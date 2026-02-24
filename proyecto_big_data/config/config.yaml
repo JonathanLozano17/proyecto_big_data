@@ -1,0 +1,16 @@
+database:
+  host: localhost
+  port: 5432
+  name: bigdata_project
+  user: postgres
+  password: 1717
+
+etl:
+  source_file: data/raw/datos_ventas.xlsx
+  target_table: ventas
+  batch_size: 5000
+  
+validation:
+  required_columns: ['id', 'fecha', 'producto', 'precio']
+  date_format: '%Y-%m-%d'
+  max_null_percentage: 10
