@@ -1,0 +1,17 @@
+==================================================
+INFORME DE CALIDAD DE DATOS
+==================================================
+
+📊 Estadísticas Generales:
+  • Filas: 1,000
+  • Columnas: 10
+  • Memoria: 0.46 MB
+  • Filas duplicadas: 0
+
+ Advertencias:
+  • Columna precio: esperado float, actual object
+  • Columna cantidad: esperado int, actual object
+  • Columna comentarios: 80.0% valores nulos (umbral: 15%)
+  • Columna fecha: contiene fechas inválidas
+
+==================================================

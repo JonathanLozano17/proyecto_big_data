@@ -1,0 +1,255 @@
+2026-02-24 12:02:16,556 - root - INFO - ==================================================
+2026-02-24 12:02:16,556 - root - INFO - INICIANDO PROCESO ETL
+2026-02-24 12:02:16,556 - root - INFO - ==================================================
+2026-02-24 12:02:16,570 - root - INFO - ------------------------------
+2026-02-24 12:02:16,570 - root - ERROR - Error extrayendo datos: [Errno 2] No such file or directory: 'data/raw/datos_ventas_complejos.xlsx'
+2026-02-24 12:03:18,643 - root - INFO - ==================================================
+2026-02-24 12:03:18,643 - root - INFO - INICIANDO PROCESO ETL
+2026-02-24 12:03:18,643 - root - INFO - ==================================================
+2026-02-24 12:03:18,646 - root - INFO - ------------------------------
+2026-02-24 12:03:18,858 - root - INFO - Hoja 'Sheet1' cargada: 1000 filas
+2026-02-24 12:03:18,863 - root - INFO - ------------------------------
+2026-02-24 12:06:26,817 - root - INFO - ==================================================
+2026-02-24 12:06:26,817 - root - INFO - INICIANDO PROCESO ETL
+2026-02-24 12:06:26,817 - root - INFO - ==================================================
+2026-02-24 12:06:26,817 - root - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-02-24 12:06:26,817 - root - INFO - ------------------------------
+2026-02-24 12:06:27,067 - root - INFO - Hoja 'Sheet1' cargada: 1000 filas
+2026-02-24 12:06:27,067 - root - INFO - Datos extraídos: 1000 filas, 10 columnas
+2026-02-24 12:06:27,067 - root - INFO - 
+ FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-02-24 12:06:27,067 - root - INFO - ------------------------------
+2026-02-24 12:06:27,076 - root - ERROR -  Error crítico en ETL: 'charmap' codec can't encode character '\U0001f4ca' in position 135: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\run_etl.py", line 62, in main
+    f.write(quality_report)
+  File "C:\Users\Jonathan.Lozano\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4ca' in position 135: character maps to <undefined>
+2026-02-24 12:12:56,305 - root - INFO - ==================================================
+2026-02-24 12:12:56,305 - root - INFO - INICIANDO PROCESO ETL
+2026-02-24 12:12:56,308 - root - INFO - ==================================================
+2026-02-24 12:12:56,308 - root - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-02-24 12:12:56,308 - root - INFO - ------------------------------
+2026-02-24 12:12:56,550 - root - INFO - Hoja 'Sheet1' cargada: 1000 filas
+2026-02-24 12:12:56,550 - root - INFO - Datos extraídos: 1000 filas, 10 columnas
+2026-02-24 12:12:56,550 - root - INFO - 
+ FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-02-24 12:12:56,550 - root - INFO - ------------------------------
+2026-02-24 12:12:56,560 - root - INFO - 
+ FASE 3: TRANSFORMACIÓN
+2026-02-24 12:12:56,560 - root - INFO - ------------------------------
+2026-02-24 12:12:56,562 - root - INFO - Fechas futuras eliminadas: 820 en fecha
+2026-02-24 12:12:56,562 - root - INFO - Columna fecha: 850 fechas inválidas convertidas a NaT
+2026-02-24 12:12:56,563 - root - ERROR -  Error crítico en ETL: expected string or bytes-like object, got 'float'
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\run_etl.py", line 75, in main
+    df_clean = transformer.transform(df)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\etl\transform.py", line 39, in transform
+    df = step(df)
+         ^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\etl\transform.py", line 114, in clean_text_fields
+    df[col] = df[col].apply(lambda x: re.sub(r'[^\w\s]', '', x))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\core\series.py", line 5084, in apply
+    ).apply()
+      ^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\core\apply.py", line 1520, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\core\apply.py", line 1578, in apply_standard
+    mapped = obj._map_values(mapper=curried)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\core\base.py", line 1020, in _map_values
+    return arr.map(mapper, na_action=na_action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\core\arrays\base.py", line 2744, in map
+    return map_array(self, mapper, na_action=na_action)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\core\algorithms.py", line 1710, in map_array
+    return lib.map_infer(values, mapper)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\etl\transform.py", line 114, in <lambda>
+    df[col] = df[col].apply(lambda x: re.sub(r'[^\w\s]', '', x))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\AppData\Local\Programs\Python\Python311\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'float'
+2026-02-24 12:15:07,839 - root - INFO - ==================================================
+2026-02-24 12:15:07,839 - root - INFO - INICIANDO PROCESO ETL
+2026-02-24 12:15:07,839 - root - INFO - ==================================================
+2026-02-24 12:15:07,840 - root - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-02-24 12:15:07,840 - root - INFO - ------------------------------
+2026-02-24 12:15:08,057 - root - INFO - Hoja 'Sheet1' cargada: 1000 filas
+2026-02-24 12:15:08,058 - root - INFO - Datos extraídos: 1000 filas, 10 columnas
+2026-02-24 12:15:08,058 - root - INFO - 
+ FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-02-24 12:15:08,058 - root - INFO - ------------------------------
+2026-02-24 12:15:08,066 - root - INFO - 
+ FASE 3: TRANSFORMACIÓN
+2026-02-24 12:15:08,066 - root - INFO - ------------------------------
+2026-02-24 12:15:08,069 - root - INFO - Fechas futuras eliminadas: 820 en fecha
+2026-02-24 12:15:08,069 - root - INFO - Columna fecha: 850 fechas inválidas convertidas a NaT
+2026-02-24 12:15:08,071 - root - ERROR -  Error crítico en ETL: name 'ddf' is not defined
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\run_etl.py", line 75, in main
+    df_clean = transformer.transform(df)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\etl\transform.py", line 39, in transform
+    df = step(df)
+         ^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\etl\transform.py", line 114, in clean_text_fields
+    ddf[col] = df[col] = (
+    ^^^
+NameError: name 'ddf' is not defined
+2026-02-24 12:18:19,914 - root - INFO - ==================================================
+2026-02-24 12:18:19,914 - root - INFO - INICIANDO PROCESO ETL
+2026-02-24 12:18:19,914 - root - INFO - ==================================================
+2026-02-24 12:18:19,914 - root - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-02-24 12:18:19,914 - root - INFO - ------------------------------
+2026-02-24 12:18:20,131 - root - INFO - Hoja 'Sheet1' cargada: 1000 filas
+2026-02-24 12:18:20,131 - root - INFO - Datos extraídos: 1000 filas, 10 columnas
+2026-02-24 12:18:20,131 - root - INFO - 
+ FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-02-24 12:18:20,131 - root - INFO - ------------------------------
+2026-02-24 12:18:20,140 - root - INFO - 
+ FASE 3: TRANSFORMACIÓN
+2026-02-24 12:18:20,140 - root - INFO - ------------------------------
+2026-02-24 12:18:20,143 - root - INFO - Fechas futuras eliminadas: 820 en fecha
+2026-02-24 12:18:20,143 - root - INFO - Columna fecha: 850 fechas inválidas convertidas a NaT
+2026-02-24 12:18:20,153 - root - INFO - Precios mínimos ajustados: 20 en precio
+2026-02-24 12:18:20,154 - root - INFO - Cantidades negativas corregidas: 56
+2026-02-24 12:18:20,155 - root - INFO - Cantidades extremas limitadas: 69
+2026-02-24 12:18:20,156 - root - INFO - Cantidades nulas imputadas a 1: 143
+2026-02-24 12:18:20,160 - root - INFO - Outliers detectados en precio: 105 filas
+2026-02-24 12:18:20,162 - root - INFO - Outliers detectados en cantidad: 69 filas
+2026-02-24 12:18:20,168 - root - INFO - Duplicados eliminados: 190 filas
+2026-02-24 12:18:20,169 - root - INFO -  Transformación completada
+2026-02-24 12:18:20,169 - root - INFO -    • Filas originales: 1000
+2026-02-24 12:18:20,169 - root - INFO -    • Filas después: 810
+2026-02-24 12:18:20,169 - root - INFO -    • Pasos aplicados: 5
+2026-02-24 12:18:20,169 - root - INFO - 
+ FASE 4: CARGA A BASE DE DATOS
+2026-02-24 12:18:20,169 - root - INFO - ------------------------------
+2026-02-24 12:18:20,392 - root - INFO - Datos cargados en ventas: 810 filas
+2026-02-24 12:18:20,392 - root - INFO - 
+==================================================
+2026-02-24 12:18:20,393 - root - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-02-24 12:18:20,393 - root - INFO - ==================================================
+2026-02-24 12:18:20,393 - root - INFO -  Resumen final:
+2026-02-24 12:18:20,393 - root - INFO -    • Tiempo total: 0.48 segundos
+2026-02-24 12:18:20,393 - root - INFO -    • Filas procesadas: 810
+2026-02-24 12:18:20,393 - root - INFO -    • Columnas finales: 18
+2026-02-24 12:18:20,393 - root - INFO -    • Tabla destino: ventas
+2026-02-24 12:18:20,393 - root - INFO -    • Reporte de calidad: logs/quality_report_20260224_121820.txt
+2026-02-24 12:18:20,394 - root - INFO - ==================================================
+2026-02-24 12:46:09,751 - root - INFO - ==================================================
+2026-02-24 12:46:09,751 - root - INFO - INICIANDO PROCESO ETL
+2026-02-24 12:46:09,751 - root - INFO - ==================================================
+2026-02-24 12:46:09,751 - root - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-02-24 12:46:09,751 - root - INFO - ------------------------------
+2026-02-24 12:46:09,968 - root - INFO - Hoja 'Sheet1' cargada: 1000 filas
+2026-02-24 12:46:09,968 - root - INFO - Datos extraídos: 1000 filas, 10 columnas
+2026-02-24 12:46:09,968 - root - INFO - 
+ FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-02-24 12:46:09,977 - root - INFO - ------------------------------
+2026-02-24 12:46:09,985 - root - INFO - 
+ FASE 3: TRANSFORMACIÓN
+2026-02-24 12:46:09,985 - root - INFO - ------------------------------
+2026-02-24 12:46:09,988 - root - INFO - Fechas futuras eliminadas: 820 en fecha
+2026-02-24 12:46:09,988 - root - INFO - Columna fecha: 850 fechas inválidas convertidas a NaT
+2026-02-24 12:46:09,997 - root - INFO - Precios mínimos ajustados: 20 en precio
+2026-02-24 12:46:09,998 - root - INFO - Cantidades negativas corregidas: 56
+2026-02-24 12:46:09,998 - root - INFO - Cantidades extremas limitadas: 69
+2026-02-24 12:46:10,000 - root - INFO - Cantidades nulas imputadas a 1: 143
+2026-02-24 12:46:10,004 - root - INFO - Outliers detectados en precio: 105 filas
+2026-02-24 12:46:10,004 - root - INFO - Outliers detectados en cantidad: 69 filas
+2026-02-24 12:46:10,010 - root - INFO - Duplicados eliminados: 190 filas
+2026-02-24 12:46:10,012 - root - INFO -  Transformación completada
+2026-02-24 12:46:10,012 - root - INFO -    • Filas originales: 1000
+2026-02-24 12:46:10,012 - root - INFO -    • Filas después: 810
+2026-02-24 12:46:10,012 - root - INFO -    • Pasos aplicados: 5
+2026-02-24 12:46:10,012 - root - INFO - 
+ FASE 4: CARGA A BASE DE DATOS
+2026-02-24 12:46:10,012 - root - INFO - ------------------------------
+2026-02-24 12:46:10,226 - root - INFO - Datos cargados en ventas: 810 filas
+2026-02-24 12:46:10,226 - root - INFO - 
+==================================================
+2026-02-24 12:46:10,227 - root - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-02-24 12:46:10,227 - root - INFO - ==================================================
+2026-02-24 12:46:10,227 - root - INFO -  Resumen final:
+2026-02-24 12:46:10,227 - root - INFO -    • Tiempo total: 0.48 segundos
+2026-02-24 12:46:10,227 - root - INFO -    • Filas procesadas: 810
+2026-02-24 12:46:10,227 - root - INFO -    • Columnas finales: 18
+2026-02-24 12:46:10,227 - root - INFO -    • Tabla destino: ventas
+2026-02-24 12:46:10,228 - root - INFO -    • Reporte de calidad: logs/quality_report_20260224_124609.txt
+2026-02-24 12:46:10,228 - root - INFO - ==================================================
+2026-02-24 12:59:09,794 - root - INFO - ==================================================
+2026-02-24 12:59:09,794 - root - INFO - INICIANDO PROCESO ETL
+2026-02-24 12:59:09,794 - root - INFO - ==================================================
+2026-02-24 12:59:09,795 - root - INFO - 
+ FASE 1: EXTRACCIÃ“N
+2026-02-24 12:59:09,795 - root - INFO - ------------------------------
+2026-02-24 12:59:10,017 - root - INFO - Hoja 'Sheet1' cargada: 1000 filas
+2026-02-24 12:59:10,018 - root - INFO - Datos extraÃ­dos: 1000 filas, 10 columnas
+2026-02-24 12:59:10,018 - root - INFO - 
+ FASE 2: VALIDACIÃ“N PRE-TRANSFORMACIÃ“N
+2026-02-24 12:59:10,018 - root - INFO - ------------------------------
+2026-02-24 12:59:10,024 - root - INFO - 
+==================================================
+INFORME DE CALIDAD DE DATOS
+==================================================
+
+ðŸ“Š EstadÃ­sticas Generales:
+  â€¢ Filas: 1,000
+  â€¢ Columnas: 10
+  â€¢ Memoria: 0.46 MB
+  â€¢ Filas duplicadas: 0
+
+ Advertencias:
+  â€¢ Columna precio: esperado float, actual object
+  â€¢ Columna cantidad: esperado int, actual object
+  â€¢ Columna comentarios: 80.0% valores nulos (umbral: 15%)
+  â€¢ Columna fecha: contiene fechas invÃ¡lidas
+
+==================================================
+2026-02-24 12:59:10,025 - root - INFO - 
+ FASE 3: TRANSFORMACIÃ“N
+2026-02-24 12:59:10,026 - root - INFO - ------------------------------
+2026-02-24 12:59:10,028 - root - INFO - Fechas futuras eliminadas: 820 en fecha
+2026-02-24 12:59:10,028 - root - INFO - Columna fecha: 850 fechas invÃ¡lidas convertidas a NaT
+2026-02-24 12:59:10,037 - root - INFO - Precios mÃ­nimos ajustados: 20 en precio
+2026-02-24 12:59:10,039 - root - INFO - Cantidades negativas corregidas: 56
+2026-02-24 12:59:10,039 - root - INFO - Cantidades extremas limitadas: 69
+2026-02-24 12:59:10,040 - root - INFO - Cantidades nulas imputadas a 1: 143
+2026-02-24 12:59:10,045 - root - INFO - Outliers detectados en precio: 105 filas
+2026-02-24 12:59:10,047 - root - INFO - Outliers detectados en cantidad: 69 filas
+2026-02-24 12:59:10,052 - root - INFO - Duplicados eliminados: 190 filas
+2026-02-24 12:59:10,052 - root - INFO -  TransformaciÃ³n completada
+2026-02-24 12:59:10,053 - root - INFO -    â€¢ Filas originales: 1000
+2026-02-24 12:59:10,053 - root - INFO -    â€¢ Filas despuÃ©s: 810
+2026-02-24 12:59:10,053 - root - INFO -    â€¢ Pasos aplicados: 5
+2026-02-24 12:59:10,053 - root - INFO - 
+ FASE 4: CARGA A BASE DE DATOS
+2026-02-24 12:59:10,053 - root - INFO - ------------------------------
+2026-02-24 12:59:10,232 - root - INFO - Datos cargados en ventas: 810 filas
+2026-02-24 12:59:10,232 - root - INFO - 
+==================================================
+2026-02-24 12:59:10,232 - root - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-02-24 12:59:10,232 - root - INFO - ==================================================
+2026-02-24 12:59:10,233 - root - INFO -  Resumen final:
+2026-02-24 12:59:10,233 - root - INFO -    â€¢ Tiempo total: 0.44 segundos
+2026-02-24 12:59:10,233 - root - INFO -    â€¢ Filas procesadas: 810
+2026-02-24 12:59:10,233 - root - INFO -    â€¢ Columnas finales: 18
+2026-02-24 12:59:10,233 - root - INFO -    â€¢ Tabla destino: ventas
+2026-02-24 12:59:10,233 - root - INFO -    â€¢ Reporte de calidad: logs/quality_report_20260224_125910.txt
+2026-02-24 12:59:10,233 - root - INFO - ==================================================

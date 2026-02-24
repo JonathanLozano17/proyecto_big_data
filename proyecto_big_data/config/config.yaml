@@ -6,11 +6,45 @@ database:
   password: 1717
 
 etl:
-  source_file: data/raw/datos_ventas.xlsx
+  source_file: data/raw/datos_ventas_complejos.xlsx
   target_table: ventas
   batch_size: 5000
-  
+  error_threshold: 10  # Porcentaje máximo de errores permitido
+
+transformations:
+  text_case: lower  # 'upper' o 'lower'
+  default_text: 'desconocido'
+  outlier_strategy: 'cap'  # 'cap', 'median', o 'remove'
+  deduplicate_subset: ['fecha', 'producto', 'precio', 'cantidad']  # null para todas las columnas
+  create_derived_columns: true
+
 validation:
-  required_columns: ['id', 'fecha', 'producto', 'precio']
-  date_format: '%Y-%m-%d'
-  max_null_percentage: 10
+  required_columns: ['id', 'fecha', 'producto', 'precio', 'cantidad']
+  max_null_percentage: 15
+  reject_future_dates: true
+  min_date: '2020-01-01'
+  min_price: 1
+  max_price: 5000
+  min_quantity: 1
+  max_quantity: 50
+  
+  column_dtypes:
+    id: 'int'
+    precio: 'float'
+    cantidad: 'int'
+    
+  value_ranges:
+    precio:
+      min: 1
+      max: 5000
+    cantidad:
+      min: 1
+      max: 50
+      
+  valid_region: ['norte', 'sur', 'este', 'oeste', 'centro']
+  valid_metodo_pago: ['tarjeta', 'efectivo', 'transferencia', 'paypal']
+
+logging:
+  level: INFO
+  file: logs/etl_detallado.log
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
