@@ -3,17 +3,18 @@ import yaml
 import sys
 from pathlib import Path
 from datetime import datetime
+
+# Importar módulos actualizados
 from src.etl.extract import extract_from_excel
 from src.etl.transform import DataTransformer
 from src.etl.load import load_to_database
 from src.validation.data_quality import validate_data, generate_quality_report
 
 def setup_logging(config):
-    """Configura logging con rotación de archivos"""
+    """Configura logging"""
     log_config = config.get('logging', {})
-    log_file = log_config.get('file', 'logs/etl.log')
+    log_file = log_config.get('file', 'logs/etl_concesionario.log')
     
-    # Crear directorio de logs si no existe
     Path(log_file).parent.mkdir(exist_ok=True)
     
     logging.basicConfig(
@@ -30,88 +31,87 @@ def main():
     
     try:
         # Cargar configuración
-        with open('config/config.yaml', 'r') as f:
+        with open('config/config.yaml', 'r', encoding='utf-8') as f:
             config = yaml.safe_load(f)
         
         setup_logging(config)
-        logging.info("=" * 50)
-        logging.info("INICIANDO PROCESO ETL")
-        logging.info("=" * 50)
+        logging.info("=" * 60)
+        logging.info("🚗 ETL CONCESIONARIO - MODELO ESTRELLA")
+        logging.info("=" * 60)
         
-        # 1. EXTRACT
-        logging.info("\n FASE 1: EXTRACCIÓN")
-        logging.info("-" * 30)
-        data = extract_from_excel(config['etl']['source_file'])
+        # 1. EXTRACT - Múltiples archivos
+        logging.info("\n📂 FASE 1: EXTRACCIÓN DE DATOS")
+        logging.info("-" * 40)
         
-        # Asumimos que trabajamos con la primera hoja
-        df = list(data.values())[0]
-        logging.info(f"Datos extraídos: {len(df)} filas, {len(df.columns)} columnas")
+        data_raw = extract_from_excel(config['etl']['source_files'])
+        logging.info(f"\n✅ Total tablas extraídas: {len(data_raw)}")
         
         # 2. VALIDATE (pre-transformación)
-        logging.info("\n FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN")
-        logging.info("-" * 30)
-        validation_result = validate_data(df, config['validation'])
+        logging.info("\n🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN")
+        logging.info("-" * 40)
         
-        # Generar y guardar reporte de calidad
-        quality_report = generate_quality_report(df, validation_result)
-        logging.info("\n" + quality_report)
-        
-        # Guardar reporte a archivo
-        report_file = f"logs/quality_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
-        with open("archivo.txt", "w", encoding="utf-8") as f:
-            f.write(quality_report)
-        
-        # Decidir si continuar basado en umbral de errores
-        error_threshold = config['etl'].get('error_threshold', 10)
-        if len(validation_result['issues']) > error_threshold:
-            logging.error(f" Demasiados problemas críticos ({len(validation_result['issues'])}). Abortando ETL.")
-            sys.exit(1)
+        all_validation_results = {}
+        for table_name, df in data_raw.items():
+            logging.info(f"\nValidando {table_name}:")
+            table_config = config['validation'].copy()
+            table_config['required_columns'] = config['validation'].get('required_columns', {}).get(table_name, [])
+            
+            validation_result = validate_data(df, table_config)
+            all_validation_results[table_name] = validation_result
+            
+            # Mostrar resumen
+            if validation_result['issues']:
+                logging.warning(f"  ⚠️ {len(validation_result['issues'])} problemas críticos")
+            if validation_result['warnings']:
+                logging.warning(f"  ⚠️ {len(validation_result['warnings'])} advertencias")
+            logging.info(f"  ✓ {validation_result['statistics']['total_rows']} filas")
         
         # 3. TRANSFORM
-        logging.info("\n FASE 3: TRANSFORMACIÓN")
-        logging.info("-" * 30)
+        logging.info("\n🔄 FASE 3: TRANSFORMACIÓN DE DATOS")
+        logging.info("-" * 40)
         
         transformer = DataTransformer(config)
-        df_clean = transformer.transform(df)
+        data_clean = transformer.transform_all(data_raw)
         
-        logging.info(f" Transformación completada")
-        logging.info(f"   • Filas originales: {len(df)}")
-        logging.info(f"   • Filas después: {len(df_clean)}")
-        
-        # Mostrar resumen de transformaciones
-        transform_report = transformer.get_transformation_report()
-        logging.info(f"   • Pasos aplicados: {transform_report['total_steps']}")
+        # Validar integridad referencial
+        ref_validation = transformer.validate_referential_integrity(data_clean)
+        logging.info("\n🔗 Validación de integridad referencial:")
+        for key, value in ref_validation.items():
+            if value > 0:
+                logging.warning(f"  ⚠️ {key}: {value} registros inválidos")
         
         # 4. LOAD
-        logging.info("\n FASE 4: CARGA A BASE DE DATOS")
-        logging.info("-" * 30)
+        logging.info("\n💾 FASE 4: CARGA A BASE DE DATOS")
+        logging.info("-" * 40)
         
         conn_string = (f"postgresql://{config['database']['user']}:{config['database']['password']}"
                       f"@{config['database']['host']}:{config['database']['port']}/{config['database']['name']}")
         
         load_to_database(
-            df_clean, 
-            config['etl']['target_table'],
-            conn_string
+            data_clean,
+            conn_string,
+            config['etl']['target_schema']
         )
         
-        # 5. FINALIZACIÓN
+        # 5. REPORTE FINAL
         end_time = datetime.now()
         duration = end_time - start_time
         
-        logging.info("\n" + "=" * 50)
-        logging.info(" ETL COMPLETADO EXITOSAMENTE")
-        logging.info("=" * 50)
-        logging.info(f" Resumen final:")
-        logging.info(f"   • Tiempo total: {duration.total_seconds():.2f} segundos")
-        logging.info(f"   • Filas procesadas: {len(df_clean)}")
-        logging.info(f"   • Columnas finales: {len(df_clean.columns)}")
-        logging.info(f"   • Tabla destino: {config['etl']['target_table']}")
-        logging.info(f"   • Reporte de calidad: {report_file}")
-        logging.info("=" * 50)
+        logging.info("\n" + "=" * 60)
+        logging.info("✅ ETL COMPLETADO EXITOSAMENTE")
+        logging.info("=" * 60)
+        logging.info(f"\n📊 Resumen final:")
+        logging.info(f"  • Tiempo total: {duration.total_seconds():.2f} segundos")
+        logging.info(f"  • Tablas procesadas: {len(data_clean)}")
+        
+        for table_name, df in data_clean.items():
+            logging.info(f"    - {table_name}: {len(df)} filas")
+        
+        logging.info(f"\n📁 Logs guardados en: logs/etl_concesionario.log")
+        logging.info("=" * 60)
         
     except Exception as e:
-        logging.error(f" Error crítico en ETL: {str(e)}", exc_info=True)
+        logging.error(f"\n❌ Error crítico en ETL: {str(e)}", exc_info=True)
         sys.exit(1)
 
 if __name__ == "__main__":

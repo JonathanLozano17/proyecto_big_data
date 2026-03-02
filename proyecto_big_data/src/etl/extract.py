@@ -1,20 +1,27 @@
 import pandas as pd
 import logging
 from pathlib import Path
+from typing import Dict
 
-def extract_from_excel(file_path):
-    """Extrae datos de Excel manejando múltiples hojas"""
+def extract_from_excel(file_paths: Dict[str, str]) -> Dict[str, pd.DataFrame]:
+    """Extrae datos de múltiples archivos Excel"""
     try:
-        # Leer todas las hojas
-        excel_file = pd.ExcelFile(file_path)
-        sheets_dict = {}
+        all_data = {}
         
-        for sheet_name in excel_file.sheet_names:
-            df = pd.read_excel(file_path, sheet_name=sheet_name)
-            sheets_dict[sheet_name] = df
-            logging.info(f"Hoja '{sheet_name}' cargada: {len(df)} filas")
+        for table_name, file_path in file_paths.items():
+            logging.info(f"Extrayendo {table_name} desde {file_path}")
+            
+            if not Path(file_path).exists():
+                logging.error(f"Archivo no encontrado: {file_path}")
+                continue
+                
+            # Leer el archivo Excel
+            df = pd.read_excel(file_path)
+            all_data[table_name] = df
+            logging.info(f"  → {table_name}: {len(df)} filas, {len(df.columns)} columnas")
         
-        return sheets_dict
+        return all_data
+        
     except Exception as e:
         logging.error(f"Error extrayendo datos: {e}")
         raise

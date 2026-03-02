@@ -1,0 +1,823 @@
+2026-03-02 08:25:28,646 - root - INFO - ============================================================
+2026-03-02 08:25:28,646 - root - INFO - 🚗 ETL CONCESIONARIO - MODELO ESTRELLA
+2026-03-02 08:25:28,646 - root - INFO - ============================================================
+2026-03-02 08:25:28,647 - root - INFO - 
+📂 FASE 1: EXTRACCIÓN DE DATOS
+2026-03-02 08:25:28,647 - root - INFO - ----------------------------------------
+2026-03-02 08:25:28,647 - root - INFO - Extrayendo dim_tiempo desde data/raw/dim_tiempo.xlsx
+2026-03-02 08:25:28,946 - root - INFO -   → dim_tiempo: 1827 filas, 9 columnas
+2026-03-02 08:25:28,946 - root - INFO - Extrayendo dim_cliente desde data/raw/dim_cliente.xlsx
+2026-03-02 08:25:28,985 - root - INFO -   → dim_cliente: 500 filas, 8 columnas
+2026-03-02 08:25:28,985 - root - INFO - Extrayendo dim_sucursal desde data/raw/dim_sucursal.xlsx
+2026-03-02 08:25:28,990 - root - INFO -   → dim_sucursal: 20 filas, 7 columnas
+2026-03-02 08:25:28,990 - root - INFO - Extrayendo dim_vehiculo desde data/raw/dim_vehiculo.xlsx
+2026-03-02 08:25:29,021 - root - INFO -   → dim_vehiculo: 300 filas, 12 columnas
+2026-03-02 08:25:29,021 - root - INFO - Extrayendo dim_vendedor desde data/raw/dim_vendedor.xlsx
+2026-03-02 08:25:29,029 - root - INFO -   → dim_vendedor: 50 filas, 7 columnas
+2026-03-02 08:25:29,029 - root - INFO - Extrayendo dim_tipoPago desde data/raw/dim_tipoPago.xlsx
+2026-03-02 08:25:29,034 - root - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-02 08:25:29,034 - root - INFO - Extrayendo dim_ciudad desde data/raw/dim_ciudad.xlsx
+2026-03-02 08:25:29,039 - root - INFO -   → dim_ciudad: 8 filas, 4 columnas
+2026-03-02 08:25:29,039 - root - INFO - Extrayendo tipo_mantenimiento desde data/raw/tipo_mantenimiento.xlsx
+2026-03-02 08:25:29,042 - root - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-02 08:25:29,042 - root - INFO - Extrayendo hecho_ventas desde data/raw/hecho_ventas.xlsx
+2026-03-02 08:25:29,192 - root - INFO -   → hecho_ventas: 2000 filas, 14 columnas
+2026-03-02 08:25:29,192 - root - INFO - Extrayendo hecho_mantenimiento desde data/raw/hecho_mantenimiento.xlsx
+2026-03-02 08:25:29,269 - root - INFO -   → hecho_mantenimiento: 800 filas, 12 columnas
+2026-03-02 08:25:29,269 - root - INFO - 
+✅ Total tablas extraídas: 10
+2026-03-02 08:25:29,270 - root - INFO - 
+🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-03-02 08:25:29,270 - root - INFO - ----------------------------------------
+2026-03-02 08:25:29,270 - root - INFO - 
+Validando dim_tiempo:
+2026-03-02 08:25:29,283 - root - INFO -   ✓ 1827 filas
+2026-03-02 08:25:29,283 - root - INFO - 
+Validando dim_cliente:
+2026-03-02 08:25:29,290 - root - INFO -   ✓ 500 filas
+2026-03-02 08:25:29,290 - root - INFO - 
+Validando dim_sucursal:
+2026-03-02 08:25:29,292 - root - INFO -   ✓ 20 filas
+2026-03-02 08:25:29,292 - root - INFO - 
+Validando dim_vehiculo:
+2026-03-02 08:25:29,296 - root - INFO -   ✓ 300 filas
+2026-03-02 08:25:29,296 - root - INFO - 
+Validando dim_vendedor:
+2026-03-02 08:25:29,298 - root - INFO -   ✓ 50 filas
+2026-03-02 08:25:29,298 - root - INFO - 
+Validando dim_tipoPago:
+2026-03-02 08:25:29,298 - root - INFO -   ✓ 15 filas
+2026-03-02 08:25:29,298 - root - INFO - 
+Validando dim_ciudad:
+2026-03-02 08:25:29,298 - root - INFO -   ✓ 8 filas
+2026-03-02 08:25:29,298 - root - INFO - 
+Validando tipo_mantenimiento:
+2026-03-02 08:25:29,302 - root - INFO -   ✓ 8 filas
+2026-03-02 08:25:29,302 - root - INFO - 
+Validando hecho_ventas:
+2026-03-02 08:25:29,310 - root - INFO -   ✓ 2000 filas
+2026-03-02 08:25:29,310 - root - INFO - 
+Validando hecho_mantenimiento:
+2026-03-02 08:25:29,312 - root - INFO -   ✓ 800 filas
+2026-03-02 08:25:29,312 - root - INFO - 
+🔄 FASE 3: TRANSFORMACIÓN DE DATOS
+2026-03-02 08:25:29,316 - root - INFO - ----------------------------------------
+2026-03-02 08:25:29,316 - root - INFO - 
+Transformando tabla: dim_tiempo
+2026-03-02 08:25:29,321 - root - INFO -   → dim_tiempo transformada: 1827 filas
+2026-03-02 08:25:29,321 - root - INFO - 
+Transformando tabla: dim_cliente
+2026-03-02 08:25:29,325 - root - INFO -   → dim_cliente transformada: 500 filas
+2026-03-02 08:25:29,325 - root - INFO - 
+Transformando tabla: dim_sucursal
+2026-03-02 08:25:29,331 - root - INFO -   → dim_sucursal transformada: 20 filas
+2026-03-02 08:25:29,331 - root - INFO - 
+Transformando tabla: dim_vehiculo
+2026-03-02 08:25:29,335 - root - INFO -   → dim_vehiculo transformada: 300 filas
+2026-03-02 08:25:29,335 - root - INFO - 
+Transformando tabla: dim_vendedor
+2026-03-02 08:25:29,339 - root - INFO -   → dim_vendedor transformada: 50 filas
+2026-03-02 08:25:29,339 - root - INFO - 
+Transformando tabla: dim_tipoPago
+2026-03-02 08:25:29,341 - root - INFO -   → dim_tipoPago transformada: 15 filas
+2026-03-02 08:25:29,341 - root - INFO - 
+Transformando tabla: dim_ciudad
+2026-03-02 08:25:29,343 - root - INFO -   → dim_ciudad transformada: 8 filas
+2026-03-02 08:25:29,343 - root - INFO - 
+Transformando tabla: tipo_mantenimiento
+2026-03-02 08:25:29,343 - root - INFO -   → tipo_mantenimiento transformada: 8 filas
+2026-03-02 08:25:29,343 - root - INFO - 
+Transformando tabla: hecho_ventas
+2026-03-02 08:25:29,362 - root - INFO -   → hecho_ventas transformada: 2000 filas
+2026-03-02 08:25:29,362 - root - INFO - 
+Transformando tabla: hecho_mantenimiento
+2026-03-02 08:25:29,371 - root - INFO -   → hecho_mantenimiento transformada: 800 filas
+2026-03-02 08:25:29,375 - root - INFO - 
+🔗 Validación de integridad referencial:
+2026-03-02 08:25:29,375 - root - INFO - 
+💾 FASE 4: CARGA A BASE DE DATOS
+2026-03-02 08:25:29,375 - root - INFO - ----------------------------------------
+2026-03-02 08:25:29,610 - root - ERROR - Error cargando datos: 'utf-8' codec can't decode byte 0xab in position 96: invalid start byte
+2026-03-02 08:25:29,610 - root - ERROR - 
+❌ Error crítico en ETL: 'utf-8' codec can't decode byte 0xab in position 96: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\run_etl.py", line 90, in main
+    load_to_database(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\etl\load.py", line 12, in load_to_database
+    with engine.connect() as conn:
+         ^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3285, in connect
+    return self._connection_cls(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 143, in __init__
+    self._dbapi_connection = engine.raw_connection()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3309, in raw_connection
+    return self.pool.connect()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 447, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1264, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 711, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    with util.safe_reraise():
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 175, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 388, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 673, in __init__
+    self.__connect()
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 899, in __connect
+    with util.safe_reraise():
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 224, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 895, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\create.py", line 661, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 630, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)  # type: ignore[no-any-return]  # NOQA: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\psycopg2\__init__.py", line 135, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xab in position 96: invalid start byte
+2026-03-02 08:32:21,014 - root - INFO - ============================================================
+2026-03-02 08:32:21,014 - root - INFO - 🚗 ETL CONCESIONARIO - MODELO ESTRELLA
+2026-03-02 08:32:21,014 - root - INFO - ============================================================
+2026-03-02 08:32:21,014 - root - INFO - 
+📂 FASE 1: EXTRACCIÓN DE DATOS
+2026-03-02 08:32:21,014 - root - INFO - ----------------------------------------
+2026-03-02 08:32:21,014 - root - INFO - Extrayendo dim_tiempo desde data/raw/dim_tiempo.xlsx
+2026-03-02 08:32:21,304 - root - INFO -   → dim_tiempo: 1827 filas, 9 columnas
+2026-03-02 08:32:21,304 - root - INFO - Extrayendo dim_cliente desde data/raw/dim_cliente.xlsx
+2026-03-02 08:32:21,341 - root - INFO -   → dim_cliente: 500 filas, 8 columnas
+2026-03-02 08:32:21,341 - root - INFO - Extrayendo dim_sucursal desde data/raw/dim_sucursal.xlsx
+2026-03-02 08:32:21,345 - root - INFO -   → dim_sucursal: 20 filas, 7 columnas
+2026-03-02 08:32:21,345 - root - INFO - Extrayendo dim_vehiculo desde data/raw/dim_vehiculo.xlsx
+2026-03-02 08:32:21,372 - root - INFO -   → dim_vehiculo: 300 filas, 12 columnas
+2026-03-02 08:32:21,372 - root - INFO - Extrayendo dim_vendedor desde data/raw/dim_vendedor.xlsx
+2026-03-02 08:32:21,385 - root - INFO -   → dim_vendedor: 50 filas, 7 columnas
+2026-03-02 08:32:21,385 - root - INFO - Extrayendo dim_tipoPago desde data/raw/dim_tipoPago.xlsx
+2026-03-02 08:32:21,386 - root - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-02 08:32:21,386 - root - INFO - Extrayendo dim_ciudad desde data/raw/dim_ciudad.xlsx
+2026-03-02 08:32:21,391 - root - INFO -   → dim_ciudad: 8 filas, 4 columnas
+2026-03-02 08:32:21,391 - root - INFO - Extrayendo tipo_mantenimiento desde data/raw/tipo_mantenimiento.xlsx
+2026-03-02 08:32:21,391 - root - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-02 08:32:21,391 - root - INFO - Extrayendo hecho_ventas desde data/raw/hecho_ventas.xlsx
+2026-03-02 08:32:21,540 - root - INFO -   → hecho_ventas: 2000 filas, 14 columnas
+2026-03-02 08:32:21,540 - root - INFO - Extrayendo hecho_mantenimiento desde data/raw/hecho_mantenimiento.xlsx
+2026-03-02 08:32:21,617 - root - INFO -   → hecho_mantenimiento: 800 filas, 12 columnas
+2026-03-02 08:32:21,617 - root - INFO - 
+✅ Total tablas extraídas: 10
+2026-03-02 08:32:21,617 - root - INFO - 
+🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-03-02 08:32:21,617 - root - INFO - ----------------------------------------
+2026-03-02 08:32:21,617 - root - INFO - 
+Validando dim_tiempo:
+2026-03-02 08:32:21,622 - root - INFO -   ✓ 1827 filas
+2026-03-02 08:32:21,622 - root - INFO - 
+Validando dim_cliente:
+2026-03-02 08:32:21,626 - root - INFO -   ✓ 500 filas
+2026-03-02 08:32:21,626 - root - INFO - 
+Validando dim_sucursal:
+2026-03-02 08:32:21,628 - root - INFO -   ✓ 20 filas
+2026-03-02 08:32:21,628 - root - INFO - 
+Validando dim_vehiculo:
+2026-03-02 08:32:21,631 - root - INFO -   ✓ 300 filas
+2026-03-02 08:32:21,631 - root - INFO - 
+Validando dim_vendedor:
+2026-03-02 08:32:21,634 - root - INFO -   ✓ 50 filas
+2026-03-02 08:32:21,635 - root - INFO - 
+Validando dim_tipoPago:
+2026-03-02 08:32:21,637 - root - INFO -   ✓ 15 filas
+2026-03-02 08:32:21,637 - root - INFO - 
+Validando dim_ciudad:
+2026-03-02 08:32:21,638 - root - INFO -   ✓ 8 filas
+2026-03-02 08:32:21,639 - root - INFO - 
+Validando tipo_mantenimiento:
+2026-03-02 08:32:21,640 - root - INFO -   ✓ 8 filas
+2026-03-02 08:32:21,640 - root - INFO - 
+Validando hecho_ventas:
+2026-03-02 08:32:21,646 - root - INFO -   ✓ 2000 filas
+2026-03-02 08:32:21,646 - root - INFO - 
+Validando hecho_mantenimiento:
+2026-03-02 08:32:21,652 - root - INFO -   ✓ 800 filas
+2026-03-02 08:32:21,652 - root - INFO - 
+🔄 FASE 3: TRANSFORMACIÓN DE DATOS
+2026-03-02 08:32:21,652 - root - INFO - ----------------------------------------
+2026-03-02 08:32:21,652 - root - INFO - 
+Transformando tabla: dim_tiempo
+2026-03-02 08:32:21,657 - root - INFO -   → dim_tiempo transformada: 1827 filas
+2026-03-02 08:32:21,657 - root - INFO - 
+Transformando tabla: dim_cliente
+2026-03-02 08:32:21,661 - root - INFO -   → dim_cliente transformada: 500 filas
+2026-03-02 08:32:21,661 - root - INFO - 
+Transformando tabla: dim_sucursal
+2026-03-02 08:32:21,666 - root - INFO -   → dim_sucursal transformada: 20 filas
+2026-03-02 08:32:21,666 - root - INFO - 
+Transformando tabla: dim_vehiculo
+2026-03-02 08:32:21,672 - root - INFO -   → dim_vehiculo transformada: 300 filas
+2026-03-02 08:32:21,672 - root - INFO - 
+Transformando tabla: dim_vendedor
+2026-03-02 08:32:21,673 - root - INFO -   → dim_vendedor transformada: 50 filas
+2026-03-02 08:32:21,673 - root - INFO - 
+Transformando tabla: dim_tipoPago
+2026-03-02 08:32:21,673 - root - INFO -   → dim_tipoPago transformada: 15 filas
+2026-03-02 08:32:21,673 - root - INFO - 
+Transformando tabla: dim_ciudad
+2026-03-02 08:32:21,679 - root - INFO -   → dim_ciudad transformada: 8 filas
+2026-03-02 08:32:21,679 - root - INFO - 
+Transformando tabla: tipo_mantenimiento
+2026-03-02 08:32:21,679 - root - INFO -   → tipo_mantenimiento transformada: 8 filas
+2026-03-02 08:32:21,679 - root - INFO - 
+Transformando tabla: hecho_ventas
+2026-03-02 08:32:21,694 - root - INFO -   → hecho_ventas transformada: 2000 filas
+2026-03-02 08:32:21,694 - root - INFO - 
+Transformando tabla: hecho_mantenimiento
+2026-03-02 08:32:21,706 - root - INFO -   → hecho_mantenimiento transformada: 800 filas
+2026-03-02 08:32:21,706 - root - INFO - 
+🔗 Validación de integridad referencial:
+2026-03-02 08:32:21,706 - root - INFO - 
+💾 FASE 4: CARGA A BASE DE DATOS
+2026-03-02 08:32:21,706 - root - INFO - ----------------------------------------
+2026-03-02 08:32:21,791 - root - INFO - ✅ Conexión a base de datos exitosa
+2026-03-02 08:32:21,819 - root - ERROR - Error cargando datos: (psycopg2.errors.InvalidSchemaName) no existe el esquema «concesionario»
+LINE 2: CREATE TABLE concesionario.dim_ciudad (
+                     ^
+
+[SQL: 
+CREATE TABLE concesionario.dim_ciudad (
+	id_ciudad FLOAT(53), 
+	nombre_ciudad TEXT, 
+	departamento TEXT, 
+	region TEXT
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-02 08:32:21,819 - root - ERROR - 
+❌ Error crítico en ETL: (psycopg2.errors.InvalidSchemaName) no existe el esquema «concesionario»
+LINE 2: CREATE TABLE concesionario.dim_ciudad (
+                     ^
+
+[SQL: 
+CREATE TABLE concesionario.dim_ciudad (
+	id_ciudad FLOAT(53), 
+	nombre_ciudad TEXT, 
+	departamento TEXT, 
+	region TEXT
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.InvalidSchemaName: no existe el esquema «concesionario»
+LINE 2: CREATE TABLE concesionario.dim_ciudad (
+                     ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\run_etl.py", line 90, in main
+    load_to_database(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\etl\load.py", line 41, in load_to_database
+    df.to_sql(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\core\generic.py", line 3052, in to_sql
+    return sql.to_sql(
+           ^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\io\sql.py", line 841, in to_sql
+    return pandas_sql.to_sql(
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\io\sql.py", line 2027, in to_sql
+    table = self.prep_table(
+            ^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\io\sql.py", line 1932, in prep_table
+    table.create()
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\io\sql.py", line 999, in create
+    self._execute_create()
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\pandas\io\sql.py", line 983, in _execute_create
+    self.table.create(bind=self.pd_sql.con)
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\sql\schema.py", line 1288, in create
+    bind._run_ddl_visitor(ddl.SchemaGenerator, self, checkfirst=checkfirst)
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2467, in _run_ddl_visitor
+    ).traverse_single(element)
+      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\sql\visitors.py", line 661, in traverse_single
+    return meth(obj, **kw)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 1022, in visit_table
+    )._invoke_with(self.connection)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 321, in _invoke_with
+    return bind.execute(self)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\sql\ddl.py", line 187, in _execute_on_connection
+    return connection._execute_ddl(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1530, in _execute_ddl
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.InvalidSchemaName) no existe el esquema «concesionario»
+LINE 2: CREATE TABLE concesionario.dim_ciudad (
+                     ^
+
+[SQL: 
+CREATE TABLE concesionario.dim_ciudad (
+	id_ciudad FLOAT(53), 
+	nombre_ciudad TEXT, 
+	departamento TEXT, 
+	region TEXT
+)
+
+]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-02 08:34:53,534 - root - INFO - ============================================================
+2026-03-02 08:34:53,534 - root - INFO - 🚗 ETL CONCESIONARIO - MODELO ESTRELLA
+2026-03-02 08:34:53,534 - root - INFO - ============================================================
+2026-03-02 08:34:53,534 - root - INFO - 
+📂 FASE 1: EXTRACCIÓN DE DATOS
+2026-03-02 08:34:53,534 - root - INFO - ----------------------------------------
+2026-03-02 08:34:53,534 - root - INFO - Extrayendo dim_tiempo desde data/raw/dim_tiempo.xlsx
+2026-03-02 08:34:53,820 - root - INFO -   → dim_tiempo: 1827 filas, 9 columnas
+2026-03-02 08:34:53,822 - root - INFO - Extrayendo dim_cliente desde data/raw/dim_cliente.xlsx
+2026-03-02 08:34:53,856 - root - INFO -   → dim_cliente: 500 filas, 8 columnas
+2026-03-02 08:34:53,856 - root - INFO - Extrayendo dim_sucursal desde data/raw/dim_sucursal.xlsx
+2026-03-02 08:34:53,861 - root - INFO -   → dim_sucursal: 20 filas, 7 columnas
+2026-03-02 08:34:53,861 - root - INFO - Extrayendo dim_vehiculo desde data/raw/dim_vehiculo.xlsx
+2026-03-02 08:34:53,892 - root - INFO -   → dim_vehiculo: 300 filas, 12 columnas
+2026-03-02 08:34:53,892 - root - INFO - Extrayendo dim_vendedor desde data/raw/dim_vendedor.xlsx
+2026-03-02 08:34:53,900 - root - INFO -   → dim_vendedor: 50 filas, 7 columnas
+2026-03-02 08:34:53,900 - root - INFO - Extrayendo dim_tipoPago desde data/raw/dim_tipoPago.xlsx
+2026-03-02 08:34:53,905 - root - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-02 08:34:53,905 - root - INFO - Extrayendo dim_ciudad desde data/raw/dim_ciudad.xlsx
+2026-03-02 08:34:53,908 - root - INFO -   → dim_ciudad: 8 filas, 4 columnas
+2026-03-02 08:34:53,908 - root - INFO - Extrayendo tipo_mantenimiento desde data/raw/tipo_mantenimiento.xlsx
+2026-03-02 08:34:53,910 - root - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-02 08:34:53,910 - root - INFO - Extrayendo hecho_ventas desde data/raw/hecho_ventas.xlsx
+2026-03-02 08:34:54,053 - root - INFO -   → hecho_ventas: 2000 filas, 14 columnas
+2026-03-02 08:34:54,053 - root - INFO - Extrayendo hecho_mantenimiento desde data/raw/hecho_mantenimiento.xlsx
+2026-03-02 08:34:54,130 - root - INFO -   → hecho_mantenimiento: 800 filas, 12 columnas
+2026-03-02 08:34:54,130 - root - INFO - 
+✅ Total tablas extraídas: 10
+2026-03-02 08:34:54,130 - root - INFO - 
+🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-03-02 08:34:54,130 - root - INFO - ----------------------------------------
+2026-03-02 08:34:54,131 - root - INFO - 
+Validando dim_tiempo:
+2026-03-02 08:34:54,136 - root - INFO -   ✓ 1827 filas
+2026-03-02 08:34:54,136 - root - INFO - 
+Validando dim_cliente:
+2026-03-02 08:34:54,140 - root - INFO -   ✓ 500 filas
+2026-03-02 08:34:54,140 - root - INFO - 
+Validando dim_sucursal:
+2026-03-02 08:34:54,142 - root - INFO -   ✓ 20 filas
+2026-03-02 08:34:54,142 - root - INFO - 
+Validando dim_vehiculo:
+2026-03-02 08:34:54,145 - root - INFO -   ✓ 300 filas
+2026-03-02 08:34:54,145 - root - INFO - 
+Validando dim_vendedor:
+2026-03-02 08:34:54,148 - root - INFO -   ✓ 50 filas
+2026-03-02 08:34:54,148 - root - INFO - 
+Validando dim_tipoPago:
+2026-03-02 08:34:54,149 - root - INFO -   ✓ 15 filas
+2026-03-02 08:34:54,149 - root - INFO - 
+Validando dim_ciudad:
+2026-03-02 08:34:54,151 - root - INFO -   ✓ 8 filas
+2026-03-02 08:34:54,151 - root - INFO - 
+Validando tipo_mantenimiento:
+2026-03-02 08:34:54,153 - root - INFO -   ✓ 8 filas
+2026-03-02 08:34:54,153 - root - INFO - 
+Validando hecho_ventas:
+2026-03-02 08:34:54,159 - root - INFO -   ✓ 2000 filas
+2026-03-02 08:34:54,159 - root - INFO - 
+Validando hecho_mantenimiento:
+2026-03-02 08:34:54,161 - root - INFO -   ✓ 800 filas
+2026-03-02 08:34:54,161 - root - INFO - 
+🔄 FASE 3: TRANSFORMACIÓN DE DATOS
+2026-03-02 08:34:54,161 - root - INFO - ----------------------------------------
+2026-03-02 08:34:54,161 - root - INFO - 
+Transformando tabla: dim_tiempo
+2026-03-02 08:34:54,169 - root - INFO -   → dim_tiempo transformada: 1827 filas
+2026-03-02 08:34:54,169 - root - INFO - 
+Transformando tabla: dim_cliente
+2026-03-02 08:34:54,175 - root - INFO -   → dim_cliente transformada: 500 filas
+2026-03-02 08:34:54,175 - root - INFO - 
+Transformando tabla: dim_sucursal
+2026-03-02 08:34:54,178 - root - INFO -   → dim_sucursal transformada: 20 filas
+2026-03-02 08:34:54,178 - root - INFO - 
+Transformando tabla: dim_vehiculo
+2026-03-02 08:34:54,180 - root - INFO -   → dim_vehiculo transformada: 300 filas
+2026-03-02 08:34:54,180 - root - INFO - 
+Transformando tabla: dim_vendedor
+2026-03-02 08:34:54,186 - root - INFO -   → dim_vendedor transformada: 50 filas
+2026-03-02 08:34:54,186 - root - INFO - 
+Transformando tabla: dim_tipoPago
+2026-03-02 08:34:54,186 - root - INFO -   → dim_tipoPago transformada: 15 filas
+2026-03-02 08:34:54,186 - root - INFO - 
+Transformando tabla: dim_ciudad
+2026-03-02 08:34:54,191 - root - INFO -   → dim_ciudad transformada: 8 filas
+2026-03-02 08:34:54,192 - root - INFO - 
+Transformando tabla: tipo_mantenimiento
+2026-03-02 08:34:54,193 - root - INFO -   → tipo_mantenimiento transformada: 8 filas
+2026-03-02 08:34:54,193 - root - INFO - 
+Transformando tabla: hecho_ventas
+2026-03-02 08:34:54,208 - root - INFO -   → hecho_ventas transformada: 2000 filas
+2026-03-02 08:34:54,209 - root - INFO - 
+Transformando tabla: hecho_mantenimiento
+2026-03-02 08:34:54,211 - root - INFO -   → hecho_mantenimiento transformada: 800 filas
+2026-03-02 08:34:54,211 - root - INFO - 
+🔗 Validación de integridad referencial:
+2026-03-02 08:34:54,211 - root - INFO - 
+💾 FASE 4: CARGA A BASE DE DATOS
+2026-03-02 08:34:54,211 - root - INFO - ----------------------------------------
+2026-03-02 08:34:54,297 - root - INFO - ✅ Esquema 'concesionario' verificado/creado exitosamente.
+2026-03-02 08:34:54,297 - root - INFO - ✅ Conexión a base de datos exitosa
+2026-03-02 08:34:54,342 - root - INFO -   → dim_ciudad: 8 filas cargadas
+2026-03-02 08:34:54,400 - root - INFO -   → dim_tiempo: 1827 filas cargadas
+2026-03-02 08:34:54,416 - root - INFO -   → dim_cliente: 500 filas cargadas
+2026-03-02 08:34:54,423 - root - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-02 08:34:54,435 - root - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-02 08:34:54,444 - root - INFO -   → dim_vendedor: 50 filas cargadas
+2026-03-02 08:34:54,451 - root - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-02 08:34:54,454 - root - INFO -   → tipo_mantenimiento: 8 filas cargadas
+2026-03-02 08:34:54,550 - root - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-02 08:34:54,591 - root - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-02 08:34:54,591 - root - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-02 08:34:54,591 - root - INFO - 
+📊 Verificación de carga:
+2026-03-02 08:34:54,591 - root - ERROR - Error cargando datos: Not an executable object: 'SELECT COUNT(*) FROM concesionario.dim_ciudad'
+2026-03-02 08:34:54,591 - root - ERROR - 
+❌ Error crítico en ETL: Not an executable object: 'SELECT COUNT(*) FROM concesionario.dim_ciudad'
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1415, in execute
+    meth = statement._execute_on_connection
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute '_execute_on_connection'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\run_etl.py", line 90, in main
+    load_to_database(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\etl\load.py", line 84, in load_to_database
+    result = conn.execute(f"SELECT COUNT(*) FROM {schema}.{table_name}")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1417, in execute
+    raise exc.ObjectNotExecutableError(statement) from err
+sqlalchemy.exc.ObjectNotExecutableError: Not an executable object: 'SELECT COUNT(*) FROM concesionario.dim_ciudad'
+2026-03-02 08:36:32,461 - root - INFO - ============================================================
+2026-03-02 08:36:32,461 - root - INFO - 🚗 ETL CONCESIONARIO - MODELO ESTRELLA
+2026-03-02 08:36:32,461 - root - INFO - ============================================================
+2026-03-02 08:36:32,461 - root - INFO - 
+📂 FASE 1: EXTRACCIÓN DE DATOS
+2026-03-02 08:36:32,461 - root - INFO - ----------------------------------------
+2026-03-02 08:36:32,461 - root - INFO - Extrayendo dim_tiempo desde data/raw/dim_tiempo.xlsx
+2026-03-02 08:36:32,745 - root - INFO -   → dim_tiempo: 1827 filas, 9 columnas
+2026-03-02 08:36:32,745 - root - INFO - Extrayendo dim_cliente desde data/raw/dim_cliente.xlsx
+2026-03-02 08:36:32,782 - root - INFO -   → dim_cliente: 500 filas, 8 columnas
+2026-03-02 08:36:32,782 - root - INFO - Extrayendo dim_sucursal desde data/raw/dim_sucursal.xlsx
+2026-03-02 08:36:32,782 - root - INFO -   → dim_sucursal: 20 filas, 7 columnas
+2026-03-02 08:36:32,782 - root - INFO - Extrayendo dim_vehiculo desde data/raw/dim_vehiculo.xlsx
+2026-03-02 08:36:32,814 - root - INFO -   → dim_vehiculo: 300 filas, 12 columnas
+2026-03-02 08:36:32,814 - root - INFO - Extrayendo dim_vendedor desde data/raw/dim_vendedor.xlsx
+2026-03-02 08:36:32,825 - root - INFO -   → dim_vendedor: 50 filas, 7 columnas
+2026-03-02 08:36:32,825 - root - INFO - Extrayendo dim_tipoPago desde data/raw/dim_tipoPago.xlsx
+2026-03-02 08:36:32,830 - root - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-02 08:36:32,830 - root - INFO - Extrayendo dim_ciudad desde data/raw/dim_ciudad.xlsx
+2026-03-02 08:36:32,830 - root - INFO -   → dim_ciudad: 8 filas, 4 columnas
+2026-03-02 08:36:32,830 - root - INFO - Extrayendo tipo_mantenimiento desde data/raw/tipo_mantenimiento.xlsx
+2026-03-02 08:36:32,836 - root - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-02 08:36:32,836 - root - INFO - Extrayendo hecho_ventas desde data/raw/hecho_ventas.xlsx
+2026-03-02 08:36:32,994 - root - INFO -   → hecho_ventas: 2000 filas, 14 columnas
+2026-03-02 08:36:32,994 - root - INFO - Extrayendo hecho_mantenimiento desde data/raw/hecho_mantenimiento.xlsx
+2026-03-02 08:36:33,073 - root - INFO -   → hecho_mantenimiento: 800 filas, 12 columnas
+2026-03-02 08:36:33,073 - root - INFO - 
+✅ Total tablas extraídas: 10
+2026-03-02 08:36:33,073 - root - INFO - 
+🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-03-02 08:36:33,073 - root - INFO - ----------------------------------------
+2026-03-02 08:36:33,076 - root - INFO - 
+Validando dim_tiempo:
+2026-03-02 08:36:33,079 - root - INFO -   ✓ 1827 filas
+2026-03-02 08:36:33,079 - root - INFO - 
+Validando dim_cliente:
+2026-03-02 08:36:33,086 - root - INFO -   ✓ 500 filas
+2026-03-02 08:36:33,086 - root - INFO - 
+Validando dim_sucursal:
+2026-03-02 08:36:33,087 - root - INFO -   ✓ 20 filas
+2026-03-02 08:36:33,087 - root - INFO - 
+Validando dim_vehiculo:
+2026-03-02 08:36:33,087 - root - INFO -   ✓ 300 filas
+2026-03-02 08:36:33,087 - root - INFO - 
+Validando dim_vendedor:
+2026-03-02 08:36:33,087 - root - INFO -   ✓ 50 filas
+2026-03-02 08:36:33,087 - root - INFO - 
+Validando dim_tipoPago:
+2026-03-02 08:36:33,095 - root - INFO -   ✓ 15 filas
+2026-03-02 08:36:33,095 - root - INFO - 
+Validando dim_ciudad:
+2026-03-02 08:36:33,096 - root - INFO -   ✓ 8 filas
+2026-03-02 08:36:33,096 - root - INFO - 
+Validando tipo_mantenimiento:
+2026-03-02 08:36:33,097 - root - INFO -   ✓ 8 filas
+2026-03-02 08:36:33,097 - root - INFO - 
+Validando hecho_ventas:
+2026-03-02 08:36:33,104 - root - INFO -   ✓ 2000 filas
+2026-03-02 08:36:33,106 - root - INFO - 
+Validando hecho_mantenimiento:
+2026-03-02 08:36:33,109 - root - INFO -   ✓ 800 filas
+2026-03-02 08:36:33,109 - root - INFO - 
+🔄 FASE 3: TRANSFORMACIÓN DE DATOS
+2026-03-02 08:36:33,109 - root - INFO - ----------------------------------------
+2026-03-02 08:36:33,109 - root - INFO - 
+Transformando tabla: dim_tiempo
+2026-03-02 08:36:33,115 - root - INFO -   → dim_tiempo transformada: 1827 filas
+2026-03-02 08:36:33,115 - root - INFO - 
+Transformando tabla: dim_cliente
+2026-03-02 08:36:33,122 - root - INFO -   → dim_cliente transformada: 500 filas
+2026-03-02 08:36:33,122 - root - INFO - 
+Transformando tabla: dim_sucursal
+2026-03-02 08:36:33,124 - root - INFO -   → dim_sucursal transformada: 20 filas
+2026-03-02 08:36:33,124 - root - INFO - 
+Transformando tabla: dim_vehiculo
+2026-03-02 08:36:33,130 - root - INFO -   → dim_vehiculo transformada: 300 filas
+2026-03-02 08:36:33,130 - root - INFO - 
+Transformando tabla: dim_vendedor
+2026-03-02 08:36:33,130 - root - INFO -   → dim_vendedor transformada: 50 filas
+2026-03-02 08:36:33,130 - root - INFO - 
+Transformando tabla: dim_tipoPago
+2026-03-02 08:36:33,130 - root - INFO -   → dim_tipoPago transformada: 15 filas
+2026-03-02 08:36:33,130 - root - INFO - 
+Transformando tabla: dim_ciudad
+2026-03-02 08:36:33,130 - root - INFO -   → dim_ciudad transformada: 8 filas
+2026-03-02 08:36:33,130 - root - INFO - 
+Transformando tabla: tipo_mantenimiento
+2026-03-02 08:36:33,140 - root - INFO -   → tipo_mantenimiento transformada: 8 filas
+2026-03-02 08:36:33,140 - root - INFO - 
+Transformando tabla: hecho_ventas
+2026-03-02 08:36:33,153 - root - INFO -   → hecho_ventas transformada: 2000 filas
+2026-03-02 08:36:33,153 - root - INFO - 
+Transformando tabla: hecho_mantenimiento
+2026-03-02 08:36:33,164 - root - INFO -   → hecho_mantenimiento transformada: 800 filas
+2026-03-02 08:36:33,169 - root - INFO - 
+🔗 Validación de integridad referencial:
+2026-03-02 08:36:33,169 - root - INFO - 
+💾 FASE 4: CARGA A BASE DE DATOS
+2026-03-02 08:36:33,170 - root - INFO - ----------------------------------------
+2026-03-02 08:36:33,248 - root - INFO - ✅ Esquema 'concesionario' verificado/creado exitosamente.
+2026-03-02 08:36:33,249 - root - INFO - ✅ Conexión a base de datos exitosa
+2026-03-02 08:36:33,314 - root - INFO -   → dim_ciudad: 8 filas cargadas
+2026-03-02 08:36:33,378 - root - INFO -   → dim_tiempo: 1827 filas cargadas
+2026-03-02 08:36:33,416 - root - INFO -   → dim_cliente: 500 filas cargadas
+2026-03-02 08:36:33,432 - root - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-02 08:36:33,464 - root - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-02 08:36:33,482 - root - INFO -   → dim_vendedor: 50 filas cargadas
+2026-03-02 08:36:33,497 - root - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-02 08:36:33,516 - root - INFO -   → tipo_mantenimiento: 8 filas cargadas
+2026-03-02 08:36:33,624 - root - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-02 08:36:33,678 - root - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-02 08:36:33,678 - root - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-02 08:36:33,679 - root - INFO - 
+📊 Verificación de carga:
+2026-03-02 08:36:33,680 - root - INFO -   • dim_ciudad: 8 registros
+2026-03-02 08:36:33,680 - root - INFO -   • dim_tiempo: 1827 registros
+2026-03-02 08:36:33,681 - root - INFO -   • dim_cliente: 500 registros
+2026-03-02 08:36:33,682 - root - INFO -   • dim_sucursal: 20 registros
+2026-03-02 08:36:33,682 - root - INFO -   • dim_vehiculo: 300 registros
+2026-03-02 08:36:33,683 - root - INFO -   • dim_vendedor: 50 registros
+2026-03-02 08:36:33,684 - root - ERROR - Error cargando datos: (psycopg2.errors.UndefinedTable) no existe la relación «concesionario.dim_tipopago»
+LINE 1: SELECT COUNT(*) FROM concesionario.dim_tipoPago
+                             ^
+
+[SQL: SELECT COUNT(*) FROM concesionario.dim_tipoPago]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-02 08:36:33,684 - root - ERROR - 
+❌ Error crítico en ETL: (psycopg2.errors.UndefinedTable) no existe la relación «concesionario.dim_tipopago»
+LINE 1: SELECT COUNT(*) FROM concesionario.dim_tipoPago
+                             ^
+
+[SQL: SELECT COUNT(*) FROM concesionario.dim_tipoPago]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: no existe la relación «concesionario.dim_tipopago»
+LINE 1: SELECT COUNT(*) FROM concesionario.dim_tipoPago
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\run_etl.py", line 90, in main
+    load_to_database(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\src\etl\load.py", line 85, in load_to_database
+    result = conn.execute(query)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) no existe la relación «concesionario.dim_tipopago»
+LINE 1: SELECT COUNT(*) FROM concesionario.dim_tipoPago
+                             ^
+
+[SQL: SELECT COUNT(*) FROM concesionario.dim_tipoPago]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-03-02 08:37:36,432 - root - INFO - ============================================================
+2026-03-02 08:37:36,432 - root - INFO - 🚗 ETL CONCESIONARIO - MODELO ESTRELLA
+2026-03-02 08:37:36,432 - root - INFO - ============================================================
+2026-03-02 08:37:36,432 - root - INFO - 
+📂 FASE 1: EXTRACCIÓN DE DATOS
+2026-03-02 08:37:36,432 - root - INFO - ----------------------------------------
+2026-03-02 08:37:36,432 - root - INFO - Extrayendo dim_tiempo desde data/raw/dim_tiempo.xlsx
+2026-03-02 08:37:36,710 - root - INFO -   → dim_tiempo: 1827 filas, 9 columnas
+2026-03-02 08:37:36,710 - root - INFO - Extrayendo dim_cliente desde data/raw/dim_cliente.xlsx
+2026-03-02 08:37:36,746 - root - INFO -   → dim_cliente: 500 filas, 8 columnas
+2026-03-02 08:37:36,746 - root - INFO - Extrayendo dim_sucursal desde data/raw/dim_sucursal.xlsx
+2026-03-02 08:37:36,760 - root - INFO -   → dim_sucursal: 20 filas, 7 columnas
+2026-03-02 08:37:36,761 - root - INFO - Extrayendo dim_vehiculo desde data/raw/dim_vehiculo.xlsx
+2026-03-02 08:37:36,781 - root - INFO -   → dim_vehiculo: 300 filas, 12 columnas
+2026-03-02 08:37:36,781 - root - INFO - Extrayendo dim_vendedor desde data/raw/dim_vendedor.xlsx
+2026-03-02 08:37:36,798 - root - INFO -   → dim_vendedor: 50 filas, 7 columnas
+2026-03-02 08:37:36,798 - root - INFO - Extrayendo dim_tipoPago desde data/raw/dim_tipoPago.xlsx
+2026-03-02 08:37:36,802 - root - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-02 08:37:36,802 - root - INFO - Extrayendo dim_ciudad desde data/raw/dim_ciudad.xlsx
+2026-03-02 08:37:36,805 - root - INFO -   → dim_ciudad: 8 filas, 4 columnas
+2026-03-02 08:37:36,805 - root - INFO - Extrayendo tipo_mantenimiento desde data/raw/tipo_mantenimiento.xlsx
+2026-03-02 08:37:36,809 - root - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-02 08:37:36,809 - root - INFO - Extrayendo hecho_ventas desde data/raw/hecho_ventas.xlsx
+2026-03-02 08:37:36,947 - root - INFO -   → hecho_ventas: 2000 filas, 14 columnas
+2026-03-02 08:37:36,947 - root - INFO - Extrayendo hecho_mantenimiento desde data/raw/hecho_mantenimiento.xlsx
+2026-03-02 08:37:37,028 - root - INFO -   → hecho_mantenimiento: 800 filas, 12 columnas
+2026-03-02 08:37:37,028 - root - INFO - 
+✅ Total tablas extraídas: 10
+2026-03-02 08:37:37,028 - root - INFO - 
+🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-03-02 08:37:37,030 - root - INFO - ----------------------------------------
+2026-03-02 08:37:37,030 - root - INFO - 
+Validando dim_tiempo:
+2026-03-02 08:37:37,034 - root - INFO -   ✓ 1827 filas
+2026-03-02 08:37:37,034 - root - INFO - 
+Validando dim_cliente:
+2026-03-02 08:37:37,039 - root - INFO -   ✓ 500 filas
+2026-03-02 08:37:37,039 - root - INFO - 
+Validando dim_sucursal:
+2026-03-02 08:37:37,041 - root - INFO -   ✓ 20 filas
+2026-03-02 08:37:37,041 - root - INFO - 
+Validando dim_vehiculo:
+2026-03-02 08:37:37,044 - root - INFO -   ✓ 300 filas
+2026-03-02 08:37:37,044 - root - INFO - 
+Validando dim_vendedor:
+2026-03-02 08:37:37,047 - root - INFO -   ✓ 50 filas
+2026-03-02 08:37:37,047 - root - INFO - 
+Validando dim_tipoPago:
+2026-03-02 08:37:37,048 - root - INFO -   ✓ 15 filas
+2026-03-02 08:37:37,048 - root - INFO - 
+Validando dim_ciudad:
+2026-03-02 08:37:37,050 - root - INFO -   ✓ 8 filas
+2026-03-02 08:37:37,050 - root - INFO - 
+Validando tipo_mantenimiento:
+2026-03-02 08:37:37,051 - root - INFO -   ✓ 8 filas
+2026-03-02 08:37:37,051 - root - INFO - 
+Validando hecho_ventas:
+2026-03-02 08:37:37,052 - root - INFO -   ✓ 2000 filas
+2026-03-02 08:37:37,052 - root - INFO - 
+Validando hecho_mantenimiento:
+2026-03-02 08:37:37,062 - root - INFO -   ✓ 800 filas
+2026-03-02 08:37:37,062 - root - INFO - 
+🔄 FASE 3: TRANSFORMACIÓN DE DATOS
+2026-03-02 08:37:37,063 - root - INFO - ----------------------------------------
+2026-03-02 08:37:37,063 - root - INFO - 
+Transformando tabla: dim_tiempo
+2026-03-02 08:37:37,070 - root - INFO -   → dim_tiempo transformada: 1827 filas
+2026-03-02 08:37:37,070 - root - INFO - 
+Transformando tabla: dim_cliente
+2026-03-02 08:37:37,070 - root - INFO -   → dim_cliente transformada: 500 filas
+2026-03-02 08:37:37,070 - root - INFO - 
+Transformando tabla: dim_sucursal
+2026-03-02 08:37:37,078 - root - INFO -   → dim_sucursal transformada: 20 filas
+2026-03-02 08:37:37,079 - root - INFO - 
+Transformando tabla: dim_vehiculo
+2026-03-02 08:37:37,081 - root - INFO -   → dim_vehiculo transformada: 300 filas
+2026-03-02 08:37:37,081 - root - INFO - 
+Transformando tabla: dim_vendedor
+2026-03-02 08:37:37,081 - root - INFO -   → dim_vendedor transformada: 50 filas
+2026-03-02 08:37:37,081 - root - INFO - 
+Transformando tabla: dim_tipoPago
+2026-03-02 08:37:37,081 - root - INFO -   → dim_tipoPago transformada: 15 filas
+2026-03-02 08:37:37,081 - root - INFO - 
+Transformando tabla: dim_ciudad
+2026-03-02 08:37:37,081 - root - INFO -   → dim_ciudad transformada: 8 filas
+2026-03-02 08:37:37,081 - root - INFO - 
+Transformando tabla: tipo_mantenimiento
+2026-03-02 08:37:37,081 - root - INFO -   → tipo_mantenimiento transformada: 8 filas
+2026-03-02 08:37:37,094 - root - INFO - 
+Transformando tabla: hecho_ventas
+2026-03-02 08:37:37,101 - root - INFO -   → hecho_ventas transformada: 2000 filas
+2026-03-02 08:37:37,101 - root - INFO - 
+Transformando tabla: hecho_mantenimiento
+2026-03-02 08:37:37,113 - root - INFO -   → hecho_mantenimiento transformada: 800 filas
+2026-03-02 08:37:37,113 - root - INFO - 
+🔗 Validación de integridad referencial:
+2026-03-02 08:37:37,113 - root - INFO - 
+💾 FASE 4: CARGA A BASE DE DATOS
+2026-03-02 08:37:37,113 - root - INFO - ----------------------------------------
+2026-03-02 08:37:37,199 - root - INFO - ✅ Esquema 'concesionario' verificado/creado exitosamente.
+2026-03-02 08:37:37,200 - root - INFO - ✅ Conexión a base de datos exitosa
+2026-03-02 08:37:37,294 - root - INFO -   → dim_ciudad: 8 filas cargadas
+2026-03-02 08:37:37,363 - root - INFO -   → dim_tiempo: 1827 filas cargadas
+2026-03-02 08:37:37,400 - root - INFO -   → dim_cliente: 500 filas cargadas
+2026-03-02 08:37:37,414 - root - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-02 08:37:37,449 - root - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-02 08:37:37,468 - root - INFO -   → dim_vendedor: 50 filas cargadas
+2026-03-02 08:37:37,482 - root - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-02 08:37:37,501 - root - INFO -   → tipo_mantenimiento: 8 filas cargadas
+2026-03-02 08:37:37,609 - root - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-02 08:37:37,664 - root - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-02 08:37:37,664 - root - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-02 08:37:37,664 - root - INFO - 
+📊 Verificación de carga:
+2026-03-02 08:37:37,664 - root - INFO -   • dim_ciudad: 8 registros
+2026-03-02 08:37:37,666 - root - INFO -   • dim_tiempo: 1827 registros
+2026-03-02 08:37:37,666 - root - INFO -   • dim_cliente: 500 registros
+2026-03-02 08:37:37,666 - root - INFO -   • dim_sucursal: 20 registros
+2026-03-02 08:37:37,668 - root - INFO -   • dim_vehiculo: 300 registros
+2026-03-02 08:37:37,668 - root - INFO -   • dim_vendedor: 50 registros
+2026-03-02 08:37:37,668 - root - INFO -   • dim_tipoPago: 15 registros
+2026-03-02 08:37:37,668 - root - INFO -   • tipo_mantenimiento: 8 registros
+2026-03-02 08:37:37,668 - root - INFO -   • hecho_ventas: 2000 registros
+2026-03-02 08:37:37,668 - root - INFO -   • hecho_mantenimiento: 800 registros
+2026-03-02 08:37:37,668 - root - INFO - 
+============================================================
+2026-03-02 08:37:37,668 - root - INFO - ✅ ETL COMPLETADO EXITOSAMENTE
+2026-03-02 08:37:37,668 - root - INFO - ============================================================
+2026-03-02 08:37:37,671 - root - INFO - 
+📊 Resumen final:
+2026-03-02 08:37:37,671 - root - INFO -   • Tiempo total: 1.24 segundos
+2026-03-02 08:37:37,671 - root - INFO -   • Tablas procesadas: 10
+2026-03-02 08:37:37,671 - root - INFO -     - dim_tiempo: 1827 filas
+2026-03-02 08:37:37,672 - root - INFO -     - dim_cliente: 500 filas
+2026-03-02 08:37:37,672 - root - INFO -     - dim_sucursal: 20 filas
+2026-03-02 08:37:37,672 - root - INFO -     - dim_vehiculo: 300 filas
+2026-03-02 08:37:37,672 - root - INFO -     - dim_vendedor: 50 filas
+2026-03-02 08:37:37,672 - root - INFO -     - dim_tipoPago: 15 filas
+2026-03-02 08:37:37,672 - root - INFO -     - dim_ciudad: 8 filas
+2026-03-02 08:37:37,672 - root - INFO -     - tipo_mantenimiento: 8 filas
+2026-03-02 08:37:37,672 - root - INFO -     - hecho_ventas: 2000 filas
+2026-03-02 08:37:37,672 - root - INFO -     - hecho_mantenimiento: 800 filas
+2026-03-02 08:37:37,672 - root - INFO - 
+📁 Logs guardados en: logs/etl_concesionario.log
+2026-03-02 08:37:37,672 - root - INFO - ============================================================
