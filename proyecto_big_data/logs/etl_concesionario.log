@@ -821,3 +821,303 @@ Transformando tabla: hecho_mantenimiento
 2026-03-02 08:37:37,672 - root - INFO - 
 📁 Logs guardados en: logs/etl_concesionario.log
 2026-03-02 08:37:37,672 - root - INFO - ============================================================
+2026-03-04 10:50:44,539 - INFO - ============================================================
+2026-03-04 10:50:44,539 - INFO - 🚗 ETL CONCESIONARIO - MODELO ESTRELLA
+2026-03-04 10:50:44,539 - INFO - ============================================================
+2026-03-04 10:50:44,539 - INFO - 
+📂 FASE 1: EXTRACCIÓN DE DATOS
+2026-03-04 10:50:44,539 - INFO - ----------------------------------------
+2026-03-04 10:50:44,539 - INFO - Leyendo archivo: data/raw/datos_concesionario_raw.xlsx
+2026-03-04 10:50:44,539 - ERROR - Archivo no encontrado: data/raw/datos_concesionario_raw.xlsx
+2026-03-04 10:50:44,539 - INFO - 
+✅ Total tablas extraídas: 0
+2026-03-04 10:50:44,539 - INFO - 
+🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-03-04 10:50:44,539 - INFO - ----------------------------------------
+2026-03-04 10:50:44,539 - INFO - 
+🔄 FASE 3: TRANSFORMACIÓN DE DATOS
+2026-03-04 10:50:44,539 - INFO - ----------------------------------------
+2026-03-04 10:50:44,539 - INFO - 
+🔗 Validación de integridad referencial:
+2026-03-04 10:50:44,539 - INFO - 
+💾 FASE 4: CARGA A BASE DE DATOS
+2026-03-04 10:50:44,539 - INFO - ----------------------------------------
+2026-03-04 10:50:44,740 - INFO - ✅ Esquema 'concesionario' verificado/creado exitosamente.
+2026-03-04 10:50:44,740 - INFO - ✅ Conexión a base de datos exitosa
+2026-03-04 10:50:44,740 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-04 10:50:44,740 - INFO - 
+📊 Verificación de carga:
+2026-03-04 10:50:44,740 - INFO - 
+============================================================
+2026-03-04 10:50:44,740 - INFO - ✅ ETL COMPLETADO EXITOSAMENTE
+2026-03-04 10:50:44,740 - INFO - ============================================================
+2026-03-04 10:50:44,740 - INFO - 
+📊 Resumen final:
+2026-03-04 10:50:44,740 - INFO -   • Tiempo total: 0.21 segundos
+2026-03-04 10:50:44,740 - INFO -   • Tablas procesadas: 0
+2026-03-04 10:50:44,740 - INFO - 
+📁 Logs guardados en: logs/etl_concesionario.log
+2026-03-04 10:50:44,740 - INFO - ============================================================
+2026-03-04 10:53:29,168 - INFO - ============================================================
+2026-03-04 10:53:29,168 - INFO - 🚗 ETL CONCESIONARIO - MODELO ESTRELLA
+2026-03-04 10:53:29,168 - INFO - ============================================================
+2026-03-04 10:53:29,168 - INFO - 
+📂 FASE 1: EXTRACCIÓN DE DATOS
+2026-03-04 10:53:29,170 - INFO - ----------------------------------------
+2026-03-04 10:53:29,170 - INFO - Leyendo archivo: data/raw/datos_concesionario_raw.xlsx
+2026-03-04 10:53:29,490 - INFO -   → dim_tiempo: 1827 filas, 9 columnas
+2026-03-04 10:53:29,531 - INFO -   → dim_cliente: 500 filas, 8 columnas
+2026-03-04 10:53:29,541 - INFO -   → dim_sucursal: 20 filas, 7 columnas
+2026-03-04 10:53:29,575 - INFO -   → dim_vehiculo: 300 filas, 12 columnas
+2026-03-04 10:53:29,612 - INFO -   → dim_vendedor: 50 filas, 7 columnas
+2026-03-04 10:53:29,621 - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-04 10:53:29,621 - ERROR -   → Hoja 'tipo_mantenimiento' no encontrada en el archivo
+2026-03-04 10:53:29,629 - INFO -   → dim_ciudad: 8 filas, 4 columnas
+2026-03-04 10:53:29,789 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-04 10:53:29,840 - INFO -   → hecho_mantenimiento: 800 filas, 11 columnas
+2026-03-04 10:53:29,840 - INFO - 
+✅ Total tablas extraídas: 9
+2026-03-04 10:53:29,840 - INFO - 
+🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-03-04 10:53:29,840 - INFO - ----------------------------------------
+2026-03-04 10:53:29,840 - INFO - 
+Validando dim_tiempo:
+2026-03-04 10:53:29,849 - INFO -   ✓ 1827 filas
+2026-03-04 10:53:29,849 - INFO - 
+Validando dim_cliente:
+2026-03-04 10:53:29,855 - INFO -   ✓ 500 filas
+2026-03-04 10:53:29,855 - INFO - 
+Validando dim_sucursal:
+2026-03-04 10:53:29,857 - INFO -   ✓ 20 filas
+2026-03-04 10:53:29,857 - INFO - 
+Validando dim_vehiculo:
+2026-03-04 10:53:29,860 - INFO -   ✓ 300 filas
+2026-03-04 10:53:29,860 - INFO - 
+Validando dim_vendedor:
+2026-03-04 10:53:29,863 - INFO -   ✓ 50 filas
+2026-03-04 10:53:29,863 - INFO - 
+Validando dim_tipoPago:
+2026-03-04 10:53:29,864 - WARNING -   ⚠️ 1 advertencias
+2026-03-04 10:53:29,865 - INFO -   ✓ 15 filas
+2026-03-04 10:53:29,865 - INFO - 
+Validando dim_ciudad:
+2026-03-04 10:53:29,866 - INFO -   ✓ 8 filas
+2026-03-04 10:53:29,866 - INFO - 
+Validando hecho_ventas:
+2026-03-04 10:53:29,871 - WARNING -   ⚠️ 1 advertencias
+2026-03-04 10:53:29,871 - INFO -   ✓ 2000 filas
+2026-03-04 10:53:29,871 - INFO - 
+Validando hecho_mantenimiento:
+2026-03-04 10:53:29,874 - WARNING -   ⚠️ 1 advertencias
+2026-03-04 10:53:29,874 - INFO -   ✓ 800 filas
+2026-03-04 10:53:29,874 - INFO - 
+🔄 FASE 3: TRANSFORMACIÓN DE DATOS
+2026-03-04 10:53:29,874 - INFO - ----------------------------------------
+2026-03-04 10:53:29,874 - INFO - 
+Transformando tabla: dim_tiempo
+2026-03-04 10:53:29,880 - INFO -   → dim_tiempo transformada: 1827 filas
+2026-03-04 10:53:29,880 - INFO - 
+Transformando tabla: dim_cliente
+2026-03-04 10:53:29,885 - INFO -   → dim_cliente transformada: 500 filas
+2026-03-04 10:53:29,885 - INFO - 
+Transformando tabla: dim_sucursal
+2026-03-04 10:53:29,885 - INFO -   → dim_sucursal transformada: 20 filas
+2026-03-04 10:53:29,885 - INFO - 
+Transformando tabla: dim_vehiculo
+2026-03-04 10:53:29,896 - INFO -   → dim_vehiculo transformada: 300 filas
+2026-03-04 10:53:29,896 - INFO - 
+Transformando tabla: dim_vendedor
+2026-03-04 10:53:29,899 - INFO -   → dim_vendedor transformada: 50 filas
+2026-03-04 10:53:29,899 - INFO - 
+Transformando tabla: dim_tipoPago
+2026-03-04 10:53:29,900 - INFO -   → dim_tipoPago transformada: 15 filas
+2026-03-04 10:53:29,900 - INFO - 
+Transformando tabla: dim_ciudad
+2026-03-04 10:53:29,902 - INFO -   → dim_ciudad transformada: 8 filas
+2026-03-04 10:53:29,902 - INFO - 
+Transformando tabla: hecho_ventas
+2026-03-04 10:53:29,916 - INFO -   → hecho_ventas transformada: 2000 filas
+2026-03-04 10:53:29,916 - INFO - 
+Transformando tabla: hecho_mantenimiento
+2026-03-04 10:53:29,927 - INFO -   → hecho_mantenimiento transformada: 800 filas
+2026-03-04 10:53:29,929 - INFO - 
+🔗 Validación de integridad referencial:
+2026-03-04 10:53:29,929 - INFO - 
+💾 FASE 4: CARGA A BASE DE DATOS
+2026-03-04 10:53:29,929 - INFO - ----------------------------------------
+2026-03-04 10:53:30,007 - INFO - ✅ Esquema 'concesionario' verificado/creado exitosamente.
+2026-03-04 10:53:30,007 - INFO - ✅ Conexión a base de datos exitosa
+2026-03-04 10:53:30,158 - INFO -   → dim_ciudad: 8 filas cargadas
+2026-03-04 10:53:30,239 - INFO -   → dim_tiempo: 1827 filas cargadas
+2026-03-04 10:53:30,277 - INFO -   → dim_cliente: 500 filas cargadas
+2026-03-04 10:53:30,295 - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-04 10:53:30,329 - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-04 10:53:30,346 - INFO -   → dim_vendedor: 50 filas cargadas
+2026-03-04 10:53:30,367 - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-04 10:53:30,511 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-04 10:53:30,570 - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-04 10:53:30,570 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-04 10:53:30,570 - INFO - 
+📊 Verificación de carga:
+2026-03-04 10:53:30,571 - INFO -   • dim_ciudad: 8 registros
+2026-03-04 10:53:30,573 - INFO -   • dim_tiempo: 1827 registros
+2026-03-04 10:53:30,573 - INFO -   • dim_cliente: 500 registros
+2026-03-04 10:53:30,574 - INFO -   • dim_sucursal: 20 registros
+2026-03-04 10:53:30,575 - INFO -   • dim_vehiculo: 300 registros
+2026-03-04 10:53:30,575 - INFO -   • dim_vendedor: 50 registros
+2026-03-04 10:53:30,576 - INFO -   • dim_tipoPago: 15 registros
+2026-03-04 10:53:30,576 - INFO -   • hecho_ventas: 2000 registros
+2026-03-04 10:53:30,577 - INFO -   • hecho_mantenimiento: 800 registros
+2026-03-04 10:53:30,577 - INFO - 
+============================================================
+2026-03-04 10:53:30,577 - INFO - ✅ ETL COMPLETADO EXITOSAMENTE
+2026-03-04 10:53:30,577 - INFO - ============================================================
+2026-03-04 10:53:30,577 - INFO - 
+📊 Resumen final:
+2026-03-04 10:53:30,577 - INFO -   • Tiempo total: 1.42 segundos
+2026-03-04 10:53:30,577 - INFO -   • Tablas procesadas: 9
+2026-03-04 10:53:30,578 - INFO -     - dim_tiempo: 1827 filas
+2026-03-04 10:53:30,578 - INFO -     - dim_cliente: 500 filas
+2026-03-04 10:53:30,578 - INFO -     - dim_sucursal: 20 filas
+2026-03-04 10:53:30,578 - INFO -     - dim_vehiculo: 300 filas
+2026-03-04 10:53:30,578 - INFO -     - dim_vendedor: 50 filas
+2026-03-04 10:53:30,579 - INFO -     - dim_tipoPago: 15 filas
+2026-03-04 10:53:30,579 - INFO -     - dim_ciudad: 8 filas
+2026-03-04 10:53:30,579 - INFO -     - hecho_ventas: 2000 filas
+2026-03-04 10:53:30,579 - INFO -     - hecho_mantenimiento: 800 filas
+2026-03-04 10:53:30,579 - INFO - 
+📁 Logs guardados en: logs/etl_concesionario.log
+2026-03-04 10:53:30,579 - INFO - ============================================================
+2026-03-04 14:43:27,207 - INFO - ============================================================
+2026-03-04 14:43:27,207 - INFO - 🚗 ETL CONCESIONARIO - MODELO ESTRELLA
+2026-03-04 14:43:27,207 - INFO - ============================================================
+2026-03-04 14:43:27,207 - INFO - 
+📂 FASE 1: EXTRACCIÓN DE DATOS
+2026-03-04 14:43:27,207 - INFO - ----------------------------------------
+2026-03-04 14:43:27,207 - INFO - Leyendo archivo: data/raw/datos_concesionario_raw.xlsx
+2026-03-04 14:43:27,532 - INFO -   → dim_tiempo: 1827 filas, 9 columnas
+2026-03-04 14:43:27,575 - INFO -   → dim_cliente: 500 filas, 8 columnas
+2026-03-04 14:43:27,585 - INFO -   → dim_sucursal: 20 filas, 7 columnas
+2026-03-04 14:43:27,620 - INFO -   → dim_vehiculo: 300 filas, 12 columnas
+2026-03-04 14:43:27,670 - INFO -   → dim_vendedor: 50 filas, 7 columnas
+2026-03-04 14:43:27,680 - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-04 14:43:27,681 - ERROR -   → Hoja 'tipo_mantenimiento' no encontrada en el archivo
+2026-03-04 14:43:27,694 - INFO -   → dim_ciudad: 8 filas, 4 columnas
+2026-03-04 14:43:27,845 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-04 14:43:27,898 - INFO -   → hecho_mantenimiento: 800 filas, 11 columnas
+2026-03-04 14:43:27,898 - INFO - 
+✅ Total tablas extraídas: 9
+2026-03-04 14:43:27,899 - INFO - 
+🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN
+2026-03-04 14:43:27,899 - INFO - ----------------------------------------
+2026-03-04 14:43:27,899 - INFO - 
+Validando dim_tiempo:
+2026-03-04 14:43:27,904 - INFO -   ✓ 1827 filas
+2026-03-04 14:43:27,905 - INFO - 
+Validando dim_cliente:
+2026-03-04 14:43:27,908 - INFO -   ✓ 500 filas
+2026-03-04 14:43:27,908 - INFO - 
+Validando dim_sucursal:
+2026-03-04 14:43:27,908 - INFO -   ✓ 20 filas
+2026-03-04 14:43:27,908 - INFO - 
+Validando dim_vehiculo:
+2026-03-04 14:43:27,908 - INFO -   ✓ 300 filas
+2026-03-04 14:43:27,908 - INFO - 
+Validando dim_vendedor:
+2026-03-04 14:43:27,916 - INFO -   ✓ 50 filas
+2026-03-04 14:43:27,916 - INFO - 
+Validando dim_tipoPago:
+2026-03-04 14:43:27,916 - WARNING -   ⚠️ 1 advertencias
+2026-03-04 14:43:27,916 - INFO -   ✓ 15 filas
+2026-03-04 14:43:27,916 - INFO - 
+Validando dim_ciudad:
+2026-03-04 14:43:27,916 - INFO -   ✓ 8 filas
+2026-03-04 14:43:27,916 - INFO - 
+Validando hecho_ventas:
+2026-03-04 14:43:27,925 - WARNING -   ⚠️ 1 advertencias
+2026-03-04 14:43:27,925 - INFO -   ✓ 2000 filas
+2026-03-04 14:43:27,925 - INFO - 
+Validando hecho_mantenimiento:
+2026-03-04 14:43:27,926 - WARNING -   ⚠️ 1 advertencias
+2026-03-04 14:43:27,926 - INFO -   ✓ 800 filas
+2026-03-04 14:43:27,926 - INFO - 
+🔄 FASE 3: TRANSFORMACIÓN DE DATOS
+2026-03-04 14:43:27,926 - INFO - ----------------------------------------
+2026-03-04 14:43:27,926 - INFO - 
+Transformando tabla: dim_tiempo
+2026-03-04 14:43:27,934 - INFO -   → dim_tiempo transformada: 1827 filas
+2026-03-04 14:43:27,934 - INFO - 
+Transformando tabla: dim_cliente
+2026-03-04 14:43:27,940 - INFO -   → dim_cliente transformada: 500 filas
+2026-03-04 14:43:27,940 - INFO - 
+Transformando tabla: dim_sucursal
+2026-03-04 14:43:27,942 - INFO -   → dim_sucursal transformada: 20 filas
+2026-03-04 14:43:27,942 - INFO - 
+Transformando tabla: dim_vehiculo
+2026-03-04 14:43:27,942 - INFO -   → dim_vehiculo transformada: 300 filas
+2026-03-04 14:43:27,942 - INFO - 
+Transformando tabla: dim_vendedor
+2026-03-04 14:43:27,942 - INFO -   → dim_vendedor transformada: 50 filas
+2026-03-04 14:43:27,942 - INFO - 
+Transformando tabla: dim_tipoPago
+2026-03-04 14:43:27,942 - INFO -   → dim_tipoPago transformada: 15 filas
+2026-03-04 14:43:27,942 - INFO - 
+Transformando tabla: dim_ciudad
+2026-03-04 14:43:27,955 - INFO -   → dim_ciudad transformada: 8 filas
+2026-03-04 14:43:27,955 - INFO - 
+Transformando tabla: hecho_ventas
+2026-03-04 14:43:27,971 - INFO -   → hecho_ventas transformada: 2000 filas
+2026-03-04 14:43:27,971 - INFO - 
+Transformando tabla: hecho_mantenimiento
+2026-03-04 14:43:27,980 - INFO -   → hecho_mantenimiento transformada: 800 filas
+2026-03-04 14:43:27,982 - INFO - 
+🔗 Validación de integridad referencial:
+2026-03-04 14:43:27,982 - INFO - 
+💾 FASE 4: CARGA A BASE DE DATOS
+2026-03-04 14:43:27,982 - INFO - ----------------------------------------
+2026-03-04 14:43:28,153 - INFO - ✅ Esquema 'concesionario' verificado/creado exitosamente.
+2026-03-04 14:43:28,153 - INFO - ✅ Conexión a base de datos exitosa
+2026-03-04 14:43:28,207 - INFO -   → dim_ciudad: 8 filas cargadas
+2026-03-04 14:43:28,262 - INFO -   → dim_tiempo: 1827 filas cargadas
+2026-03-04 14:43:28,273 - INFO -   → dim_cliente: 500 filas cargadas
+2026-03-04 14:43:28,273 - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-04 14:43:28,297 - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-04 14:43:28,307 - INFO -   → dim_vendedor: 50 filas cargadas
+2026-03-04 14:43:28,309 - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-04 14:43:28,406 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-04 14:43:28,470 - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-04 14:43:28,470 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-04 14:43:28,470 - INFO - 
+📊 Verificación de carga:
+2026-03-04 14:43:28,471 - INFO -   • dim_ciudad: 8 registros
+2026-03-04 14:43:28,472 - INFO -   • dim_tiempo: 1827 registros
+2026-03-04 14:43:28,473 - INFO -   • dim_cliente: 500 registros
+2026-03-04 14:43:28,474 - INFO -   • dim_sucursal: 20 registros
+2026-03-04 14:43:28,474 - INFO -   • dim_vehiculo: 300 registros
+2026-03-04 14:43:28,475 - INFO -   • dim_vendedor: 50 registros
+2026-03-04 14:43:28,476 - INFO -   • dim_tipoPago: 15 registros
+2026-03-04 14:43:28,476 - INFO -   • hecho_ventas: 2000 registros
+2026-03-04 14:43:28,477 - INFO -   • hecho_mantenimiento: 800 registros
+2026-03-04 14:43:28,478 - INFO - 
+============================================================
+2026-03-04 14:43:28,478 - INFO - ✅ ETL COMPLETADO EXITOSAMENTE
+2026-03-04 14:43:28,478 - INFO - ============================================================
+2026-03-04 14:43:28,478 - INFO - 
+📊 Resumen final:
+2026-03-04 14:43:28,478 - INFO -   • Tiempo total: 1.27 segundos
+2026-03-04 14:43:28,478 - INFO -   • Tablas procesadas: 9
+2026-03-04 14:43:28,478 - INFO -     - dim_tiempo: 1827 filas
+2026-03-04 14:43:28,479 - INFO -     - dim_cliente: 500 filas
+2026-03-04 14:43:28,479 - INFO -     - dim_sucursal: 20 filas
+2026-03-04 14:43:28,479 - INFO -     - dim_vehiculo: 300 filas
+2026-03-04 14:43:28,479 - INFO -     - dim_vendedor: 50 filas
+2026-03-04 14:43:28,479 - INFO -     - dim_tipoPago: 15 filas
+2026-03-04 14:43:28,479 - INFO -     - dim_ciudad: 8 filas
+2026-03-04 14:43:28,479 - INFO -     - hecho_ventas: 2000 filas
+2026-03-04 14:43:28,479 - INFO -     - hecho_mantenimiento: 800 filas
+2026-03-04 14:43:28,479 - INFO - 
+📁 Logs guardados en: logs/etl_concesionario.log
+2026-03-04 14:43:28,480 - INFO - ============================================================

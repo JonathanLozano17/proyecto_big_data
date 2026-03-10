@@ -4,19 +4,21 @@ from pathlib import Path
 from typing import Dict
 
 def extract_from_excel(file_paths: Dict[str, str]) -> Dict[str, pd.DataFrame]:
-    """Extrae datos de múltiples archivos Excel"""
+    """
+    Extrae datos de un archivo Excel con una sola hoja llamada 'datos_concesionario'
+    """
     try:
         all_data = {}
         
         for table_name, file_path in file_paths.items():
-            logging.info(f"Extrayendo {table_name} desde {file_path}")
+            logging.info(f"Leyendo archivo: {file_path}")
             
             if not Path(file_path).exists():
                 logging.error(f"Archivo no encontrado: {file_path}")
                 continue
-                
-            # Leer el archivo Excel
-            df = pd.read_excel(file_path)
+            
+            # Leer el archivo Excel (la hoja se llama 'datos_concesionario')
+            df = pd.read_excel(file_path, sheet_name='datos_concesionario')
             all_data[table_name] = df
             logging.info(f"  → {table_name}: {len(df)} filas, {len(df.columns)} columnas")
         

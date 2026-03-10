@@ -1,118 +1,95 @@
 import logging
-import yaml
 import sys
 from pathlib import Path
-from datetime import datetime
 
-# Importar módulos actualizados
-from src.etl.extract import extract_from_excel
-from src.etl.transform import DataTransformer
-from src.etl.load import load_to_database
-from src.validation.data_quality import validate_data, generate_quality_report
+# Agregar el directorio actual al path
+sys.path.append(str(Path(__file__).parent))
 
-def setup_logging(config):
-    """Configura logging"""
-    log_config = config.get('logging', {})
-    log_file = log_config.get('file', 'logs/etl_concesionario.log')
-    
-    Path(log_file).parent.mkdir(exist_ok=True)
-    
-    logging.basicConfig(
-        level=getattr(logging, log_config.get('level', 'INFO')),
-        format=log_config.get('format', '%(asctime)s - %(levelname)s - %(message)s'),
-        handlers=[
-            logging.FileHandler(log_file, encoding='utf-8'),
-            logging.StreamHandler(sys.stdout)
-        ]
-    )
+from etl.extract import extract_from_excel
+from etl.transform import DataTransformer
+from etl.load import load_to_database
+
+# Configuración de logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
 
 def main():
-    start_time = datetime.now()
+    """Función principal del ETL"""
+    logging.info("=" * 60)
+    logging.info("🚗 INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA")
+    logging.info("=" * 60)
+    
+    # Configuración
+    config = {
+        'validation': {
+            'reject_future_dates': True,
+            'min_date': '2020-01-01',
+            'max_date': '2024-12-31',
+            'min_price': 0,
+            'max_price': 200000
+        },
+        'database': {
+            'connection_string': 'postgresql://postgres:1717@localhost:5432/concesionario_db',
+            'schema': 'public'
+        }
+    }
+    
+    # Ruta del archivo único
+    base_path = Path(__file__).parent.parent
+    file_path = str(base_path / 'data' / 'raw' / 'datos_concesionario_raw.xlsx')
+    
+    # El extractor espera un diccionario {nombre_tabla: ruta_archivo}
+    # Usamos 'datos_concesionario' como nombre de la tabla origen
+    file_paths = {
+        'datos_concesionario': file_path
+    }
     
     try:
-        # Cargar configuración
-        with open('config/config.yaml', 'r', encoding='utf-8') as f:
-            config = yaml.safe_load(f)
+        # 1. EXTRACT
+        logging.info("\n📤 FASE 1: EXTRACCIÓN")
+        raw_data = extract_from_excel(file_paths)
         
-        setup_logging(config)
-        logging.info("=" * 60)
-        logging.info("🚗 ETL CONCESIONARIO - MODELO ESTRELLA")
-        logging.info("=" * 60)
+        if not raw_data:
+            logging.error("No se pudieron extraer datos")
+            return
         
-        # 1. EXTRACT - Múltiples archivos
-        logging.info("\n📂 FASE 1: EXTRACCIÓN DE DATOS")
-        logging.info("-" * 40)
+        logging.info(f"✅ Datos extraídos correctamente")
         
-        data_raw = extract_from_excel(config['etl']['source_files'])
-        logging.info(f"\n✅ Total tablas extraídas: {len(data_raw)}")
-        
-        # 2. VALIDATE (pre-transformación)
-        logging.info("\n🔍 FASE 2: VALIDACIÓN PRE-TRANSFORMACIÓN")
-        logging.info("-" * 40)
-        
-        all_validation_results = {}
-        for table_name, df in data_raw.items():
-            logging.info(f"\nValidando {table_name}:")
-            table_config = config['validation'].copy()
-            table_config['required_columns'] = config['validation'].get('required_columns', {}).get(table_name, [])
-            
-            validation_result = validate_data(df, table_config)
-            all_validation_results[table_name] = validation_result
-            
-            # Mostrar resumen
-            if validation_result['issues']:
-                logging.warning(f"  ⚠️ {len(validation_result['issues'])} problemas críticos")
-            if validation_result['warnings']:
-                logging.warning(f"  ⚠️ {len(validation_result['warnings'])} advertencias")
-            logging.info(f"  ✓ {validation_result['statistics']['total_rows']} filas")
-        
-        # 3. TRANSFORM
-        logging.info("\n🔄 FASE 3: TRANSFORMACIÓN DE DATOS")
-        logging.info("-" * 40)
-        
+        # 2. TRANSFORM
+        logging.info("\n🔄 FASE 2: TRANSFORMACIÓN")
         transformer = DataTransformer(config)
-        data_clean = transformer.transform_all(data_raw)
+        transformed_data = transformer.transform_all(raw_data)
         
         # Validar integridad referencial
-        ref_validation = transformer.validate_referential_integrity(data_clean)
-        logging.info("\n🔗 Validación de integridad referencial:")
-        for key, value in ref_validation.items():
-            if value > 0:
-                logging.warning(f"  ⚠️ {key}: {value} registros inválidos")
+        validation_results = transformer.validate_referential_integrity(transformed_data)
+        if validation_results:
+            logging.info("\n📊 Validación de integridad referencial:")
+            for key, value in validation_results.items():
+                if value > 0:
+                    logging.warning(f"  • {key}: {value}")
+                else:
+                    logging.info(f"  • {key}: {value}")
         
-        # 4. LOAD
-        logging.info("\n💾 FASE 4: CARGA A BASE DE DATOS")
-        logging.info("-" * 40)
-        
-        conn_string = (f"postgresql://{config['database']['user']}:{config['database']['password']}"
-                      f"@{config['database']['host']}:{config['database']['port']}/{config['database']['name']}")
-        
+        # 3. LOAD
+        logging.info("\n📥 FASE 3: CARGA A BASE DE DATOS")
         load_to_database(
-            data_clean,
-            conn_string,
-            config['etl']['target_schema']
+            transformed_data, 
+            config['database']['connection_string'],
+            config['database']['schema']
         )
-        
-        # 5. REPORTE FINAL
-        end_time = datetime.now()
-        duration = end_time - start_time
         
         logging.info("\n" + "=" * 60)
         logging.info("✅ ETL COMPLETADO EXITOSAMENTE")
         logging.info("=" * 60)
-        logging.info(f"\n📊 Resumen final:")
-        logging.info(f"  • Tiempo total: {duration.total_seconds():.2f} segundos")
-        logging.info(f"  • Tablas procesadas: {len(data_clean)}")
-        
-        for table_name, df in data_clean.items():
-            logging.info(f"    - {table_name}: {len(df)} filas")
-        
-        logging.info(f"\n📁 Logs guardados en: logs/etl_concesionario.log")
-        logging.info("=" * 60)
         
     except Exception as e:
-        logging.error(f"\n❌ Error crítico en ETL: {str(e)}", exc_info=True)
-        sys.exit(1)
+        logging.error(f"❌ Error en ETL: {e}")
+        import traceback
+        traceback.print_exc()
+        raise
 
 if __name__ == "__main__":
     main()

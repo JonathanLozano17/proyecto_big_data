@@ -1,46 +1,29 @@
+# config/config.yaml
 etl:
   source_files:
-    dim_tiempo: "data/raw/dim_tiempo.xlsx"
-    dim_cliente: "data/raw/dim_cliente.xlsx"
-    dim_sucursal: "data/raw/dim_sucursal.xlsx"
-    dim_vehiculo: "data/raw/dim_vehiculo.xlsx"
-    dim_vendedor: "data/raw/dim_vendedor.xlsx"
-    dim_tipoPago: "data/raw/dim_tipoPago.xlsx"
-    dim_ciudad: "data/raw/dim_ciudad.xlsx"
-    tipo_mantenimiento: "data/raw/tipo_mantenimiento.xlsx"
-    hecho_ventas: "data/raw/hecho_ventas.xlsx"
-    hecho_mantenimiento: "data/raw/hecho_mantenimiento.xlsx"
+    datos_concesionario: "data/raw/datos_concesionario_raw.xlsx"
+  
   target_schema: "concesionario"
-  error_threshold: 20
 
 database:
   host: "localhost"
-  port: "5432"
+  port: 5432
   name: "concesionario_db"
   user: "postgres"
   password: "1717"
 
 validation:
-  reject_future_dates: true
   min_date: "2020-01-01"
-  max_null_percentage: 30
+  max_date: "2024-12-31"
   min_price: 1000
   max_price: 200000
-  min_quantity: 1
-  max_quantity: 100
+  reject_future_dates: true
+  
   required_columns:
-    hecho_ventas: ["id_venta", "id_vehiculo", "precio_venta"]
-    hecho_mantenimiento: ["id_mantenimiento", "id_vehiculo", "costo_servicio"]
     dim_cliente: ["id_cliente", "nombre"]
-    dim_vehiculo: ["id_vehiculo", "marca", "modelo"]
-
-transformations:
-  text_case: "lower"
-  default_text: "desconocido"
-  outlier_strategy: "cap"
-  deduplicate_subset: null
+    hecho_ventas: ["id_venta", "fecha_venta", "precio_venta"]
 
 logging:
   level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
   file: "logs/etl_concesionario.log"
-  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
