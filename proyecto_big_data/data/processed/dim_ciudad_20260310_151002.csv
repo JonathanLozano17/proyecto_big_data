@@ -1,0 +1,10 @@
+id_ciudad,nombre_ciudad,departamento,region
+6.0,Bucaramanga,Santander,Este
+2.0,Medellín,Antioquia,Norte
+7.0,Pereira,Risaralda,Oeste
+5.0,Cartagena,Bolívar,Norte
+1.0,Bogotá,Cundinamarca,Centro
+3.0,Cali,Valle del Cauca,Sur
+4.0,Barranquilla,Atlántico,Norte
+999.0,CIUDAD_INVALIDA,DEPTO_INVALIDO,REGION_INVALIDA
+8.0,Cúcuta,Norte de Santander,Este

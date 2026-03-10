@@ -1,16 +1,13 @@
-# config/config.yaml
 etl:
   source_files:
     datos_concesionario: "data/raw/datos_concesionario_raw.xlsx"
   
-  target_schema: "concesionario"
+  target_schema: "main"  # SQLite no usa esquemas como PostgreSQL, pero mantenemos consistencia
 
 database:
-  host: "localhost"
-  port: 5432
-  name: "concesionario_db"
-  user: "postgres"
-  password: "1717"
+  type: "sqlite"
+  path: "data/processed/concesionario.db"  # Ruta al archivo SQLite
+  # Eliminamos host, port, user, password que son específicos de PostgreSQL
 
 validation:
   min_date: "2020-01-01"

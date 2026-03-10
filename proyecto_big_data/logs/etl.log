@@ -60,3 +60,862 @@
 2026-02-24 11:42:19,540 - INFO - Cargando datos...
 2026-02-24 11:42:19,663 - INFO - Datos cargados en ventas: 5 filas
 2026-02-24 11:42:19,663 - INFO - �ETL completado exitosamente!
+2026-03-10 14:27:32 - INFO - ============================================================
+2026-03-10 14:27:32 - INFO - ============================================================
+2026-03-10 14:27:32 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 14:27:33 - INFO - Iniciando transformaci�n a modelo estrella...
+2026-03-10 14:27:33 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 14:27:33 - INFO -   � clientes_invalidos_en_ventas: 0
+2026-03-10 14:27:33 - INFO -   � vehiculos_invalidos_en_ventas: 0
+2026-03-10 14:27:33 - INFO -   � tipos_mantenimiento_invalidos: 0
+2026-03-10 14:27:33 - INFO -   � dim_ciudad: 9 registros
+2026-03-10 14:27:33 - INFO -   � dim_tiempo: 1364 registros
+2026-03-10 14:27:33 - INFO -   � dim_cliente: 499 registros
+2026-03-10 14:27:33 - INFO -   � dim_sucursal: 20 registros
+2026-03-10 14:27:33 - INFO -   � dim_vehiculo: 300 registros
+2026-03-10 14:27:33 - INFO -   � dim_vendedor: 51 registros
+2026-03-10 14:27:33 - INFO -   � dim_tipoPago: 15 registros
+2026-03-10 14:27:33 - INFO -   � tipo_mantenimiento: 8 registros
+2026-03-10 14:27:33 - INFO -   � hecho_ventas: 2000 registros
+2026-03-10 14:27:33 - INFO -   � hecho_mantenimiento: 800 registros
+2026-03-10 14:27:33 - INFO - ============================================================
+2026-03-10 14:27:33 - INFO - ============================================================
+2026-03-10 14:27:34 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:34 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:34 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:34 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:34 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:34 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:34 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:34 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - ERROR -   Error en top_clientes: Execution failed on sql '
+        SELECT 
+            c.id_cliente,
+            c.nombre as nombre_cliente,
+            c.tipo_cliente,
+            COUNT(v.id_venta) as num_compras,
+            SUM(v.precio_venta) as total_gastado,
+            AVG(v.precio_venta) as ticket_promedio,
+            COUNT(DISTINCT v.id_vehiculo) as vehiculos_comprados,
+            c.ciudad_nombre,
+            MAX(v.precio_venta) as compra_maxima
+        FROM hecho_ventas v
+        JOIN dim_cliente c ON v.id_cliente = c.id_cliente
+        GROUP BY c.id_cliente, c.nombre, c.tipo_cliente, c.ciudad_nombre
+        ORDER BY total_gastado DESC
+        LIMIT 20
+        ': no such column: c.ciudad_nombre
+2026-03-10 14:27:35 - ERROR -   Error en rendimiento_vendedores: Execution failed on sql '
+        SELECT 
+            v.id_vendedor,
+            v.nombre as nombre_vendedor,
+            v.experiencia_anios,
+            s.nombre as sucursal,
+            COUNT(hv.id_venta) as ventas_realizadas,
+            SUM(hv.precio_venta) as ingresos_generados,
+            AVG(hv.precio_venta) as ticket_promedio,
+            SUM(hv.comision_vendedor) as comision_total,
+            COUNT(DISTINCT hv.id_cliente) as clientes_atendidos
+        FROM hecho_ventas hv
+        JOIN dim_vendedor v ON hv.id_vendedor = v.id_vendedor
+        JOIN dim_sucursal s ON hv.id_sucursal = s.id_sucursal
+        GROUP BY v.id_vendedor, v.nombre, v.experiencia_anios, s.nombre
+        ORDER BY ingresos_generados DESC
+        ': no such column: hv.comision_vendedor
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:27:35 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:01 - INFO - ============================================================
+2026-03-10 14:29:01 - INFO - ============================================================
+2026-03-10 14:29:01 - INFO - 
+ FASE 1: EXTRACCI�N
+2026-03-10 14:29:01 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 14:29:02 - INFO -  Datos extra�dos correctamente
+2026-03-10 14:29:02 - INFO - 
+ FASE 2: TRANSFORMACI�N
+2026-03-10 14:29:02 - INFO - Iniciando transformaci�n a modelo estrella...
+2026-03-10 14:29:02 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 14:29:02 - INFO - 
+ Validaci�n de integridad referencial:
+2026-03-10 14:29:02 - INFO -   � clientes_invalidos_en_ventas: 0
+2026-03-10 14:29:02 - INFO -   � vehiculos_invalidos_en_ventas: 0
+2026-03-10 14:29:02 - INFO -   � tipos_mantenimiento_invalidos: 0
+2026-03-10 14:29:02 - INFO - 
+ Creando backup CSV...
+2026-03-10 14:29:02 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-10 14:29:03 - INFO -   � dim_ciudad: 9 registros
+2026-03-10 14:29:03 - INFO -   � dim_tiempo: 1364 registros
+2026-03-10 14:29:03 - INFO -   � dim_cliente: 499 registros
+2026-03-10 14:29:03 - INFO -   � dim_sucursal: 20 registros
+2026-03-10 14:29:03 - INFO -   � dim_vehiculo: 300 registros
+2026-03-10 14:29:03 - INFO -   � dim_vendedor: 51 registros
+2026-03-10 14:29:03 - INFO -   � dim_tipoPago: 15 registros
+2026-03-10 14:29:03 - INFO -   � tipo_mantenimiento: 8 registros
+2026-03-10 14:29:03 - INFO -   � hecho_ventas: 2000 registros
+2026-03-10 14:29:03 - INFO -   � hecho_mantenimiento: 800 registros
+2026-03-10 14:29:03 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-10 14:29:03 - INFO - ============================================================
+2026-03-10 14:29:03 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-10 14:29:03 - INFO - ============================================================
+2026-03-10 14:29:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:03 - ERROR -   Error en top_clientes: Execution failed on sql '
+        SELECT 
+            c.id_cliente,
+            c.nombre as nombre_cliente,
+            c.tipo_cliente,
+            COUNT(v.id_venta) as num_compras,
+            SUM(v.precio_venta) as total_gastado,
+            AVG(v.precio_venta) as ticket_promedio,
+            COUNT(DISTINCT v.id_vehiculo) as vehiculos_comprados,
+            c.ciudad_nombre,
+            MAX(v.precio_venta) as compra_maxima
+        FROM hecho_ventas v
+        JOIN dim_cliente c ON v.id_cliente = c.id_cliente
+        GROUP BY c.id_cliente, c.nombre, c.tipo_cliente, c.ciudad_nombre
+        ORDER BY total_gastado DESC
+        LIMIT 20
+        ': no such column: c.ciudad_nombre
+2026-03-10 14:29:03 - ERROR -   Error en rendimiento_vendedores: Execution failed on sql '
+        SELECT 
+            v.id_vendedor,
+            v.nombre as nombre_vendedor,
+            v.experiencia_anios,
+            s.nombre as sucursal,
+            COUNT(hv.id_venta) as ventas_realizadas,
+            SUM(hv.precio_venta) as ingresos_generados,
+            AVG(hv.precio_venta) as ticket_promedio,
+            SUM(hv.comision_vendedor) as comision_total,
+            COUNT(DISTINCT hv.id_cliente) as clientes_atendidos
+        FROM hecho_ventas hv
+        JOIN dim_vendedor v ON hv.id_vendedor = v.id_vendedor
+        JOIN dim_sucursal s ON hv.id_sucursal = s.id_sucursal
+        GROUP BY v.id_vendedor, v.nombre, v.experiencia_anios, s.nombre
+        ORDER BY ingresos_generados DESC
+        ': no such column: hv.comision_vendedor
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:04 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:29:14 - INFO - ============================================================
+2026-03-10 14:29:14 - INFO - ============================================================
+2026-03-10 14:29:14 - INFO - 
+ FASE 1: EXTRACCI�N
+2026-03-10 14:29:14 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 14:29:15 - INFO -  Datos extra�dos correctamente
+2026-03-10 14:29:15 - INFO - 
+ FASE 2: TRANSFORMACI�N
+2026-03-10 14:29:15 - INFO - Iniciando transformaci�n a modelo estrella...
+2026-03-10 14:29:15 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 14:29:16 - INFO - 
+ Validaci�n de integridad referencial:
+2026-03-10 14:29:16 - INFO -   � clientes_invalidos_en_ventas: 0
+2026-03-10 14:29:16 - INFO -   � vehiculos_invalidos_en_ventas: 0
+2026-03-10 14:29:16 - INFO -   � tipos_mantenimiento_invalidos: 0
+2026-03-10 14:29:16 - INFO - 
+ Creando backup CSV...
+2026-03-10 14:29:16 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-10 14:29:16 - INFO -   � dim_ciudad: 9 registros
+2026-03-10 14:29:16 - INFO -   � dim_tiempo: 1364 registros
+2026-03-10 14:29:16 - INFO -   � dim_cliente: 499 registros
+2026-03-10 14:29:16 - INFO -   � dim_sucursal: 20 registros
+2026-03-10 14:29:16 - INFO -   � dim_vehiculo: 300 registros
+2026-03-10 14:29:16 - INFO -   � dim_vendedor: 51 registros
+2026-03-10 14:29:16 - INFO -   � dim_tipoPago: 15 registros
+2026-03-10 14:29:16 - INFO -   � tipo_mantenimiento: 8 registros
+2026-03-10 14:29:16 - INFO -   � hecho_ventas: 2000 registros
+2026-03-10 14:29:16 - INFO -   � hecho_mantenimiento: 800 registros
+2026-03-10 14:29:16 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-10 14:29:16 - INFO - ============================================================
+2026-03-10 14:29:16 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-10 14:29:16 - INFO - ============================================================
+2026-03-10 14:31:50 - INFO - ============================================================
+2026-03-10 14:31:50 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-10 14:31:50 - INFO - ============================================================
+2026-03-10 14:31:50 - INFO - 
+ FASE 1: EXTRACCI�N
+2026-03-10 14:31:50 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 14:31:51 - INFO -  Datos extra�dos correctamente
+2026-03-10 14:31:51 - INFO - 
+ FASE 2: TRANSFORMACI�N
+2026-03-10 14:31:51 - INFO - Iniciando transformaci�n a modelo estrella...
+2026-03-10 14:31:51 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 14:31:51 - INFO - 
+ Validaci�n de integridad referencial:
+2026-03-10 14:31:51 - INFO -   � clientes_invalidos_en_ventas: 0
+2026-03-10 14:31:51 - INFO -   � vehiculos_invalidos_en_ventas: 0
+2026-03-10 14:31:51 - INFO -   � tipos_mantenimiento_invalidos: 0
+2026-03-10 14:31:51 - INFO - 
+ Creando backup CSV...
+2026-03-10 14:31:51 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-10 14:31:51 - INFO - 
+ Verificaci�n de carga:
+2026-03-10 14:31:51 - INFO -   � dim_ciudad: 9 registros
+2026-03-10 14:31:51 - INFO -   � dim_tiempo: 1364 registros
+2026-03-10 14:31:51 - INFO -   � dim_cliente: 499 registros
+2026-03-10 14:31:51 - INFO -   � dim_sucursal: 20 registros
+2026-03-10 14:31:51 - INFO -   � dim_vehiculo: 300 registros
+2026-03-10 14:31:51 - INFO -   � dim_vendedor: 51 registros
+2026-03-10 14:31:51 - INFO -   � dim_tipoPago: 15 registros
+2026-03-10 14:31:51 - INFO -   � tipo_mantenimiento: 8 registros
+2026-03-10 14:31:51 - INFO -   � hecho_ventas: 2000 registros
+2026-03-10 14:31:51 - INFO -   � hecho_mantenimiento: 800 registros
+2026-03-10 14:31:51 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-10 14:31:51 - INFO - ============================================================
+2026-03-10 14:31:51 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-10 14:31:51 - INFO - ============================================================
+2026-03-10 14:32:33 - INFO - ============================================================
+2026-03-10 14:32:33 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-10 14:32:33 - INFO - ============================================================
+2026-03-10 14:32:33 - INFO - 
+ FASE 1: EXTRACCI�N
+2026-03-10 14:32:33 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 14:32:34 - INFO -  Datos extra�dos correctamente
+2026-03-10 14:32:34 - INFO - 
+ FASE 2: TRANSFORMACI�N
+2026-03-10 14:32:34 - INFO - Iniciando transformaci�n a modelo estrella...
+2026-03-10 14:32:34 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 14:32:34 - INFO - 
+ Validaci�n de integridad referencial:
+2026-03-10 14:32:34 - INFO -   � clientes_invalidos_en_ventas: 0
+2026-03-10 14:32:34 - INFO -   � vehiculos_invalidos_en_ventas: 0
+2026-03-10 14:32:34 - INFO -   � tipos_mantenimiento_invalidos: 0
+2026-03-10 14:32:34 - INFO - 
+ Creando backup CSV...
+2026-03-10 14:32:34 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-10 14:32:34 - INFO - 
+ Verificaci�n de carga:
+2026-03-10 14:32:34 - INFO -   � dim_ciudad: 9 registros
+2026-03-10 14:32:34 - INFO -   � dim_tiempo: 1364 registros
+2026-03-10 14:32:34 - INFO -   � dim_cliente: 499 registros
+2026-03-10 14:32:34 - INFO -   � dim_sucursal: 20 registros
+2026-03-10 14:32:34 - INFO -   � dim_vehiculo: 300 registros
+2026-03-10 14:32:34 - INFO -   � dim_vendedor: 51 registros
+2026-03-10 14:32:34 - INFO -   � dim_tipoPago: 15 registros
+2026-03-10 14:32:34 - INFO -   � tipo_mantenimiento: 8 registros
+2026-03-10 14:32:34 - INFO -   � hecho_ventas: 2000 registros
+2026-03-10 14:32:34 - INFO -   � hecho_mantenimiento: 800 registros
+2026-03-10 14:32:34 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-10 14:32:34 - INFO - ============================================================
+2026-03-10 14:32:34 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-10 14:32:34 - INFO - ============================================================
+2026-03-10 14:33:17 - INFO - ============================================================
+2026-03-10 14:33:17 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-10 14:33:17 - INFO - ============================================================
+2026-03-10 14:33:17 - INFO - 
+ FASE 1: EXTRACCI�N
+2026-03-10 14:33:17 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 14:33:18 - INFO -  Datos extra�dos correctamente
+2026-03-10 14:33:18 - INFO - 
+ FASE 2: TRANSFORMACI�N
+2026-03-10 14:33:18 - INFO - Iniciando transformaci�n a modelo estrella...
+2026-03-10 14:33:18 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 14:33:18 - INFO - 
+ Validaci�n de integridad referencial:
+2026-03-10 14:33:18 - INFO -   � clientes_invalidos_en_ventas: 0
+2026-03-10 14:33:18 - INFO -   � vehiculos_invalidos_en_ventas: 0
+2026-03-10 14:33:18 - INFO -   � tipos_mantenimiento_invalidos: 0
+2026-03-10 14:33:18 - INFO - 
+ Creando backup CSV...
+2026-03-10 14:33:18 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-10 14:33:18 - INFO - 
+ Verificaci�n de carga:
+2026-03-10 14:33:18 - INFO -   � dim_ciudad: 9 registros
+2026-03-10 14:33:18 - INFO -   � dim_tiempo: 1364 registros
+2026-03-10 14:33:18 - INFO -   � dim_cliente: 499 registros
+2026-03-10 14:33:18 - INFO -   � dim_sucursal: 20 registros
+2026-03-10 14:33:18 - INFO -   � dim_vehiculo: 300 registros
+2026-03-10 14:33:18 - INFO -   � dim_vendedor: 51 registros
+2026-03-10 14:33:18 - INFO -   � dim_tipoPago: 15 registros
+2026-03-10 14:33:18 - INFO -   � tipo_mantenimiento: 8 registros
+2026-03-10 14:33:18 - INFO -   � hecho_ventas: 2000 registros
+2026-03-10 14:33:18 - INFO -   � hecho_mantenimiento: 800 registros
+2026-03-10 14:33:18 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-10 14:33:18 - INFO - ============================================================
+2026-03-10 14:33:18 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-10 14:33:18 - INFO - ============================================================
+2026-03-10 14:36:48 - INFO - ============================================================
+2026-03-10 14:36:48 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-10 14:36:48 - INFO - ============================================================
+2026-03-10 14:36:48 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-10 14:36:48 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 14:36:49 - INFO -   → datos_concesionario: 2800 filas, 62 columnas
+2026-03-10 14:36:49 - INFO -  Datos extraídos correctamente
+2026-03-10 14:36:49 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-10 14:36:49 - INFO - Iniciando transformación a modelo estrella...
+2026-03-10 14:36:49 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 14:36:49 - INFO - 
+📊 Resultados de la transformación:
+2026-03-10 14:36:49 - INFO -   → dim_tiempo: 1364 filas, 9 columnas
+2026-03-10 14:36:49 - INFO -   → dim_ciudad: 9 filas, 4 columnas
+2026-03-10 14:36:49 - INFO -   → dim_cliente: 499 filas, 7 columnas
+2026-03-10 14:36:49 - INFO -   → dim_sucursal: 20 filas, 5 columnas
+2026-03-10 14:36:49 - INFO -   → dim_vehiculo: 300 filas, 8 columnas
+2026-03-10 14:36:49 - INFO -   → dim_vendedor: 51 filas, 4 columnas
+2026-03-10 14:36:49 - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-10 14:36:49 - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-10 14:36:49 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-10 14:36:49 - INFO -   → hecho_mantenimiento: 800 filas, 11 columnas
+2026-03-10 14:36:49 - INFO - 
+ Validación de integridad referencial:
+2026-03-10 14:36:49 - INFO -   • clientes_invalidos_en_ventas: 0
+2026-03-10 14:36:49 - INFO -   • vehiculos_invalidos_en_ventas: 0
+2026-03-10 14:36:49 - INFO -   • tipos_mantenimiento_invalidos: 0
+2026-03-10 14:36:49 - INFO - 
+ Creando backup CSV...
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\dim_tiempo_20260310_143649.csv
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\dim_ciudad_20260310_143649.csv
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\dim_cliente_20260310_143649.csv
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\dim_sucursal_20260310_143649.csv
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\dim_vehiculo_20260310_143649.csv
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\dim_vendedor_20260310_143649.csv
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\dim_tipoPago_20260310_143649.csv
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\tipo_mantenimiento_20260310_143649.csv
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\hecho_ventas_20260310_143649.csv
+2026-03-10 14:36:49 - INFO -   → Backup CSV: data\processed\hecho_mantenimiento_20260310_143649.csv
+2026-03-10 14:36:49 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-10 14:36:49 - INFO - ✅ Conexión a SQLite exitosa: data/processed/concesionario.db
+2026-03-10 14:36:49 - INFO -   → dim_ciudad: 9 filas cargadas
+2026-03-10 14:36:49 - INFO -   → dim_tiempo: 1364 filas cargadas
+2026-03-10 14:36:49 - INFO -   → dim_cliente: 499 filas cargadas
+2026-03-10 14:36:49 - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-10 14:36:49 - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-10 14:36:49 - INFO -   → dim_vendedor: 51 filas cargadas
+2026-03-10 14:36:49 - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-10 14:36:49 - INFO -   → tipo_mantenimiento: 8 filas cargadas
+2026-03-10 14:36:49 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-10 14:36:49 - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-10 14:36:49 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-10 14:36:49 - INFO - 
+ Verificación de carga:
+2026-03-10 14:36:49 - INFO -   • dim_ciudad: 9 registros
+2026-03-10 14:36:49 - INFO -   • dim_tiempo: 1364 registros
+2026-03-10 14:36:49 - INFO -   • dim_cliente: 499 registros
+2026-03-10 14:36:49 - INFO -   • dim_sucursal: 20 registros
+2026-03-10 14:36:49 - INFO -   • dim_vehiculo: 300 registros
+2026-03-10 14:36:49 - INFO -   • dim_vendedor: 51 registros
+2026-03-10 14:36:49 - INFO -   • dim_tipoPago: 15 registros
+2026-03-10 14:36:49 - INFO -   • tipo_mantenimiento: 8 registros
+2026-03-10 14:36:49 - INFO -   • hecho_ventas: 2000 registros
+2026-03-10 14:36:49 - INFO -   • hecho_mantenimiento: 800 registros
+2026-03-10 14:36:49 - INFO - 
+✅ Índices de optimización creados
+2026-03-10 14:36:49 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-10 14:36:49 - INFO - ============================================================
+2026-03-10 14:36:49 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-10 14:36:49 - INFO - ============================================================
+2026-03-10 14:38:47 - INFO - 
+ Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_143847
+2026-03-10 14:38:47 - INFO -   → Generando: ventas_por_tiempo
+2026-03-10 14:38:47 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:47 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:47 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:47 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:47 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:47 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:47 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:47 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO -   → Generando: top_clientes
+2026-03-10 14:38:48 - ERROR -   Error en top_clientes: Execution failed on sql '
+        SELECT 
+            c.id_cliente,
+            c.nombre as nombre_cliente,
+            c.tipo_cliente,
+            COUNT(v.id_venta) as num_compras,
+            SUM(v.precio_venta) as total_gastado,
+            AVG(v.precio_venta) as ticket_promedio,
+            COUNT(DISTINCT v.id_vehiculo) as vehiculos_comprados,
+            c.ciudad_nombre,
+            MAX(v.precio_venta) as compra_maxima
+        FROM hecho_ventas v
+        JOIN dim_cliente c ON v.id_cliente = c.id_cliente
+        GROUP BY c.id_cliente, c.nombre, c.tipo_cliente, c.ciudad_nombre
+        ORDER BY total_gastado DESC
+        LIMIT 20
+        ': no such column: c.ciudad_nombre
+2026-03-10 14:38:48 - INFO -   → Generando: rendimiento_vendedores
+2026-03-10 14:38:48 - ERROR -   Error en rendimiento_vendedores: Execution failed on sql '
+        SELECT 
+            v.id_vendedor,
+            v.nombre as nombre_vendedor,
+            v.experiencia_anios,
+            s.nombre as sucursal,
+            COUNT(hv.id_venta) as ventas_realizadas,
+            SUM(hv.precio_venta) as ingresos_generados,
+            AVG(hv.precio_venta) as ticket_promedio,
+            SUM(hv.comision_vendedor) as comision_total,
+            COUNT(DISTINCT hv.id_cliente) as clientes_atendidos
+        FROM hecho_ventas hv
+        JOIN dim_vendedor v ON hv.id_vendedor = v.id_vendedor
+        JOIN dim_sucursal s ON hv.id_sucursal = s.id_sucursal
+        GROUP BY v.id_vendedor, v.nombre, v.experiencia_anios, s.nombre
+        ORDER BY ingresos_generados DESC
+        ': no such column: hv.comision_vendedor
+2026-03-10 14:38:48 - INFO -   → Generando: mantenimiento_por_tipo
+2026-03-10 14:38:48 - INFO -   → Generando: analisis_financiero
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:48 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:38:49 - INFO -   → Generando: dashboard_ventas
+2026-03-10 14:38:49 - INFO -   → Generando: calidad_datos
+2026-03-10 14:44:19 - INFO - 
+ Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_144419
+2026-03-10 14:44:19 - INFO -   → Generando: ventas_por_tiempo
+2026-03-10 14:44:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO -   → Generando: top_clientes
+2026-03-10 14:44:20 - ERROR -   Error en top_clientes: Execution failed on sql '
+        SELECT 
+            c.id_cliente,
+            c.nombre as nombre_cliente,
+            c.tipo_cliente,
+            COUNT(v.id_venta) as num_compras,
+            SUM(v.precio_venta) as total_gastado,
+            AVG(v.precio_venta) as ticket_promedio,
+            COUNT(DISTINCT v.id_vehiculo) as vehiculos_comprados,
+            c.nombre_ciudad,
+            MAX(v.precio_venta) as compra_maxima
+        FROM hecho_ventas v
+        JOIN dim_cliente c ON v.id_cliente = c.id_cliente
+        GROUP BY c.id_cliente, c.nombre, c.tipo_cliente, c.nombre_ciudad
+        ORDER BY total_gastado DESC
+        LIMIT 20
+        ': no such column: c.nombre_ciudad
+2026-03-10 14:44:20 - INFO -   → Generando: rendimiento_vendedores
+2026-03-10 14:44:20 - ERROR -   Error en rendimiento_vendedores: Execution failed on sql '
+        SELECT 
+            v.id_vendedor,
+            v.nombre as nombre_vendedor,
+            v.experiencia_anios,
+            s.nombre as sucursal,
+            COUNT(hv.id_venta) as ventas_realizadas,
+            SUM(hv.precio_venta) as ingresos_generados,
+            AVG(hv.precio_venta) as ticket_promedio,
+            SUM(hv.comision_vendedor) as comision_total,
+            COUNT(DISTINCT hv.id_cliente) as clientes_atendidos
+        FROM hecho_ventas hv
+        JOIN dim_vendedor v ON hv.id_vendedor = v.id_vendedor
+        JOIN dim_sucursal s ON hv.id_sucursal = s.id_sucursal
+        GROUP BY v.id_vendedor, v.nombre, v.experiencia_anios, s.nombre
+        ORDER BY ingresos_generados DESC
+        ': no such column: hv.comision_vendedor
+2026-03-10 14:44:20 - INFO -   → Generando: mantenimiento_por_tipo
+2026-03-10 14:44:20 - INFO -   → Generando: analisis_financiero
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:20 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:44:21 - INFO -   → Generando: dashboard_ventas
+2026-03-10 14:44:21 - INFO -   → Generando: calidad_datos
+2026-03-10 14:56:27 - INFO - 
+Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_145627
+2026-03-10 14:56:27 - INFO -   -> Generando: ventas_por_tiempo
+2026-03-10 14:56:27 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:56:27 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 14:56:28 - INFO -   -> Generando: top_clientes
+2026-03-10 14:56:28 - INFO -   -> Generando: rendimiento_vendedores
+2026-03-10 14:56:28 - INFO -   -> Generando: mantenimiento_por_tipo
+2026-03-10 14:56:28 - INFO -   -> Generando: analisis_financiero
+2026-03-10 14:56:29 - INFO -   -> Generando: dashboard_ventas
+2026-03-10 14:56:29 - INFO -   -> Generando: calidad_datos
+2026-03-10 14:56:29 - WARNING - Error obteniendo métricas generales: name 'np' is not defined
+2026-03-10 14:56:29 - INFO - 
+Reportes generados en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_145627
+2026-03-10 14:56:50 - INFO - 
+ Modelo: linear_regression
+2026-03-10 14:56:50 - INFO -   MAE: $14,696.53
+2026-03-10 14:56:50 - INFO -   RMSE: $17,077.46
+2026-03-10 14:56:50 - INFO -   R²: 0.0388
+2026-03-10 14:56:50 - INFO -   CV R²: 0.0709 (+/- 0.0638)
+2026-03-10 14:56:53 - INFO - 
+ Modelo: random_forest
+2026-03-10 14:56:53 - INFO -   MAE: $14,884.36
+2026-03-10 14:56:53 - INFO -   RMSE: $17,345.37
+2026-03-10 14:56:53 - INFO -   R²: 0.0084
+2026-03-10 14:56:53 - INFO -   CV R²: 0.0167 (+/- 0.0564)
+2026-03-10 14:56:54 - INFO - 
+ Modelo: gradient_boosting
+2026-03-10 14:56:54 - INFO -   MAE: $15,015.20
+2026-03-10 14:56:54 - INFO -   RMSE: $17,550.00
+2026-03-10 14:56:54 - INFO -   R²: -0.0152
+2026-03-10 14:56:54 - INFO -   CV R²: 0.0188 (+/- 0.0637)
+2026-03-10 14:56:54 - INFO - 
+✅ Modelo guardado en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\models\vehicle_price_model_20260310_145654.pkl
+2026-03-10 15:01:36 - INFO - ============================================================
+2026-03-10 15:01:36 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-10 15:01:36 - INFO - ============================================================
+2026-03-10 15:01:36 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-10 15:01:36 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 15:01:37 - INFO -   → datos_concesionario: 2800 filas, 62 columnas
+2026-03-10 15:01:37 - INFO -  Datos extraídos correctamente
+2026-03-10 15:01:37 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-10 15:01:37 - INFO - Iniciando transformación a modelo estrella...
+2026-03-10 15:01:37 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 15:01:38 - INFO - 
+📊 Resultados de la transformación:
+2026-03-10 15:01:38 - INFO -   → dim_tiempo: 1364 filas, 9 columnas
+2026-03-10 15:01:38 - INFO -   → dim_ciudad: 9 filas, 4 columnas
+2026-03-10 15:01:38 - INFO -   → dim_cliente: 499 filas, 7 columnas
+2026-03-10 15:01:38 - INFO -   → dim_sucursal: 20 filas, 5 columnas
+2026-03-10 15:01:38 - INFO -   → dim_vehiculo: 300 filas, 8 columnas
+2026-03-10 15:01:38 - INFO -   → dim_vendedor: 51 filas, 4 columnas
+2026-03-10 15:01:38 - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-10 15:01:38 - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-10 15:01:38 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-10 15:01:38 - INFO -   → hecho_mantenimiento: 800 filas, 11 columnas
+2026-03-10 15:01:38 - INFO - 
+ Validación de integridad referencial:
+2026-03-10 15:01:38 - INFO -   • clientes_invalidos_en_ventas: 0
+2026-03-10 15:01:38 - INFO -   • vehiculos_invalidos_en_ventas: 0
+2026-03-10 15:01:38 - INFO -   • tipos_mantenimiento_invalidos: 0
+2026-03-10 15:01:38 - INFO - 
+ Creando backup CSV...
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\dim_tiempo_20260310_150138.csv
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\dim_ciudad_20260310_150138.csv
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\dim_cliente_20260310_150138.csv
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\dim_sucursal_20260310_150138.csv
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\dim_vehiculo_20260310_150138.csv
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\dim_vendedor_20260310_150138.csv
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\dim_tipoPago_20260310_150138.csv
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\tipo_mantenimiento_20260310_150138.csv
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\hecho_ventas_20260310_150138.csv
+2026-03-10 15:01:38 - INFO -   → Backup CSV: data\processed\hecho_mantenimiento_20260310_150138.csv
+2026-03-10 15:01:38 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-10 15:01:38 - INFO - ✅ Conexión a SQLite exitosa: data/processed/concesionario.db
+2026-03-10 15:01:38 - INFO -   → dim_ciudad: 9 filas cargadas
+2026-03-10 15:01:38 - INFO -   → dim_tiempo: 1364 filas cargadas
+2026-03-10 15:01:38 - INFO -   → dim_cliente: 499 filas cargadas
+2026-03-10 15:01:38 - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-10 15:01:38 - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-10 15:01:38 - INFO -   → dim_vendedor: 51 filas cargadas
+2026-03-10 15:01:38 - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-10 15:01:38 - INFO -   → tipo_mantenimiento: 8 filas cargadas
+2026-03-10 15:01:38 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-10 15:01:38 - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-10 15:01:38 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-10 15:01:38 - INFO - 
+ Verificación de carga:
+2026-03-10 15:01:38 - INFO -   • dim_ciudad: 9 registros
+2026-03-10 15:01:38 - INFO -   • dim_tiempo: 1364 registros
+2026-03-10 15:01:38 - INFO -   • dim_cliente: 499 registros
+2026-03-10 15:01:38 - INFO -   • dim_sucursal: 20 registros
+2026-03-10 15:01:38 - INFO -   • dim_vehiculo: 300 registros
+2026-03-10 15:01:38 - INFO -   • dim_vendedor: 51 registros
+2026-03-10 15:01:38 - INFO -   • dim_tipoPago: 15 registros
+2026-03-10 15:01:38 - INFO -   • tipo_mantenimiento: 8 registros
+2026-03-10 15:01:38 - INFO -   • hecho_ventas: 2000 registros
+2026-03-10 15:01:38 - INFO -   • hecho_mantenimiento: 800 registros
+2026-03-10 15:01:38 - INFO - 
+✅ Índices de optimización creados
+2026-03-10 15:01:38 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-10 15:01:38 - INFO - ============================================================
+2026-03-10 15:01:38 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-10 15:01:38 - INFO - ============================================================
+2026-03-10 15:01:38 - INFO - 
+Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_150138
+2026-03-10 15:01:38 - INFO -   -> Generando: ventas_por_tiempo
+2026-03-10 15:01:38 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 15:01:38 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 15:01:38 - INFO -   -> Generando: top_clientes
+2026-03-10 15:01:39 - INFO -   -> Generando: rendimiento_vendedores
+2026-03-10 15:01:39 - INFO -   -> Generando: mantenimiento_por_tipo
+2026-03-10 15:01:39 - INFO -   -> Generando: analisis_financiero
+2026-03-10 15:01:40 - INFO -   -> Generando: dashboard_ventas
+2026-03-10 15:01:40 - INFO -   -> Generando: calidad_datos
+2026-03-10 15:01:40 - WARNING - Error obteniendo métricas generales: name 'np' is not defined
+2026-03-10 15:01:40 - INFO - 
+Reportes generados en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_150138
+2026-03-10 15:01:40 - INFO - 
+ Modelo: linear_regression
+2026-03-10 15:01:40 - INFO -   MAE: $14,696.53
+2026-03-10 15:01:40 - INFO -   RMSE: $17,077.46
+2026-03-10 15:01:40 - INFO -   R²: 0.0388
+2026-03-10 15:01:40 - INFO -   CV R²: 0.0709 (+/- 0.0638)
+2026-03-10 15:01:43 - INFO - 
+ Modelo: random_forest
+2026-03-10 15:01:43 - INFO -   MAE: $14,884.36
+2026-03-10 15:01:43 - INFO -   RMSE: $17,345.37
+2026-03-10 15:01:43 - INFO -   R²: 0.0084
+2026-03-10 15:01:43 - INFO -   CV R²: 0.0167 (+/- 0.0564)
+2026-03-10 15:01:44 - INFO - 
+ Modelo: gradient_boosting
+2026-03-10 15:01:44 - INFO -   MAE: $15,015.20
+2026-03-10 15:01:44 - INFO -   RMSE: $17,550.00
+2026-03-10 15:01:44 - INFO -   R²: -0.0152
+2026-03-10 15:01:44 - INFO -   CV R²: 0.0188 (+/- 0.0637)
+2026-03-10 15:01:44 - INFO - 
+✅ Modelo guardado en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\models\vehicle_price_model_20260310_150144.pkl
+2026-03-10 15:09:14 - INFO - ============================================================
+2026-03-10 15:09:14 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-10 15:09:14 - INFO - ============================================================
+2026-03-10 15:09:14 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-10 15:09:14 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 15:09:15 - INFO -   → datos_concesionario: 2800 filas, 62 columnas
+2026-03-10 15:09:15 - INFO -  Datos extraídos correctamente
+2026-03-10 15:09:15 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-10 15:09:15 - INFO - Iniciando transformación a modelo estrella...
+2026-03-10 15:09:15 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 15:09:15 - INFO - 
+📊 Resultados de la transformación:
+2026-03-10 15:09:15 - INFO -   → dim_tiempo: 1364 filas, 9 columnas
+2026-03-10 15:09:15 - INFO -   → dim_ciudad: 9 filas, 4 columnas
+2026-03-10 15:09:15 - INFO -   → dim_cliente: 499 filas, 7 columnas
+2026-03-10 15:09:15 - INFO -   → dim_sucursal: 20 filas, 5 columnas
+2026-03-10 15:09:15 - INFO -   → dim_vehiculo: 300 filas, 8 columnas
+2026-03-10 15:09:15 - INFO -   → dim_vendedor: 51 filas, 4 columnas
+2026-03-10 15:09:15 - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-10 15:09:15 - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-10 15:09:15 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-10 15:09:15 - INFO -   → hecho_mantenimiento: 800 filas, 11 columnas
+2026-03-10 15:09:15 - INFO - 
+ Validación de integridad referencial:
+2026-03-10 15:09:15 - INFO -   • clientes_invalidos_en_ventas: 0
+2026-03-10 15:09:15 - INFO -   • vehiculos_invalidos_en_ventas: 0
+2026-03-10 15:09:15 - INFO -   • tipos_mantenimiento_invalidos: 0
+2026-03-10 15:09:15 - INFO - 
+ Creando backup CSV...
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\dim_tiempo_20260310_150915.csv
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\dim_ciudad_20260310_150915.csv
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\dim_cliente_20260310_150915.csv
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\dim_sucursal_20260310_150915.csv
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\dim_vehiculo_20260310_150915.csv
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\dim_vendedor_20260310_150915.csv
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\dim_tipoPago_20260310_150915.csv
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\tipo_mantenimiento_20260310_150915.csv
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\hecho_ventas_20260310_150915.csv
+2026-03-10 15:09:15 - INFO -   → Backup CSV: data\processed\hecho_mantenimiento_20260310_150915.csv
+2026-03-10 15:09:15 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-10 15:09:15 - INFO - ✅ Conexión a SQLite exitosa: data/processed/concesionario.db
+2026-03-10 15:09:15 - INFO -   → dim_ciudad: 9 filas cargadas
+2026-03-10 15:09:15 - INFO -   → dim_tiempo: 1364 filas cargadas
+2026-03-10 15:09:15 - INFO -   → dim_cliente: 499 filas cargadas
+2026-03-10 15:09:15 - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-10 15:09:15 - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-10 15:09:15 - INFO -   → dim_vendedor: 51 filas cargadas
+2026-03-10 15:09:15 - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-10 15:09:15 - INFO -   → tipo_mantenimiento: 8 filas cargadas
+2026-03-10 15:09:15 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-10 15:09:15 - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-10 15:09:15 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-10 15:09:15 - INFO - 
+ Verificación de carga:
+2026-03-10 15:09:15 - INFO -   • dim_ciudad: 9 registros
+2026-03-10 15:09:15 - INFO -   • dim_tiempo: 1364 registros
+2026-03-10 15:09:15 - INFO -   • dim_cliente: 499 registros
+2026-03-10 15:09:15 - INFO -   • dim_sucursal: 20 registros
+2026-03-10 15:09:15 - INFO -   • dim_vehiculo: 300 registros
+2026-03-10 15:09:15 - INFO -   • dim_vendedor: 51 registros
+2026-03-10 15:09:15 - INFO -   • dim_tipoPago: 15 registros
+2026-03-10 15:09:15 - INFO -   • tipo_mantenimiento: 8 registros
+2026-03-10 15:09:15 - INFO -   • hecho_ventas: 2000 registros
+2026-03-10 15:09:15 - INFO -   • hecho_mantenimiento: 800 registros
+2026-03-10 15:09:15 - INFO - 
+✅ Índices de optimización creados
+2026-03-10 15:09:15 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-10 15:09:15 - INFO - ============================================================
+2026-03-10 15:09:15 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-10 15:09:15 - INFO - ============================================================
+2026-03-10 15:09:15 - INFO - 
+Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_150915
+2026-03-10 15:09:15 - INFO -   -> Generando: ventas_por_tiempo
+2026-03-10 15:09:16 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 15:09:16 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 15:09:16 - INFO -   -> Generando: top_clientes
+2026-03-10 15:09:16 - INFO -   -> Generando: rendimiento_vendedores
+2026-03-10 15:09:17 - INFO -   -> Generando: mantenimiento_por_tipo
+2026-03-10 15:09:17 - INFO -   -> Generando: analisis_financiero
+2026-03-10 15:09:17 - INFO -   -> Generando: dashboard_ventas
+2026-03-10 15:09:17 - INFO -   -> Generando: calidad_datos
+2026-03-10 15:09:17 - INFO - 
+Reportes generados en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_150915
+2026-03-10 15:09:18 - INFO - 
+ Modelo: linear_regression
+2026-03-10 15:09:18 - INFO -   MAE: $14,696.53
+2026-03-10 15:09:18 - INFO -   RMSE: $17,077.46
+2026-03-10 15:09:18 - INFO -   R²: 0.0388
+2026-03-10 15:09:18 - INFO -   CV R²: 0.0709 (+/- 0.0638)
+2026-03-10 15:09:18 - INFO - 
+ Modelo: random_forest
+2026-03-10 15:09:18 - INFO -   MAE: $14,884.36
+2026-03-10 15:09:18 - INFO -   RMSE: $17,345.37
+2026-03-10 15:09:18 - INFO -   R²: 0.0084
+2026-03-10 15:09:18 - INFO -   CV R²: 0.0167 (+/- 0.0564)
+2026-03-10 15:09:19 - INFO - 
+ Modelo: gradient_boosting
+2026-03-10 15:09:19 - INFO -   MAE: $15,015.20
+2026-03-10 15:09:19 - INFO -   RMSE: $17,550.00
+2026-03-10 15:09:19 - INFO -   R²: -0.0152
+2026-03-10 15:09:19 - INFO -   CV R²: 0.0188 (+/- 0.0637)
+2026-03-10 15:09:19 - INFO - 
+✅ Modelo guardado en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\models\vehicle_price_model_20260310_150919.pkl
+2026-03-10 15:10:01 - INFO - ============================================================
+2026-03-10 15:10:01 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-10 15:10:01 - INFO - ============================================================
+2026-03-10 15:10:01 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-10 15:10:01 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-10 15:10:02 - INFO -   → datos_concesionario: 2800 filas, 62 columnas
+2026-03-10 15:10:02 - INFO -  Datos extraídos correctamente
+2026-03-10 15:10:02 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-10 15:10:02 - INFO - Iniciando transformación a modelo estrella...
+2026-03-10 15:10:02 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-10 15:10:02 - INFO - 
+📊 Resultados de la transformación:
+2026-03-10 15:10:02 - INFO -   → dim_tiempo: 1364 filas, 9 columnas
+2026-03-10 15:10:02 - INFO -   → dim_ciudad: 9 filas, 4 columnas
+2026-03-10 15:10:02 - INFO -   → dim_cliente: 499 filas, 7 columnas
+2026-03-10 15:10:02 - INFO -   → dim_sucursal: 20 filas, 5 columnas
+2026-03-10 15:10:02 - INFO -   → dim_vehiculo: 300 filas, 8 columnas
+2026-03-10 15:10:02 - INFO -   → dim_vendedor: 51 filas, 4 columnas
+2026-03-10 15:10:02 - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-10 15:10:02 - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-10 15:10:02 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-10 15:10:02 - INFO -   → hecho_mantenimiento: 800 filas, 11 columnas
+2026-03-10 15:10:02 - INFO - 
+ Validación de integridad referencial:
+2026-03-10 15:10:02 - INFO -   • clientes_invalidos_en_ventas: 0
+2026-03-10 15:10:02 - INFO -   • vehiculos_invalidos_en_ventas: 0
+2026-03-10 15:10:02 - INFO -   • tipos_mantenimiento_invalidos: 0
+2026-03-10 15:10:02 - INFO - 
+ Creando backup CSV...
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\dim_tiempo_20260310_151002.csv
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\dim_ciudad_20260310_151002.csv
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\dim_cliente_20260310_151002.csv
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\dim_sucursal_20260310_151002.csv
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\dim_vehiculo_20260310_151002.csv
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\dim_vendedor_20260310_151002.csv
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\dim_tipoPago_20260310_151002.csv
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\tipo_mantenimiento_20260310_151002.csv
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\hecho_ventas_20260310_151002.csv
+2026-03-10 15:10:02 - INFO -   → Backup CSV: data\processed\hecho_mantenimiento_20260310_151002.csv
+2026-03-10 15:10:02 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-10 15:10:02 - INFO - ✅ Conexión a SQLite exitosa: data/processed/concesionario.db
+2026-03-10 15:10:02 - INFO -   → dim_ciudad: 9 filas cargadas
+2026-03-10 15:10:02 - INFO -   → dim_tiempo: 1364 filas cargadas
+2026-03-10 15:10:02 - INFO -   → dim_cliente: 499 filas cargadas
+2026-03-10 15:10:02 - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-10 15:10:02 - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-10 15:10:02 - INFO -   → dim_vendedor: 51 filas cargadas
+2026-03-10 15:10:02 - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-10 15:10:02 - INFO -   → tipo_mantenimiento: 8 filas cargadas
+2026-03-10 15:10:02 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-10 15:10:02 - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-10 15:10:02 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-10 15:10:02 - INFO - 
+ Verificación de carga:
+2026-03-10 15:10:02 - INFO -   • dim_ciudad: 9 registros
+2026-03-10 15:10:02 - INFO -   • dim_tiempo: 1364 registros
+2026-03-10 15:10:02 - INFO -   • dim_cliente: 499 registros
+2026-03-10 15:10:02 - INFO -   • dim_sucursal: 20 registros
+2026-03-10 15:10:02 - INFO -   • dim_vehiculo: 300 registros
+2026-03-10 15:10:02 - INFO -   • dim_vendedor: 51 registros
+2026-03-10 15:10:02 - INFO -   • dim_tipoPago: 15 registros
+2026-03-10 15:10:02 - INFO -   • tipo_mantenimiento: 8 registros
+2026-03-10 15:10:02 - INFO -   • hecho_ventas: 2000 registros
+2026-03-10 15:10:02 - INFO -   • hecho_mantenimiento: 800 registros
+2026-03-10 15:10:02 - INFO - 
+✅ Índices de optimización creados
+2026-03-10 15:10:02 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-10 15:10:02 - INFO - ============================================================
+2026-03-10 15:10:02 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-10 15:10:02 - INFO - ============================================================
+2026-03-10 15:10:02 - INFO - 
+Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_151002
+2026-03-10 15:10:02 - INFO -   -> Generando: ventas_por_tiempo
+2026-03-10 15:10:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 15:10:03 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-10 15:10:03 - INFO -   -> Generando: top_clientes
+2026-03-10 15:10:03 - INFO -   -> Generando: rendimiento_vendedores
+2026-03-10 15:10:04 - INFO -   -> Generando: mantenimiento_por_tipo
+2026-03-10 15:10:04 - INFO -   -> Generando: analisis_financiero
+2026-03-10 15:10:04 - INFO -   -> Generando: dashboard_ventas
+2026-03-10 15:10:04 - INFO -   -> Generando: calidad_datos
+2026-03-10 15:10:04 - INFO - 
+Reportes generados en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260310_151002
+2026-03-10 15:10:04 - INFO - 
+ Modelo: linear_regression
+2026-03-10 15:10:04 - INFO -   MAE: $14,696.53
+2026-03-10 15:10:04 - INFO -   RMSE: $17,077.46
+2026-03-10 15:10:04 - INFO -   R²: 0.0388
+2026-03-10 15:10:04 - INFO -   CV R²: 0.0709 (+/- 0.0638)
+2026-03-10 15:10:05 - INFO - 
+ Modelo: random_forest
+2026-03-10 15:10:05 - INFO -   MAE: $14,884.36
+2026-03-10 15:10:05 - INFO -   RMSE: $17,345.37
+2026-03-10 15:10:05 - INFO -   R²: 0.0084
+2026-03-10 15:10:05 - INFO -   CV R²: 0.0167 (+/- 0.0564)
+2026-03-10 15:10:06 - INFO - 
+ Modelo: gradient_boosting
+2026-03-10 15:10:06 - INFO -   MAE: $15,015.20
+2026-03-10 15:10:06 - INFO -   RMSE: $17,550.00
+2026-03-10 15:10:06 - INFO -   R²: -0.0152
+2026-03-10 15:10:06 - INFO -   CV R²: 0.0188 (+/- 0.0637)
+2026-03-10 15:10:06 - INFO - 
+✅ Modelo guardado en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\models\vehicle_price_model_20260310_151006.pkl

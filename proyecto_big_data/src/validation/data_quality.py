@@ -88,7 +88,7 @@ def generate_quality_report(df: pd.DataFrame, validation_result: Dict[str, Any])
     report.append("INFORME DE CALIDAD DE DATOS")
     report.append("=" * 50)
     
-    report.append(f"\n📊 Estadísticas Generales:")
+    report.append(f"\n Estadísticas Generales:")
     report.append(f"  • Filas: {validation_result['statistics']['total_rows']:,}")
     report.append(f"  • Columnas: {validation_result['statistics']['total_columns']}")
     report.append(f"  • Memoria: {validation_result['statistics']['memory_usage']:.2f} MB")
