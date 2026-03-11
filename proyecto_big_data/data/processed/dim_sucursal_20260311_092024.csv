@@ -1,0 +1,36 @@
+id_sucursal,nombre,id_ciudad,tamaño,zona
+1,sucursal oriente,9,pequenio,norte
+2,sucursal industrial,1,mediana,centro
+3,sucursal sur,10,pequenia,centro
+4,sucursal el poblado,5,grande,norte
+5,sucursal carrera 7,3,mediana,sur
+6,sucursal norte,11,mediana,oeste
+7,sucursal oriente,3,mediano,sur
+8,sucursal autopista,10,grande,centro
+9,sucursal aeropuerto,12,grande,sur
+10,sucursal calle 80,9,mediana,norte
+11,sucursal autopista,4,grande,norte
+12,sucursal aeropuerto,11,pequenia,oeste
+13,sucursal centro,6,pequenia,este
+14,sucursal industrial,7,pequenio,oeste
+15,sucursal industrial,10,grande,centro
+16,sucursal aeropuerto,3,grande,sur
+17,sucursal calle 80,8,grande,este
+18,sucursal sur,7,mediana,oeste
+19,sucursal el poblado,3,mediana,sur
+20,sucursal autopista,10,mediana,centro
+21,sucursal occidente,4,grande,norte
+22,sucursal occidente,3,grande,sur
+23,sucursal sur,2,pequenia,norte
+24,sucursal carrera 7,8,grande,este
+25,sucursal norte,1,pequenia,centro
+26,sucursal oriente,1,pequenio,centro
+27,sucursal sur,5,pequenia,norte
+28,sucursal aeropuerto,5,grande,norte
+29,sucursal aeropuerto,1,grande,centro
+30,sucursal principal,1,grande,centro
+31,sucursal el poblado,5,pequenia,norte
+32,sucursal el poblado,6,pequenia,este
+33,sucursal aeropuerto,4,mediana,norte
+34,sucursal industrial,8,grande,este
+35,sucursal oriente,5,grande,norte

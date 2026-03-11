@@ -1,0 +1,45 @@
+============================================================
+RESUMEN DE REPORTES - CONCESIONARIO
+============================================================
+
+METRICAS GENERALES:
+  * Ventas totales: 2,000.0
+  * Mantenimientos: 1,000.0
+  * Clientes unicos: 780.0
+  * Vehiculos: 498.0
+  * Ingresos totales: $144,657,417.00
+  * Ticket promedio: $72,328.71
+
+RESULTADOS POR REPORTE:
+  * ventas_por_tiempo:
+      - total_ingresos: 50476169.00
+      - total_ventas: 713
+      - ticket_promedio_general: 70794.07
+      - mes_max_ventas: July
+
+  * top_clientes:
+      - top_cliente: ANDRÉS Niñez Fernandez
+      - top_gasto: 723210.00
+      - clientes_recurrentes: 20
+
+  * rendimiento_vendedores:
+      - mejor_vendedor: Verónica Domínguez
+      - ingresos_mejor: 876281.00
+      - promedio_ventas_vendedor: 3.12
+      - correlacion_experiencia: -0.00
+
+  * analisis_financiero:
+      - ingresos_totales: 50476169.00
+      - costos_totales: 142600000.00
+      - margen_total: -92123831.00
+      - margen_promedio: -239.11
+      - tasa_financiacion_promedio: 53.31
+
+  * dashboard_ventas:
+      - dashboard: dashboard.html
+
+  * calidad_datos:
+      - tablas: {'dim_cliente': 780, 'dim_vehiculo': 498, 'hecho_ventas': 2000, 'hecho_mantenimiento': 1000}
+      - calidad: {'nulos_hecho_ventas': 0, 'total_hecho_ventas': 2000, 'nulos_hecho_mantenimiento': 0, 'total_hecho_mantenimiento': 1000, 'total_dim_cliente': 780, 'duplicados_ventas': 0, 'relaciones_rotas_ventas': 0}
+
+============================================================

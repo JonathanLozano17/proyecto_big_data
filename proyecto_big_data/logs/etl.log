@@ -919,3 +919,478 @@ Reportes generados en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_da
 2026-03-10 15:10:06 - INFO -   CV R²: 0.0188 (+/- 0.0637)
 2026-03-10 15:10:06 - INFO - 
 ✅ Modelo guardado en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\models\vehicle_price_model_20260310_151006.pkl
+2026-03-11 07:53:36 - INFO - ============================================================
+2026-03-11 07:53:36 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-11 07:53:36 - INFO - ============================================================
+2026-03-11 07:53:36 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-11 07:53:36 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-11 07:53:37 - INFO -   → datos_concesionario: 2800 filas, 62 columnas
+2026-03-11 07:53:37 - INFO -  Datos extraídos correctamente
+2026-03-11 07:53:37 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-11 07:53:37 - INFO - Iniciando transformación a modelo estrella...
+2026-03-11 07:53:37 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-11 07:53:37 - INFO - 
+📊 Resultados de la transformación:
+2026-03-11 07:53:37 - INFO -   → dim_tiempo: 1364 filas, 9 columnas
+2026-03-11 07:53:37 - INFO -   → dim_ciudad: 9 filas, 4 columnas
+2026-03-11 07:53:37 - INFO -   → dim_cliente: 499 filas, 7 columnas
+2026-03-11 07:53:37 - INFO -   → dim_sucursal: 20 filas, 5 columnas
+2026-03-11 07:53:37 - INFO -   → dim_vehiculo: 300 filas, 8 columnas
+2026-03-11 07:53:37 - INFO -   → dim_vendedor: 51 filas, 4 columnas
+2026-03-11 07:53:37 - INFO -   → dim_tipoPago: 15 filas, 6 columnas
+2026-03-11 07:53:37 - INFO -   → tipo_mantenimiento: 8 filas, 6 columnas
+2026-03-11 07:53:37 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-11 07:53:37 - INFO -   → hecho_mantenimiento: 800 filas, 11 columnas
+2026-03-11 07:53:37 - INFO - 
+ Validación de integridad referencial:
+2026-03-11 07:53:37 - INFO -   • clientes_invalidos_en_ventas: 0
+2026-03-11 07:53:37 - INFO -   • vehiculos_invalidos_en_ventas: 0
+2026-03-11 07:53:37 - INFO -   • tipos_mantenimiento_invalidos: 0
+2026-03-11 07:53:37 - INFO - 
+ Creando backup CSV...
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\dim_tiempo_20260311_075337.csv
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\dim_ciudad_20260311_075337.csv
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\dim_cliente_20260311_075337.csv
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\dim_sucursal_20260311_075337.csv
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\dim_vehiculo_20260311_075337.csv
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\dim_vendedor_20260311_075337.csv
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\dim_tipoPago_20260311_075337.csv
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\tipo_mantenimiento_20260311_075337.csv
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\hecho_ventas_20260311_075337.csv
+2026-03-11 07:53:37 - INFO -   → Backup CSV: data\processed\hecho_mantenimiento_20260311_075337.csv
+2026-03-11 07:53:37 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-11 07:53:37 - INFO - ✅ Conexión a SQLite exitosa: data/processed/concesionario.db
+2026-03-11 07:53:37 - INFO -   → dim_ciudad: 9 filas cargadas
+2026-03-11 07:53:38 - INFO -   → dim_tiempo: 1364 filas cargadas
+2026-03-11 07:53:38 - INFO -   → dim_cliente: 499 filas cargadas
+2026-03-11 07:53:38 - INFO -   → dim_sucursal: 20 filas cargadas
+2026-03-11 07:53:38 - INFO -   → dim_vehiculo: 300 filas cargadas
+2026-03-11 07:53:38 - INFO -   → dim_vendedor: 51 filas cargadas
+2026-03-11 07:53:38 - INFO -   → dim_tipoPago: 15 filas cargadas
+2026-03-11 07:53:38 - INFO -   → tipo_mantenimiento: 8 filas cargadas
+2026-03-11 07:53:38 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-11 07:53:38 - INFO -   → hecho_mantenimiento: 800 filas cargadas
+2026-03-11 07:53:38 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-11 07:53:38 - INFO - 
+ Verificación de carga:
+2026-03-11 07:53:38 - INFO -   • dim_ciudad: 9 registros
+2026-03-11 07:53:38 - INFO -   • dim_tiempo: 1364 registros
+2026-03-11 07:53:38 - INFO -   • dim_cliente: 499 registros
+2026-03-11 07:53:38 - INFO -   • dim_sucursal: 20 registros
+2026-03-11 07:53:38 - INFO -   • dim_vehiculo: 300 registros
+2026-03-11 07:53:38 - INFO -   • dim_vendedor: 51 registros
+2026-03-11 07:53:38 - INFO -   • dim_tipoPago: 15 registros
+2026-03-11 07:53:38 - INFO -   • tipo_mantenimiento: 8 registros
+2026-03-11 07:53:38 - INFO -   • hecho_ventas: 2000 registros
+2026-03-11 07:53:38 - INFO -   • hecho_mantenimiento: 800 registros
+2026-03-11 07:53:38 - INFO - 
+✅ Índices de optimización creados
+2026-03-11 07:53:38 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-11 07:53:38 - INFO - ============================================================
+2026-03-11 07:53:38 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-11 07:53:38 - INFO - ============================================================
+2026-03-11 07:53:38 - INFO - 
+Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260311_075338
+2026-03-11 07:53:38 - INFO -   -> Generando: ventas_por_tiempo
+2026-03-11 07:53:38 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-11 07:53:38 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-11 07:53:39 - INFO -   -> Generando: top_clientes
+2026-03-11 07:53:39 - INFO -   -> Generando: rendimiento_vendedores
+2026-03-11 07:53:39 - INFO -   -> Generando: mantenimiento_por_tipo
+2026-03-11 07:53:40 - INFO -   -> Generando: analisis_financiero
+2026-03-11 07:53:40 - INFO -   -> Generando: dashboard_ventas
+2026-03-11 07:53:40 - INFO -   -> Generando: calidad_datos
+2026-03-11 07:53:40 - INFO - 
+Reportes generados en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260311_075338
+2026-03-11 07:53:40 - INFO - 
+ Modelo: linear_regression
+2026-03-11 07:53:40 - INFO -   MAE: $14,696.53
+2026-03-11 07:53:40 - INFO -   RMSE: $17,077.46
+2026-03-11 07:53:40 - INFO -   R²: 0.0388
+2026-03-11 07:53:40 - INFO -   CV R²: 0.0709 (+/- 0.0638)
+2026-03-11 07:53:41 - INFO - 
+ Modelo: random_forest
+2026-03-11 07:53:41 - INFO -   MAE: $14,884.36
+2026-03-11 07:53:41 - INFO -   RMSE: $17,345.37
+2026-03-11 07:53:41 - INFO -   R²: 0.0084
+2026-03-11 07:53:41 - INFO -   CV R²: 0.0167 (+/- 0.0564)
+2026-03-11 07:53:42 - INFO - 
+ Modelo: gradient_boosting
+2026-03-11 07:53:42 - INFO -   MAE: $15,015.20
+2026-03-11 07:53:42 - INFO -   RMSE: $17,550.00
+2026-03-11 07:53:42 - INFO -   R²: -0.0152
+2026-03-11 07:53:42 - INFO -   CV R²: 0.0188 (+/- 0.0637)
+2026-03-11 07:53:42 - INFO - 
+✅ Modelo guardado en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\models\vehicle_price_model_20260311_075342.pkl
+2026-03-11 08:05:50 - INFO - ============================================================
+2026-03-11 08:05:50 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-11 08:05:50 - INFO - ============================================================
+2026-03-11 08:05:50 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-11 08:05:50 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-11 08:05:51 - INFO -   → datos_concesionario: 2800 filas, 62 columnas
+2026-03-11 08:05:51 - INFO -  Datos extraídos correctamente
+2026-03-11 08:05:51 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-11 08:05:51 - INFO - Iniciando transformación a modelo estrella...
+2026-03-11 08:05:51 - INFO - DataFrame recibido: 2800 filas, 62 columnas
+2026-03-11 08:05:51 - ERROR -  Error en ETL: 'DataTransformer' object has no attribute '_create_dim_sucursal'
+2026-03-11 08:07:02 - INFO - ============================================================
+2026-03-11 08:07:02 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-11 08:07:02 - INFO - ============================================================
+2026-03-11 08:07:02 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-11 08:07:02 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-11 08:07:03 - INFO -   → datos_concesionario: 3000 filas, 56 columnas
+2026-03-11 08:07:03 - INFO -  Datos extraídos correctamente
+2026-03-11 08:07:03 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-11 08:07:03 - INFO - Iniciando transformación a modelo estrella...
+2026-03-11 08:07:03 - INFO - DataFrame recibido: 3000 filas, 56 columnas
+2026-03-11 08:07:03 - ERROR -  Error en ETL: 'DataTransformer' object has no attribute '_create_dim_sucursal'
+2026-03-11 08:45:50 - INFO - ============================================================
+2026-03-11 08:45:50 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-11 08:45:50 - INFO - ============================================================
+2026-03-11 08:45:50 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-11 08:45:50 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-11 08:45:51 - INFO -   → datos_concesionario: 3000 filas, 56 columnas
+2026-03-11 08:45:51 - INFO -  Datos extraídos correctamente
+2026-03-11 08:45:51 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-11 08:45:51 - INFO - Iniciando transformación a modelo estrella...
+2026-03-11 08:45:51 - INFO - DataFrame recibido: 3000 filas, 56 columnas
+2026-03-11 08:45:52 - INFO - 
+📊 Resultados de la transformación:
+2026-03-11 08:45:52 - INFO -   → dim_tiempo: 426 filas, 9 columnas
+2026-03-11 08:45:52 - INFO -   → dim_ciudad: 11 filas, 4 columnas
+2026-03-11 08:45:52 - INFO -   → dim_cliente: 780 filas, 7 columnas
+2026-03-11 08:45:52 - INFO -   → dim_sucursal: 30 filas, 5 columnas
+2026-03-11 08:45:52 - INFO -   → dim_vehiculo: 498 filas, 8 columnas
+2026-03-11 08:45:52 - INFO -   → dim_vendedor: 80 filas, 4 columnas
+2026-03-11 08:45:52 - INFO -   → dim_tipoPago: 20 filas, 6 columnas
+2026-03-11 08:45:52 - INFO -   → tipo_mantenimiento: 10 filas, 6 columnas
+2026-03-11 08:45:52 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-11 08:45:52 - INFO -   → hecho_mantenimiento: 1000 filas, 10 columnas
+2026-03-11 08:45:52 - INFO - 
+ Validación de integridad referencial:
+2026-03-11 08:45:52 - INFO -   • clientes_invalidos_en_ventas: 0
+2026-03-11 08:45:52 - INFO -   • vehiculos_invalidos_en_ventas: 0
+2026-03-11 08:45:52 - INFO -   • tipos_mantenimiento_invalidos: 0
+2026-03-11 08:45:52 - INFO - 
+ Creando backup CSV...
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\dim_tiempo_20260311_084552.csv
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\dim_ciudad_20260311_084552.csv
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\dim_cliente_20260311_084552.csv
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\dim_sucursal_20260311_084552.csv
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\dim_vehiculo_20260311_084552.csv
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\dim_vendedor_20260311_084552.csv
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\dim_tipoPago_20260311_084552.csv
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\tipo_mantenimiento_20260311_084552.csv
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\hecho_ventas_20260311_084552.csv
+2026-03-11 08:45:52 - INFO -   → Backup CSV: data\processed\hecho_mantenimiento_20260311_084552.csv
+2026-03-11 08:45:52 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-11 08:45:52 - INFO - ✅ Conexión a SQLite exitosa: data/processed/concesionario.db
+2026-03-11 08:45:52 - INFO -   → dim_ciudad: 11 filas cargadas
+2026-03-11 08:45:52 - INFO -   → dim_tiempo: 426 filas cargadas
+2026-03-11 08:45:52 - INFO -   → dim_cliente: 780 filas cargadas
+2026-03-11 08:45:52 - INFO -   → dim_sucursal: 30 filas cargadas
+2026-03-11 08:45:52 - INFO -   → dim_vehiculo: 498 filas cargadas
+2026-03-11 08:45:52 - INFO -   → dim_vendedor: 80 filas cargadas
+2026-03-11 08:45:52 - INFO -   → dim_tipoPago: 20 filas cargadas
+2026-03-11 08:45:52 - INFO -   → tipo_mantenimiento: 10 filas cargadas
+2026-03-11 08:45:52 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-11 08:45:52 - INFO -   → hecho_mantenimiento: 1000 filas cargadas
+2026-03-11 08:45:52 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-11 08:45:52 - INFO - 
+ Verificación de carga:
+2026-03-11 08:45:52 - INFO -   • dim_ciudad: 11 registros
+2026-03-11 08:45:52 - INFO -   • dim_tiempo: 426 registros
+2026-03-11 08:45:52 - INFO -   • dim_cliente: 780 registros
+2026-03-11 08:45:52 - INFO -   • dim_sucursal: 30 registros
+2026-03-11 08:45:52 - INFO -   • dim_vehiculo: 498 registros
+2026-03-11 08:45:52 - INFO -   • dim_vendedor: 80 registros
+2026-03-11 08:45:52 - INFO -   • dim_tipoPago: 20 registros
+2026-03-11 08:45:52 - INFO -   • tipo_mantenimiento: 10 registros
+2026-03-11 08:45:52 - INFO -   • hecho_ventas: 2000 registros
+2026-03-11 08:45:52 - INFO -   • hecho_mantenimiento: 1000 registros
+2026-03-11 08:45:52 - INFO - 
+✅ Índices de optimización creados
+2026-03-11 08:45:52 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-11 08:45:52 - INFO - ============================================================
+2026-03-11 08:45:52 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-11 08:45:52 - INFO - ============================================================
+2026-03-11 08:45:52 - INFO - 
+Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260311_084552
+2026-03-11 08:45:52 - INFO -   -> Generando: ventas_por_tiempo
+2026-03-11 08:45:52 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-11 08:45:52 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-11 08:45:53 - INFO -   -> Generando: top_clientes
+2026-03-11 08:45:53 - INFO -   -> Generando: rendimiento_vendedores
+2026-03-11 08:45:53 - INFO -   -> Generando: mantenimiento_por_tipo
+2026-03-11 08:45:53 - ERROR -   Error en mantenimiento_por_tipo: Execution failed on sql '
+        SELECT 
+            tm.nombre_tipo as tipo_mantenimiento,
+            tm.descripcion,
+            COUNT(m.id_mantenimiento) as num_servicios,
+            SUM(COALESCE(m.costo_servicio, 0) + COALESCE(m.costo_repuestos, 0)) as ingresos_totales,
+            AVG(COALESCE(m.costo_servicio, 0) + COALESCE(m.costo_repuestos, 0)) as costo_promedio,
+            AVG(m.horas_taller) as horas_promedio,
+            SUM(COALESCE(m.repuestos_usados, 0)) as total_repuestos,
+            AVG(m.kilometraje_vehiculo) as km_promedio
+        FROM hecho_mantenimiento m
+        JOIN tipo_mantenimiento tm ON m.id_tipo_mantenimiento = tm.id_tipo_mantenimiento
+        GROUP BY tm.nombre_tipo, tm.descripcion
+        ORDER BY num_servicios DESC
+        ': no such column: m.id_mantenimiento
+2026-03-11 08:45:53 - INFO -   -> Generando: analisis_financiero
+2026-03-11 08:45:54 - INFO -   -> Generando: dashboard_ventas
+2026-03-11 08:45:54 - INFO -   -> Generando: calidad_datos
+2026-03-11 08:45:54 - INFO - 
+Reportes generados en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260311_084552
+2026-03-11 08:45:54 - INFO - 
+ Modelo: linear_regression
+2026-03-11 08:45:54 - INFO -   MAE: $24,014.47
+2026-03-11 08:45:54 - INFO -   RMSE: $27,970.60
+2026-03-11 08:45:54 - INFO -   R²: 0.0003
+2026-03-11 08:45:54 - INFO -   CV R²: -0.0419 (+/- 0.0368)
+2026-03-11 08:45:54 - INFO - 
+ Modelo: random_forest
+2026-03-11 08:45:54 - INFO -   MAE: $24,614.60
+2026-03-11 08:45:54 - INFO -   RMSE: $28,605.09
+2026-03-11 08:45:54 - INFO -   R²: -0.0455
+2026-03-11 08:45:54 - INFO -   CV R²: -0.0581 (+/- 0.0589)
+2026-03-11 08:45:55 - INFO - 
+ Modelo: gradient_boosting
+2026-03-11 08:45:55 - INFO -   MAE: $24,523.43
+2026-03-11 08:45:55 - INFO -   RMSE: $29,636.64
+2026-03-11 08:45:55 - INFO -   R²: -0.1223
+2026-03-11 08:45:55 - INFO -   CV R²: -0.1252 (+/- 0.0744)
+2026-03-11 08:45:55 - INFO - 
+✅ Modelo guardado en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\models\vehicle_price_model_20260311_084555.pkl
+2026-03-11 08:55:28 - INFO - ============================================================
+2026-03-11 08:55:28 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-11 08:55:28 - INFO - ============================================================
+2026-03-11 08:55:28 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-11 08:55:28 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-11 08:55:30 - INFO -   → datos_concesionario: 3000 filas, 56 columnas
+2026-03-11 08:55:30 - INFO -  Datos extraídos correctamente
+2026-03-11 08:55:30 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-11 08:55:30 - INFO - Iniciando transformación a modelo estrella...
+2026-03-11 08:55:30 - INFO - DataFrame recibido: 3000 filas, 56 columnas
+2026-03-11 08:55:30 - INFO - 
+📊 Resultados de la transformación:
+2026-03-11 08:55:30 - INFO -   → dim_tiempo: 426 filas, 9 columnas
+2026-03-11 08:55:30 - INFO -   → dim_ciudad: 11 filas, 4 columnas
+2026-03-11 08:55:30 - INFO -   → dim_cliente: 780 filas, 7 columnas
+2026-03-11 08:55:30 - INFO -   → dim_sucursal: 30 filas, 5 columnas
+2026-03-11 08:55:30 - INFO -   → dim_vehiculo: 498 filas, 8 columnas
+2026-03-11 08:55:30 - INFO -   → dim_vendedor: 80 filas, 4 columnas
+2026-03-11 08:55:30 - INFO -   → dim_tipoPago: 20 filas, 6 columnas
+2026-03-11 08:55:30 - INFO -   → tipo_mantenimiento: 10 filas, 6 columnas
+2026-03-11 08:55:30 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-11 08:55:30 - INFO -   → hecho_mantenimiento: 1000 filas, 10 columnas
+2026-03-11 08:55:30 - INFO - 
+ Validación de integridad referencial:
+2026-03-11 08:55:30 - INFO -   • clientes_invalidos_en_ventas: 0
+2026-03-11 08:55:30 - INFO -   • vehiculos_invalidos_en_ventas: 0
+2026-03-11 08:55:30 - INFO -   • tipos_mantenimiento_invalidos: 0
+2026-03-11 08:55:30 - INFO - 
+ Creando backup CSV...
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\dim_tiempo_20260311_085530.csv
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\dim_ciudad_20260311_085530.csv
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\dim_cliente_20260311_085530.csv
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\dim_sucursal_20260311_085530.csv
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\dim_vehiculo_20260311_085530.csv
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\dim_vendedor_20260311_085530.csv
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\dim_tipoPago_20260311_085530.csv
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\tipo_mantenimiento_20260311_085530.csv
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\hecho_ventas_20260311_085530.csv
+2026-03-11 08:55:30 - INFO -   → Backup CSV: data\processed\hecho_mantenimiento_20260311_085530.csv
+2026-03-11 08:55:30 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-11 08:55:30 - INFO - ✅ Conexión a SQLite exitosa: data/processed/concesionario.db
+2026-03-11 08:55:30 - INFO -   → dim_ciudad: 11 filas cargadas
+2026-03-11 08:55:30 - INFO -   → dim_tiempo: 426 filas cargadas
+2026-03-11 08:55:30 - INFO -   → dim_cliente: 780 filas cargadas
+2026-03-11 08:55:30 - INFO -   → dim_sucursal: 30 filas cargadas
+2026-03-11 08:55:30 - INFO -   → dim_vehiculo: 498 filas cargadas
+2026-03-11 08:55:30 - INFO -   → dim_vendedor: 80 filas cargadas
+2026-03-11 08:55:30 - INFO -   → dim_tipoPago: 20 filas cargadas
+2026-03-11 08:55:30 - INFO -   → tipo_mantenimiento: 10 filas cargadas
+2026-03-11 08:55:30 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-11 08:55:30 - INFO -   → hecho_mantenimiento: 1000 filas cargadas
+2026-03-11 08:55:30 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-11 08:55:30 - INFO - 
+ Verificación de carga:
+2026-03-11 08:55:30 - INFO -   • dim_ciudad: 11 registros
+2026-03-11 08:55:30 - INFO -   • dim_tiempo: 426 registros
+2026-03-11 08:55:30 - INFO -   • dim_cliente: 780 registros
+2026-03-11 08:55:30 - INFO -   • dim_sucursal: 30 registros
+2026-03-11 08:55:30 - INFO -   • dim_vehiculo: 498 registros
+2026-03-11 08:55:30 - INFO -   • dim_vendedor: 80 registros
+2026-03-11 08:55:30 - INFO -   • dim_tipoPago: 20 registros
+2026-03-11 08:55:30 - INFO -   • tipo_mantenimiento: 10 registros
+2026-03-11 08:55:30 - INFO -   • hecho_ventas: 2000 registros
+2026-03-11 08:55:30 - INFO -   • hecho_mantenimiento: 1000 registros
+2026-03-11 08:55:30 - INFO - 
+✅ Índices de optimización creados
+2026-03-11 08:55:30 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-11 08:55:30 - INFO - ============================================================
+2026-03-11 08:55:30 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-11 08:55:30 - INFO - ============================================================
+2026-03-11 08:55:30 - INFO - 
+Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260311_085530
+2026-03-11 08:55:30 - INFO -   -> Generando: ventas_por_tiempo
+2026-03-11 08:55:30 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-11 08:55:30 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-11 08:55:31 - INFO -   -> Generando: top_clientes
+2026-03-11 08:55:31 - INFO -   -> Generando: rendimiento_vendedores
+2026-03-11 08:55:31 - INFO -   -> Generando: mantenimiento_por_tipo
+2026-03-11 08:55:31 - ERROR -   Error en mantenimiento_por_tipo: cannot access local variable 'query_simple' where it is not associated with a value
+2026-03-11 08:55:31 - INFO -   -> Generando: analisis_financiero
+2026-03-11 08:55:32 - INFO -   -> Generando: dashboard_ventas
+2026-03-11 08:55:32 - INFO -   -> Generando: calidad_datos
+2026-03-11 08:55:32 - INFO - 
+Reportes generados en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260311_085530
+2026-03-11 08:55:32 - INFO - 
+ Modelo: linear_regression
+2026-03-11 08:55:32 - INFO -   MAE: $24,016.25
+2026-03-11 08:55:32 - INFO -   RMSE: $27,972.23
+2026-03-11 08:55:32 - INFO -   R²: 0.0002
+2026-03-11 08:55:32 - INFO -   CV R²: -0.0405 (+/- 0.0357)
+2026-03-11 08:55:32 - INFO - 
+ Modelo: random_forest
+2026-03-11 08:55:32 - INFO -   MAE: $24,636.48
+2026-03-11 08:55:32 - INFO -   RMSE: $28,621.15
+2026-03-11 08:55:32 - INFO -   R²: -0.0467
+2026-03-11 08:55:32 - INFO -   CV R²: -0.0590 (+/- 0.0587)
+2026-03-11 08:55:33 - INFO - 
+ Modelo: gradient_boosting
+2026-03-11 08:55:33 - INFO -   MAE: $24,541.95
+2026-03-11 08:55:33 - INFO -   RMSE: $29,655.72
+2026-03-11 08:55:33 - INFO -   R²: -0.1237
+2026-03-11 08:55:33 - INFO -   CV R²: -0.1259 (+/- 0.0733)
+2026-03-11 08:55:33 - INFO - 
+✅ Modelo guardado en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\models\vehicle_price_model_20260311_085533.pkl
+2026-03-11 08:57:18 - INFO - ============================================================
+2026-03-11 08:57:18 - INFO -  INICIANDO ETL - CONCESIONARIO MODELO ESTRELLA (SQLite)
+2026-03-11 08:57:18 - INFO - ============================================================
+2026-03-11 08:57:18 - INFO - 
+ FASE 1: EXTRACCIÓN
+2026-03-11 08:57:18 - INFO - Leyendo archivo: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\data\raw\datos_concesionario_raw.xlsx
+2026-03-11 08:57:19 - INFO -   → datos_concesionario: 3000 filas, 56 columnas
+2026-03-11 08:57:19 - INFO -  Datos extraídos correctamente
+2026-03-11 08:57:19 - INFO - 
+ FASE 2: TRANSFORMACIÓN
+2026-03-11 08:57:19 - INFO - Iniciando transformación a modelo estrella...
+2026-03-11 08:57:19 - INFO - DataFrame recibido: 3000 filas, 56 columnas
+2026-03-11 08:57:19 - INFO - 
+📊 Resultados de la transformación:
+2026-03-11 08:57:19 - INFO -   → dim_tiempo: 426 filas, 9 columnas
+2026-03-11 08:57:19 - INFO -   → dim_ciudad: 11 filas, 4 columnas
+2026-03-11 08:57:19 - INFO -   → dim_cliente: 780 filas, 7 columnas
+2026-03-11 08:57:19 - INFO -   → dim_sucursal: 30 filas, 5 columnas
+2026-03-11 08:57:19 - INFO -   → dim_vehiculo: 498 filas, 8 columnas
+2026-03-11 08:57:19 - INFO -   → dim_vendedor: 80 filas, 4 columnas
+2026-03-11 08:57:19 - INFO -   → dim_tipoPago: 20 filas, 6 columnas
+2026-03-11 08:57:19 - INFO -   → tipo_mantenimiento: 10 filas, 6 columnas
+2026-03-11 08:57:19 - INFO -   → hecho_ventas: 2000 filas, 13 columnas
+2026-03-11 08:57:19 - INFO -   → hecho_mantenimiento: 1000 filas, 10 columnas
+2026-03-11 08:57:19 - INFO - 
+ Validación de integridad referencial:
+2026-03-11 08:57:19 - INFO -   • clientes_invalidos_en_ventas: 0
+2026-03-11 08:57:19 - INFO -   • vehiculos_invalidos_en_ventas: 0
+2026-03-11 08:57:19 - INFO -   • tipos_mantenimiento_invalidos: 0
+2026-03-11 08:57:19 - INFO - 
+ Creando backup CSV...
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\dim_tiempo_20260311_085719.csv
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\dim_ciudad_20260311_085719.csv
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\dim_cliente_20260311_085719.csv
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\dim_sucursal_20260311_085719.csv
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\dim_vehiculo_20260311_085719.csv
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\dim_vendedor_20260311_085719.csv
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\dim_tipoPago_20260311_085719.csv
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\tipo_mantenimiento_20260311_085719.csv
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\hecho_ventas_20260311_085719.csv
+2026-03-11 08:57:19 - INFO -   → Backup CSV: data\processed\hecho_mantenimiento_20260311_085719.csv
+2026-03-11 08:57:19 - INFO - 
+ FASE 3: CARGA A SQLite
+2026-03-11 08:57:19 - INFO - ✅ Conexión a SQLite exitosa: data/processed/concesionario.db
+2026-03-11 08:57:19 - INFO -   → dim_ciudad: 11 filas cargadas
+2026-03-11 08:57:19 - INFO -   → dim_tiempo: 426 filas cargadas
+2026-03-11 08:57:19 - INFO -   → dim_cliente: 780 filas cargadas
+2026-03-11 08:57:19 - INFO -   → dim_sucursal: 30 filas cargadas
+2026-03-11 08:57:19 - INFO -   → dim_vehiculo: 498 filas cargadas
+2026-03-11 08:57:19 - INFO -   → dim_vendedor: 80 filas cargadas
+2026-03-11 08:57:19 - INFO -   → dim_tipoPago: 20 filas cargadas
+2026-03-11 08:57:19 - INFO -   → tipo_mantenimiento: 10 filas cargadas
+2026-03-11 08:57:19 - INFO -   → hecho_ventas: 2000 filas cargadas
+2026-03-11 08:57:19 - INFO -   → hecho_mantenimiento: 1000 filas cargadas
+2026-03-11 08:57:19 - INFO - 
+✅ Todas las tablas cargadas exitosamente
+2026-03-11 08:57:19 - INFO - 
+ Verificación de carga:
+2026-03-11 08:57:19 - INFO -   • dim_ciudad: 11 registros
+2026-03-11 08:57:19 - INFO -   • dim_tiempo: 426 registros
+2026-03-11 08:57:19 - INFO -   • dim_cliente: 780 registros
+2026-03-11 08:57:19 - INFO -   • dim_sucursal: 30 registros
+2026-03-11 08:57:19 - INFO -   • dim_vehiculo: 498 registros
+2026-03-11 08:57:19 - INFO -   • dim_vendedor: 80 registros
+2026-03-11 08:57:19 - INFO -   • dim_tipoPago: 20 registros
+2026-03-11 08:57:19 - INFO -   • tipo_mantenimiento: 10 registros
+2026-03-11 08:57:19 - INFO -   • hecho_ventas: 2000 registros
+2026-03-11 08:57:19 - INFO -   • hecho_mantenimiento: 1000 registros
+2026-03-11 08:57:19 - INFO - 
+✅ Índices de optimización creados
+2026-03-11 08:57:19 - INFO - 
+ Base de datos SQLite creada: data/processed/concesionario.db
+2026-03-11 08:57:19 - INFO - ============================================================
+2026-03-11 08:57:19 - INFO -  ETL COMPLETADO EXITOSAMENTE
+2026-03-11 08:57:19 - INFO - ============================================================
+2026-03-11 08:57:19 - INFO - 
+Generando reportes en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260311_085719
+2026-03-11 08:57:19 - INFO -   -> Generando: ventas_por_tiempo
+2026-03-11 08:57:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-11 08:57:19 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-03-11 08:57:20 - INFO -   -> Generando: top_clientes
+2026-03-11 08:57:20 - INFO -   -> Generando: rendimiento_vendedores
+2026-03-11 08:57:20 - INFO -   -> Generando: mantenimiento_por_tipo
+2026-03-11 08:57:20 - ERROR -   Error en mantenimiento_por_tipo: cannot access local variable 'query_simple' where it is not associated with a value
+2026-03-11 08:57:20 - INFO -   -> Generando: analisis_financiero
+2026-03-11 08:57:21 - INFO -   -> Generando: dashboard_ventas
+2026-03-11 08:57:21 - INFO -   -> Generando: calidad_datos
+2026-03-11 08:57:21 - INFO - 
+Reportes generados en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\reports\report_20260311_085719
+2026-03-11 08:57:21 - INFO - 
+ Modelo: linear_regression
+2026-03-11 08:57:21 - INFO -   MAE: $24,016.25
+2026-03-11 08:57:21 - INFO -   RMSE: $27,972.23
+2026-03-11 08:57:21 - INFO -   R²: 0.0002
+2026-03-11 08:57:21 - INFO -   CV R²: -0.0405 (+/- 0.0357)
+2026-03-11 08:57:22 - INFO - 
+ Modelo: random_forest
+2026-03-11 08:57:22 - INFO -   MAE: $24,636.48
+2026-03-11 08:57:22 - INFO -   RMSE: $28,621.15
+2026-03-11 08:57:22 - INFO -   R²: -0.0467
+2026-03-11 08:57:22 - INFO -   CV R²: -0.0590 (+/- 0.0587)
+2026-03-11 08:57:22 - INFO - 
+ Modelo: gradient_boosting
+2026-03-11 08:57:22 - INFO -   MAE: $24,541.95
+2026-03-11 08:57:22 - INFO -   RMSE: $29,655.72
+2026-03-11 08:57:22 - INFO -   R²: -0.1237
+2026-03-11 08:57:22 - INFO -   CV R²: -0.1259 (+/- 0.0733)
+2026-03-11 08:57:22 - INFO - 
+✅ Modelo guardado en: C:\Users\Jonathan.Lozano\Documents\GitHub\proyecto_big_data\proyecto_big_data\models\vehicle_price_model_20260311_085722.pkl

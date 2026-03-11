@@ -1,487 +1,409 @@
+"""
+generate_data.py
+Genera datos crudos del concesionario con suciedad intencional.
+Output: data/raw/datos_concesionario_raw.xlsx  (hoja: datos_concesionario)
+"""
+
 import pandas as pd
 import numpy as np
 import random
-from datetime import datetime, timedelta
+import unicodedata
 import os
+from datetime import datetime, timedelta
 
-# Configuración
-path = "data/raw/"
-if not os.path.exists(path):
-    os.makedirs(path)
+random.seed(None)
+np.random.seed(None)
 
-# Semillas para reproducibilidad
-np.random.seed(42)
-random.seed(42)
+OUT_PATH = "data/raw/"
+os.makedirs(OUT_PATH, exist_ok=True)
 
-# Configuración de fechas
-fecha_inicio = datetime(2020, 1, 1)
-fecha_fin = datetime(2024, 12, 31)
+# ──────────────────────────────────────────────
+# CATÁLOGOS BASE
+# ──────────────────────────────────────────────
 
-print("=" * 60)
-print("🚗 GENERANDO DATOS DESNORMALIZADOS PARA CONCESIONARIO")
-print("=" * 60)
-
-# ============================================
-# 1. GENERAR DATOS MAESTROS (DIMENSIONES)
-# ============================================
-print("\n📊 Generando datos maestros...")
-
-# Ciudades
-ciudades = [
-    {'id_ciudad': 1, 'nombre_ciudad': 'Bogotá', 'departamento': 'Cundinamarca', 'region': 'Centro'},
-    {'id_ciudad': 2, 'nombre_ciudad': 'Medellín', 'departamento': 'Antioquia', 'region': 'Norte'},
-    {'id_ciudad': 3, 'nombre_ciudad': 'Cali', 'departamento': 'Valle del Cauca', 'region': 'Sur'},
-    {'id_ciudad': 4, 'nombre_ciudad': 'Barranquilla', 'departamento': 'Atlántico', 'region': 'Norte'},
-    {'id_ciudad': 5, 'nombre_ciudad': 'Cartagena', 'departamento': 'Bolívar', 'region': 'Norte'},
-    {'id_ciudad': 6, 'nombre_ciudad': 'Bucaramanga', 'departamento': 'Santander', 'region': 'Este'},
-    {'id_ciudad': 7, 'nombre_ciudad': 'Pereira', 'departamento': 'Risaralda', 'region': 'Oeste'},
-    {'id_ciudad': 8, 'nombre_ciudad': 'Cúcuta', 'departamento': 'Norte de Santander', 'region': 'Este'},
+NOMBRES = [
+    ('José','Jose','JOSÉ','jose'),('María','Maria','MARÍA','maria'),
+    ('Jesús','Jesus','JESÚS','jesus'),('Álvaro','Alvaro','ÁLVARO','alvaro'),
+    ('Sofía','Sofia','SOFÍA','sofia'),('Andrés','Andres','ANDRÉS','andres'),
+    ('Mónica','Monica','MÓNICA','monica'),('Ángela','Angela','ÁNGELA','angela'),
+    ('Benjamín','Benjamin','BENJAMÍN','benjamin'),('Julián','Julian','JULIÁN','julian'),
+    ('Raúl','Raul','RAÚL','raul'),('Verónica','Veronica','VERÓNICA','veronica'),
+    ('Sebastián','Sebastian','SEBASTIÁN','sebastian'),('Natalia','natalia','NATALIA','Natalia'),
+    ('Camilo','CAMILO','camilo','Camilo'),('Valentina','valentina','VALENTINA','Valentina'),
+    ('Felipe','FELIPE','felipe','Felipe'),('Daniela','daniela','DANIELA','Daniela'),
+    ('Alejandro','ALEJANDRO','alejandro','Alejandro'),('Carolina','carolina','CAROLINA','Carolina'),
+    ('Diego','DIEGO','diego','Diego'),('Paola','PAOLA','paola','Paola'),
+    ('Ricardo','RICARDO','ricardo','Ricardo'),('Laura','LAURA','laura','Laura'),
+    ('Hernán','Hernan','HERNÁN','hernan'),('Claudia','CLAUDIA','claudia','Claudia'),
+    ('Mauricio','MAURICIO','mauricio','Mauricio'),('Patricia','PATRICIA','patricia','Patricia'),
 ]
 
-# Tipos de mantenimiento
-tipos_mantenimiento = [
-    {'id_tipo_mantenimiento': 1, 'nombre_tipo': 'Aceite y Filtros', 'descripcion': 'Cambio de aceite y filtros', 'incluye_garantia': 1, 'meses_garantia': 3, 'kilometros_garantia': 5000},
-    {'id_tipo_mantenimiento': 2, 'nombre_tipo': 'Frenos', 'descripcion': 'Revisión y cambio de pastillas', 'incluye_garantia': 1, 'meses_garantia': 6, 'kilometros_garantia': 10000},
-    {'id_tipo_mantenimiento': 3, 'nombre_tipo': 'Suspensión', 'descripcion': 'Revisión de amortiguadores', 'incluye_garantia': 1, 'meses_garantia': 12, 'kilometros_garantia': 20000},
-    {'id_tipo_mantenimiento': 4, 'nombre_tipo': 'Motor', 'descripcion': 'Ajuste y calibración', 'incluye_garantia': 1, 'meses_garantia': 12, 'kilometros_garantia': 15000},
-    {'id_tipo_mantenimiento': 5, 'nombre_tipo': 'Sistema Eléctrico', 'descripcion': 'Revisión eléctrica', 'incluye_garantia': 0, 'meses_garantia': 0, 'kilometros_garantia': 0},
-    {'id_tipo_mantenimiento': 6, 'nombre_tipo': 'Aire Acondicionado', 'descripcion': 'Recarga y revisión', 'incluye_garantia': 0, 'meses_garantia': 0, 'kilometros_garantia': 0},
-    {'id_tipo_mantenimiento': 7, 'nombre_tipo': 'Transmisión', 'descripcion': 'Cambio de aceite transmisión', 'incluye_garantia': 1, 'meses_garantia': 6, 'kilometros_garantia': 15000},
-    {'id_tipo_mantenimiento': 8, 'nombre_tipo': 'Alineación y Balanceo', 'descripcion': 'Alineación y balanceo', 'incluye_garantia': 0, 'meses_garantia': 0, 'kilometros_garantia': 0}
+APELLIDOS = [
+    ('García','Garcia','GARCÍA','garcia'),('Rodríguez','Rodriguez','RODRÍGUEZ','rodriguez'),
+    ('González','Gonzalez','GONZÁLEZ','gonzalez'),('López','Lopez','LÓPEZ','lopez'),
+    ('Martínez','Martinez','MARTÍNEZ','martinez'),('Sánchez','Sanchez','SÁNCHEZ','sanchez'),
+    ('Pérez','Perez','PÉREZ','perez'),('Muñoz','Munoz','MUÑOZ','munoz'),
+    ('Peña','Pena','PEÑA','pena'),('Castaño','Castano','CASTAÑO','castano'),
+    ('Niñez','Ninez','NIÑEZ','ninez'),('Álvarez','Alvarez','ÁLVAREZ','alvarez'),
+    ('Fernández','Fernandez','FERNÁNDEZ','fernandez'),('Domínguez','Dominguez','DOMÍNGUEZ','dominguez'),
+    ('España','Espana','ESPAÑA','espana'),('Cifuentes','CIFUENTES','cifuentes','Cifuentes'),
+    ('Ospina','OSPINA','ospina','Ospina'),('Ríos','Rios','RÍOS','rios'),
+    ('Vargas','VARGAS','vargas','Vargas'),('Cárdenas','Cardenas','CÁRDENAS','cardenas'),
+    ('Ramírez','Ramirez','RAMÍREZ','ramirez'),('Gutiérrez','Gutierrez','GUTIÉRREZ','gutierrez'),
+    ('Cruz','CRUZ','cruz','Cruz'),('Moreno','MORENO','moreno','Moreno'),
+    ('Herrera','HERRERA','herrera','Herrera'),('Toro','TORO','toro','Toro'),
 ]
 
-# Tipos de pago
-tipos_pago = []
-entidades = ['Bancolombia', 'Davivienda', 'BBVA', 'Banco de Bogotá', 'Banco Popular', 'Colpatria', 'Citibank']
-for i in range(1, 16):
-    tipo = random.choice(['contado', 'credito', 'leasing'])
-    if tipo == 'contado':
-        entidad = None
-        plazo = 0
-        tasa = 0
-    else:
-        entidad = random.choice(entidades)
-        plazo = random.choice([12, 24, 36, 48, 60])
-        tasa = round(random.uniform(0.8, 2.5), 2)
-    
-    # Problemas controlados
-    if i == 5:
-        tipo_pago = "CREDITO"  # Mayúsculas
-    else:
-        tipo_pago = tipo
-    
-    tipos_pago.append({
-        'id_tipo_pago': i,
-        'tipo_pago': tipo_pago,
-        'entidad_financiera': entidad,
-        'plazo_meses': plazo,
-        'tasa_interes': tasa,
-        'requiere_aprobacion': 1 if tipo != 'contado' else 0
-    })
+CIUDADES = [
+    {'id':1,'base':'Bogotá','vars':['Bogotá','Bogota','BOGOTÁ','Bogotá D.C.','Bogota DC','bogotá','BOGOTA','Santa Fe de Bogotá'],'depto':'Cundinamarca','region':'Centro'},
+    {'id':2,'base':'Medellín','vars':['Medellín','Medellin','MEDELLÍN','Medallo','medellín','MEDELLIN','Medellín, Antioquia'],'depto':'Antioquia','region':'Norte'},
+    {'id':3,'base':'Cali','vars':['Cali','CALI','cali','Santiago de Cali','Cali, Valle','SANTIAGO DE CALI'],'depto':'Valle del Cauca','region':'Sur'},
+    {'id':4,'base':'Barranquilla','vars':['Barranquilla','BARRANQUILLA','B/quilla','barranquilla','Bquilla'],'depto':'Atlántico','region':'Norte'},
+    {'id':5,'base':'Cartagena','vars':['Cartagena','CARTAGENA','Cartagena de Indias','cartagena','CTG'],'depto':'Bolívar','region':'Norte'},
+    {'id':6,'base':'Bucaramanga','vars':['Bucaramanga','BUCARAMANGA','B/manga','bucaramanga','Buca'],'depto':'Santander','region':'Este'},
+    {'id':7,'base':'Pereira','vars':['Pereira','PEREIRA','pereira','Pereira Risaralda'],'depto':'Risaralda','region':'Oeste'},
+    {'id':8,'base':'Cúcuta','vars':['Cúcuta','Cucuta','CÚCUTA','cucuta','San José de Cúcuta'],'depto':'Norte de Santander','region':'Este'},
+    {'id':9,'base':'Santa Marta','vars':['Santa Marta','SANTA MARTA','S. Marta','santa marta','SMarta'],'depto':'Magdalena','region':'Norte'},
+    {'id':10,'base':'Ibagué','vars':['Ibagué','Ibague','IBAGUÉ','ibagué','IBAGUE'],'depto':'Tolima','region':'Centro'},
+    {'id':11,'base':'Manizales','vars':['Manizales','MANIZALES','manizales'],'depto':'Caldas','region':'Oeste'},
+    {'id':12,'base':'Pasto','vars':['Pasto','PASTO','pasto','San Juan de Pasto'],'depto':'Nariño','region':'Sur'},
+]
 
-# ============================================
-# 2. GENERAR REGISTROS DESNORMALIZADOS (VENTAS + MANTENIMIENTO)
-# ============================================
-print("\n📈 Generando registros desnormalizados...")
-
-# Generar datos de ventas (2000 registros)
-ventas_data = []
-nombres = ['Carlos', 'Ana', 'Juan', 'María', 'Luis', 'Laura', 'Pedro', 'Sofía', 'Andrés', 'Valentina']
-apellidos = ['García', 'Rodríguez', 'Martínez', 'López', 'González', 'Pérez', 'Sánchez', 'Ramírez']
-marcas = ['Toyota', 'Renault', 'Chevrolet', 'Mazda', 'Kia', 'Hyundai', 'Nissan', 'Ford', 'Volkswagen', 'Suzuki']
-modelos_por_marca = {
-    'Toyota': ['Corolla', 'Hilux', 'Prado', 'Yaris', 'Rav4'],
-    'Renault': ['Duster', 'Sandero', 'Logan', 'Kwid', 'Stepway'],
-    'Chevrolet': ['Onix', 'Joy', 'Tracker', 'S10', 'Spin'],
-    'Mazda': ['Mazda2', 'Mazda3', 'Mazda6', 'CX-30', 'CX-5'],
-    'Kia': ['Rio', 'Sportage', 'Seltos', 'Picanto', 'Cerato'],
-    'Hyundai': ['i10', 'i20', 'Tucson', 'Santa Fe', 'Creta'],
-    'Nissan': ['Versa', 'Sentra', 'X-Trail', 'Frontier', 'Kicks'],
-    'Ford': ['Fiesta', 'Focus', 'Escape', 'Ranger', 'Explorer'],
-    'Volkswagen': ['Gol', 'Virtus', 'T-Cross', 'Amarok', 'Jetta'],
-    'Suzuki': ['Swift', 'Vitara', 'Jimny', 'S-Cross', 'Ignis']
+MARCAS_MODELOS = {
+    'Toyota':['Corolla','Hilux','Prado','Yaris','Rav4','Fortuner','Land Cruiser'],
+    'Renault':['Duster','Sandero','Logan','Kwid','Stepway','Koleos','Oroch'],
+    'Chevrolet':['Onix','Joy','Tracker','S10','Spin','Blazer','Montana'],
+    'Mazda':['Mazda2','Mazda3','Mazda6','CX-30','CX-5','BT-50'],
+    'Kia':['Rio','Sportage','Seltos','Picanto','Cerato','Sonet','Carnival'],
+    'Hyundai':['i10','i20','Tucson','Santa Fe','Creta','Ioniq','Accent'],
+    'Nissan':['Versa','Sentra','X-Trail','Frontier','Kicks','Pathfinder'],
+    'Ford':['Fiesta','Focus','Escape','Ranger','Explorer','Maverick','Bronco'],
+    'Volkswagen':['Gol','Virtus','T-Cross','Amarok','Jetta','Tiguan','Polo'],
+    'Suzuki':['Swift','Vitara','Jimny','S-Cross','Ignis','Grand Vitara'],
+    'Honda':['Civic','CR-V','HR-V','Fit','Accord','WR-V'],
+    'Mitsubishi':['Lancer','Outlander','ASX','L200','Eclipse Cross'],
 }
-nombres_sucursal = ['Principal', 'Norte', 'Sur', 'Centro', 'Occidente', 'Oriente', 'Autopista', 'Calle 80']
-nombres_vendedor = ['Carlos', 'Ana', 'Juan', 'María', 'Luis', 'Laura', 'Pedro', 'Sofía', 'Diego', 'Camila']
 
-for i in range(1, 2001):
-    # === DATOS DE CLIENTE (con problemas controlados) ===
-    id_cliente = random.randint(1, 500)
-    if i % 50 == 0:  # Clientes sin ciudad
-        id_ciudad_cliente = None
-        ciudad_cliente = None
-        departamento_cliente = None
-        region_cliente = None
-    elif i % 33 == 0:  # Ciudad inválida
-        id_ciudad_cliente = 999
-        ciudad_cliente = "CIUDAD_INVALIDA"
-        departamento_cliente = "DEPTO_INVALIDO"
-        region_cliente = "REGION_INVALIDA"
+COMBUSTIBLES_POOL = (
+    ['Gasolina']*5 + ['GASOLINA','gasolina','Gasolina  '] +
+    ['Diesel']*4  + ['DIESEL','diesel','Diesel  '] +
+    ['Híbrido','HIBRIDO','hibrido'] +
+    ['Eléctrico','ELECTRICO','electrico'] +
+    ['Gas Natural','GAS NATURAL','gas natural']
+)
+
+COLORES_POOL = (
+    ['Blanco','Negro','Plata','Rojo','Azul','Gris','Verde','Amarillo','Naranja','Marrón','Beige','Vino'] +
+    ['BLANCO','blanco','NEGRO','negro','PLATA','plata','ROJO','rojo','AZUL','azul','GRIS','gris']
+)
+
+TIPOS_MANTENIMIENTO = [
+    {'id':1,'nombre':'Aceite y Filtros','desc':'Cambio de aceite y filtros','garantia':1,'meses':3,'km':5000},
+    {'id':2,'nombre':'Frenos','desc':'Revisión y cambio de pastillas','garantia':1,'meses':6,'km':10000},
+    {'id':3,'nombre':'Suspensión','desc':'Revisión de amortiguadores','garantia':1,'meses':12,'km':20000},
+    {'id':4,'nombre':'Motor','desc':'Ajuste y calibración del motor','garantia':1,'meses':12,'km':15000},
+    {'id':5,'nombre':'Sistema Eléctrico','desc':'Revisión eléctrica completa','garantia':0,'meses':0,'km':0},
+    {'id':6,'nombre':'Aire Acondicionado','desc':'Recarga y revisión A/C','garantia':0,'meses':0,'km':0},
+    {'id':7,'nombre':'Transmisión','desc':'Cambio de aceite transmisión','garantia':1,'meses':6,'km':15000},
+    {'id':8,'nombre':'Alineación y Balanceo','desc':'Alineación y balanceo de llantas','garantia':0,'meses':0,'km':0},
+    {'id':9,'nombre':'Llantas y Neumáticos','desc':'Cambio y rotación de llantas','garantia':1,'meses':12,'km':15000},
+    {'id':10,'nombre':'Revisión General','desc':'Revisión completa del vehículo','garantia':0,'meses':0,'km':0},
+    {'id':11,'nombre':'Latonería y Pintura','desc':'Reparación de carrocería','garantia':1,'meses':6,'km':0},
+    {'id':12,'nombre':'Vidrios y Lunas','desc':'Cambio o reparación de vidrios','garantia':0,'meses':0,'km':0},
+]
+
+ENTIDADES_POOL = (
+    ['Bancolombia','Davivienda','BBVA','Banco de Bogotá','Banco Popular','Colpatria','Citibank','Scotiabank','GNB Sudameris','Finandina'] +
+    ['bancolombia','DAVIVIENDA','Bbva','banco de bogota','BANCO POPULAR','colpatria','CITIBANK','scotiabank']
+)
+
+TIPOS_PAGO_POOL = (
+    ['contado']*4 + ['CONTADO','Contado','contado  '] +
+    ['credito']*4 + ['CREDITO','Crédito','credito  ','crédito'] +
+    ['leasing']*3 + ['LEASING','Leasing','leasing  ']
+)
+
+SUCURSALES = ['Principal','Norte','Sur','Centro','Occidente','Oriente','Autopista','Calle 80','Carrera 7','El Poblado','Aeropuerto','Industrial']
+TAMAÑOS   = ['Pequeña','Mediana','Grande','Pequeño','Mediano','GRANDE','PEQUEÑA','MEDIANA','grande','pequeña']
+FINANCIADO_VALS = [1,0,'SI','NO','Y','N','true','false','verdadero','falso','Si','No','1','0']
+
+# ──────────────────────────────────────────────
+# HELPERS
+# ──────────────────────────────────────────────
+
+def strip_accents(s):
+    return unicodedata.normalize('NFKD', s).encode('ASCII','ignore').decode()
+
+def maybe(val, pct=0.88):
+    """Retorna val con probabilidad pct, sino None"""
+    return val if random.random() < pct else None
+
+def dirty(val, pct=0.25):
+    """Aleatoriamente altera mayúsculas/minúsculas o añade espacios"""
+    if val is None or random.random() > pct:
+        return val
+    val = str(val)
+    r = random.random()
+    if r < 0.33: return val.upper()
+    elif r < 0.66: return val.lower()
+    else: return (" " + val + " ") if random.random() < 0.5 else val + "  "
+
+def rand_date():
+    base = datetime(2019, 1, 1) + timedelta(days=random.randint(0, 2190))
+    fmts = [
+        base.strftime('%Y-%m-%d'),
+        base.strftime('%d/%m/%Y'),
+        base.strftime('%d-%m-%Y'),
+        base.strftime('%Y/%m/%d'),
+        base.strftime('%d.%m.%Y'),
+        base.strftime('%b %d, %Y'),
+        base.strftime('%d-%b-%Y'),
+    ]
+    # ~5% fechas inválidas
+    if random.random() < 0.05:
+        return random.choice(['2024-13-45','31/02/2023','fecha_invalida','99/99/9999',''])
+    return random.choice(fmts)
+
+def gen_email(nombre, apellido, id_c):
+    dominios_ok  = ['gmail.com','hotmail.com','yahoo.es','outlook.com','correo.co','icloud.com']
+    dominios_err = ['gmial.com','hotmai.com','yaho.es','outlok.com','correo.c']
+    n = strip_accents(nombre).lower()
+    a = strip_accents(apellido).lower()
+    opciones = [
+        f"{n}.{a}@{random.choice(dominios_ok)}",
+        f"{n}{a}@{random.choice(dominios_ok)}",
+        f"{n[0]}{a}@{random.choice(dominios_ok)}",
+        f"{n}{random.randint(1,999)}@{random.choice(dominios_ok)}",
+        f"cliente{id_c}@{random.choice(dominios_ok)}",
+        f"{a}.{n}@{random.choice(dominios_ok)}",
+        f"{n}_{a}@{random.choice(dominios_ok)}",
+    ]
+    # ~12% emails rotos
+    if random.random() < 0.12:
+        return random.choice([
+            f"{n}.{a}@{random.choice(dominios_err)}",
+            f"{n}{a}sinpunto",
+            f"{n}.{a}",
+            "correo@incompleto.",
+            "@sinusuario.com",
+            f"{n}..{a}@gmail.com",
+        ])
+    # ~8% nulos
+    if random.random() < 0.08:
+        return None
+    return random.choice(opciones)
+
+def gen_precio(base):
+    r = random.random()
+    if r < 0.25:  return f"${base:,.0f}".replace(',','.')
+    elif r < 0.35: return f"${base:,}"
+    elif r < 0.42: return str(base) + " USD"
+    elif r < 0.48: return f"{base:.2f}"
+    elif r < 0.50: return None          # ~2% nulos
+    return base
+
+def gen_descuento():
+    val = random.randint(0, 35)
+    r = random.random()
+    if r < 0.30:  return f"{val}%"
+    elif r < 0.40: return f"{val/100:.2f}"
+    elif r < 0.45: return f"descuento {val}%"
+    return val
+
+# ──────────────────────────────────────────────
+# GENERACIÓN PRINCIPAL
+# ──────────────────────────────────────────────
+
+N_VENTAS = 2000
+N_MANT   = 1000
+records  = []
+
+for i in range(1, N_VENTAS + N_MANT + 1):
+    tipo_reg = 'VENTA' if i <= N_VENTAS else 'MANTENIMIENTO'
+
+    # ── Cliente ──────────────────────────────
+    id_cli  = random.randint(1, 900)
+    nombre  = random.choice(random.choice(NOMBRES))
+    ap1     = random.choice(random.choice(APELLIDOS))
+    ap2     = random.choice(random.choice(APELLIDOS))
+    cli_nombre = f"{nombre} {ap1} {ap2}"
+
+    # Ciudad cliente: 75% válida, 25% sucia/nula
+    if random.random() < 0.75:
+        ciu     = random.choice(CIUDADES)
+        ciudad_cli  = dirty(random.choice(ciu['vars']), 0.25)
+        depto_cli   = dirty(ciu['depto'], 0.15)
+        region_cli  = dirty(ciu['region'], 0.15)
+        id_ciu_cli  = ciu['id']
     else:
-        ciudad = random.choice(ciudades)
-        id_ciudad_cliente = ciudad['id_ciudad']
-        ciudad_cliente = ciudad['nombre_ciudad']
-        departamento_cliente = ciudad['departamento']
-        region_cliente = ciudad['region']
-    
-    if i % 25 == 0:
-        tipo_cliente = "RECURRENTE"  # Mayúsculas
-    elif i % 20 == 0:
-        tipo_cliente = "nuevo  "  # Espacios
+        ciudad_cli  = random.choice(['','CIUDAD_INVALIDA','No especificada',' ',None,'N/A','sin dato','?'])
+        depto_cli   = random.choice(['',None,'N/A','sin dato'])
+        region_cli  = random.choice(['',None,'N/A'])
+        id_ciu_cli  = random.choice([999,-1,None,0])
+
+    tipo_cli = dirty(random.choice(['nuevo','recurrente','vip','empresarial','potencial']), 0.35)
+    cli_email = gen_email(nombre, ap1, id_cli)
+    cli_edad  = random.randint(18,80) if random.random() > 0.03 else random.randint(5,120)
+    cli_edad  = maybe(cli_edad, 0.92)
+    cli_gen   = dirty(random.choice(['M','F','Masculino','Femenino','M','F','M','F']), 0.2)
+
+    # ── Vehículo ─────────────────────────────
+    id_veh    = random.randint(1, 600)
+    marca     = random.choice(list(MARCAS_MODELOS.keys()))
+    modelo    = random.choice(MARCAS_MODELOS[marca])
+    tipo_veh  = dirty(random.choice(['carro','moto','camioneta','bus','furgón','pickup']), 0.2)
+    año_mod   = random.randint(2012, 2025)
+    cilindraje = random.choice([1000,1200,1400,1500,1600,1800,2000,2400,3000,3500,4000])
+    combustible = dirty(random.choice(COMBUSTIBLES_POOL), 0.1)
+    color     = random.choice(COLORES_POOL)
+    p_compra  = random.randint(15000, 120000)
+    p_venta_s = int(p_compra * random.uniform(1.05, 1.40))
+
+    # ── Sucursal ─────────────────────────────
+    id_suc    = random.randint(1, 35)
+    ciu_suc   = random.choice(CIUDADES)
+    nom_suc   = f"Sucursal {random.choice(SUCURSALES)}"
+    tam_suc   = random.choice(TAMAÑOS)
+
+    # ── Vendedor ─────────────────────────────
+    id_vend   = random.randint(1, 100)
+    vend_nom  = f"{random.choice(random.choice(NOMBRES))} {random.choice(random.choice(APELLIDOS))}"
+    vend_exp  = maybe(random.randint(0, 25), 0.92)
+
+    fecha = rand_date()
+
+    # ── Campos específicos por tipo ──────────
+    if tipo_reg == 'VENTA':
+        fecha_venta    = fecha
+        fecha_mant     = None
+        id_tipo_mant   = None
+        nom_mant       = None
+        desc_mant      = None
+        garantia_mant  = None
+        meses_gar      = None
+        km_gar         = None
+        costo_serv     = None
+        costo_rep      = None
+        rep_usados     = None
+        horas_taller   = None
+        km_vehiculo    = None
+
+        precio_venta   = gen_precio(p_venta_s)
+        costo_vehiculo = p_compra
+        descuento      = gen_descuento()
+        financiado     = random.choice(FINANCIADO_VALS)
+        comision       = maybe(round(p_venta_s * random.uniform(0.008, 0.035), 2), 0.90)
+        id_tipo_pago   = random.randint(1, 20)
+        tipo_pago_nom  = dirty(random.choice(TIPOS_PAGO_POOL), 0.15)
+        entidad_fin    = maybe(dirty(random.choice(ENTIDADES_POOL), 0.10), 0.55)
+        plazo          = maybe(random.choice([12,24,36,48,60,72]), 0.55)
+        tasa           = maybe(round(random.uniform(0.5, 2.8), 2), 0.55)
+        req_aprobacion = random.choice([1,0])
+        cantidad       = maybe(1, 0.97)
     else:
-        tipo_cliente = random.choice(['nuevo', 'recurrente'])
-    
-    cliente_nombre = f"{random.choice(nombres)} {random.choice(apellidos)}"
-    cliente_edad = random.randint(18, 70)
-    cliente_genero = random.choice(['M', 'F', 'M', 'F', 'M'])
-    cliente_email = f"cliente{id_cliente}@{random.choice(['gmail.com', 'hotmail.com', 'yahoo.es'])}" if i % 15 != 0 else None
-    
-    # === DATOS DE VEHÍCULO (con problemas) ===
-    id_vehiculo = random.randint(1, 300)
-    marca = random.choice(marcas)
-    modelo = random.choice(modelos_por_marca[marca])
-    
-    if i % 40 == 0:
-        tipo_combustible = "GASOLINA  "  # Espacios
-    elif i % 30 == 0:
-        tipo_combustible = "Diesel"  # Formato incorrecto
-    else:
-        tipo_combustible = random.choice(['Gasolina', 'Diesel', 'Híbrido', 'Eléctrico'])
-    
-    tipo_vehiculo = random.choice(['carro', 'carro', 'carro', 'moto'])
-    año_modelo = random.randint(2018, 2025)
-    cilindraje = random.choice([1000, 1200, 1400, 1600, 1800, 2000, 2400, 3000, 3500])
-    color = random.choice(['Blanco', 'Negro', 'Plata', 'Rojo', 'Azul', 'Gris'])
-    precio_compra = random.randint(30000, 80000)
-    precio_venta_sugerido = random.randint(35000, 100000)
-    
-    # === DATOS DE SUCURSAL ===
-    id_sucursal = random.randint(1, 20)
-    ciudad_sucursal = random.choice(ciudades)
-    nombre_sucursal = f"Sucursal {random.choice(nombres_sucursal)}"
-    tamaño_sucursal = random.choice(['Pequeña', 'Mediana', 'Grande'])
-    zona_sucursal = ciudad_sucursal['region']
-    
-    # === DATOS DE VENDEDOR ===
-    id_vendedor = random.randint(1, 50) if i % 60 != 0 else 999  # Algunos inválidos
-    vendedor_nombre = f"{random.choice(nombres_vendedor)} {random.choice(apellidos)}"
-    vendedor_experiencia = random.randint(0, 15)
-    
-    # === DATOS DE FECHA (con problemas) ===
-    if i % 70 == 0:
-        fecha_venta = None
-    elif i % 45 == 0:
-        fecha_venta = "2024-13-45"  # Fecha inválida
-    elif i % 30 == 0:
-        fecha_venta = (fecha_fin + timedelta(days=30)).strftime('%Y-%m-%d')  # Fecha futura
-    else:
-        dias = random.randint(0, (fecha_fin - fecha_inicio).days)
-        fecha_venta = (fecha_inicio + timedelta(days=dias)).strftime('%Y-%m-%d')
-    
-    # Calcular atributos de fecha
-    if fecha_venta and isinstance(fecha_venta, str) and '-' in fecha_venta:
-        try:
-            fecha_obj = datetime.strptime(fecha_venta, '%Y-%m-%d')
-            mes_venta = fecha_obj.month
-            trimestre_venta = (fecha_obj.month - 1) // 3 + 1
-            año_venta = fecha_obj.year
-            dia_semana_venta = fecha_obj.strftime('%A')
-            es_fin_semana_venta = 1 if fecha_obj.weekday() >= 5 else 0
-        except:
-            mes_venta = None
-            trimestre_venta = None
-            año_venta = None
-            dia_semana_venta = None
-            es_fin_semana_venta = None
-    else:
-        mes_venta = None
-        trimestre_venta = None
-        año_venta = None
-        dia_semana_venta = None
-        es_fin_semana_venta = None
-    
-    # === DATOS DE PAGO ===
-    id_tipo_pago = random.randint(1, 15)
-    tipo_pago_info = next((tp for tp in tipos_pago if tp['id_tipo_pago'] == id_tipo_pago), tipos_pago[0])
-    
-    # === MÉTRICAS DE VENTA (con problemas) ===
-    if i % 55 == 0:
-        descuento = "15%"  # Con porcentaje
-    else:
-        descuento = random.choice([0, 5, 10, 15, 20])
-    
-    if i % 25 == 0:
-        financiado = "SI"  # Texto
-    elif i % 15 == 0:
-        financiado = random.choice(['Y', 'N'])
-    else:
-        financiado = 1 if random.random() < 0.4 else 0
-    
-    precio_venta_final = precio_venta_sugerido
-    try:
-        if isinstance(descuento, (int, float)) or (isinstance(descuento, str) and descuento.replace('%', '').isdigit()):
-            desc_val = float(str(descuento).replace('%', ''))
-            precio_venta_final = precio_venta_sugerido * (1 - desc_val/100)
-    except:
-        pass
-    
-    ventas_data.append({
-        # Claves del hecho
-        'id_venta': i,
-        'tipo_registro': 'VENTA',
-        'fecha_venta': fecha_venta,
-        'id_cliente': id_cliente if i % 80 != 0 else None,  # Algunos nulos
-        'id_vehiculo': id_vehiculo,
-        'id_vendedor': id_vendedor,
-        'id_sucursal': id_sucursal,
-        'id_tipo_pago': id_tipo_pago,
-        
-        # Métricas de venta
-        'cantidad': 1,
-        'precio_venta': precio_venta_final,
-        'costo_vehiculo': precio_compra,
-        'descuento': descuento,
-        'financiado': financiado,
-        'comision_vendedor': round(precio_venta_final * random.uniform(0.01, 0.03), 2),
-        
-        # Atributos de tiempo (dim_Tiempo)
-        'mes_venta': mes_venta,
-        'trimestre_venta': trimestre_venta,
-        'año_venta': año_venta,
-        'dia_semana_venta': dia_semana_venta,
-        'es_fin_semana_venta': es_fin_semana_venta,
-        
-        # Atributos de cliente (dim_Cliente)
-        'cliente_nombre': cliente_nombre,
-        'cliente_edad': cliente_edad,
-        'cliente_genero': cliente_genero,
-        'cliente_tipo': tipo_cliente,
-        'cliente_email': cliente_email,
-        'id_ciudad_cliente': id_ciudad_cliente,
-        'ciudad_cliente': ciudad_cliente,
-        'departamento_cliente': departamento_cliente,
-        'region_cliente': region_cliente,
-        
-        # Atributos de vehículo (dim_Vehiculo)
-        'vehiculo_marca': marca,
-        'vehiculo_modelo': modelo,
-        'vehiculo_tipo': tipo_vehiculo,
-        'vehiculo_año': año_modelo,
-        'vehiculo_cilindraje': cilindraje,
-        'vehiculo_combustible': tipo_combustible,
-        'vehiculo_color': color,
-        
-        # Atributos de sucursal (dim_Sucursal)
-        'sucursal_nombre': nombre_sucursal,
-        'id_ciudad_sucursal': ciudad_sucursal['id_ciudad'],
-        'ciudad_sucursal': ciudad_sucursal['nombre_ciudad'],
-        'departamento_sucursal': ciudad_sucursal['departamento'],
-        'region_sucursal': ciudad_sucursal['region'],
-        'sucursal_tamaño': tamaño_sucursal,
-        'sucursal_zona': zona_sucursal,
-        
-        # Atributos de vendedor (dim_Vendedor)
-        'vendedor_nombre': vendedor_nombre,
-        'vendedor_experiencia': vendedor_experiencia,
-        
-        # Atributos de tipo de pago (dim_TipoPago)
-        'tipo_pago_nombre': tipo_pago_info['tipo_pago'],
-        'entidad_financiera': tipo_pago_info['entidad_financiera'],
-        'plazo_meses': tipo_pago_info['plazo_meses'],
-        'tasa_interes': tipo_pago_info['tasa_interes'],
-        'requiere_aprobacion': tipo_pago_info['requiere_aprobacion'],
-        
-        # Campos de mantenimiento (vacíos para ventas)
-        'id_mantenimiento': None,
-        'fecha_mantenimiento': None,
-        'id_tipo_mantenimiento': None,
-        'tipo_mantenimiento_nombre': None,
-        'tipo_mantenimiento_descripcion': None,
-        'incluye_garantia': None,
-        'meses_garantia': None,
-        'kilometros_garantia': None,
-        'costo_servicio': None,
-        'costo_repuestos': None,
-        'repuestos_usados': None,
-        'horas_taller': None,
-        'kilometraje_vehiculo': None,
+        fecha_venta    = None
+        fecha_mant     = fecha
+        tm             = random.choice(TIPOS_MANTENIMIENTO)
+        id_tipo_mant   = tm['id']
+        nom_mant       = dirty(tm['nombre'], 0.10)
+        desc_mant      = tm['desc']
+        garantia_mant  = tm['garantia']
+        meses_gar      = tm['meses']
+        km_gar         = tm['km']
+        costo_serv     = maybe(random.randint(30, 3000), 0.95)
+        costo_rep      = maybe(random.randint(0, 800), 0.70)
+        rep_usados     = maybe(random.randint(0, 15))
+        horas_taller   = maybe(random.randint(1, 16))
+        km_vehiculo    = maybe(random.randint(500, 150000))
+
+        precio_venta   = None
+        costo_vehiculo = None
+        descuento      = None
+        financiado     = None
+        comision       = None
+        id_tipo_pago   = None
+        tipo_pago_nom  = None
+        entidad_fin    = None
+        plazo          = None
+        tasa           = None
+        req_aprobacion = None
+        cantidad       = None
+
+    records.append({
+        # ── Identificadores ──────────────────
+        'id_venta':               i if tipo_reg == 'VENTA' else None,
+        'tipo_registro':          tipo_reg,
+        'fecha_venta':            fecha_venta,
+        'fecha_mantenimiento':    fecha_mant,
+        'id_cliente':             id_cli,
+        'id_vehiculo':            id_veh,
+        'id_vendedor':            id_vend if tipo_reg == 'VENTA' else None,
+        'id_sucursal':            id_suc,
+        'id_tipo_pago':           id_tipo_pago,
+        'id_tipo_mantenimiento':  id_tipo_mant,
+        # ── Métricas venta ───────────────────
+        'cantidad':               cantidad,
+        'precio_venta':           precio_venta,
+        'costo_vehiculo':         costo_vehiculo,
+        'descuento':              descuento,
+        'financiado':             financiado,
+        'comision_vendedor':      comision,
+        # ── Cliente ──────────────────────────
+        'cliente_nombre':         cli_nombre,
+        'cliente_edad':           cli_edad,
+        'cliente_genero':         cli_gen,
+        'cliente_tipo':           tipo_cli,
+        'cliente_email':          cli_email,
+        'id_ciudad_cliente':      id_ciu_cli,
+        'ciudad_cliente':         ciudad_cli,
+        'departamento_cliente':   depto_cli,
+        'region_cliente':         region_cli,
+        # ── Vehículo ─────────────────────────
+        'vehiculo_marca':         marca,
+        'vehiculo_modelo':        modelo,
+        'vehiculo_tipo':          tipo_veh,
+        'vehiculo_año':           año_mod,
+        'vehiculo_cilindraje':    cilindraje,
+        'vehiculo_combustible':   combustible,
+        'vehiculo_color':         color,
+        # ── Sucursal ─────────────────────────
+        'sucursal_nombre':        nom_suc,
+        'id_ciudad_sucursal':     ciu_suc['id'],
+        'ciudad_sucursal':        ciu_suc['base'],
+        'departamento_sucursal':  ciu_suc['depto'],
+        'region_sucursal':        ciu_suc['region'],
+        'sucursal_tamaño':        tam_suc,
+        'sucursal_zona':          ciu_suc['region'],
+        # ── Vendedor ─────────────────────────
+        'vendedor_nombre':        vend_nom if tipo_reg == 'VENTA' else None,
+        'vendedor_experiencia':   vend_exp if tipo_reg == 'VENTA' else None,
+        # ── Pago ─────────────────────────────
+        'tipo_pago_nombre':       tipo_pago_nom,
+        'entidad_financiera':     entidad_fin,
+        'plazo_meses':            plazo,
+        'tasa_interes':           tasa,
+        'requiere_aprobacion':    req_aprobacion,
+        # ── Mantenimiento ────────────────────
+        'tipo_mantenimiento_nombre':       nom_mant,
+        'tipo_mantenimiento_descripcion':  desc_mant,
+        'incluye_garantia':        garantia_mant,
+        'meses_garantia':          meses_gar,
+        'kilometros_garantia':     km_gar,
+        'costo_servicio':          costo_serv,
+        'costo_repuestos':         costo_rep,
+        'repuestos_usados':        rep_usados,
+        'horas_taller':            horas_taller,
+        'kilometraje_vehiculo':    km_vehiculo,
     })
 
-# Generar datos de mantenimiento (800 registros)
-for i in range(2001, 2801):
-    # Similar a ventas pero con datos de mantenimiento
-    id_cliente = random.randint(1, 500)
-    id_vehiculo = random.randint(1, 300)
-    id_tipo_mantenimiento = random.randint(1, len(tipos_mantenimiento))
-    tipo_mant = tipos_mantenimiento[id_tipo_mantenimiento - 1]
-    
-    # Fecha de mantenimiento (con problemas)
-    if i % 50 == 0:
-        fecha_mantenimiento = "error_fecha"
-    else:
-        dias = random.randint(30, 800)
-        fecha_mantenimiento = (fecha_inicio + timedelta(days=dias)).strftime('%Y-%m-%d')
-    
-    # Calcular atributos de fecha
-    if fecha_mantenimiento and isinstance(fecha_mantenimiento, str) and '-' in fecha_mantenimiento:
-        try:
-            fecha_obj = datetime.strptime(fecha_mantenimiento, '%Y-%m-%d')
-            mes_mant = fecha_obj.month
-            trimestre_mant = (fecha_obj.month - 1) // 3 + 1
-            año_mant = fecha_obj.year
-            dia_semana_mant = fecha_obj.strftime('%A')
-            es_fin_semana_mant = 1 if fecha_obj.weekday() >= 5 else 0
-        except:
-            mes_mant = None
-            trimestre_mant = None
-            año_mant = None
-            dia_semana_mant = None
-            es_fin_semana_mant = None
-    else:
-        mes_mant = None
-        trimestre_mant = None
-        año_mant = None
-        dia_semana_mant = None
-        es_fin_semana_mant = None
-    
-    # Costos de mantenimiento
-    costo_base = random.randint(100, 1500)
-    repuestos = random.randint(0, 5)
-    costo_repuestos = random.randint(0, 800) if repuestos > 0 else 0
-    
-    if i % 40 == 0:
-        repuestos_usados = "muchos"
-    elif i % 25 == 0:
-        repuestos_usados = -repuestos
-    else:
-        repuestos_usados = repuestos
-    
-    # Ciudad para el cliente (aleatoria)
-    ciudad = random.choice(ciudades)
-    
-    ventas_data.append({
-        # Claves del hecho (vacías para mantenimiento)
-        'id_venta': None,
-        'tipo_registro': 'MANTENIMIENTO',
-        'fecha_venta': None,
-        'id_cliente': id_cliente,
-        'id_vehiculo': id_vehiculo,
-        'id_vendedor': None,
-        'id_sucursal': random.randint(1, 20),
-        'id_tipo_pago': None,
-        
-        # Métricas de venta (vacías)
-        'cantidad': None,
-        'precio_venta': None,
-        'costo_vehiculo': None,
-        'descuento': None,
-        'financiado': None,
-        'comision_vendedor': None,
-        
-        # Atributos de tiempo (para mantenimiento)
-        'mes_venta': mes_mant,
-        'trimestre_venta': trimestre_mant,
-        'año_venta': año_mant,
-        'dia_semana_venta': dia_semana_mant,
-        'es_fin_semana_venta': es_fin_semana_mant,
-        
-        # Atributos de cliente
-        'cliente_nombre': f"{random.choice(nombres)} {random.choice(apellidos)}",
-        'cliente_edad': random.randint(18, 70),
-        'cliente_genero': random.choice(['M', 'F', 'M', 'F', 'M']),
-        'cliente_tipo': random.choice(['nuevo', 'recurrente']),
-        'cliente_email': f"cliente{id_cliente}@gmail.com",
-        'id_ciudad_cliente': ciudad['id_ciudad'],
-        'ciudad_cliente': ciudad['nombre_ciudad'],
-        'departamento_cliente': ciudad['departamento'],
-        'region_cliente': ciudad['region'],
-        
-        # Atributos de vehículo (simplificados)
-        'vehiculo_marca': random.choice(marcas),
-        'vehiculo_modelo': random.choice(['Corolla', 'Duster', 'Onix', 'Mazda3']),
-        'vehiculo_tipo': random.choice(['carro', 'moto']),
-        'vehiculo_año': random.randint(2018, 2025),
-        'vehiculo_cilindraje': random.choice([1000, 1400, 1600, 2000]),
-        'vehiculo_combustible': random.choice(['Gasolina', 'Diesel']),
-        'vehiculo_color': random.choice(['Blanco', 'Negro', 'Rojo']),
-        
-        # Atributos de sucursal
-        'sucursal_nombre': f"Sucursal {random.choice(nombres_sucursal)}",
-        'id_ciudad_sucursal': ciudad['id_ciudad'],
-        'ciudad_sucursal': ciudad['nombre_ciudad'],
-        'departamento_sucursal': ciudad['departamento'],
-        'region_sucursal': ciudad['region'],
-        'sucursal_tamaño': random.choice(['Pequeña', 'Mediana', 'Grande']),
-        'sucursal_zona': ciudad['region'],
-        
-        # Atributos de vendedor (vacíos)
-        'vendedor_nombre': None,
-        'vendedor_experiencia': None,
-        
-        # Atributos de tipo de pago (vacíos)
-        'tipo_pago_nombre': None,
-        'entidad_financiera': None,
-        'plazo_meses': None,
-        'tasa_interes': None,
-        'requiere_aprobacion': None,
-        
-        # Campos de mantenimiento
-        'id_mantenimiento': i,
-        'fecha_mantenimiento': fecha_mantenimiento,
-        'id_tipo_mantenimiento': id_tipo_mantenimiento,
-        'tipo_mantenimiento_nombre': tipo_mant['nombre_tipo'],
-        'tipo_mantenimiento_descripcion': tipo_mant['descripcion'],
-        'incluye_garantia': tipo_mant['incluye_garantia'],
-        'meses_garantia': tipo_mant['meses_garantia'],
-        'kilometros_garantia': tipo_mant['kilometros_garantia'],
-        'costo_servicio': costo_base,
-        'costo_repuestos': costo_repuestos,
-        'repuestos_usados': repuestos_usados,
-        'horas_taller': random.randint(1, 8) if i % 30 != 0 else None,
-        'kilometraje_vehiculo': random.randint(5000, 60000),
-    })
+# Mezclar filas
+df = pd.DataFrame(records).sample(frac=1).reset_index(drop=True)
 
-# Crear DataFrame único
-df_unico = pd.DataFrame(ventas_data)
+out_file = f"{OUT_PATH}datos_concesionario_raw.xlsx"
+df.to_excel(out_file, index=False, sheet_name='datos_concesionario')
 
-# ============================================
-# 3. GUARDAR ARCHIVO ÚNICO
-# ============================================
-print("\n" + "=" * 60)
-print("💾 GUARDANDO ARCHIVO ÚNICO DESNORMALIZADO")
-print("=" * 60)
-
-archivo_unico = f"{path}datos_concesionario_raw.xlsx"
-df_unico.to_excel(archivo_unico, index=False, sheet_name='datos_concesionario')
-
-print(f"\n✅ Archivo único guardado: {archivo_unico}")
-print(f"   Total de registros: {len(df_unico)}")
-print(f"   Total de columnas: {len(df_unico.columns)}")
-
-# ============================================
-# 4. REPORTE DE GENERACIÓN
-# ============================================
-print("\n" + "=" * 60)
-print("📊 REPORTE DE GENERACIÓN")
-print("=" * 60)
-
-print("\n📁 Estructura del archivo único:")
-print(f"  • Una sola hoja: 'datos_concesionario'")
-print(f"  • {len(df_unico)} registros combinados:")
-print(f"    - Ventas: {len(df_unico[df_unico['tipo_registro'] == 'VENTA'])} registros")
-print(f"    - Mantenimiento: {len(df_unico[df_unico['tipo_registro'] == 'MANTENIMIENTO'])} registros")
-
-print("\n📊 PROBLEMAS CONTROLADOS EN LOS DATOS:")
-print("  • Fechas nulas, inválidas y futuras")
-print("  • IDs de clientes/vendedores inexistentes")
-print("  • Precios y descuentos con formato de texto y símbolos")
-print("  • Campos categóricos con mayúsculas/minúsculas inconsistentes")
-print("  • Valores nulos en campos críticos")
-print("  • Relaciones referenciales rotas")
-print("  • Datos combinados de ventas y mantenimiento en un mismo archivo")
-
-print("\n🎯 AHORA PUEDES EJECUTAR TU ETL:")
-print("   python main.py")
-print("\n   El ETL procesará el archivo 'datos_concesionario_raw.xlsx'")
-print("   y cargará los datos limpios en PostgreSQL en formato estrella")
-print("=" * 60)
+print(f"✅ Archivo generado: {out_file}")
+print(f"   Total filas  : {len(df)}")
+print(f"   Ventas       : {(df['tipo_registro']=='VENTA').sum()}")
+print(f"   Mantenimiento: {(df['tipo_registro']=='MANTENIMIENTO').sum()}")
+print(f"   Columnas     : {len(df.columns)}")

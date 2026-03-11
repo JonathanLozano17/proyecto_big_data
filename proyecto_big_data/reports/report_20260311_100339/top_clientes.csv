@@ -1,0 +1,21 @@
+﻿id_cliente,nombre_cliente,tipo_cliente,num_compras,total_gastado,ticket_promedio,vehiculos_comprados,compra_maxima
+58,ricardo ramirez cruz,empresarial,7,793135.0,113305.0,7,145859.0
+662,julian ospina ospina,empresarial,7,729907.0,104272.42857142857,7,130035.0
+751,sebastian cruz rios,potencial,7,613160.0,87594.28571428571,6,132647.0
+74,valentina gutierrez castanio,vip,6,552283.0,92047.16666666667,6,144034.0
+283,angela martinez castanio,empresarial,5,551907.0,110381.4,5,142163.0
+43,natalia cardenas cifuentes,recurrente,7,547157.0,78165.28571428571,7,130962.0
+505,monica perez gonzalez,vip,6,532978.0,88829.66666666667,6,140697.0
+887,felipe sanchez toro,potencial,6,527807.0,87967.83333333333,6,159597.0
+543,alejandro rios munoz,recurrente,6,498278.0,83046.33333333333,6,116628.0
+740,valentina moreno espania,potencial,4,478592.0,119648.0,4,163582.0
+109,benjamin ramirez ospina,recurrente,5,474066.0,94813.2,5,150134.0
+14,paola dominguez rodriguez,empresarial,4,449778.0,112444.5,4,143066.0
+595,hernan herrera gonzalez,potencial,5,447781.0,89556.2,5,129112.0
+667,daniela rodriguez cruz,empresarial,4,434722.0,108680.5,4,146689.0
+83,laura martinez gutierrez,recurrente,5,413193.0,82638.6,5,132665.0
+120,valentina ramirez perez,nuevo,6,412185.0,68697.5,6,126535.0
+377,valentina dominguez cruz,nuevo,5,411529.0,82305.8,5,134863.0
+811,ricardo niniez ramirez,empresarial,7,409510.0,58501.42857142857,7,139818.0
+895,patricia herrera martinez,recurrente,5,406210.0,81242.0,5,156482.0
+380,sofia martinez ospina,empresarial,4,394467.0,98616.75,4,159395.0

@@ -1,586 +1,528 @@
-import pandas as pd
-import numpy as np
-from sklearn.model_selection import train_test_split, cross_val_score, GridSearchCV
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import StandardScaler, LabelEncoder
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-import joblib
-import logging
-from pathlib import Path
+"""
+predictions.py  —  Predicciones de precios, ventas futuras y segmentación RFM.
+
+Uso:
+    python predictions.py
+    python predictions.py --db data/processed/concesionario.db --months 6
+"""
+
+import argparse
 import json
+import logging
+import sys
+from datetime import datetime
+from pathlib import Path
+
+import joblib
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import seaborn as sns
-from datetime import datetime, timedelta
-from ..database.connection import DatabaseManager
+import sqlite3
+
+from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+
+# ── Encoding para Windows ──────────────────────────────────────────────────────
+if sys.platform == 'win32':
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except Exception:
+        pass
+
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s [%(levelname)s] %(message)s',
+                    datefmt='%H:%M:%S')
+log = logging.getLogger(__name__)
+
+# ──────────────────────────────────────────────────────────────────────────────
+# DATABASE MANAGER (autocontenido)
+# ──────────────────────────────────────────────────────────────────────────────
+
+class DatabaseManager:
+    def __init__(self, db_path: str = 'data/processed/concesionario.db'):
+        self.db_path = db_path
+
+    def execute_query(self, query: str, params=None) -> pd.DataFrame:
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                return pd.read_sql_query(query, conn, params=params)
+        except Exception as e:
+            log.error(f"Query error: {e}")
+            return pd.DataFrame()
+
+    def table_columns(self, table: str) -> list:
+        df = self.execute_query(f"PRAGMA table_info({table})")
+        return df['name'].tolist() if not df.empty else []
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# VEHICLE PRICE PREDICTOR
+# ──────────────────────────────────────────────────────────────────────────────
 
 class VehiclePricePredictor:
-    """Predictor de precios de vehículos"""
-    
-    def __init__(self, db_path: str = None):
-        self.db_manager = DatabaseManager(db_path)
-        self.models = {}
+    """Entrena y utiliza modelos ML para predecir el precio de venta de vehículos."""
+
+    def __init__(self, db_path: str = 'data/processed/concesionario.db'):
+        self.db = DatabaseManager(db_path)
+        self.models: dict = {}
         self.scaler = StandardScaler()
-        self.label_encoders = {}
-        self.model_dir = Path(__file__).parent.parent.parent / 'models'
+        self.label_encoders: dict = {}
+        self.feature_cols: list = []
+        self.model_dir = Path('models')
         self.model_dir.mkdir(parents=True, exist_ok=True)
-        
+
+    # ── Preparación de datos ──────────────────────────────────────────────────
+
+    def _detect_sucursal_cols(self) -> tuple:
+        """Detecta los nombres reales de las columnas de dim_sucursal."""
+        cols = self.db.table_columns('dim_sucursal')
+        tam = next((c for c in cols if 'tama' in c.lower() or 'tam' in c.lower()), None)
+        zona = next((c for c in cols if 'zona' in c.lower()), None)
+        return tam, zona
+
     def prepare_data(self):
-        """Prepara datos para el modelo de predicción de precios"""
-        query = """
-        SELECT 
-            v.id_vehiculo,
-            v.marca,
-            v.modelo,
-            v.tipo,
-            v.año_modelo,
-            v.cilindraje,
-            v.tipo_combustible,
-            v.color,
-            hv.precio_venta as precio_real,
-            hv.costo_vehiculo,
-            hv.descuento,
-            COALESCE(hv.financiado, 0) as financiado,
-            t.año as año_venta,
-            t.mes as mes_venta,
-            c.edad as edad_cliente,
-            c.genero as genero_cliente,
-            c.tipo_cliente,
-            s.tamaño as tamaño_sucursal,
-            s.zona as zona_sucursal
-        FROM hecho_ventas hv
-        JOIN dim_vehiculo v ON hv.id_vehiculo = v.id_vehiculo
-        JOIN dim_tiempo t ON hv.id_tiempo = t.id_tiempo
-        JOIN dim_cliente c ON hv.id_cliente = c.id_cliente
-        JOIN dim_sucursal s ON hv.id_sucursal = s.id_sucursal
-        WHERE hv.precio_venta IS NOT NULL 
-          AND hv.precio_venta > 0
-        """
-        
-        df = self.db_manager.execute_query(query)
-        
+        tam_col, zona_col = self._detect_sucursal_cols()
+        tam_select  = f"s.{tam_col} AS tamano_sucursal" if tam_col  else "'desconocido' AS tamano_sucursal"
+        zona_select = f"s.{zona_col} AS zona_sucursal"  if zona_col else "'desconocido' AS zona_sucursal"
+
+        # Detectar columna año del vehículo (puede ser 'año_modelo' o 'ano_modelo')
+        veh_cols = self.db.table_columns('dim_vehiculo')
+        anio_col = next((c for c in veh_cols if 'a' in c.lower() and 'o' in c.lower() and 'mod' in c.lower()), 'año_modelo')
+
+        df = self.db.execute_query(f"""
+            SELECT
+                v.id_vehiculo,
+                v.marca,
+                v.modelo,
+                v.tipo,
+                v.{anio_col}           AS anio_modelo,
+                v.cilindraje,
+                v.tipo_combustible,
+                v.color,
+                hv.precio_venta        AS precio_real,
+                hv.costo_vehiculo,
+                COALESCE(hv.descuento, 0) AS descuento,
+                COALESCE(hv.financiado, 0) AS financiado,
+                t.año                  AS anio_venta,
+                t.mes                  AS mes_venta,
+                c.edad                 AS edad_cliente,
+                c.genero               AS genero_cliente,
+                c.tipo_cliente,
+                {tam_select},
+                {zona_select}
+            FROM hecho_ventas hv
+            JOIN dim_vehiculo v ON hv.id_vehiculo = v.id_vehiculo
+            JOIN dim_tiempo   t ON hv.id_tiempo   = t.id_tiempo
+            JOIN dim_cliente  c ON hv.id_cliente  = c.id_cliente
+            JOIN dim_sucursal s ON hv.id_sucursal  = s.id_sucursal
+            WHERE hv.precio_venta IS NOT NULL
+              AND hv.precio_venta > 0
+        """)
+
         if df.empty:
-            logging.error("No hay datos para entrenar el modelo")
+            log.error("No hay datos para entrenar el modelo")
             return None, None
-        
-        # Crear features
-        X = df.drop(['precio_real', 'id_vehiculo'], axis=1, errors='ignore')
+
+        X = df.drop(columns=['precio_real', 'id_vehiculo'], errors='ignore')
         y = df['precio_real']
-        
+        self.feature_cols = X.columns.tolist()
         return X, y
-    
-    def preprocess_features(self, X, fit_encoders=True):
-        """Preprocesa características para el modelo"""
-        X_processed = X.copy()
-        
-        # Identificar columnas numéricas y categóricas
-        numeric_cols = X_processed.select_dtypes(include=[np.number]).columns.tolist()
-        categorical_cols = X_processed.select_dtypes(include=['object']).columns.tolist()
-        
-        # Manejar valores nulos
-        for col in numeric_cols:
-            X_processed[col] = X_processed[col].fillna(X_processed[col].median())
-        
-        for col in categorical_cols:
-            X_processed[col] = X_processed[col].fillna('Desconocido')
-            
-            # Codificar variables categóricas
-            if fit_encoders:
-                self.label_encoders[col] = LabelEncoder()
-                X_processed[col] = self.label_encoders[col].fit_transform(X_processed[col].astype(str))
+
+    # ── Preprocesamiento ──────────────────────────────────────────────────────
+
+    def _preprocess(self, X: pd.DataFrame, fit: bool = True) -> pd.DataFrame:
+        Xp = X.copy()
+        num_cols = Xp.select_dtypes(include=np.number).columns.tolist()
+        cat_cols = Xp.select_dtypes(include='object').columns.tolist()
+
+        # Nulos numéricos
+        for c in num_cols:
+            Xp[c] = Xp[c].fillna(Xp[c].median() if fit else 0)
+
+        # Nulos categóricos + encoding
+        for c in cat_cols:
+            Xp[c] = Xp[c].fillna('desconocido').astype(str)
+            if fit:
+                le = LabelEncoder()
+                vals = Xp[c].tolist()
+                if 'desconocido' not in vals:
+                    vals.append('desconocido')
+                le.fit(vals)
+                self.label_encoders[c] = le
+                Xp[c] = le.transform(Xp[c])
             else:
-                # Usar encoders existentes
-                if col in self.label_encoders:
-                    # Manejar valores no vistos
-                    known_classes = set(self.label_encoders[col].classes_)
-                    X_processed[col] = X_processed[col].apply(
-                        lambda x: x if x in known_classes else 'Desconocido'
+                if c in self.label_encoders:
+                    le = self.label_encoders[c]
+                    known = set(le.classes_)
+                    Xp[c] = Xp[c].apply(
+                        lambda x: le.transform([x])[0] if x in known
+                        else (le.transform(['desconocido'])[0] if 'desconocido' in known else 0)
                     )
-                    X_processed[col] = self.label_encoders[col].transform(X_processed[col].astype(str))
-        
-        # Escalar características numéricas
-        if fit_encoders:
-            X_processed[numeric_cols] = self.scaler.fit_transform(X_processed[numeric_cols])
+
+        # Escalar
+        if fit:
+            Xp[num_cols] = self.scaler.fit_transform(Xp[num_cols])
         else:
-            X_processed[numeric_cols] = self.scaler.transform(X_processed[numeric_cols])
-        
-        return X_processed
-    
-    def train_models(self):
-        """Entrena múltiples modelos y selecciona el mejor"""
+            Xp[num_cols] = self.scaler.transform(Xp[num_cols])
+
+        return Xp
+
+    # ── Entrenamiento ─────────────────────────────────────────────────────────
+
+    def train_models(self) -> dict:
         X, y = self.prepare_data()
         if X is None:
-            return None
-        
-        # Preprocesar
-        X_processed = self.preprocess_features(X, fit_encoders=True)
-        
-        # Dividir datos
-        X_train, X_test, y_train, y_test = train_test_split(
-            X_processed, y, test_size=0.2, random_state=42
-        )
-        
-        # Definir modelos
-        models = {
-            'linear_regression': LinearRegression(),
-            'random_forest': RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1),
-            'gradient_boosting': GradientBoostingRegressor(n_estimators=100, random_state=42)
-        }
-        
-        # Entrenar y evaluar
-        results = {}
-        best_model = None
-        best_score = -np.inf
-        
-        for name, model in models.items():
-            # Entrenar
-            model.fit(X_train, y_train)
-            
-            # Predecir
-            y_pred = model.predict(X_test)
-            
-            # Métricas
-            mae = mean_absolute_error(y_test, y_pred)
-            rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-            r2 = r2_score(y_test, y_pred)
-            
-            # Validación cruzada
-            cv_scores = cross_val_score(model, X_processed, y, cv=5, scoring='r2')
-            
-            results[name] = {
-                'model': model,
-                'mae': float(mae),
-                'rmse': float(rmse),
-                'r2': float(r2),
-                'cv_mean': float(cv_scores.mean()),
-                'cv_std': float(cv_scores.std())
-            }
-            
-            logging.info(f"\n Modelo: {name}")
-            logging.info(f"  MAE: ${mae:,.2f}")
-            logging.info(f"  RMSE: ${rmse:,.2f}")
-            logging.info(f"  R²: {r2:.4f}")
-            logging.info(f"  CV R²: {cv_scores.mean():.4f} (+/- {cv_scores.std()*2:.4f})")
-            
-            # Guardar el mejor modelo
-            if cv_scores.mean() > best_score:
-                best_score = cv_scores.mean()
-                best_model = model
-                self.models[name] = model
-        
-        # Guardar el mejor modelo
-        if best_model:
-            self.save_model(best_model, results)
-            
-            # Gráfico de importancia de características (para Random Forest)
-            if 'random_forest' in models and hasattr(models['random_forest'], 'feature_importances_'):
-                self.plot_feature_importance(
-                    models['random_forest'], 
-                    X.columns.tolist(),
-                    'random_forest_importance.png'
-                )
-        
-        return results
-    
-    def predict_price(self, vehicle_features):
-        """Predice el precio de un vehículo"""
-        if not self.models:
-            # Cargar modelo guardado
-            self.load_model()
-        
-        if not self.models:
-            logging.error("No hay modelo disponible para predicción")
-            return None
-        
-        # Usar el mejor modelo (Random Forest por defecto)
-        model = self.models.get('random_forest', list(self.models.values())[0])
-        
-        # Preprocesar características
-        X = pd.DataFrame([vehicle_features])
-        X_processed = self.preprocess_features(X, fit_encoders=False)
-        
-        # Predecir
-        prediction = model.predict(X_processed)[0]
-        
-        return float(prediction)
-    
-    def save_model(self, model, results):
-        """Guarda el modelo entrenado"""
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        
-        # Guardar modelo
-        model_path = self.model_dir / f'vehicle_price_model_{timestamp}.pkl'
-        joblib.dump(model, model_path)
-        
-        # Guardar preprocesadores
-        preprocessors = {
-            'scaler': self.scaler,
-            'label_encoders': self.label_encoders
-        }
-        preprocessors_path = self.model_dir / f'preprocessors_{timestamp}.pkl'
-        joblib.dump(preprocessors, preprocessors_path)
-        
-        # Guardar resultados
-        results_path = self.model_dir / f'model_results_{timestamp}.json'
-        results_serializable = {}
-        for name, res in results.items():
-            results_serializable[name] = {
-                k: v for k, v in res.items() if k != 'model'
-            }
-        
-        with open(results_path, 'w', encoding='utf-8') as f:
-            json.dump(results_serializable, f, indent=2, default=str)
-        
-        logging.info(f"\n✅ Modelo guardado en: {model_path}")
-        
-        # Guardar como modelo actual
-        joblib.dump(model, self.model_dir / 'vehicle_price_model_current.pkl')
-        joblib.dump(preprocessors, self.model_dir / 'preprocessors_current.pkl')
-    
-    def load_model(self, model_path=None):
-        """Carga el modelo guardado"""
-        if model_path is None:
-            model_path = self.model_dir / 'vehicle_price_model_current.pkl'
-            preprocessors_path = self.model_dir / 'preprocessors_current.pkl'
-        
-        if model_path.exists():
-            self.models['loaded'] = joblib.load(model_path)
-            
-            # Cargar preprocesadores
-            if preprocessors_path.exists():
-                preprocessors = joblib.load(preprocessors_path)
-                self.scaler = preprocessors['scaler']
-                self.label_encoders = preprocessors['label_encoders']
-            
-            logging.info(f"✅ Modelo cargado desde: {model_path}")
-            return True
-        else:
-            logging.warning("No se encontró modelo guardado")
-            return False
-    
-    def plot_feature_importance(self, model, feature_names, filename):
-        """Grafica importancia de características"""
-        if hasattr(model, 'feature_importances_'):
-            importances = model.feature_importances_
-            indices = np.argsort(importances)[::-1]
-            
-            plt.figure(figsize=(12, 6))
-            plt.title("Importancia de Características")
-            plt.bar(range(len(importances)), importances[indices])
-            plt.xticks(range(len(importances)), 
-                      [feature_names[i] for i in indices], 
-                      rotation=45, ha='right')
-            plt.tight_layout()
-            plt.savefig(self.model_dir / filename, dpi=100, bbox_inches='tight')
-            plt.close()
-    
-    def predict_future_sales(self, months_ahead=3):
-        """Predice ventas futuras"""
-        # Obtener datos históricos
-        query = """
-        SELECT 
-            t.fecha_completa,
-            COUNT(v.id_venta) as ventas,
-            SUM(v.precio_venta) as ingresos
-        FROM hecho_ventas v
-        JOIN dim_tiempo t ON v.id_tiempo = t.id_tiempo
-        GROUP BY t.fecha_completa
-        ORDER BY t.fecha_completa
-        """
-        
-        df = self.db_manager.execute_query(query)
-        
-        if df.empty or len(df) < 10:
-            return {'error': 'Datos insuficientes para predicción'}
-        
-        # Convertir fechas
-        df['fecha'] = pd.to_datetime(df['fecha_completa'])
-        df = df.set_index('fecha')
-        
-        # Usar 'ME' en lugar de 'M' para pandas >= 2.2
-        try:
-            # Intentar con 'ME' (nuevo formato)
-            df_monthly = df.resample('ME').sum().reset_index()
-        except:
-            # Fallback a 'M' para versiones antiguas
-            df_monthly = df.resample('M').sum().reset_index()
-        
-        # Modelo simple de series temporales (promedio móvil)
-        df_monthly['ventas_ma'] = df_monthly['ventas'].rolling(window=3).mean()
-        
-        # Último valor conocido
-        last_ventas = df_monthly['ventas'].iloc[-3:].mean()
-        last_ingresos = df_monthly['ingresos'].iloc[-3:].mean()
-        
-        # Predicción simple
-        predictions = []
-        for i in range(1, months_ahead + 1):
-            # Tendencia simple (2% crecimiento mensual asumido)
-            growth_rate = 0.02
-            predicted_ventas = last_ventas * (1 + growth_rate) ** i
-            predicted_ingresos = last_ingresos * (1 + growth_rate) ** i
-            
-            predictions.append({
-                'mes': i,
-                'ventas_predichas': int(predicted_ventas),
-                'ingresos_predichos': float(predicted_ingresos)
-            })
-        
-        # Gráfico
-        plt.figure(figsize=(12, 6))
-        
-        # Histórico
-        plt.plot(df_monthly['fecha'], df_monthly['ventas'], label='Histórico', marker='o')
-        
-        # Predicción
-        last_date = df_monthly['fecha'].iloc[-1]
-        pred_dates = []
-        pred_values = []
-        
-        for i in range(1, months_ahead + 1):
-            # Añadir meses usando dateutil o pandas
-            next_date = last_date + pd.DateOffset(months=i)
-            pred_dates.append(next_date)
-            pred_values.append(predictions[i-1]['ventas_predichas'])
-        
-        plt.plot(pred_dates, pred_values, 'r--', label='Predicción', marker='s')
-        
-        plt.title('Predicción de Ventas')
-        plt.xlabel('Fecha')
-        plt.ylabel('Número de Ventas')
-        plt.legend()
-        plt.grid(True, alpha=0.3)
-        
-        plt.savefig(self.model_dir / 'sales_prediction.png', dpi=100, bbox_inches='tight')
-        plt.close()
-        
-        return {
-            'predictions': predictions,
-            'last_historical': {
-                'ventas': int(last_ventas),
-                'ingresos': float(last_ingresos)
-            },
-            'total_predicted_sales': int(sum(p['ventas_predichas'] for p in predictions)),
-            'total_predicted_revenue': float(sum(p['ingresos_predichos'] for p in predictions))
+            return {}
+
+        Xp = self._preprocess(X, fit=True)
+        X_train, X_test, y_train, y_test = train_test_split(Xp, y, test_size=0.2, random_state=42)
+
+        candidates = {
+            'linear_regression':  LinearRegression(),
+            'random_forest':      RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1),
+            'gradient_boosting':  GradientBoostingRegressor(n_estimators=100, random_state=42),
         }
 
+        results = {}
+        best_name, best_cv, best_model = None, -np.inf, None
+
+        for name, mdl in candidates.items():
+            mdl.fit(X_train, y_train)
+            yp = mdl.predict(X_test)
+            mae  = mean_absolute_error(y_test, yp)
+            rmse = np.sqrt(mean_squared_error(y_test, yp))
+            r2   = r2_score(y_test, yp)
+            cv   = cross_val_score(mdl, Xp, y, cv=5, scoring='r2')
+
+            log.info(f"\n Modelo: {name}")
+            log.info(f"  MAE: ${mae:,.2f}")
+            log.info(f"  RMSE: ${rmse:,.2f}")
+            log.info(f"  R²: {r2:.4f}")
+            log.info(f"  CV R²: {cv.mean():.4f} (+/- {cv.std()*2:.4f})")
+
+            results[name] = dict(mae=float(mae), rmse=float(rmse), r2=float(r2),
+                                 cv_mean=float(cv.mean()), cv_std=float(cv.std()))
+            self.models[name] = mdl
+
+            if cv.mean() > best_cv:
+                best_cv, best_name, best_model = cv.mean(), name, mdl
+
+        if best_model:
+            self._save_model(best_model, results)
+            # Importancia de características (Random Forest)
+            rf = candidates.get('random_forest')
+            if rf and hasattr(rf, 'feature_importances_'):
+                self._plot_feature_importance(rf, X.columns.tolist())
+
+        log.info(f"\n✅ Modelo guardado en: {self.model_dir}")
+        return results
+
+    # ── Predicción de precio ──────────────────────────────────────────────────
+
+    def predict_price(self, features: dict) -> float:
+        if not self.models:
+            if not self._load_model():
+                return 50_000.0
+
+        mdl = self.models.get('random_forest') or next(iter(self.models.values()))
+
+        # Asegurar que el dataframe tiene las mismas columnas que en entrenamiento
+        row = {c: features.get(c, np.nan) for c in self.feature_cols}
+        Xp = self._preprocess(pd.DataFrame([row]), fit=False)
+        try:
+            pred = float(mdl.predict(Xp)[0])
+            return float(np.clip(pred, 10_000, 200_000))
+        except Exception as e:
+            log.error(f"Error predicción: {e}")
+            return 50_000.0
+
+    # ── Predicción de ventas futuras ──────────────────────────────────────────
+
+    def predict_future_sales(self, months_ahead: int = 6) -> dict:
+        df = self.db.execute_query("""
+            SELECT t.fecha_completa,
+                   COUNT(v.id_venta)  AS ventas,
+                   SUM(v.precio_venta) AS ingresos
+            FROM hecho_ventas v
+            JOIN dim_tiempo t ON v.id_tiempo = t.id_tiempo
+            GROUP BY t.fecha_completa
+            ORDER BY t.fecha_completa
+        """)
+
+        if df.empty or len(df) < 10:
+            return {'error': 'Datos insuficientes para predicción'}
+
+        df['fecha'] = pd.to_datetime(df['fecha_completa'])
+        df = df.set_index('fecha')
+
+        # Resample mensual (compatible con pandas >= 2.2 y anteriores)
+        for freq in ('ME', 'M'):
+            try:
+                df_m = df.resample(freq).sum().reset_index()
+                break
+            except Exception:
+                df_m = None
+        if df_m is None or df_m.empty:
+            return {'error': 'No se pudo agregar datos mensuales'}
+
+        # Promedios de últimos 3 meses
+        last_v = df_m['ventas'].iloc[-3:].mean()
+        last_i = df_m['ingresos'].iloc[-3:].mean()
+        growth = 0.02   # 2% mensual asumido
+
+        predictions = [
+            {
+                'mes': i,
+                'ventas_predichas':  int(last_v * (1 + growth) ** i),
+                'ingresos_predichos': float(last_i * (1 + growth) ** i),
+            }
+            for i in range(1, months_ahead + 1)
+        ]
+
+        # Gráfico
+        fig, ax = plt.subplots(figsize=(12, 5))
+        ax.plot(df_m['fecha'], df_m['ventas'], marker='o', label='Histórico')
+        last_date = df_m['fecha'].iloc[-1]
+        pred_dates = [last_date + pd.DateOffset(months=i) for i in range(1, months_ahead + 1)]
+        pred_vals  = [p['ventas_predichas'] for p in predictions]
+        ax.plot(pred_dates, pred_vals, 'r--', marker='s', label='Predicción')
+        ax.set_title('Predicción de Ventas')
+        ax.set_xlabel('Fecha')
+        ax.set_ylabel('Ventas')
+        ax.legend()
+        ax.grid(True, alpha=0.3)
+        plt.tight_layout()
+        plt.savefig(self.model_dir / 'sales_prediction.png', dpi=100, bbox_inches='tight')
+        plt.close()
+
+        return {
+            'predictions':             predictions,
+            'total_predicted_sales':   int(sum(p['ventas_predichas']  for p in predictions)),
+            'total_predicted_revenue': float(sum(p['ingresos_predichos'] for p in predictions)),
+        }
+
+    # ── Persistencia ─────────────────────────────────────────────────────────
+
+    def _save_model(self, model, results: dict):
+        ts = datetime.now().strftime('%Y%m%d_%H%M%S')
+        joblib.dump(model, self.model_dir / f'vehicle_price_model_{ts}.pkl')
+        joblib.dump({'scaler': self.scaler, 'label_encoders': self.label_encoders,
+                     'feature_cols': self.feature_cols},
+                    self.model_dir / f'preprocessors_{ts}.pkl')
+        # Guardar como "current" para carga rápida
+        joblib.dump(model, self.model_dir / 'vehicle_price_model_current.pkl')
+        joblib.dump({'scaler': self.scaler, 'label_encoders': self.label_encoders,
+                     'feature_cols': self.feature_cols},
+                    self.model_dir / 'preprocessors_current.pkl')
+        # Resultados JSON
+        clean = {k: {kk: vv for kk, vv in v.items()} for k, v in results.items()}
+        (self.model_dir / f'model_results_{ts}.json').write_text(
+            json.dumps(clean, indent=2), encoding='utf-8'
+        )
+
+    def _load_model(self) -> bool:
+        mp = self.model_dir / 'vehicle_price_model_current.pkl'
+        pp = self.model_dir / 'preprocessors_current.pkl'
+        if mp.exists():
+            self.models['loaded'] = joblib.load(mp)
+            if pp.exists():
+                pre = joblib.load(pp)
+                self.scaler          = pre['scaler']
+                self.label_encoders  = pre['label_encoders']
+                self.feature_cols    = pre.get('feature_cols', [])
+            return True
+        return False
+
+    def _plot_feature_importance(self, model, feature_names: list):
+        imp = model.feature_importances_
+        idx = np.argsort(imp)[::-1]
+        plt.figure(figsize=(12, 5))
+        plt.title('Importancia de Características')
+        plt.bar(range(len(imp)), imp[idx])
+        plt.xticks(range(len(imp)), [feature_names[i] for i in idx], rotation=45, ha='right')
+        plt.tight_layout()
+        plt.savefig(self.model_dir / 'feature_importance.png', dpi=100, bbox_inches='tight')
+        plt.close()
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# CUSTOMER SEGMENTATION (RFM)
+# ──────────────────────────────────────────────────────────────────────────────
+
 class CustomerSegmentation:
-    """Segmentación de clientes usando RFM"""
-    
-    def __init__(self, db_path: str = None):
-        self.db_manager = DatabaseManager(db_path)
-        self.model_dir = Path(__file__).parent.parent.parent / 'models'
+    """Segmentación RFM de clientes."""
+
+    def __init__(self, db_path: str = 'data/processed/concesionario.db'):
+        self.db = DatabaseManager(db_path)
+        self.model_dir = Path('models')
         self.model_dir.mkdir(parents=True, exist_ok=True)
-    
-    def calculate_rfm(self):
-        """Calcula métricas RFM (Recency, Frequency, Monetary)"""
-        query = """
-        SELECT 
-            c.id_cliente,
-            c.nombre,
-            c.tipo_cliente,
-            c.edad,
-            c.genero,
-            MAX(t.fecha_completa) as ultima_compra,
-            COUNT(v.id_venta) as frecuencia,
-            SUM(COALESCE(v.precio_venta, 0)) as valor_monetario,
-            AVG(v.precio_venta) as ticket_promedio,
-            COUNT(DISTINCT v.id_vehiculo) as vehiculos_comprados
-        FROM dim_cliente c
-        LEFT JOIN hecho_ventas v ON c.id_cliente = v.id_cliente
-        LEFT JOIN dim_tiempo t ON v.id_tiempo = t.id_tiempo
-        GROUP BY c.id_cliente, c.nombre, c.tipo_cliente, c.edad, c.genero
-        """
-        
-        df = self.db_manager.execute_query(query)
-        
+
+    def calculate_rfm(self) -> pd.DataFrame:
+        df = self.db.execute_query("""
+            SELECT c.id_cliente, c.nombre, c.tipo_cliente, c.edad, c.genero,
+                   MAX(t.fecha_completa)            AS ultima_compra,
+                   COUNT(v.id_venta)                AS frecuencia,
+                   SUM(COALESCE(v.precio_venta, 0)) AS valor_monetario,
+                   AVG(v.precio_venta)              AS ticket_promedio,
+                   COUNT(DISTINCT v.id_vehiculo)    AS vehiculos_comprados
+            FROM dim_cliente c
+            LEFT JOIN hecho_ventas v ON c.id_cliente = v.id_cliente
+            LEFT JOIN dim_tiempo   t ON v.id_tiempo  = t.id_tiempo
+            GROUP BY c.id_cliente, c.nombre, c.tipo_cliente, c.edad, c.genero
+        """)
         if df.empty:
             return df
-        
-        # Calcular Recency (días desde última compra)
-        today = pd.Timestamp.now().date()
-        df['ultima_compra'] = pd.to_datetime(df['ultima_compra'])
-        df['recency'] = (pd.Timestamp.now() - df['ultima_compra']).dt.days
-        
-        # Manejar clientes sin compras
-        df['recency'] = df['recency'].fillna(999)
-        df['frecuencia'] = df['frecuencia'].fillna(0)
+
+        now = pd.Timestamp.now()
+        df['ultima_compra']   = pd.to_datetime(df['ultima_compra'], errors='coerce')
+        df['recency']         = (now - df['ultima_compra']).dt.days.fillna(999)
+        df['frecuencia']      = df['frecuencia'].fillna(0)
         df['valor_monetario'] = df['valor_monetario'].fillna(0)
-        
-        # Crear scores RFM (1-5) - manejar posibles errores de qcut
-        try:
-            df['r_score'] = pd.qcut(df['recency'].rank(method='first'), q=5, labels=[5,4,3,2,1])
-        except:
-            # Si hay problemas, usar división por cuantiles manual
-            bins = df['recency'].quantile([0, 0.2, 0.4, 0.6, 0.8, 1.0])
-            df['r_score'] = pd.cut(df['recency'], bins=bins, labels=[5,4,3,2,1], include_lowest=True)
-        
-        try:
-            df['f_score'] = pd.qcut(df['frecuencia'].rank(method='first'), q=5, labels=[1,2,3,4,5])
-        except:
-            bins = df['frecuencia'].quantile([0, 0.2, 0.4, 0.6, 0.8, 1.0])
-            df['f_score'] = pd.cut(df['frecuencia'], bins=bins, labels=[1,2,3,4,5], include_lowest=True)
-        
-        try:
-            df['m_score'] = pd.qcut(df['valor_monetario'].rank(method='first'), q=5, labels=[1,2,3,4,5])
-        except:
-            bins = df['valor_monetario'].quantile([0, 0.2, 0.4, 0.6, 0.8, 1.0])
-            df['m_score'] = pd.cut(df['valor_monetario'], bins=bins, labels=[1,2,3,4,5], include_lowest=True)
-        
-        # Convertir a numérico
-        for col in ['r_score', 'f_score', 'm_score']:
-            df[col] = pd.to_numeric(df[col])
-        
-        # Score total
-        df['rfm_score'] = df['r_score'] + df['f_score'] + df['m_score']
-        
-        # Segmentar clientes
-        def segmentar(row):
-            if row['rfm_score'] >= 13:
-                return 'Campeones'
-            elif row['rfm_score'] >= 10:
-                return 'Leales'
-            elif row['rfm_score'] >= 7:
-                return 'Potenciales'
-            elif row['rfm_score'] >= 4:
-                return 'Prometedores'
-            else:
-                return 'En riesgo'
-        
-        df['segmento'] = df.apply(segmentar, axis=1)
-        
+
+        def _qcut_safe(series, labels):
+            try:
+                return pd.qcut(series.rank(method='first'), q=5, labels=labels)
+            except Exception:
+                cuts = series.quantile([0, .2, .4, .6, .8, 1.0]).unique()
+                if len(cuts) < 2:
+                    return pd.Series(labels[0], index=series.index)
+                return pd.cut(series, bins=cuts, labels=labels[:len(cuts)-1], include_lowest=True)
+
+        df['r_score'] = pd.to_numeric(_qcut_safe(df['recency'],         [5, 4, 3, 2, 1]))
+        df['f_score'] = pd.to_numeric(_qcut_safe(df['frecuencia'],      [1, 2, 3, 4, 5]))
+        df['m_score'] = pd.to_numeric(_qcut_safe(df['valor_monetario'], [1, 2, 3, 4, 5]))
+        df['rfm_score'] = df[['r_score', 'f_score', 'm_score']].sum(axis=1)
+
+        def _segmentar(score):
+            if score >= 13: return 'Campeones'
+            if score >= 10: return 'Leales'
+            if score >= 7:  return 'Prometedores'
+            if score >= 4:  return 'Potenciales'
+            return 'En riesgo'
+
+        df['segmento'] = df['rfm_score'].apply(_segmentar)
         return df
-    
-    def analyze_segments(self):
-        """Analiza los segmentos de clientes"""
+
+    def analyze_segments(self) -> dict:
         df = self.calculate_rfm()
-        
         if df.empty:
             return {'error': 'No hay datos para segmentación'}
-        
-        # Estadísticas por segmento
-        segment_stats = df.groupby('segmento').agg({
-            'id_cliente': 'count',
-            'frecuencia': 'mean',
-            'valor_monetario': ['mean', 'sum'],
-            'ticket_promedio': 'mean'
-        }).round(2)
-        
-        # Gráfico
-        fig, axes = plt.subplots(2, 2, figsize=(15, 10))
-        
-        # Distribución de segmentos
-        segment_counts = df['segmento'].value_counts()
-        axes[0, 0].pie(segment_counts.values, labels=segment_counts.index, autopct='%1.1f%%')
+
+        seg_counts = df['segmento'].value_counts()
+        seg_value  = df.groupby('segmento')['valor_monetario'].sum()
+
+        fig, axes = plt.subplots(2, 2, figsize=(14, 10))
+
+        axes[0, 0].pie(seg_counts.values, labels=seg_counts.index, autopct='%1.1f%%')
         axes[0, 0].set_title('Distribución de Segmentos')
-        
-        # Valor por segmento
-        segment_value = df.groupby('segmento')['valor_monetario'].sum()
-        axes[0, 1].bar(range(len(segment_value)), segment_value.values)
-        axes[0, 1].set_xticks(range(len(segment_value)))
-        axes[0, 1].set_xticklabels(segment_value.index, rotation=45, ha='right')
+
+        xp = range(len(seg_value))
+        axes[0, 1].bar(xp, seg_value.values)
+        axes[0, 1].set_xticks(xp)
+        axes[0, 1].set_xticklabels(seg_value.index, rotation=30, ha='right')
         axes[0, 1].set_title('Valor Total por Segmento')
-        
-        # Frecuencia promedio
-        segment_freq = df.groupby('segmento')['frecuencia'].mean()
-        axes[1, 0].bar(range(len(segment_freq)), segment_freq.values)
-        axes[1, 0].set_xticks(range(len(segment_freq)))
-        axes[1, 0].set_xticklabels(segment_freq.index, rotation=45, ha='right')
+
+        seg_freq = df.groupby('segmento')['frecuencia'].mean()
+        xp2 = range(len(seg_freq))
+        axes[1, 0].bar(xp2, seg_freq.values)
+        axes[1, 0].set_xticks(xp2)
+        axes[1, 0].set_xticklabels(seg_freq.index, rotation=30, ha='right')
         axes[1, 0].set_title('Frecuencia Promedio por Segmento')
-        
-        # Ticket promedio
-        segment_ticket = df.groupby('segmento')['ticket_promedio'].mean()
-        axes[1, 1].bar(range(len(segment_ticket)), segment_ticket.values)
-        axes[1, 1].set_xticks(range(len(segment_ticket)))
-        axes[1, 1].set_xticklabels(segment_ticket.index, rotation=45, ha='right')
+
+        seg_tick = df.groupby('segmento')['ticket_promedio'].mean()
+        xp3 = range(len(seg_tick))
+        axes[1, 1].bar(xp3, seg_tick.values)
+        axes[1, 1].set_xticks(xp3)
+        axes[1, 1].set_xticklabels(seg_tick.index, rotation=30, ha='right')
         axes[1, 1].set_title('Ticket Promedio por Segmento')
-        
+
         plt.tight_layout()
         plt.savefig(self.model_dir / 'customer_segments.png', dpi=100, bbox_inches='tight')
         plt.close()
-        
-        # Guardar resultados
+
         df.to_csv(self.model_dir / 'customer_segments.csv', index=False, encoding='utf-8-sig')
-        
+
         return {
-            'total_clientes': int(len(df)),
-            'segmentos': segment_counts.to_dict(),
-            'segmento_mas_valioso': str(segment_value.idxmax()),
-            'valor_segmento_mas_valioso': float(segment_value.max()),
-            'estadisticas': segment_stats.to_dict()
+            'total_clientes':               int(len(df)),
+            'segmentos':                    seg_counts.to_dict(),
+            'segmento_mas_valioso':         str(seg_value.idxmax()),
+            'valor_segmento_mas_valioso':   float(seg_value.max()),
         }
 
-def main_prediction():
-    """Función principal para predicciones"""
-    logging.basicConfig(level=logging.INFO)
-    
+
+# ──────────────────────────────────────────────────────────────────────────────
+# MAIN
+# ──────────────────────────────────────────────────────────────────────────────
+
+def main(db_path: str = 'data/processed/concesionario.db', months_ahead: int = 6):
     print("=" * 60)
-    print("🔮 MÓDULO DE PREDICCIONES - CONCESIONARIO")
+    print("MODULO DE PREDICCIONES - CONCESIONARIO")
     print("=" * 60)
-    
-    # 1. Predicción de precios
-    print("\n🚗 ENTRENANDO MODELO DE PRECIOS...")
-    price_predictor = VehiclePricePredictor()
-    results = price_predictor.train_models()
-    
+
+    # ── 1. Precio de vehículos ──────────────────────────────────────────────
+    print("\n[1/3] ENTRENANDO MODELO DE PRECIOS...")
+    predictor = VehiclePricePredictor(db_path)
+    results   = predictor.train_models()
+
     if results:
-        best_model = max(results.items(), key=lambda x: x[1]['cv_mean'])[0]
-        print(f"\n✅ Mejor modelo: {best_model}")
-        
+        best = max(results, key=lambda k: results[k]['cv_mean'])
+        print(f"\n  Mejor modelo  : {best}")
+        print(f"  CV R²         : {results[best]['cv_mean']:.4f}")
+        print(f"  MAE           : ${results[best]['mae']:,.2f}")
+
         # Ejemplo de predicción
         ejemplo = {
-            'marca': 'Toyota',
-            'modelo': 'Corolla',
-            'tipo': 'carro',
-            'año_modelo': 2023,
-            'cilindraje': 1800,
-            'tipo_combustible': 'Gasolina',
-            'color': 'Blanco',
-            'costo_vehiculo': 25000,
-            'descuento': 0,
-            'financiado': 0,
-            'año_venta': 2024,
-            'mes_venta': 3,
-            'edad_cliente': 35,
-            'genero_cliente': 'M',
-            'tipo_cliente': 'nuevo',
-            'tamaño_sucursal': 'Mediana',
-            'zona_sucursal': 'Centro'
+            'marca': 'Toyota', 'modelo': 'Corolla', 'tipo': 'carro',
+            'anio_modelo': 2023, 'cilindraje': 1800,
+            'tipo_combustible': 'Gasolina', 'color': 'Blanco',
+            'costo_vehiculo': 25000, 'descuento': 0, 'financiado': 0,
+            'anio_venta': 2024, 'mes_venta': 3,
+            'edad_cliente': 35, 'genero_cliente': 'M', 'tipo_cliente': 'nuevo',
+            'tamano_sucursal': 'mediana', 'zona_sucursal': 'centro',
         }
-        
-        precio_predicho = price_predictor.predict_price(ejemplo)
-        if precio_predicho:
-            print(f"\n💰 Predicción de precio (ejemplo): ${precio_predicho:,.2f}")
-    
-    # 2. Predicción de ventas futuras
-    print("\n📈 PREDICIENDO VENTAS FUTURAS...")
-    sales_pred = price_predictor.predict_future_sales(months_ahead=6)
-    
-    if 'error' not in sales_pred:
-        print(f"\n📊 Predicción para próximos 6 meses:")
-        print(f"  • Ventas totales predichas: {sales_pred['total_predicted_sales']}")
-        print(f"  • Ingresos totales predichos: ${sales_pred['total_predicted_revenue']:,.2f}")
-        
-        for p in sales_pred['predictions']:
-            print(f"    Mes {p['mes']}: {p['ventas_predichas']} ventas, ${p['ingresos_predichos']:,.2f}")
+        precio = predictor.predict_price(ejemplo)
+        print(f"\n  Precio predicho (ejemplo): ${precio:,.2f}")
+
+    # ── 2. Ventas futuras ───────────────────────────────────────────────────
+    print(f"\n[2/3] PREDICIENDO VENTAS FUTURAS ({months_ahead} meses)...")
+    sales = predictor.predict_future_sales(months_ahead=months_ahead)
+
+    if 'error' not in sales:
+        print(f"\n  Ventas totales predichas  : {sales['total_predicted_sales']}")
+        print(f"  Ingresos totales predichos: ${sales['total_predicted_revenue']:,.2f}")
+        for p in sales['predictions']:
+            print(f"    Mes {p['mes']:>2}: {p['ventas_predichas']:>4} ventas | ${p['ingresos_predichos']:>14,.2f}")
     else:
-        print(f"\n⚠️  {sales_pred['error']}")
-    
-    # 3. Segmentación de clientes
-    print("\n👥 ANALIZANDO SEGMENTOS DE CLIENTES...")
-    segmenter = CustomerSegmentation()
-    segments = segmenter.analyze_segments()
-    
-    if 'error' not in segments:
-        print(f"\n📊 Segmentos de clientes:")
-        for segment, count in segments['segmentos'].items():
-            print(f"  • {segment}: {count} clientes")
-        print(f"\n  Segmento más valioso: {segments['segmento_mas_valioso']}")
-        print(f"  Valor: ${segments['valor_segmento_mas_valioso']:,.2f}")
-    
+        print(f"\n  Advertencia: {sales['error']}")
+
+    # ── 3. Segmentación RFM ─────────────────────────────────────────────────
+    print("\n[3/3] SEGMENTACION DE CLIENTES (RFM)...")
+    segmenter = CustomerSegmentation(db_path)
+    segs      = segmenter.analyze_segments()
+
+    if 'error' not in segs:
+        print(f"\n  Total clientes : {segs['total_clientes']}")
+        for seg, cnt in segs['segmentos'].items():
+            print(f"    {seg:<18}: {cnt} clientes")
+        print(f"\n  Segmento mas valioso: {segs['segmento_mas_valioso']}")
+        print(f"  Valor              : ${segs['valor_segmento_mas_valioso']:,.2f}")
+    else:
+        print(f"\n  Advertencia: {segs['error']}")
+
     print("\n" + "=" * 60)
-    print("✅ PREDICCIONES COMPLETADAS")
+    print("PREDICCIONES COMPLETADAS")
     print("=" * 60)
 
-if __name__ == "__main__":
-    main_prediction()
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Predicciones del concesionario')
+    parser.add_argument('--db',     default='data/processed/concesionario.db',
+                        help='Ruta al archivo SQLite')
+    parser.add_argument('--months', type=int, default=6,
+                        help='Meses a predecir (default: 6)')
+    args = parser.parse_args()
+    main(db_path=args.db, months_ahead=args.months)

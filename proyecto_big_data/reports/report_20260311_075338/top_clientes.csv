@@ -1,0 +1,21 @@
+﻿id_cliente,nombre_cliente,tipo_cliente,nombre_ciudad,num_compras,total_gastado,ticket_promedio,vehiculos_comprados,compra_maxima
+231.0,Andrés López,nuevo,N/A,10,657856.75,65785.675,10,89290.5
+341.0,Laura Rodríguez,recurrente,N/A,11,619830.15,56348.19545454546,11,78757.84999999999
+205.0,Laura Sánchez,recurrente,N/A,10,596029.95,59602.994999999995,10,70754.40000000001
+135.0,Laura López,recurrente,N/A,8,580468.8,72558.6,8,88635.0
+252.0,Sofía González,recurrente,N/A,9,573054.0,63672.666666666664,9,81771.25
+270.0,Juan García,recurrente,N/A,8,554621.9,69327.7375,7,84158.5
+109.0,Juan Pérez,nuevo,N/A,9,553947.9,61549.76666666667,9,89287.65
+44.0,Juan García,nuevo,N/A,8,530787.35,66348.41875,8,94695.0
+7.0,Carlos Pérez,nuevo,N/A,8,526121.25,65765.15625,8,88484.0
+353.0,Pedro Pérez,recurrente,N/A,7,524212.7,74887.52857142857,7,90241.0
+34.0,Sofía Sánchez,recurrente,N/A,8,512321.1,64040.1375,8,87910.15
+228.0,Ana Martínez,recurrente,N/A,9,510056.8,56672.97777777778,9,75318.3
+11.0,Laura López,nuevo,N/A,7,508311.9,72615.98571428572,7,84718.65
+122.0,Carlos García,recurrente,N/A,9,500501.55,55611.28333333333,9,80446.5
+216.0,Andrés Pérez,nuevo,N/A,8,499997.45,62499.68125,8,89843.40000000001
+498.0,Juan Sánchez,nuevo,N/A,7,496300.6,70900.08571428571,7,95142.0
+414.0,María Martínez,nuevo,N/A,7,475276.6,67896.65714285713,7,86973.45
+126.0,Luis Ramírez,recurrente,N/A,8,466265.64999999997,58283.206249999996,7,75703.5
+212.0,Valentina González,recurrente,N/A,8,466130.65,58266.33125,8,86032.0
+256.0,Pedro González,nuevo,N/A,7,464479.89999999997,66354.27142857142,7,78428.2

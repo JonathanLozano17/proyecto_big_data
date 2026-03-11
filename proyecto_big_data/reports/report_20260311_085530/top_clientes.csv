@@ -1,0 +1,21 @@
+﻿id_cliente,nombre_cliente,tipo_cliente,nombre_ciudad,num_compras,total_gastado,ticket_promedio,vehiculos_comprados,compra_maxima
+367,ANDRÉS Niñez Fernandez,recurrente,N/A,8,723210.0,90401.25,8,117012.0
+213,Noelia Domínguez Rodríguez,nuevo,N/A,7,636468.0,90924.0,7,119366.0
+253,Raul Espana Domínguez,empresarial,N/A,8,628015.0,78501.875,8,111379.0
+654,Sofia MUÑOZ RODRÍGUEZ,nuevo,N/A,6,544137.0,90689.5,6,118910.0
+525,MARÍA Rodríguez Dominguez,empresarial,N/A,6,539105.0,89850.83333333333,6,115493.0
+243,Maria Fernández González,nuevo,N/A,7,538089.0,76869.85714285714,7,111943.0
+579,Veronica Rodríguez Niñez,vip,N/A,6,527226.0,87871.0,6,109647.0
+6,Angela Sánchez PEÑA,nuevo,N/A,6,522811.0,87135.16666666667,6,115472.0
+358,Jesus Espana Fernández,nuevo,N/A,6,513701.0,85616.83333333333,6,118056.0
+144,Noelia Martínez Espana,vip,N/A,6,509494.0,84915.66666666667,6,113847.0
+416,JOSÉ SÁNCHEZ Dominguez,recurrente,N/A,6,508218.0,84703.0,6,110070.0
+595,Andres Sánchez MARTÍNEZ,empresarial,N/A,5,506071.0,101214.2,5,114869.0
+209,María Pena Gonzalez,nuevo,N/A,8,503681.0,62960.125,8,108774.0
+387,BÁRBARA ÁLVAREZ ESPAÑA,empresarial,N/A,7,501965.0,71709.28571428571,7,101695.0
+350,Estefanía Castano Garcia,vip,N/A,7,500963.0,71566.14285714286,7,108628.0
+275,BÁRBARA Sánchez MUÑOZ,nuevo,N/A,7,494657.0,70665.28571428571,7,117242.0
+186,Gabriela MUÑOZ Espana,nuevo,N/A,6,488343.0,81390.5,6,112917.0
+776,Raúl González PÉREZ,nuevo,N/A,6,480874.0,80145.66666666667,6,118411.0
+445,JULIÁN Rodriguez López,nuevo,N/A,5,476858.0,95371.6,5,109361.0
+291,JULIÁN García López,nuevo,N/A,5,476113.0,95222.6,5,113501.0

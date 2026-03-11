@@ -1,0 +1,21 @@
+id_tipo_pago,tipo_pago,entidad_financiera,plazo_meses,tasa_interes,requiere_aprobacion
+1.0,credito,no identificado,0.0,1.13,1.0
+2.0,credito,colpatria,24.0,2.59,1.0
+3.0,contado,no identificado,24.0,1.41,1.0
+4.0,credito,no identificado,0.0,2.73,0.0
+5.0,credito,banco popular,24.0,0.0,1.0
+6.0,contado,banco de bogota,0.0,1.23,1.0
+7.0,contado,no identificado,36.0,0.83,0.0
+8.0,leasing,no identificado,24.0,2.28,1.0
+9.0,credito,no identificado,0.0,0.0,0.0
+10.0,contado,no identificado,72.0,0.77,1.0
+11.0,contado,colpatria,60.0,1.59,0.0
+12.0,contado,no identificado,0.0,1.89,1.0
+13.0,contado,no identificado,60.0,0.7,0.0
+14.0,credito,no identificado,48.0,1.58,1.0
+15.0,contado,davivienda,72.0,0.0,0.0
+16.0,credito,no identificado,0.0,0.0,1.0
+17.0,contado,bbva,48.0,2.72,1.0
+18.0,contado,banco de bogota,12.0,1.18,1.0
+19.0,credito,bancolombia,0.0,0.0,0.0
+20.0,contado,no identificado,0.0,0.0,0.0

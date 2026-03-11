@@ -1,0 +1,31 @@
+id_sucursal,nombre,id_ciudad,tamaño,zona
+13,Sucursal El Poblado,7,Pequeño,Oeste
+28,Sucursal Autopista,10,Mediana,Centro
+5,Sucursal Sur,7,Grande,Oeste
+2,Sucursal Norte,10,Pequeño,Centro
+8,Sucursal Centro,1,Pequeño,Centro
+27,Sucursal Occidente,1,Grande,Centro
+29,Sucursal Calle 80,3,Pequeño,Sur
+6,Sucursal Sur,8,Mediano,Este
+22,Sucursal Autopista,7,Mediana,Oeste
+12,Sucursal Oriente,5,Grande,Norte
+1,Sucursal Sur,9,Grande,Norte
+10,Sucursal Centro,1,Grande,Centro
+16,Sucursal Calle 80,4,Mediano,Norte
+18,Sucursal Norte,3,Pequeño,Sur
+30,Sucursal Occidente,8,Grande,Este
+15,Sucursal Oriente,4,Pequeña,Norte
+19,Sucursal Calle 80,2,Mediano,Norte
+4,Sucursal Sur,6,Mediano,Este
+21,Sucursal Sur,7,Mediano,Oeste
+7,Sucursal Carrera 7,3,Mediano,Sur
+11,Sucursal Sur,7,Pequeño,Oeste
+14,Sucursal Calle 80,9,Mediano,Norte
+26,Sucursal Carrera 7,10,Mediana,Centro
+24,Sucursal Centro,9,Mediano,Norte
+3,Sucursal Sur,6,Pequeña,Este
+20,Sucursal Occidente,3,Pequeña,Sur
+9,Sucursal El Poblado,2,Pequeña,Norte
+23,Sucursal Centro,10,Grande,Centro
+25,Sucursal Autopista,9,Mediana,Norte
+17,Sucursal Autopista,5,Mediano,Norte

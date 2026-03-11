@@ -1,0 +1,21 @@
+﻿id_cliente,nombre_cliente,tipo_cliente,num_compras,total_gastado,ticket_promedio,vehiculos_comprados,compra_maxima
+850,maria garcia fernandez,empresarial,8,635371.0,79421.375,8,132335.0
+885,alvaro lopez cruz,potencial,7,629345.0,89906.42857142857,7,121360.0
+362,laura rios herrera,potencial,6,595398.0,99233.0,6,146662.0
+605,carolina moreno perez,potencial,6,560042.0,93340.33333333333,6,143263.0
+76,alvaro espania toro,potencial,5,531924.0,106384.8,5,154347.0
+722,ricardo gutierrez cruz,potencial,4,528713.0,132178.25,4,150347.0
+619,veronica pena cruz,recurrente,5,523874.0,104774.8,5,150009.0
+858,hernan munioz herrera,recurrente,5,506797.0,101359.4,5,137246.0
+526,mauricio herrera herrera,recurrente,6,498893.0,83148.83333333333,6,155078.0
+706,mauricio alvarez dominguez,nuevo,5,491714.0,98342.8,5,138702.0
+892,sofia cifuentes ramirez,empresarial,5,476767.0,95353.4,5,127597.0
+731,paola cifuentes gonzalez,potencial,7,476214.0,68030.57142857143,7,139666.0
+141,monica munioz ospina,nuevo,6,468292.0,78048.66666666667,6,138190.0
+72,monica martinez espana,vip,4,445945.0,111486.25,4,148811.0
+226,carolina vargas sanchez,recurrente,4,433459.0,108364.75,4,124649.0
+416,felipe lopez fernandez,recurrente,7,431748.0,71958.0,7,144054.0
+264,maria garcia vargas,empresarial,5,430541.0,107635.25,5,144765.0
+398,felipe herrera herrera,recurrente,8,427934.0,53491.75,8,105242.0
+422,ricardo cardenas vargas,empresarial,4,426274.0,106568.5,4,141466.0
+214,jose niniez fernandez,potencial,5,419512.0,83902.4,5,140940.0

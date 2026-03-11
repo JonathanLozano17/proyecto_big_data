@@ -1,0 +1,881 @@
+﻿id_vendedor,nombre_vendedor,experiencia,sucursal,ventas_realizadas,ingresos_generados,ticket_promedio,comision_total,clientes_atendidos
+30.0,julian dominguez,18,sucursal occidente,7,746173.0,106596.14285714286,13034.32,7
+25.0,alvaro cardenas,23,sucursal principal,5,591656.0,118331.2,14559.55,5
+33.0,paola toro,20,sucursal principal,8,570594.0,71324.25,10162.8,8
+30.0,julian dominguez,18,sucursal principal,5,538885.0,107777.0,12801.37,5
+100.0,monica lopez,11,sucursal carrera 7,6,525243.0,87540.5,12163.19,6
+31.0,sebastian sanchez,8,sucursal aeropuerto,7,519844.0,74263.42857142857,15035.91,7
+8.0,raul castanio,7,sucursal centro,5,516668.0,103333.6,9310.029999999999,5
+41.0,mauricio dominguez,15,sucursal oriente,6,513663.0,85610.5,7227.01,6
+77.0,alvaro rios,14,sucursal occidente,5,506780.0,101356.0,13779.97,5
+32.0,angela fernandez,17,sucursal centro,5,497517.0,99503.4,8641.12,5
+8.0,raul castanio,7,sucursal occidente,5,491116.0,98223.2,8586.78,5
+9.0,camilo herrera,23,sucursal industrial,6,473351.0,78891.83333333333,12891.75,6
+20.0,alejandro moreno,0,sucursal principal,5,466500.0,93300.0,15126.56,5
+52.0,carolina ospina,1,sucursal industrial,9,459136.0,51015.11111111111,12545.24,9
+53.0,carolina martinez,5,sucursal centro,6,454423.0,75737.16666666667,7225.799999999999,6
+5.0,alejandro vargas,2,sucursal principal,6,429730.0,71621.66666666667,12219.14,6
+16.0,ricardo castanio,8,sucursal principal,5,428496.0,85699.2,4528.33,5
+18.0,paola cruz,6,sucursal aeropuerto,5,424844.0,84968.8,5559.95,5
+73.0,andres castano,18,sucursal aeropuerto,6,419445.0,69907.5,10058.58,6
+48.0,laura espana,11,sucursal aeropuerto,4,414453.0,103613.25,6093.95,4
+39.0,alejandro munoz,7,sucursal carrera 7,4,411287.0,102821.75,9257.6,4
+83.0,ricardo cardenas,18,sucursal calle 80,6,411046.0,82209.2,12968.210000000001,6
+96.0,maria garcia,16,sucursal aeropuerto,5,409323.0,81864.6,8904.56,5
+85.0,paola garcia,14,sucursal principal,4,404418.0,101104.5,5802.77,4
+93.0,jesus dominguez,24,sucursal principal,5,403330.0,80666.0,14549.59,5
+13.0,daniela penia,22,sucursal industrial,4,402050.0,100512.5,6963.57,4
+91.0,jesus cardenas,4,sucursal principal,4,392518.0,98129.5,9244.12,4
+80.0,maria gutierrez,16,sucursal centro,5,388338.0,77667.6,10009.1,5
+88.0,ricardo rodriguez,12,sucursal carrera 7,6,385404.0,64234.0,6065.549999999999,6
+45.0,carolina toro,7,sucursal principal,5,382841.0,76568.2,11434.86,5
+22.0,angela munioz,9,sucursal principal,4,377456.0,94364.0,4821.78,4
+39.0,alejandro munoz,7,sucursal principal,4,375397.0,93849.25,6325.12,4
+87.0,claudia cardenas,0,sucursal autopista,4,372644.0,93161.0,6914.84,4
+71.0,alvaro perez,0,sucursal principal,7,369646.0,52806.57142857143,10840.07,7
+67.0,benjamin cifuentes,14,sucursal occidente,6,369188.0,61531.333333333336,9280.25,6
+50.0,ricardo ramirez,23,sucursal centro,4,367263.0,91815.75,6603.81,4
+8.0,raul castanio,7,sucursal industrial,6,365865.0,60977.5,5659.18,6
+73.0,andres castano,18,sucursal principal,6,365608.0,60934.666666666664,7571.9,6
+44.0,andres gonzalez,22,sucursal norte,4,363086.0,90771.5,6868.48,4
+10.0,natalia lopez,21,sucursal norte,3,362487.0,120829.0,7183.3099999999995,3
+51.0,angela cruz,19,sucursal principal,5,362371.0,72474.2,8406.66,5
+47.0,camilo munioz,0,sucursal aeropuerto,6,356926.0,59487.666666666664,10420.76,6
+68.0,daniela castanio,2,sucursal centro,6,355635.0,59272.5,8725.15,6
+10.0,natalia lopez,21,sucursal principal,6,347885.0,57980.833333333336,13538.98,6
+46.0,jesus dominguez,17,sucursal centro,3,343846.0,114615.33333333333,4356.72,3
+78.0,patricia sanchez,2,sucursal industrial,3,343476.0,114492.0,10203.21,3
+33.0,paola toro,20,sucursal autopista,6,336012.0,67202.4,6455.09,6
+32.0,angela fernandez,17,sucursal oriente,3,332629.0,110876.33333333333,4525.68,3
+75.0,benjamin martinez,17,sucursal principal,10,330356.0,36706.22222222222,9924.28,10
+21.0,patricia perez,7,sucursal calle 80,5,328939.0,65787.8,7449.18,5
+9.0,camilo herrera,23,sucursal principal,4,326508.0,81627.0,9578.78,4
+9.0,camilo herrera,23,sucursal oriente,4,325634.0,81408.5,5629.88,4
+57.0,angela castanio,1,sucursal carrera 7,5,325513.0,65102.6,9310.98,5
+90.0,sofia penia,24,sucursal carrera 7,4,318751.0,79687.75,5749.47,4
+43.0,natalia cruz,5,sucursal principal,3,318408.0,106136.0,8358.33,3
+64.0,jose alvarez,2,sucursal industrial,3,317476.0,105825.33333333333,4502.29,3
+60.0,jesus cardenas,9,sucursal calle 80,3,314517.0,104839.0,6290.95,3
+91.0,jesus cardenas,4,sucursal occidente,4,314177.0,78544.25,6154.61,4
+12.0,julian fernandez,1,sucursal occidente,6,314010.0,52335.0,5856.54,6
+4.0,patricia ramirez,0,sucursal principal,3,311575.0,103858.33333333333,7323.1900000000005,3
+56.0,natalia pena,23,sucursal oriente,4,310522.0,77630.5,6242.74,4
+51.0,angela cruz,19,sucursal carrera 7,4,308974.0,77243.5,5409.58,4
+61.0,alejandro gonzalez,14,sucursal principal,5,308794.0,61758.8,7915.25,5
+49.0,ricardo cardenas,3,sucursal carrera 7,6,305551.0,50925.166666666664,8859.7,6
+78.0,patricia sanchez,2,sucursal occidente,4,304349.0,76087.25,5046.74,4
+16.0,ricardo castanio,8,sucursal centro,4,303145.0,75786.25,5511.049999999999,4
+53.0,carolina martinez,5,sucursal calle 80,4,300092.0,75023.0,7901.02,4
+21.0,patricia perez,7,sucursal occidente,4,299656.0,74914.0,1822.17,4
+31.0,sebastian sanchez,8,sucursal occidente,4,297772.0,74443.0,8226.16,4
+88.0,ricardo rodriguez,12,sucursal principal,5,296231.0,59246.2,3501.15,5
+85.0,paola garcia,14,sucursal industrial,6,294528.0,49088.0,7550.0,6
+65.0,daniela penia,12,sucursal principal,6,294257.0,58851.4,9037.69,6
+100.0,monica lopez,11,sucursal industrial,4,292488.0,73122.0,7536.49,3
+65.0,daniela penia,12,sucursal centro,3,290937.0,96979.0,3996.47,3
+84.0,daniela cifuentes,16,sucursal principal,8,290059.0,36257.375,12322.6,8
+83.0,ricardo cardenas,18,sucursal carrera 7,3,288878.0,96292.66666666667,5291.91,3
+99.0,ricardo cruz,5,sucursal industrial,3,287851.0,95950.33333333333,4388.42,3
+94.0,claudia gonzalez,7,sucursal industrial,3,287738.0,95912.66666666667,5117.65,3
+67.0,benjamin cifuentes,14,sucursal industrial,4,287232.0,71808.0,8153.32,4
+80.0,maria gutierrez,16,sucursal principal,3,287121.0,95707.0,3651.1400000000003,3
+15.0,camilo munioz,9,sucursal centro,3,286877.0,95625.66666666667,5082.2,3
+86.0,felipe martinez,11,sucursal oriente,3,286809.0,95603.0,5365.219999999999,3
+24.0,angela espania,20,sucursal centro,4,285349.0,71337.25,8840.77,4
+24.0,angela espania,20,sucursal industrial,5,282512.0,56502.4,8157.719999999999,5
+58.0,mauricio espana,12,sucursal principal,3,281729.0,93909.66666666667,2178.92,3
+74.0,hernan niniez,9,sucursal oriente,3,281088.0,93696.0,6006.69,3
+84.0,daniela cifuentes,16,sucursal carrera 7,2,280322.0,140161.0,6871.9800000000005,2
+43.0,natalia cruz,5,sucursal industrial,3,280236.0,93412.0,6273.21,3
+70.0,patricia pena,7,sucursal industrial,3,279493.0,93164.33333333333,5397.3099999999995,3
+51.0,angela cruz,19,sucursal norte,3,278896.0,92965.33333333333,7998.6,3
+58.0,mauricio espana,12,sucursal calle 80,3,278408.0,92802.66666666667,6913.57,3
+9.0,camilo herrera,23,sucursal aeropuerto,3,277819.0,92606.33333333333,3483.53,3
+75.0,benjamin martinez,17,sucursal carrera 7,3,276808.0,138404.0,5240.16,3
+3.0,jose rios,25,sucursal centro,4,276787.0,69196.75,5442.5599999999995,4
+68.0,daniela castanio,2,sucursal principal,4,275090.0,68772.5,6031.02,4
+70.0,patricia pena,7,sucursal calle 80,2,274209.0,137104.5,6918.700000000001,2
+85.0,paola garcia,14,sucursal carrera 7,2,271884.0,135942.0,5521.32,2
+12.0,julian fernandez,1,sucursal industrial,4,270859.0,67714.75,11394.77,4
+65.0,daniela penia,12,sucursal industrial,4,269481.0,67370.25,4254.66,4
+41.0,mauricio dominguez,15,sucursal aeropuerto,3,269001.0,89667.0,7480.73,3
+83.0,ricardo cardenas,18,sucursal principal,4,268002.0,67000.5,5804.85,4
+54.0,jose martinez,11,sucursal centro,3,267521.0,89173.66666666667,2746.96,3
+79.0,angela munioz,16,sucursal principal,3,266380.0,88793.33333333333,4957.88,3
+22.0,angela munioz,9,sucursal carrera 7,4,265285.0,66321.25,5551.41,4
+83.0,ricardo cardenas,18,sucursal occidente,4,263619.0,65904.75,4919.12,4
+17.0,alvaro penia,14,sucursal aeropuerto,3,263617.0,87872.33333333333,4190.11,3
+96.0,maria garcia,16,sucursal industrial,3,263507.0,87835.66666666667,8944.75,3
+44.0,andres gonzalez,22,sucursal calle 80,3,263005.0,87668.33333333333,4729.59,3
+97.0,alejandro ninez,20,sucursal principal,6,262938.0,43823.0,7175.44,6
+97.0,alejandro ninez,20,sucursal calle 80,5,262656.0,52531.2,6380.3,5
+38.0,paola garcia,17,sucursal principal,6,262354.0,52470.8,8068.1,6
+36.0,laura perez,19,sucursal calle 80,4,261591.0,65397.75,6060.56,4
+87.0,claudia cardenas,0,sucursal industrial,4,260430.0,86810.0,4053.71,4
+91.0,jesus cardenas,4,sucursal carrera 7,3,260197.0,86732.33333333333,6790.879999999999,3
+28.0,paola sanchez,8,sucursal aeropuerto,4,259178.0,64794.5,5229.1900000000005,4
+27.0,carolina sanchez,3,sucursal oriente,4,258949.0,64737.25,6939.6,4
+2.0,claudia ramirez,0,sucursal centro,3,258204.0,86068.0,5561.55,3
+24.0,angela espania,20,sucursal autopista,3,257336.0,85778.66666666667,4599.16,3
+83.0,ricardo cardenas,18,sucursal aeropuerto,2,256629.0,128314.5,5158.389999999999,2
+11.0,sofia garcia,19,sucursal oriente,2,255002.0,127501.0,5859.79,2
+77.0,alvaro rios,14,sucursal norte,3,254752.0,84917.33333333333,6943.76,3
+69.0,monica gonzalez,1,sucursal industrial,2,254646.0,127323.0,6420.8,2
+100.0,monica lopez,11,sucursal principal,3,254432.0,84810.66666666667,5341.26,3
+81.0,laura penia,4,sucursal centro,2,253696.0,126848.0,7041.93,2
+4.0,patricia ramirez,0,sucursal oriente,4,252262.0,63065.5,6467.72,4
+42.0,mauricio rodriguez,20,sucursal calle 80,2,249320.0,124660.0,4896.88,2
+93.0,jesus dominguez,24,sucursal occidente,4,248383.0,62095.75,8908.29,4
+45.0,carolina toro,7,sucursal oriente,3,247472.0,82490.66666666667,6325.8099999999995,3
+84.0,daniela cifuentes,16,sucursal industrial,3,247334.0,82444.66666666667,3369.2599999999998,3
+54.0,jose martinez,11,sucursal principal,4,246184.0,61546.0,7863.57,4
+39.0,alejandro munoz,7,sucursal aeropuerto,3,245710.0,81903.33333333333,3886.2400000000002,3
+74.0,hernan niniez,9,sucursal occidente,3,243463.0,81154.33333333333,4083.06,3
+99.0,ricardo cruz,5,sucursal norte,3,243058.0,81019.33333333333,6586.13,3
+45.0,carolina toro,7,sucursal occidente,4,242914.0,60728.5,5482.33,4
+16.0,ricardo castanio,8,sucursal occidente,3,242511.0,80837.0,3613.71,3
+51.0,angela cruz,19,sucursal oriente,2,242149.0,121074.5,5620.9400000000005,2
+76.0,andres munioz,4,sucursal centro,2,240503.0,120251.5,7933.01,2
+16.0,ricardo castanio,8,sucursal aeropuerto,4,239371.0,59842.75,3886.8900000000003,4
+62.0,paola penia,2,sucursal calle 80,4,238985.0,79661.66666666667,5852.64,4
+71.0,alvaro perez,0,sucursal oriente,3,237960.0,79320.0,1620.35,3
+98.0,raul herrera,15,sucursal principal,4,237686.0,59421.5,7011.42,4
+68.0,daniela castanio,2,sucursal industrial,2,237293.0,118646.5,3554.63,2
+76.0,andres munioz,4,sucursal aeropuerto,3,236879.0,78959.66666666667,4988.42,3
+12.0,julian fernandez,1,sucursal calle 80,4,235657.0,58914.25,8920.07,4
+86.0,felipe martinez,11,sucursal norte,2,235029.0,117514.5,4753.82,2
+66.0,felipe toro,0,sucursal occidente,3,234808.0,78269.33333333333,2116.8500000000004,3
+15.0,camilo munioz,9,sucursal calle 80,4,233915.0,58478.75,4309.83,4
+69.0,monica gonzalez,1,sucursal principal,2,232636.0,116318.0,3644.14,2
+66.0,felipe toro,0,sucursal autopista,2,232614.0,116307.0,4164.049999999999,2
+34.0,claudia alvarez,10,sucursal centro,3,232249.0,77416.33333333333,3791.46,3
+28.0,paola sanchez,8,sucursal oriente,2,231572.0,115786.0,953.43,2
+18.0,paola cruz,6,sucursal norte,2,231565.0,115782.5,4691.73,2
+24.0,angela espania,20,sucursal occidente,2,231372.0,115686.0,6543.91,2
+2.0,claudia ramirez,0,sucursal principal,5,230714.0,46142.8,5769.46,5
+65.0,daniela penia,12,sucursal oriente,2,230030.0,115015.0,2520.92,2
+33.0,paola toro,20,sucursal calle 80,4,229924.0,57481.0,5665.84,4
+82.0,alejandro toro,3,sucursal centro,2,229796.0,114898.0,934.36,2
+59.0,sebastian cardenas,4,sucursal aeropuerto,2,229698.0,114849.0,2882.13,2
+45.0,carolina toro,7,sucursal centro,3,229209.0,76403.0,6516.19,3
+53.0,carolina martinez,5,sucursal industrial,2,229121.0,114560.5,4073.8999999999996,2
+29.0,angela herrera,0,sucursal principal,4,229015.0,57253.75,8873.47,4
+21.0,patricia perez,7,sucursal aeropuerto,3,228911.0,76303.66666666667,2880.48,3
+58.0,mauricio espana,12,sucursal oriente,2,228638.0,114319.0,5383.06,2
+37.0,monica munioz,22,sucursal norte,2,228460.0,114230.0,5510.7,2
+99.0,ricardo cruz,5,sucursal autopista,5,228069.0,45613.8,6894.04,5
+56.0,natalia pena,23,sucursal occidente,3,227308.0,75769.33333333333,5751.280000000001,3
+23.0,natalia garcia,14,sucursal aeropuerto,3,227126.0,75708.66666666667,5122.49,3
+32.0,angela fernandez,17,sucursal principal,2,226159.0,113079.5,7200.46,2
+73.0,andres castano,18,sucursal industrial,4,225441.0,56360.25,7075.9800000000005,4
+90.0,sofia penia,24,sucursal occidente,2,225441.0,112720.5,5282.21,2
+72.0,hernan dominguez,18,sucursal industrial,3,223555.0,74518.33333333333,4692.219999999999,3
+96.0,maria garcia,16,sucursal oriente,2,223408.0,111704.0,3753.53,2
+12.0,julian fernandez,1,sucursal principal,3,223384.0,74461.33333333333,7903.58,3
+23.0,natalia garcia,14,sucursal occidente,5,222962.0,44592.4,6502.66,5
+50.0,ricardo ramirez,23,sucursal principal,3,222733.0,74244.33333333333,4810.42,3
+72.0,hernan dominguez,18,sucursal principal,3,222294.0,74098.0,4839.61,3
+45.0,carolina toro,7,sucursal carrera 7,2,221821.0,110910.5,4954.55,2
+37.0,monica munioz,22,sucursal centro,2,219568.0,109784.0,5745.200000000001,2
+56.0,natalia pena,23,sucursal industrial,5,219256.0,43851.2,7862.59,5
+23.0,natalia garcia,14,sucursal industrial,2,217770.0,108885.0,2126.0,2
+8.0,raul castanio,7,sucursal el poblado,3,216645.0,72215.0,9580.06,3
+9.0,camilo herrera,23,sucursal centro,2,215002.0,107501.0,908.3,2
+66.0,felipe toro,0,sucursal centro,5,214585.0,53646.25,2522.4700000000003,5
+94.0,claudia gonzalez,7,sucursal calle 80,2,212733.0,106366.5,4186.59,2
+95.0,alvaro sanchez,22,sucursal principal,3,212192.0,70730.66666666667,4071.69,3
+37.0,monica munioz,22,sucursal industrial,2,211092.0,105546.0,1044.89,2
+4.0,patricia ramirez,0,sucursal industrial,3,210995.0,70331.66666666667,7158.55,3
+87.0,claudia cardenas,0,sucursal centro,3,210934.0,70311.33333333333,3477.1,3
+60.0,jesus cardenas,9,sucursal centro,2,210871.0,105435.5,6119.44,2
+6.0,angela vargas,4,sucursal aeropuerto,3,210697.0,70232.33333333333,4001.25,3
+81.0,laura penia,4,sucursal industrial,3,209071.0,69690.33333333333,1084.8799999999999,3
+84.0,daniela cifuentes,16,sucursal norte,4,209055.0,52263.75,4870.76,4
+89.0,benjamin gonzalez,8,sucursal principal,4,208540.0,52135.0,8693.93,4
+78.0,patricia sanchez,2,sucursal carrera 7,3,208375.0,69458.33333333333,7354.55,3
+71.0,alvaro perez,0,sucursal industrial,2,208202.0,104101.0,4700.76,2
+50.0,ricardo ramirez,23,sucursal carrera 7,2,208013.0,104006.5,5349.27,2
+15.0,camilo munioz,9,sucursal principal,4,207590.0,51897.5,4608.7699999999995,4
+15.0,camilo munioz,9,sucursal industrial,3,206956.0,68985.33333333333,3805.09,3
+45.0,carolina toro,7,sucursal aeropuerto,2,206570.0,103285.0,3392.83,2
+40.0,alvaro sanchez,24,sucursal industrial,2,206568.0,103284.0,5689.49,2
+2.0,claudia ramirez,0,sucursal calle 80,3,206515.0,68838.33333333333,8168.08,3
+49.0,ricardo cardenas,3,sucursal calle 80,3,205677.0,68559.0,3167.46,3
+78.0,patricia sanchez,2,sucursal oriente,3,205466.0,68488.66666666667,4205.79,3
+31.0,sebastian sanchez,8,sucursal oriente,2,203883.0,101941.5,3372.04,2
+58.0,mauricio espana,12,sucursal centro,2,203696.0,101848.0,3049.29,2
+81.0,laura penia,4,sucursal aeropuerto,2,203380.0,101690.0,1608.71,2
+13.0,daniela penia,22,sucursal aeropuerto,4,203301.0,50825.25,8038.04,4
+43.0,natalia cruz,5,sucursal centro,4,202327.0,67442.33333333333,3981.27,4
+90.0,sofia penia,24,sucursal centro,2,202248.0,101124.0,4385.92,2
+85.0,paola garcia,14,sucursal calle 80,2,202219.0,101109.5,6350.75,2
+29.0,angela herrera,0,sucursal calle 80,2,202132.0,101066.0,5329.32,2
+24.0,angela espania,20,sucursal carrera 7,3,201689.0,67229.66666666667,6850.07,3
+100.0,monica lopez,11,sucursal calle 80,3,200347.0,66782.33333333333,4961.82,3
+27.0,carolina sanchez,3,sucursal carrera 7,2,199537.0,99768.5,4080.0,2
+62.0,paola penia,2,sucursal autopista,2,199399.0,99699.5,2886.52,2
+7.0,jesus garcia,2,sucursal aeropuerto,4,198953.0,49738.25,7630.469999999999,4
+54.0,jose martinez,11,sucursal oriente,3,198871.0,66290.33333333333,6645.200000000001,3
+1.0,angela munoz,22,sucursal centro,3,198386.0,66128.66666666667,3114.53,3
+82.0,alejandro toro,3,sucursal el poblado,2,198032.0,99016.0,1375.69,2
+97.0,alejandro ninez,20,sucursal autopista,3,197383.0,65794.33333333333,7093.75,3
+79.0,angela munioz,16,sucursal oriente,2,197139.0,98569.5,3872.1400000000003,2
+6.0,angela vargas,4,sucursal centro,4,197064.0,49266.0,4888.2300000000005,4
+24.0,angela espania,20,sucursal aeropuerto,2,196690.0,98345.0,6129.83,2
+18.0,paola cruz,6,sucursal industrial,4,196026.0,49006.5,10376.4,4
+86.0,felipe martinez,11,sucursal centro,3,195399.0,65133.0,2302.39,3
+66.0,felipe toro,0,sucursal principal,2,195092.0,97546.0,4672.7,2
+39.0,alejandro munoz,7,sucursal occidente,4,192906.0,64302.0,5182.9400000000005,4
+43.0,natalia cruz,5,sucursal el poblado,2,192857.0,96428.5,5343.2,2
+36.0,laura perez,19,sucursal principal,4,192767.0,64255.666666666664,6680.539999999999,4
+16.0,ricardo castanio,8,sucursal norte,2,192432.0,96216.0,4666.3,2
+49.0,ricardo cardenas,3,sucursal aeropuerto,4,191971.0,47992.75,5542.84,4
+98.0,raul herrera,15,sucursal carrera 7,5,191746.0,38349.2,5033.08,5
+1.0,angela munoz,22,sucursal principal,3,190781.0,63593.666666666664,2633.9,3
+29.0,angela herrera,0,sucursal occidente,2,190650.0,95325.0,3957.5199999999995,2
+60.0,jesus cardenas,9,sucursal autopista,2,190149.0,95074.5,4346.139999999999,2
+14.0,diego espania,8,sucursal oriente,2,190082.0,95041.0,5389.21,2
+28.0,paola sanchez,8,sucursal industrial,2,189947.0,94973.5,1240.5,2
+65.0,daniela penia,12,sucursal norte,2,189711.0,94855.5,2013.62,2
+80.0,maria gutierrez,16,sucursal occidente,4,189601.0,47400.25,2531.94,4
+73.0,andres castano,18,sucursal centro,2,189517.0,94758.5,1322.59,2
+84.0,daniela cifuentes,16,sucursal aeropuerto,3,188857.0,62952.333333333336,4599.01,3
+62.0,paola penia,2,sucursal industrial,4,187595.0,46898.75,7710.34,4
+42.0,mauricio rodriguez,20,sucursal aeropuerto,4,187519.0,46879.75,6527.58,4
+15.0,camilo munioz,9,sucursal norte,2,186940.0,93470.0,4145.03,2
+69.0,monica gonzalez,1,sucursal oriente,2,186375.0,93187.5,3628.74,2
+19.0,paola perez,0,sucursal calle 80,4,186214.0,46553.5,10647.619999999999,4
+18.0,paola cruz,6,sucursal principal,2,186152.0,93076.0,4300.74,2
+98.0,raul herrera,15,sucursal aeropuerto,3,185758.0,61919.333333333336,587.22,3
+13.0,daniela penia,22,sucursal norte,2,185580.0,92790.0,2914.0299999999997,2
+38.0,paola garcia,17,sucursal autopista,2,184402.0,92201.0,4218.61,2
+46.0,jesus dominguez,17,sucursal norte,2,182541.0,91270.5,1813.0700000000002,2
+95.0,alvaro sanchez,22,sucursal occidente,3,181388.0,60462.666666666664,5897.89,3
+74.0,hernan niniez,9,sucursal principal,2,181377.0,90688.5,2504.15,2
+99.0,ricardo cruz,5,sucursal principal,3,181116.0,60372.0,7791.4,3
+98.0,raul herrera,15,sucursal industrial,3,180244.0,60081.333333333336,3279.79,3
+94.0,claudia gonzalez,7,sucursal principal,3,180160.0,90080.0,4539.42,3
+24.0,angela espania,20,sucursal calle 80,2,178972.0,89486.0,1342.58,2
+94.0,claudia gonzalez,7,sucursal aeropuerto,4,178685.0,44671.25,5683.37,4
+17.0,alvaro penia,14,sucursal occidente,3,177848.0,59282.666666666664,3769.92,3
+51.0,angela cruz,19,sucursal aeropuerto,3,177756.0,59252.0,5590.83,3
+19.0,paola perez,0,sucursal industrial,3,177038.0,88519.0,7262.7300000000005,3
+69.0,monica gonzalez,1,sucursal occidente,4,176443.0,44110.75,3749.21,4
+92.0,monica lopez,25,sucursal calle 80,3,175196.0,58398.666666666664,5927.0,3
+63.0,julian gutierrez,18,sucursal carrera 7,3,174484.0,58161.333333333336,4644.31,3
+1.0,angela munoz,22,sucursal aeropuerto,3,174371.0,58123.666666666664,2419.83,3
+57.0,angela castanio,1,sucursal aeropuerto,4,173936.0,43484.0,5931.86,4
+95.0,alvaro sanchez,22,sucursal aeropuerto,4,173548.0,57849.333333333336,3703.2999999999997,4
+5.0,alejandro vargas,2,sucursal oriente,5,173038.0,34607.6,9865.34,5
+62.0,paola penia,2,sucursal norte,3,172732.0,57577.333333333336,3633.5899999999997,3
+85.0,paola garcia,14,sucursal aeropuerto,5,172120.0,34424.0,8602.0,5
+14.0,diego espania,8,sucursal norte,3,171824.0,57274.666666666664,3644.3199999999997,3
+17.0,alvaro penia,14,sucursal oriente,2,171699.0,85849.5,568.14,2
+82.0,alejandro toro,3,sucursal carrera 7,3,171522.0,57174.0,4618.77,3
+97.0,alejandro ninez,20,sucursal carrera 7,2,170525.0,85262.5,2836.65,2
+100.0,monica lopez,11,sucursal oriente,2,170469.0,85234.5,4244.05,2
+88.0,ricardo rodriguez,12,sucursal norte,2,170413.0,85206.5,4014.6499999999996,2
+4.0,patricia ramirez,0,sucursal occidente,3,170310.0,56770.0,6870.6,3
+26.0,alejandro toro,3,sucursal centro,2,169022.0,84511.0,2908.66,2
+4.0,patricia ramirez,0,sucursal centro,4,169017.0,42254.25,3483.03,4
+89.0,benjamin gonzalez,8,sucursal calle 80,2,168744.0,84372.0,902.77,2
+67.0,benjamin cifuentes,14,sucursal aeropuerto,4,167749.0,41937.25,2662.43,4
+78.0,patricia sanchez,2,sucursal norte,2,167384.0,83692.0,4415.3,2
+42.0,mauricio rodriguez,20,sucursal occidente,2,167319.0,83659.5,4083.69,2
+62.0,paola penia,2,sucursal principal,3,166649.0,83324.5,7411.53,3
+33.0,paola toro,20,sucursal industrial,2,166338.0,83169.0,803.56,2
+80.0,maria gutierrez,16,sucursal industrial,2,165836.0,82918.0,4855.66,2
+61.0,alejandro gonzalez,14,sucursal carrera 7,2,165427.0,82713.5,3933.9300000000003,2
+18.0,paola cruz,6,sucursal occidente,2,163932.0,81966.0,3631.71,2
+29.0,angela herrera,0,sucursal industrial,3,163897.0,54632.333333333336,6515.11,3
+25.0,alvaro cardenas,23,sucursal autopista,1,163595.0,163595.0,,1
+55.0,angela niniez,18,sucursal autopista,2,163343.0,81671.5,1235.95,2
+57.0,angela castanio,1,sucursal calle 80,2,162812.0,81406.0,2774.7,2
+48.0,laura espana,11,sucursal occidente,2,162626.0,81313.0,3185.81,2
+13.0,daniela penia,22,sucursal principal,3,162396.0,54132.0,1773.35,3
+66.0,felipe toro,0,sucursal norte,3,162319.0,54106.333333333336,3907.77,3
+2.0,claudia ramirez,0,sucursal norte,2,162222.0,81111.0,3064.76,2
+21.0,patricia perez,7,sucursal industrial,2,162068.0,81034.0,2850.1,2
+72.0,hernan dominguez,18,sucursal autopista,2,161466.0,80733.0,1094.19,2
+16.0,ricardo castanio,8,sucursal oriente,2,161419.0,80709.5,2161.0,2
+92.0,monica lopez,25,sucursal oriente,5,161300.0,40325.0,10524.01,5
+70.0,patricia pena,7,sucursal principal,3,160951.0,53650.333333333336,5136.79,3
+96.0,maria garcia,16,sucursal centro,2,160917.0,80458.5,4494.25,2
+63.0,julian gutierrez,18,sucursal occidente,2,160627.0,80313.5,2382.67,2
+52.0,carolina ospina,1,sucursal autopista,2,160228.0,80114.0,3011.27,2
+59.0,sebastian cardenas,4,sucursal centro,2,160023.0,80011.5,1413.24,2
+80.0,maria gutierrez,16,sucursal autopista,1,159597.0,159597.0,5454.7,1
+32.0,angela fernandez,17,sucursal norte,2,159309.0,79654.5,1724.14,2
+99.0,ricardo cruz,5,sucursal occidente,3,159174.0,53058.0,6066.18,3
+14.0,diego espania,8,sucursal centro,2,157876.0,78938.0,4426.82,2
+20.0,alejandro moreno,0,sucursal norte,2,157297.0,78648.5,2588.71,2
+73.0,andres castano,18,sucursal oriente,2,156885.0,78442.5,2776.54,2
+28.0,paola sanchez,8,sucursal carrera 7,2,156810.0,78405.0,586.59,2
+46.0,jesus dominguez,17,sucursal aeropuerto,3,156535.0,52178.333333333336,2548.58,3
+56.0,natalia pena,23,sucursal principal,2,155228.0,77614.0,1050.44,2
+42.0,mauricio rodriguez,20,sucursal principal,3,155012.0,51670.666666666664,2698.99,3
+94.0,claudia gonzalez,7,sucursal oriente,2,153470.0,76735.0,3914.41,2
+45.0,carolina toro,7,sucursal calle 80,1,153193.0,153193.0,4392.68,1
+91.0,jesus cardenas,4,sucursal norte,2,152609.0,76304.5,7940.35,2
+76.0,andres munioz,4,sucursal el poblado,2,151749.0,75874.5,3726.83,2
+90.0,sofia penia,24,sucursal principal,2,151027.0,75513.5,3677.07,2
+75.0,benjamin martinez,17,sucursal norte,2,150926.0,75463.0,1881.85,2
+79.0,angela munioz,16,sucursal occidente,1,150447.0,150447.0,4572.39,1
+22.0,angela munioz,9,sucursal norte,3,150070.0,50023.333333333336,8028.78,3
+56.0,natalia pena,23,sucursal calle 80,4,149281.0,37320.25,6746.700000000001,4
+52.0,carolina ospina,1,sucursal centro,5,149270.0,29854.0,4088.8,5
+71.0,alvaro perez,0,sucursal calle 80,2,149002.0,74501.0,4253.27,2
+30.0,julian dominguez,18,sucursal centro,2,148895.0,74447.5,2386.69,2
+62.0,paola penia,2,sucursal occidente,2,147896.0,73948.0,7231.799999999999,2
+71.0,alvaro perez,0,sucursal occidente,2,147533.0,73766.5,3182.5299999999997,2
+97.0,alejandro ninez,20,sucursal norte,3,147357.0,49119.0,2534.42,3
+6.0,angela vargas,4,sucursal carrera 7,2,146748.0,73374.0,4126.31,2
+81.0,laura penia,4,sucursal carrera 7,2,146706.0,73353.0,1250.14,2
+73.0,andres castano,18,sucursal autopista,2,146111.0,73055.5,4097.25,2
+93.0,jesus dominguez,24,sucursal oriente,3,146034.0,48678.0,3467.31,3
+79.0,angela munioz,16,sucursal industrial,2,145886.0,72943.0,4276.95,2
+85.0,paola garcia,14,sucursal el poblado,1,145505.0,145505.0,2546.85,1
+30.0,julian dominguez,18,sucursal carrera 7,1,145467.0,145467.0,2383.95,1
+10.0,natalia lopez,21,sucursal calle 80,3,145272.0,48424.0,6930.370000000001,3
+46.0,jesus dominguez,17,sucursal oriente,3,144953.0,48317.666666666664,4483.1,3
+7.0,jesus garcia,2,sucursal principal,3,144250.0,72125.0,825.61,3
+1.0,angela munoz,22,sucursal autopista,3,143401.0,47800.333333333336,1903.63,3
+42.0,mauricio rodriguez,20,sucursal centro,2,143208.0,71604.0,1828.48,2
+41.0,mauricio dominguez,15,sucursal centro,2,143153.0,71576.5,7778.679999999999,2
+7.0,jesus garcia,2,sucursal industrial,2,142848.0,71424.0,3391.3999999999996,2
+77.0,alvaro rios,14,sucursal aeropuerto,1,142566.0,142566.0,3514.1,1
+20.0,alejandro moreno,0,sucursal oriente,4,142117.0,35529.25,3498.95,4
+52.0,carolina ospina,1,sucursal el poblado,2,141725.0,70862.5,1025.41,2
+92.0,monica lopez,25,sucursal aeropuerto,2,140854.0,70427.0,3819.68,2
+63.0,julian gutierrez,18,sucursal industrial,2,140747.0,70373.5,3643.0299999999997,2
+2.0,claudia ramirez,0,sucursal occidente,3,140709.0,46903.0,9818.07,3
+21.0,patricia perez,7,sucursal centro,1,140697.0,140697.0,,1
+26.0,alejandro toro,3,sucursal industrial,3,140663.0,46887.666666666664,5176.280000000001,3
+90.0,sofia penia,24,sucursal industrial,1,140641.0,140641.0,2021.7,1
+86.0,felipe martinez,11,sucursal occidente,1,140156.0,140156.0,,1
+49.0,ricardo cardenas,3,sucursal industrial,2,139846.0,69923.0,4300.03,2
+35.0,carolina martinez,21,sucursal aeropuerto,2,139390.0,69695.0,4194.24,2
+89.0,benjamin gonzalez,8,sucursal industrial,2,139310.0,69655.0,5460.639999999999,2
+46.0,jesus dominguez,17,sucursal principal,3,139091.0,69545.5,4947.65,3
+30.0,julian dominguez,18,sucursal oriente,2,138718.0,69359.0,5656.26,2
+63.0,julian gutierrez,18,sucursal el poblado,1,137923.0,137923.0,2258.36,1
+90.0,sofia penia,24,sucursal calle 80,1,137889.0,137889.0,,1
+44.0,andres gonzalez,22,sucursal principal,5,137687.0,27537.4,4948.91,5
+44.0,andres gonzalez,22,sucursal aeropuerto,2,137403.0,68701.5,5353.7,2
+12.0,julian fernandez,1,sucursal autopista,1,136390.0,136390.0,3251.08,1
+84.0,daniela cifuentes,16,sucursal occidente,2,136285.0,68142.5,6476.39,2
+13.0,daniela penia,22,sucursal centro,1,136259.0,136259.0,2358.12,1
+58.0,mauricio espana,12,sucursal occidente,4,135863.0,33965.75,6990.44,4
+73.0,andres castano,18,sucursal carrera 7,3,135452.0,45150.666666666664,3702.05,3
+100.0,monica lopez,11,sucursal aeropuerto,1,135338.0,135338.0,2428.7,1
+84.0,daniela cifuentes,16,sucursal centro,3,135091.0,45030.333333333336,7661.5,3
+35.0,carolina martinez,21,sucursal centro,1,134754.0,134754.0,,1
+3.0,jose rios,25,sucursal industrial,1,134285.0,134285.0,3084.65,1
+92.0,monica lopez,25,sucursal centro,2,134170.0,67085.0,2869.21,2
+64.0,jose alvarez,2,sucursal centro,2,134119.0,67059.5,2402.53,2
+63.0,julian gutierrez,18,sucursal calle 80,2,133431.0,66715.5,3054.6800000000003,2
+12.0,julian fernandez,1,sucursal carrera 7,2,133333.0,66666.5,1409.64,2
+91.0,jesus cardenas,4,sucursal oriente,2,133133.0,66566.5,4074.95,2
+70.0,patricia pena,7,sucursal carrera 7,2,132673.0,66336.5,1975.26,2
+83.0,ricardo cardenas,18,sucursal centro,4,132475.0,33118.75,3760.13,4
+20.0,alejandro moreno,0,sucursal centro,1,132241.0,132241.0,2535.03,1
+48.0,laura espana,11,sucursal oriente,3,131617.0,43872.333333333336,4721.77,3
+42.0,mauricio rodriguez,20,sucursal oriente,1,130962.0,130962.0,3519.52,1
+94.0,claudia gonzalez,7,sucursal norte,1,130299.0,130299.0,2655.25,1
+92.0,monica lopez,25,sucursal carrera 7,2,130161.0,65080.5,3034.17,2
+100.0,monica lopez,11,sucursal centro,2,129661.0,64830.5,1403.87,2
+78.0,patricia sanchez,2,sucursal calle 80,3,129654.0,43218.0,6884.8099999999995,3
+64.0,jose alvarez,2,sucursal principal,4,129386.0,32346.5,5768.62,4
+76.0,andres munioz,4,sucursal calle 80,2,128425.0,64212.5,5852.04,2
+79.0,angela munioz,16,sucursal centro,3,128135.0,42711.666666666664,3472.66,3
+32.0,angela fernandez,17,sucursal aeropuerto,3,128020.0,42673.333333333336,5716.38,3
+75.0,benjamin martinez,17,sucursal centro,4,127933.0,31983.25,5992.43,4
+22.0,angela munioz,9,sucursal autopista,1,127623.0,127623.0,1404.76,1
+56.0,natalia pena,23,sucursal autopista,1,126703.0,126703.0,4004.92,1
+58.0,mauricio espana,12,sucursal el poblado,1,126647.0,126647.0,3521.74,1
+76.0,andres munioz,4,sucursal principal,3,126000.0,63000.0,11091.97,3
+34.0,claudia alvarez,10,sucursal aeropuerto,4,125947.0,31486.75,3781.68,4
+34.0,claudia alvarez,10,sucursal carrera 7,1,125894.0,125894.0,3658.1,1
+47.0,camilo munioz,0,sucursal occidente,1,125119.0,125119.0,4222.8,1
+66.0,felipe toro,0,sucursal oriente,3,125060.0,41686.666666666664,8907.16,3
+35.0,carolina martinez,21,sucursal principal,3,124992.0,41664.0,4933.17,3
+86.0,felipe martinez,11,sucursal principal,2,124866.0,62433.0,3668.1000000000004,2
+29.0,angela herrera,0,sucursal norte,1,124863.0,124863.0,2833.68,1
+21.0,patricia perez,7,sucursal oriente,2,124804.0,62402.0,568.24,2
+95.0,alvaro sanchez,22,sucursal centro,1,124356.0,124356.0,3984.44,1
+63.0,julian gutierrez,18,sucursal aeropuerto,2,124010.0,62005.0,2351.9,2
+87.0,claudia cardenas,0,sucursal occidente,2,123798.0,61899.0,3905.21,2
+55.0,angela niniez,18,sucursal oriente,1,123671.0,123671.0,1450.49,1
+32.0,angela fernandez,17,sucursal calle 80,2,123437.0,61718.5,974.55,2
+22.0,angela munioz,9,sucursal calle 80,2,123432.0,61716.0,3714.26,2
+78.0,patricia sanchez,2,sucursal aeropuerto,3,122979.0,40993.0,3274.54,3
+50.0,ricardo ramirez,23,sucursal autopista,2,122513.0,61256.5,3568.91,2
+44.0,andres gonzalez,22,sucursal occidente,2,122134.0,61067.0,1932.31,2
+4.0,patricia ramirez,0,sucursal aeropuerto,3,120999.0,40333.0,5140.63,3
+57.0,angela castanio,1,sucursal principal,1,120915.0,120915.0,1782.94,1
+93.0,jesus dominguez,24,sucursal centro,2,120403.0,60201.5,4531.03,2
+62.0,paola penia,2,sucursal carrera 7,2,120390.0,60195.0,1622.35,2
+58.0,mauricio espana,12,sucursal aeropuerto,2,120255.0,60127.5,2176.87,2
+9.0,camilo herrera,23,sucursal occidente,1,119493.0,119493.0,3024.11,1
+32.0,angela fernandez,17,sucursal carrera 7,3,119469.0,59734.5,5238.26,3
+69.0,monica gonzalez,1,sucursal centro,2,119438.0,59719.0,2969.49,2
+57.0,angela castanio,1,sucursal autopista,1,118788.0,118788.0,2181.04,1
+2.0,claudia ramirez,0,sucursal carrera 7,1,118528.0,118528.0,3329.95,1
+40.0,alvaro sanchez,24,sucursal autopista,2,118360.0,59180.0,1956.65,2
+37.0,monica munioz,22,sucursal carrera 7,3,118223.0,39407.666666666664,6675.96,3
+100.0,monica lopez,11,sucursal autopista,3,117699.0,39233.0,1767.91,3
+32.0,angela fernandez,17,sucursal occidente,2,117457.0,58728.5,1632.1699999999998,2
+26.0,alejandro toro,3,sucursal carrera 7,3,117073.0,39024.333333333336,3568.91,3
+49.0,ricardo cardenas,3,sucursal oriente,2,117070.0,58535.0,2758.13,2
+61.0,alejandro gonzalez,14,sucursal norte,2,116636.0,58318.0,2415.0,2
+20.0,alejandro moreno,0,sucursal industrial,4,116577.0,38859.0,5303.29,4
+53.0,carolina martinez,5,sucursal occidente,1,116559.0,116559.0,2188.4,1
+97.0,alejandro ninez,20,sucursal occidente,2,116540.0,58270.0,1771.55,2
+69.0,monica gonzalez,1,sucursal carrera 7,1,115656.0,115656.0,2680.4,1
+14.0,diego espania,8,sucursal industrial,1,115226.0,115226.0,1237.28,1
+78.0,patricia sanchez,2,sucursal centro,2,115059.0,57529.5,3147.9700000000003,2
+54.0,jose martinez,11,sucursal norte,1,114907.0,114907.0,3648.43,1
+73.0,andres castano,18,sucursal calle 80,1,114638.0,114638.0,3765.52,1
+25.0,alvaro cardenas,23,sucursal aeropuerto,3,114402.0,38134.0,5948.63,3
+10.0,natalia lopez,21,sucursal autopista,1,114271.0,114271.0,3755.73,1
+91.0,jesus cardenas,4,sucursal el poblado,1,113999.0,113999.0,1084.46,1
+61.0,alejandro gonzalez,14,sucursal aeropuerto,2,113950.0,56975.0,3586.16,2
+93.0,jesus dominguez,24,sucursal calle 80,3,113613.0,37871.0,3060.85,3
+68.0,daniela castanio,2,sucursal carrera 7,2,113559.0,56779.5,2690.7200000000003,2
+47.0,camilo munioz,0,sucursal oriente,3,113553.0,37851.0,7322.19,3
+53.0,carolina martinez,5,sucursal autopista,1,113314.0,113314.0,3675.76,1
+66.0,felipe toro,0,sucursal el poblado,2,113254.0,56627.0,3735.2200000000003,2
+67.0,benjamin cifuentes,14,sucursal centro,2,113167.0,56583.5,2501.96,2
+65.0,daniela penia,12,sucursal calle 80,3,113016.0,37672.0,2980.83,3
+82.0,alejandro toro,3,sucursal autopista,1,112888.0,112888.0,1678.67,1
+10.0,natalia lopez,21,sucursal industrial,2,112870.0,56435.0,1703.72,2
+45.0,carolina toro,7,sucursal industrial,1,112424.0,112424.0,2609.81,1
+61.0,alejandro gonzalez,14,sucursal industrial,4,111825.0,27956.25,4809.91,4
+90.0,sofia penia,24,sucursal aeropuerto,3,111797.0,37265.666666666664,6080.0,3
+48.0,laura espana,11,sucursal norte,2,111032.0,55516.0,959.46,2
+91.0,jesus cardenas,4,sucursal aeropuerto,2,111028.0,55514.0,3288.88,2
+59.0,sebastian cardenas,4,sucursal carrera 7,1,110893.0,110893.0,3785.83,1
+19.0,paola perez,0,sucursal oriente,1,110071.0,110071.0,2303.06,1
+6.0,angela vargas,4,sucursal principal,2,110026.0,55013.0,1396.58,2
+70.0,patricia pena,7,sucursal aeropuerto,3,109008.0,36336.0,7373.16,3
+38.0,paola garcia,17,sucursal centro,3,108898.0,36299.333333333336,3945.55,3
+36.0,laura perez,19,sucursal industrial,3,108471.0,36157.0,5122.22,3
+40.0,alvaro sanchez,24,sucursal calle 80,2,107642.0,53821.0,7198.09,2
+19.0,paola perez,0,sucursal principal,5,107373.0,21474.6,3874.5299999999997,5
+19.0,paola perez,0,sucursal centro,1,107167.0,107167.0,2715.74,1
+30.0,julian dominguez,18,sucursal industrial,3,107068.0,35689.333333333336,3082.42,3
+7.0,jesus garcia,2,sucursal occidente,2,106699.0,53349.5,3480.0299999999997,2
+58.0,mauricio espana,12,sucursal norte,1,106407.0,106407.0,1638.65,1
+23.0,natalia garcia,14,sucursal centro,2,106044.0,53022.0,2648.03,2
+6.0,angela vargas,4,sucursal autopista,2,105947.0,52973.5,1975.04,2
+21.0,patricia perez,7,sucursal norte,1,105857.0,105857.0,2257.9,1
+34.0,claudia alvarez,10,sucursal principal,3,105761.0,35253.666666666664,4519.78,3
+63.0,julian gutierrez,18,sucursal norte,1,105449.0,105449.0,2183.68,1
+48.0,laura espana,11,sucursal principal,3,105154.0,35051.333333333336,2389.7599999999998,3
+3.0,jose rios,25,sucursal oriente,1,104447.0,104447.0,1369.16,1
+84.0,daniela cifuentes,16,sucursal calle 80,2,104154.0,52077.0,3167.29,2
+47.0,camilo munioz,0,sucursal el poblado,2,104062.0,52031.0,1731.56,2
+64.0,jose alvarez,2,sucursal aeropuerto,2,104011.0,52005.5,4277.14,2
+36.0,laura perez,19,sucursal centro,1,103658.0,103658.0,2972.92,1
+47.0,camilo munioz,0,sucursal calle 80,1,103532.0,103532.0,3095.31,1
+94.0,claudia gonzalez,7,sucursal carrera 7,1,102948.0,102948.0,2018.93,1
+11.0,sofia garcia,19,sucursal centro,3,102664.0,51332.0,4828.22,3
+96.0,maria garcia,16,sucursal principal,2,102411.0,51205.5,2883.38,2
+29.0,angela herrera,0,sucursal centro,1,102277.0,102277.0,1717.51,1
+13.0,daniela penia,22,sucursal carrera 7,2,102274.0,51137.0,2236.02,2
+75.0,benjamin martinez,17,sucursal autopista,3,102172.0,34057.333333333336,5822.639999999999,3
+19.0,paola perez,0,sucursal el poblado,1,101942.0,101942.0,3151.41,1
+71.0,alvaro perez,0,sucursal el poblado,1,101918.0,101918.0,2171.34,1
+85.0,paola garcia,14,sucursal autopista,2,101206.0,50603.0,6665.49,2
+47.0,camilo munioz,0,sucursal autopista,2,100997.0,50498.5,1733.3600000000001,2
+57.0,angela castanio,1,sucursal industrial,2,100966.0,50483.0,4795.17,2
+29.0,angela herrera,0,sucursal autopista,1,100895.0,100895.0,3423.98,1
+12.0,julian fernandez,1,sucursal centro,2,100751.0,50375.5,993.82,2
+64.0,jose alvarez,2,sucursal norte,1,100616.0,100616.0,3457.07,1
+79.0,angela munioz,16,sucursal el poblado,2,100288.0,50144.0,640.73,2
+87.0,claudia cardenas,0,sucursal principal,2,100230.0,50115.0,3158.96,2
+31.0,sebastian sanchez,8,sucursal calle 80,1,100189.0,100189.0,2669.7,1
+1.0,angela munoz,22,sucursal norte,1,100160.0,100160.0,2952.0,1
+71.0,alvaro perez,0,sucursal aeropuerto,2,99748.0,49874.0,3217.97,2
+62.0,paola penia,2,sucursal el poblado,1,99276.0,99276.0,1377.65,1
+43.0,natalia cruz,5,sucursal occidente,1,99092.0,99092.0,2232.84,1
+39.0,alejandro munoz,7,sucursal calle 80,1,99014.0,99014.0,2510.57,1
+52.0,carolina ospina,1,sucursal principal,3,98955.0,32985.0,4098.889999999999,3
+41.0,mauricio dominguez,15,sucursal occidente,3,98623.0,32874.333333333336,3113.9,3
+21.0,patricia perez,7,sucursal principal,2,98573.0,49286.5,4958.38,2
+63.0,julian gutierrez,18,sucursal oriente,2,98421.0,49210.5,2996.95,2
+99.0,ricardo cruz,5,sucursal carrera 7,1,98156.0,98156.0,,1
+74.0,hernan niniez,9,sucursal aeropuerto,3,98144.0,49072.0,2903.57,3
+76.0,andres munioz,4,sucursal occidente,1,97953.0,97953.0,2407.6,1
+15.0,camilo munioz,9,sucursal carrera 7,1,97634.0,97634.0,2237.52,1
+32.0,angela fernandez,17,sucursal industrial,2,97573.0,48786.5,3672.12,2
+88.0,ricardo rodriguez,12,sucursal occidente,2,97557.0,48778.5,4533.28,2
+41.0,mauricio dominguez,15,sucursal norte,3,97120.0,32373.333333333332,7438.31,3
+33.0,paola toro,20,sucursal occidente,1,96949.0,96949.0,1077.03,1
+69.0,monica gonzalez,1,sucursal norte,1,96524.0,96524.0,2275.6,1
+24.0,angela espania,20,sucursal principal,1,96452.0,96452.0,2304.02,1
+8.0,raul castanio,7,sucursal principal,1,96204.0,96204.0,915.34,1
+8.0,raul castanio,7,sucursal aeropuerto,2,96075.0,48037.5,2204.47,2
+75.0,benjamin martinez,17,sucursal oriente,1,95927.0,95927.0,1064.45,1
+65.0,daniela penia,12,sucursal occidente,2,95865.0,47932.5,3196.9300000000003,2
+35.0,carolina martinez,21,sucursal carrera 7,3,95676.0,31892.0,3592.35,3
+8.0,raul castanio,7,sucursal calle 80,1,95605.0,95605.0,1231.86,1
+61.0,alejandro gonzalez,14,sucursal oriente,1,95415.0,95415.0,,1
+64.0,jose alvarez,2,sucursal calle 80,4,95123.0,23780.75,6164.8,4
+58.0,mauricio espana,12,sucursal industrial,2,95121.0,47560.5,2792.95,2
+65.0,daniela penia,12,sucursal autopista,1,95034.0,95034.0,2352.98,1
+3.0,jose rios,25,sucursal carrera 7,3,94754.0,31584.666666666668,3849.3,3
+80.0,maria gutierrez,16,sucursal norte,1,94069.0,94069.0,1607.45,1
+79.0,angela munioz,16,sucursal calle 80,2,93787.0,46893.5,1652.0300000000002,2
+63.0,julian gutierrez,18,sucursal centro,1,93721.0,93721.0,3072.45,1
+94.0,claudia gonzalez,7,sucursal autopista,4,93476.0,23369.0,7582.01,4
+55.0,angela niniez,18,sucursal occidente,3,93058.0,31019.333333333332,2491.13,3
+19.0,paola perez,0,sucursal occidente,1,92269.0,92269.0,1743.46,1
+5.0,alejandro vargas,2,sucursal carrera 7,1,92062.0,92062.0,1574.13,1
+91.0,jesus cardenas,4,sucursal calle 80,1,91922.0,91922.0,1443.59,1
+20.0,alejandro moreno,0,sucursal carrera 7,1,91437.0,91437.0,1893.74,1
+92.0,monica lopez,25,sucursal occidente,2,91400.0,45700.0,2333.12,2
+78.0,patricia sanchez,2,sucursal principal,2,90917.0,45458.5,1837.15,2
+68.0,daniela castanio,2,sucursal aeropuerto,1,90830.0,90830.0,2552.33,1
+89.0,benjamin gonzalez,8,sucursal centro,1,90441.0,90441.0,1867.79,1
+41.0,mauricio dominguez,15,sucursal industrial,2,90266.0,45133.0,1464.6100000000001,2
+40.0,alvaro sanchez,24,sucursal aeropuerto,2,89916.0,44958.0,2667.48,2
+10.0,natalia lopez,21,sucursal aeropuerto,2,89307.0,44653.5,4857.57,2
+13.0,daniela penia,22,sucursal oriente,1,88647.0,88647.0,1154.03,1
+54.0,jose martinez,11,sucursal industrial,2,88546.0,44273.0,4462.0599999999995,2
+87.0,claudia cardenas,0,sucursal aeropuerto,1,87913.0,87913.0,1532.85,1
+46.0,jesus dominguez,17,sucursal calle 80,3,87797.0,29265.666666666668,1622.51,3
+50.0,ricardo ramirez,23,sucursal occidente,2,87629.0,43814.5,1242.47,2
+46.0,jesus dominguez,17,sucursal carrera 7,2,87484.0,43742.0,1907.02,2
+71.0,alvaro perez,0,sucursal carrera 7,1,87474.0,87474.0,2152.2,1
+68.0,daniela castanio,2,sucursal calle 80,3,87241.0,29080.333333333332,2681.35,3
+94.0,claudia gonzalez,7,sucursal occidente,2,86980.0,43490.0,2489.58,2
+17.0,alvaro penia,14,sucursal centro,1,86410.0,86410.0,1604.82,1
+49.0,ricardo cardenas,3,sucursal el poblado,2,86302.0,43151.0,888.23,2
+57.0,angela castanio,1,sucursal occidente,2,85915.0,42957.5,3830.16,2
+4.0,patricia ramirez,0,sucursal calle 80,3,85214.0,28404.666666666668,2489.96,3
+54.0,jose martinez,11,sucursal aeropuerto,3,85131.0,28377.0,3757.63,3
+3.0,jose rios,25,sucursal principal,2,85087.0,42543.5,2212.81,2
+5.0,alejandro vargas,2,sucursal aeropuerto,1,84497.0,84497.0,1410.87,1
+52.0,carolina ospina,1,sucursal norte,2,83866.0,41933.0,1841.88,2
+2.0,claudia ramirez,0,sucursal industrial,3,83811.0,27937.0,2683.1,3
+86.0,felipe martinez,11,sucursal calle 80,2,83645.0,41822.5,2230.66,2
+72.0,hernan dominguez,18,sucursal calle 80,3,83161.0,27720.333333333332,4911.32,3
+75.0,benjamin martinez,17,sucursal calle 80,1,82655.0,82655.0,,1
+67.0,benjamin cifuentes,14,sucursal autopista,2,82557.0,41278.5,682.26,2
+41.0,mauricio dominguez,15,sucursal calle 80,1,82117.0,82117.0,2720.81,1
+65.0,daniela penia,12,sucursal carrera 7,1,81229.0,81229.0,,1
+16.0,ricardo castanio,8,sucursal calle 80,1,80941.0,80941.0,1007.32,1
+41.0,mauricio dominguez,15,sucursal carrera 7,2,80900.0,40450.0,4030.31,2
+53.0,carolina martinez,5,sucursal aeropuerto,1,80129.0,80129.0,2711.49,1
+37.0,monica munioz,22,sucursal aeropuerto,1,79982.0,79982.0,665.12,1
+6.0,angela vargas,4,sucursal oriente,1,79672.0,79672.0,2001.55,1
+2.0,claudia ramirez,0,sucursal oriente,1,79053.0,79053.0,1470.85,1
+34.0,claudia alvarez,10,sucursal autopista,2,78753.0,39376.5,1458.07,2
+28.0,paola sanchez,8,sucursal occidente,1,77979.0,77979.0,720.95,1
+74.0,hernan niniez,9,sucursal calle 80,1,77813.0,77813.0,,1
+53.0,carolina martinez,5,sucursal carrera 7,2,77496.0,77496.0,3172.03,2
+48.0,laura espana,11,sucursal centro,2,76793.0,38396.5,2186.73,2
+98.0,raul herrera,15,sucursal norte,1,76741.0,76741.0,2252.26,1
+89.0,benjamin gonzalez,8,sucursal occidente,1,76697.0,76697.0,1324.73,1
+5.0,alejandro vargas,2,sucursal norte,1,76658.0,76658.0,2061.77,1
+31.0,sebastian sanchez,8,sucursal industrial,2,76432.0,38216.0,4018.8999999999996,2
+99.0,ricardo cruz,5,sucursal oriente,2,76279.0,38139.5,1923.44,2
+69.0,monica gonzalez,1,sucursal calle 80,2,76154.0,38077.0,2994.73,2
+93.0,jesus dominguez,24,sucursal el poblado,1,75916.0,75916.0,1569.08,1
+95.0,alvaro sanchez,22,sucursal autopista,1,75313.0,75313.0,1209.85,1
+100.0,monica lopez,11,sucursal norte,2,75110.0,37555.0,2860.1499999999996,2
+30.0,julian dominguez,18,sucursal autopista,1,75032.0,75032.0,2299.9,1
+1.0,angela munoz,22,sucursal carrera 7,1,74496.0,74496.0,1531.79,1
+25.0,alvaro cardenas,23,sucursal oriente,1,74158.0,74158.0,2065.17,1
+40.0,alvaro sanchez,24,sucursal norte,1,74128.0,74128.0,1772.48,1
+31.0,sebastian sanchez,8,sucursal principal,3,73839.0,24613.0,6689.91,3
+73.0,andres castano,18,sucursal occidente,1,73566.0,73566.0,2403.28,1
+32.0,angela fernandez,17,sucursal el poblado,1,73491.0,73491.0,1716.91,1
+26.0,alejandro toro,3,sucursal occidente,4,73197.0,18299.25,8573.529999999999,4
+80.0,maria gutierrez,16,sucursal carrera 7,1,72892.0,72892.0,1165.42,1
+43.0,natalia cruz,5,sucursal carrera 7,1,72747.0,72747.0,1018.41,1
+27.0,carolina sanchez,3,sucursal centro,1,72535.0,72535.0,1589.51,1
+25.0,alvaro cardenas,23,sucursal occidente,2,72491.0,36245.5,2134.04,2
+10.0,natalia lopez,21,sucursal carrera 7,3,72404.0,36202.0,4406.2699999999995,3
+84.0,daniela cifuentes,16,sucursal el poblado,1,72110.0,72110.0,882.61,1
+98.0,raul herrera,15,sucursal centro,1,71957.0,71957.0,2275.09,1
+10.0,natalia lopez,21,sucursal centro,1,71838.0,71838.0,713.35,1
+28.0,paola sanchez,8,sucursal el poblado,2,71664.0,35832.0,2731.49,2
+22.0,angela munioz,9,sucursal aeropuerto,1,71144.0,71144.0,923.93,1
+2.0,claudia ramirez,0,sucursal aeropuerto,1,71104.0,71104.0,599.25,1
+98.0,raul herrera,15,sucursal autopista,1,70884.0,70884.0,1163.89,1
+88.0,ricardo rodriguez,12,sucursal industrial,2,70743.0,35371.5,1243.73,2
+42.0,mauricio rodriguez,20,sucursal industrial,2,70737.0,35368.5,3986.91,2
+83.0,ricardo cardenas,18,sucursal el poblado,1,70375.0,70375.0,1881.84,1
+59.0,sebastian cardenas,4,sucursal occidente,3,70258.0,23419.333333333332,3862.06,3
+17.0,alvaro penia,14,sucursal el poblado,1,69646.0,69646.0,1242.79,1
+54.0,jose martinez,11,sucursal occidente,2,69626.0,34813.0,4461.23,2
+17.0,alvaro penia,14,sucursal carrera 7,1,69235.0,69235.0,1904.83,1
+93.0,jesus dominguez,24,sucursal norte,1,68936.0,68936.0,1354.24,1
+93.0,jesus dominguez,24,sucursal aeropuerto,2,68855.0,34427.5,1449.04,2
+77.0,alvaro rios,14,sucursal calle 80,2,68834.0,68834.0,5650.51,2
+71.0,alvaro perez,0,sucursal autopista,1,68682.0,68682.0,1717.27,1
+60.0,jesus cardenas,9,sucursal industrial,1,67398.0,67398.0,791.17,1
+36.0,laura perez,19,sucursal autopista,2,67300.0,33650.0,5765.5,2
+49.0,ricardo cardenas,3,sucursal principal,3,66050.0,33025.0,1689.97,3
+30.0,julian dominguez,18,sucursal calle 80,1,65975.0,65975.0,1742.67,1
+84.0,daniela cifuentes,16,sucursal oriente,1,65954.0,65954.0,1811.73,1
+50.0,ricardo ramirez,23,sucursal calle 80,2,65858.0,32929.0,1851.3799999999999,2
+47.0,camilo munioz,0,sucursal centro,1,64403.0,64403.0,2147.2,1
+31.0,sebastian sanchez,8,sucursal autopista,2,64289.0,32144.5,2944.1499999999996,2
+87.0,claudia cardenas,0,sucursal oriente,2,63873.0,31936.5,1635.2800000000002,2
+90.0,sofia penia,24,sucursal norte,1,63860.0,63860.0,566.08,1
+48.0,laura espana,11,sucursal industrial,1,63715.0,63715.0,1287.29,1
+22.0,angela munioz,9,sucursal occidente,2,63535.0,31767.5,2062.48,2
+54.0,jose martinez,11,sucursal calle 80,2,63493.0,31746.5,2793.24,2
+11.0,sofia garcia,19,sucursal calle 80,2,63135.0,63135.0,6633.01,2
+77.0,alvaro rios,14,sucursal el poblado,1,62857.0,62857.0,633.35,1
+64.0,jose alvarez,2,sucursal el poblado,2,62571.0,31285.5,2957.28,2
+81.0,laura penia,4,sucursal principal,1,62473.0,62473.0,615.48,1
+72.0,hernan dominguez,18,sucursal aeropuerto,3,61822.0,20607.333333333332,4758.25,3
+79.0,angela munioz,16,sucursal norte,1,61466.0,61466.0,1349.79,1
+3.0,jose rios,25,sucursal calle 80,3,61091.0,20363.666666666668,6704.5599999999995,3
+25.0,alvaro cardenas,23,sucursal calle 80,2,60935.0,30467.5,2152.88,2
+55.0,angela niniez,18,sucursal industrial,1,60729.0,60729.0,1988.25,1
+75.0,benjamin martinez,17,sucursal occidente,1,60157.0,60157.0,1454.28,1
+46.0,jesus dominguez,17,sucursal autopista,1,60132.0,60132.0,481.53,1
+96.0,maria garcia,16,sucursal norte,2,60067.0,30033.5,1376.23,2
+42.0,mauricio rodriguez,20,sucursal norte,1,60047.0,60047.0,841.02,1
+5.0,alejandro vargas,2,sucursal autopista,1,59878.0,59878.0,499.46,1
+52.0,carolina ospina,1,sucursal aeropuerto,1,59861.0,59861.0,887.24,1
+87.0,claudia cardenas,0,sucursal carrera 7,1,59722.0,59722.0,1672.25,1
+55.0,angela niniez,18,sucursal norte,1,59611.0,59611.0,1842.86,1
+40.0,alvaro sanchez,24,sucursal carrera 7,1,59296.0,59296.0,1559.49,1
+66.0,felipe toro,0,sucursal industrial,2,59000.0,59000.0,2805.21,2
+28.0,paola sanchez,8,sucursal centro,1,58374.0,58374.0,644.52,1
+92.0,monica lopez,25,sucursal autopista,2,58137.0,29068.5,3079.19,2
+79.0,angela munioz,16,sucursal carrera 7,2,58107.0,29053.5,5063.18,2
+15.0,camilo munioz,9,sucursal aeropuerto,2,57728.0,57728.0,3467.3999999999996,2
+11.0,sofia garcia,19,sucursal occidente,3,57279.0,19093.0,3665.14,3
+48.0,laura espana,11,sucursal autopista,3,57055.0,19018.333333333332,6984.8099999999995,3
+13.0,daniela penia,22,sucursal autopista,1,56677.0,56677.0,1722.63,1
+25.0,alvaro cardenas,23,sucursal industrial,1,56540.0,56540.0,1463.29,1
+7.0,jesus garcia,2,sucursal centro,2,56270.0,28135.0,1251.81,2
+44.0,andres gonzalez,22,sucursal oriente,1,54417.0,54417.0,1027.09,1
+17.0,alvaro penia,14,sucursal principal,1,54295.0,54295.0,1237.22,1
+53.0,carolina martinez,5,sucursal principal,2,54220.0,27110.0,2283.7200000000003,2
+33.0,paola toro,20,sucursal aeropuerto,1,53930.0,53930.0,926.54,1
+82.0,alejandro toro,3,sucursal calle 80,1,53026.0,53026.0,1498.17,1
+96.0,maria garcia,16,sucursal autopista,1,52250.0,52250.0,1715.62,1
+40.0,alvaro sanchez,24,sucursal occidente,3,52066.0,17355.333333333332,2507.85,3
+61.0,alejandro gonzalez,14,sucursal occidente,2,51448.0,25724.0,3705.16,2
+11.0,sofia garcia,19,sucursal autopista,1,51272.0,51272.0,,1
+23.0,natalia garcia,14,sucursal oriente,1,50800.0,50800.0,471.74,1
+23.0,natalia garcia,14,sucursal calle 80,2,49133.0,24566.5,1558.04,2
+24.0,angela espania,20,sucursal el poblado,1,49128.0,49128.0,1344.36,1
+1.0,angela munoz,22,sucursal industrial,1,48866.0,48866.0,1562.1,1
+27.0,carolina sanchez,3,sucursal principal,3,48609.0,16203.0,3225.55,3
+64.0,jose alvarez,2,sucursal carrera 7,2,48091.0,24045.5,1605.91,2
+25.0,alvaro cardenas,23,sucursal carrera 7,2,48055.0,24027.5,3668.8900000000003,2
+81.0,laura penia,4,sucursal calle 80,2,47298.0,23649.0,1005.8299999999999,2
+47.0,camilo munioz,0,sucursal principal,2,47165.0,23582.5,1429.27,2
+35.0,carolina martinez,21,sucursal occidente,2,46969.0,23484.5,1661.0900000000001,2
+86.0,felipe martinez,11,sucursal el poblado,1,46613.0,46613.0,687.14,1
+97.0,alejandro ninez,20,sucursal industrial,1,46053.0,46053.0,881.88,1
+75.0,benjamin martinez,17,sucursal industrial,1,46028.0,46028.0,572.28,1
+12.0,julian fernandez,1,sucursal aeropuerto,1,45968.0,45968.0,811.45,1
+38.0,paola garcia,17,sucursal occidente,1,45963.0,45963.0,1320.9,1
+35.0,carolina martinez,21,sucursal calle 80,2,45111.0,22555.5,3260.41,2
+55.0,angela niniez,18,sucursal principal,2,44537.0,22268.5,1737.92,2
+27.0,carolina sanchez,3,sucursal occidente,1,44252.0,44252.0,1522.08,1
+33.0,paola toro,20,sucursal centro,1,44035.0,44035.0,,1
+39.0,alejandro munoz,7,sucursal industrial,1,43613.0,43613.0,1059.92,1
+100.0,monica lopez,11,sucursal occidente,1,43114.0,43114.0,1277.22,1
+29.0,angela herrera,0,sucursal oriente,2,42711.0,21355.5,2650.59,2
+52.0,carolina ospina,1,sucursal calle 80,1,42698.0,42698.0,589.04,1
+67.0,benjamin cifuentes,14,sucursal carrera 7,2,42694.0,21347.0,4387.67,2
+66.0,felipe toro,0,sucursal carrera 7,2,42489.0,21244.5,1952.63,2
+13.0,daniela penia,22,sucursal calle 80,1,42471.0,42471.0,1340.29,1
+36.0,laura perez,19,sucursal carrera 7,2,42240.0,21120.0,1641.21,2
+7.0,jesus garcia,2,sucursal el poblado,1,42133.0,42133.0,703.27,1
+29.0,angela herrera,0,sucursal carrera 7,1,40693.0,40693.0,777.14,1
+71.0,alvaro perez,0,sucursal centro,2,39881.0,19940.5,3434.4300000000003,2
+51.0,angela cruz,19,sucursal occidente,2,39382.0,19691.0,1283.98,2
+43.0,natalia cruz,5,sucursal aeropuerto,2,39020.0,39020.0,1003.97,2
+3.0,jose rios,25,sucursal el poblado,2,38712.0,19356.0,1912.1000000000001,2
+8.0,raul castanio,7,sucursal carrera 7,1,38070.0,38070.0,820.11,1
+8.0,raul castanio,7,sucursal oriente,2,37514.0,37514.0,3357.07,2
+50.0,ricardo ramirez,23,sucursal industrial,1,37227.0,37227.0,971.25,1
+24.0,angela espania,20,sucursal norte,1,37221.0,37221.0,1132.31,1
+20.0,alejandro moreno,0,sucursal occidente,1,36791.0,36791.0,945.43,1
+44.0,andres gonzalez,22,sucursal carrera 7,1,36410.0,36410.0,932.11,1
+59.0,sebastian cardenas,4,sucursal norte,2,35804.0,35804.0,3972.15,2
+26.0,alejandro toro,3,sucursal autopista,3,35505.0,11835.0,2811.71,3
+37.0,monica munioz,22,sucursal calle 80,1,35397.0,35397.0,747.03,1
+67.0,benjamin cifuentes,14,sucursal oriente,2,34923.0,17461.5,1613.44,2
+41.0,mauricio dominguez,15,sucursal principal,1,34666.0,34666.0,286.94,1
+51.0,angela cruz,19,sucursal industrial,1,34510.0,34510.0,1036.22,1
+100.0,monica lopez,11,sucursal el poblado,1,34492.0,34492.0,,1
+18.0,paola cruz,6,sucursal centro,1,34428.0,34428.0,392.76,1
+59.0,sebastian cardenas,4,sucursal calle 80,1,34392.0,34392.0,436.73,1
+28.0,paola sanchez,8,sucursal calle 80,1,34275.0,34275.0,799.19,1
+31.0,sebastian sanchez,8,sucursal carrera 7,2,34085.0,17042.5,2883.81,2
+5.0,alejandro vargas,2,sucursal occidente,1,34076.0,34076.0,1084.25,1
+59.0,sebastian cardenas,4,sucursal principal,2,33811.0,16905.5,2010.6100000000001,2
+92.0,monica lopez,25,sucursal principal,2,33794.0,16897.0,1567.82,2
+77.0,alvaro rios,14,sucursal industrial,1,33632.0,33632.0,,1
+3.0,jose rios,25,sucursal aeropuerto,1,33340.0,33340.0,674.98,1
+50.0,ricardo ramirez,23,sucursal aeropuerto,1,32735.0,32735.0,804.86,1
+80.0,maria gutierrez,16,sucursal oriente,1,32293.0,32293.0,715.88,1
+60.0,jesus cardenas,9,sucursal occidente,3,31929.0,10643.0,3306.75,3
+20.0,alejandro moreno,0,sucursal aeropuerto,1,31545.0,31545.0,946.68,1
+35.0,carolina martinez,21,sucursal industrial,3,31095.0,10365.0,4164.12,3
+9.0,camilo herrera,23,sucursal calle 80,1,30912.0,30912.0,433.95,1
+36.0,laura perez,19,sucursal norte,1,30781.0,30781.0,731.4,1
+55.0,angela niniez,18,sucursal calle 80,2,30221.0,15110.5,1685.3600000000001,2
+61.0,alejandro gonzalez,14,sucursal el poblado,1,29898.0,29898.0,648.15,1
+78.0,patricia sanchez,2,sucursal el poblado,1,28827.0,28827.0,544.39,1
+67.0,benjamin cifuentes,14,sucursal norte,1,28759.0,28759.0,357.83,1
+6.0,angela vargas,4,sucursal industrial,1,28476.0,28476.0,710.54,1
+49.0,ricardo cardenas,3,sucursal occidente,1,28083.0,28083.0,434.47,1
+82.0,alejandro toro,3,sucursal principal,2,28069.0,14034.5,1245.44,2
+55.0,angela niniez,18,sucursal carrera 7,1,28024.0,28024.0,703.52,1
+22.0,angela munioz,9,sucursal industrial,1,27420.0,27420.0,606.24,1
+56.0,natalia pena,23,sucursal norte,1,27339.0,27339.0,,1
+9.0,camilo herrera,23,sucursal el poblado,1,27305.0,27305.0,736.82,1
+11.0,sofia garcia,19,sucursal carrera 7,1,27288.0,27288.0,231.29,1
+22.0,angela munioz,9,sucursal el poblado,1,26825.0,26825.0,426.62,1
+28.0,paola sanchez,8,sucursal principal,2,26808.0,13404.0,3290.8500000000004,2
+15.0,camilo munioz,9,sucursal el poblado,1,26805.0,26805.0,556.39,1
+83.0,ricardo cardenas,18,sucursal autopista,1,26167.0,26167.0,,1
+36.0,laura perez,19,sucursal aeropuerto,2,25757.0,12878.5,2178.2799999999997,2
+7.0,jesus garcia,2,sucursal carrera 7,1,25439.0,25439.0,471.74,1
+29.0,angela herrera,0,sucursal aeropuerto,1,25254.0,25254.0,593.11,1
+64.0,jose alvarez,2,sucursal occidente,1,25067.0,25067.0,526.97,1
+12.0,julian fernandez,1,sucursal oriente,1,24655.0,24655.0,360.82,1
+72.0,hernan dominguez,18,sucursal centro,1,24366.0,24366.0,440.07,1
+85.0,paola garcia,14,sucursal centro,3,24353.0,8117.666666666667,4290.13,3
+39.0,alejandro munoz,7,sucursal oriente,1,24267.0,24267.0,200.44,1
+62.0,paola penia,2,sucursal oriente,1,24248.0,24248.0,,1
+42.0,mauricio rodriguez,20,sucursal autopista,2,23874.0,11937.0,2159.49,2
+18.0,paola cruz,6,sucursal carrera 7,2,23854.0,11927.0,2002.35,2
+72.0,hernan dominguez,18,sucursal el poblado,1,23625.0,23625.0,269.02,1
+63.0,julian gutierrez,18,sucursal principal,3,23322.0,11661.0,2129.3,3
+40.0,alvaro sanchez,24,sucursal oriente,2,23179.0,11589.5,2352.29,2
+27.0,carolina sanchez,3,sucursal calle 80,1,23060.0,23060.0,528.02,1
+9.0,camilo herrera,23,sucursal carrera 7,2,22704.0,11352.0,392.64,2
+82.0,alejandro toro,3,sucursal norte,1,22578.0,22578.0,610.62,1
+80.0,maria gutierrez,16,sucursal aeropuerto,3,22393.0,7464.333333333333,2385.52,3
+74.0,hernan niniez,9,sucursal centro,1,21732.0,21732.0,729.9,1
+79.0,angela munioz,16,sucursal aeropuerto,2,21476.0,10738.0,1307.56,2
+92.0,monica lopez,25,sucursal industrial,1,21203.0,21203.0,358.99,1
+15.0,camilo munioz,9,sucursal oriente,1,20835.0,20835.0,504.63,1
+40.0,alvaro sanchez,24,sucursal principal,2,20436.0,10218.0,5011.3099999999995,2
+10.0,natalia lopez,21,sucursal oriente,1,20424.0,20424.0,208.64,1
+89.0,benjamin gonzalez,8,sucursal aeropuerto,3,20192.0,6730.666666666667,1862.02,3
+11.0,sofia garcia,19,sucursal aeropuerto,1,20067.0,20067.0,542.52,1
+1.0,angela munoz,22,sucursal occidente,1,19326.0,19326.0,226.02,1
+80.0,maria gutierrez,16,sucursal el poblado,1,18721.0,18721.0,400.84,1
+5.0,alejandro vargas,2,sucursal industrial,1,16801.0,16801.0,548.49,1
+14.0,diego espania,8,sucursal aeropuerto,3,3000.0,1000.0,2328.85,3
+43.0,natalia cruz,5,sucursal autopista,3,3000.0,1000.0,6797.68,3
+3.0,jose rios,25,sucursal norte,2,2000.0,1000.0,1358.82,2
+3.0,jose rios,25,sucursal occidente,2,2000.0,1000.0,,2
+7.0,jesus garcia,2,sucursal oriente,2,2000.0,1000.0,2888.82,2
+11.0,sofia garcia,19,sucursal el poblado,2,2000.0,1000.0,1982.25,2
+27.0,carolina sanchez,3,sucursal industrial,2,2000.0,1000.0,5919.37,2
+37.0,monica munioz,22,sucursal occidente,2,2000.0,1000.0,3695.5299999999997,2
+62.0,paola penia,2,sucursal centro,2,2000.0,1000.0,3641.41,2
+77.0,alvaro rios,14,sucursal principal,2,2000.0,1000.0,2420.68,2
+79.0,angela munioz,16,sucursal autopista,2,2000.0,1000.0,5312.9,2
+86.0,felipe martinez,11,sucursal aeropuerto,2,2000.0,1000.0,3305.3199999999997,2
+93.0,jesus dominguez,24,sucursal autopista,2,2000.0,1000.0,705.72,2
+98.0,raul herrera,15,sucursal oriente,2,2000.0,1000.0,3611.17,2
+1.0,angela munoz,22,sucursal oriente,1,1000.0,1000.0,1212.63,1
+3.0,jose rios,25,sucursal autopista,1,1000.0,1000.0,468.98,1
+4.0,patricia ramirez,0,sucursal norte,1,1000.0,1000.0,4262.45,1
+5.0,alejandro vargas,2,sucursal calle 80,1,1000.0,1000.0,1414.88,1
+6.0,angela vargas,4,sucursal norte,1,1000.0,1000.0,345.92,1
+6.0,angela vargas,4,sucursal occidente,1,1000.0,1000.0,4468.3,1
+7.0,jesus garcia,2,sucursal autopista,1,1000.0,1000.0,1719.21,1
+7.0,jesus garcia,2,sucursal norte,1,1000.0,1000.0,1981.39,1
+9.0,camilo herrera,23,sucursal autopista,1,1000.0,1000.0,839.27,1
+10.0,natalia lopez,21,sucursal occidente,1,1000.0,1000.0,578.55,1
+11.0,sofia garcia,19,sucursal industrial,1,1000.0,1000.0,729.27,1
+14.0,diego espania,8,sucursal calle 80,1,1000.0,1000.0,2061.78,1
+14.0,diego espania,8,sucursal carrera 7,1,1000.0,1000.0,2382.42,1
+14.0,diego espania,8,sucursal principal,1,1000.0,1000.0,3086.4,1
+19.0,paola perez,0,sucursal norte,1,1000.0,1000.0,509.85,1
+22.0,angela munioz,9,sucursal oriente,1,1000.0,1000.0,,1
+23.0,natalia garcia,14,sucursal autopista,1,1000.0,1000.0,1447.81,1
+23.0,natalia garcia,14,sucursal carrera 7,1,1000.0,1000.0,1717.04,1
+23.0,natalia garcia,14,sucursal principal,1,1000.0,1000.0,1579.69,1
+26.0,alejandro toro,3,sucursal calle 80,1,1000.0,1000.0,3989.39,1
+26.0,alejandro toro,3,sucursal el poblado,1,1000.0,1000.0,1064.02,1
+26.0,alejandro toro,3,sucursal oriente,1,1000.0,1000.0,942.58,1
+26.0,alejandro toro,3,sucursal principal,1,1000.0,1000.0,1531.76,1
+27.0,carolina sanchez,3,sucursal norte,1,1000.0,1000.0,1366.73,1
+28.0,paola sanchez,8,sucursal autopista,1,1000.0,1000.0,2629.85,1
+30.0,julian dominguez,18,sucursal norte,1,1000.0,1000.0,2428.38,1
+31.0,sebastian sanchez,8,sucursal centro,1,1000.0,1000.0,397.49,1
+31.0,sebastian sanchez,8,sucursal el poblado,1,1000.0,1000.0,3305.74,1
+31.0,sebastian sanchez,8,sucursal norte,1,1000.0,1000.0,3794.67,1
+34.0,claudia alvarez,10,sucursal oriente,2,1000.0,1000.0,2739.87,2
+35.0,carolina martinez,21,sucursal oriente,1,1000.0,1000.0,3196.09,1
+37.0,monica munioz,22,sucursal oriente,1,1000.0,1000.0,2157.89,1
+38.0,paola garcia,17,sucursal calle 80,1,1000.0,1000.0,858.65,1
+38.0,paola garcia,17,sucursal industrial,1,1000.0,1000.0,3638.56,1
+38.0,paola garcia,17,sucursal oriente,1,1000.0,1000.0,1314.28,1
+43.0,natalia cruz,5,sucursal calle 80,1,1000.0,1000.0,1529.21,1
+43.0,natalia cruz,5,sucursal oriente,1,1000.0,1000.0,1777.27,1
+44.0,andres gonzalez,22,sucursal industrial,1,1000.0,1000.0,456.69,1
+45.0,carolina toro,7,sucursal norte,1,1000.0,1000.0,2291.49,1
+46.0,jesus dominguez,17,sucursal el poblado,1,1000.0,1000.0,998.68,1
+48.0,laura espana,11,sucursal calle 80,1,1000.0,1000.0,778.22,1
+49.0,ricardo cardenas,3,sucursal centro,1,1000.0,1000.0,3058.55,1
+51.0,angela cruz,19,sucursal autopista,1,1000.0,1000.0,,1
+51.0,angela cruz,19,sucursal el poblado,1,1000.0,1000.0,843.61,1
+52.0,carolina ospina,1,sucursal oriente,1,1000.0,1000.0,642.22,1
+53.0,carolina martinez,5,sucursal el poblado,1,1000.0,1000.0,2723.57,1
+54.0,jose martinez,11,sucursal autopista,1,1000.0,1000.0,3470.33,1
+54.0,jose martinez,11,sucursal carrera 7,1,1000.0,1000.0,1012.98,1
+57.0,angela castanio,1,sucursal el poblado,1,1000.0,1000.0,885.74,1
+58.0,mauricio espana,12,sucursal carrera 7,1,1000.0,1000.0,,1
+60.0,jesus cardenas,9,sucursal aeropuerto,1,1000.0,1000.0,1909.28,1
+60.0,jesus cardenas,9,sucursal principal,1,1000.0,1000.0,999.92,1
+61.0,alejandro gonzalez,14,sucursal centro,1,1000.0,1000.0,1894.22,1
+67.0,benjamin cifuentes,14,sucursal calle 80,1,1000.0,1000.0,4769.42,1
+68.0,daniela castanio,2,sucursal el poblado,1,1000.0,1000.0,2712.97,1
+70.0,patricia pena,7,sucursal autopista,1,1000.0,1000.0,1727.59,1
+70.0,patricia pena,7,sucursal occidente,1,1000.0,1000.0,2837.89,1
+70.0,patricia pena,7,sucursal oriente,1,1000.0,1000.0,1079.56,1
+72.0,hernan dominguez,18,sucursal occidente,1,1000.0,1000.0,598.62,1
+74.0,hernan niniez,9,sucursal carrera 7,1,1000.0,1000.0,,1
+74.0,hernan niniez,9,sucursal industrial,1,1000.0,1000.0,,1
+76.0,andres munioz,4,sucursal carrera 7,1,1000.0,1000.0,1002.04,1
+77.0,alvaro rios,14,sucursal autopista,1,1000.0,1000.0,1217.24,1
+77.0,alvaro rios,14,sucursal carrera 7,1,1000.0,1000.0,1110.15,1
+77.0,alvaro rios,14,sucursal centro,1,1000.0,1000.0,459.78,1
+77.0,alvaro rios,14,sucursal oriente,1,1000.0,1000.0,1404.75,1
+80.0,maria gutierrez,16,sucursal calle 80,1,1000.0,1000.0,837.16,1
+82.0,alejandro toro,3,sucursal aeropuerto,1,1000.0,1000.0,3640.66,1
+82.0,alejandro toro,3,sucursal occidente,1,1000.0,1000.0,927.04,1
+82.0,alejandro toro,3,sucursal oriente,1,1000.0,1000.0,534.45,1
+83.0,ricardo cardenas,18,sucursal industrial,1,1000.0,1000.0,490.86,1
+83.0,ricardo cardenas,18,sucursal oriente,1,1000.0,1000.0,739.92,1
+85.0,paola garcia,14,sucursal norte,1,1000.0,1000.0,1205.59,1
+85.0,paola garcia,14,sucursal occidente,1,1000.0,1000.0,,1
+86.0,felipe martinez,11,sucursal industrial,1,1000.0,1000.0,1164.44,1
+87.0,claudia cardenas,0,sucursal calle 80,1,1000.0,1000.0,542.13,1
+87.0,claudia cardenas,0,sucursal el poblado,1,1000.0,1000.0,2589.47,1
+88.0,ricardo rodriguez,12,sucursal aeropuerto,1,1000.0,1000.0,1477.82,1
+88.0,ricardo rodriguez,12,sucursal oriente,1,1000.0,1000.0,272.09,1
+93.0,jesus dominguez,24,sucursal industrial,1,1000.0,1000.0,901.18,1
+95.0,alvaro sanchez,22,sucursal carrera 7,1,1000.0,1000.0,829.57,1
+95.0,alvaro sanchez,22,sucursal industrial,1,1000.0,1000.0,3120.96,1
+96.0,maria garcia,16,sucursal calle 80,1,1000.0,1000.0,1489.5,1
+96.0,maria garcia,16,sucursal carrera 7,1,1000.0,1000.0,1501.1,1
+97.0,alejandro ninez,20,sucursal el poblado,1,1000.0,1000.0,,1
+98.0,raul herrera,15,sucursal calle 80,1,1000.0,1000.0,3064.61,1
+98.0,raul herrera,15,sucursal occidente,1,1000.0,1000.0,3709.14,1
+99.0,ricardo cruz,5,sucursal centro,1,1000.0,1000.0,2539.2,1
+2.0,claudia ramirez,0,sucursal autopista,1,,,308.04,1
+6.0,angela vargas,4,sucursal calle 80,1,,,613.3,1
+20.0,alejandro moreno,0,sucursal autopista,1,,,2298.72,1
+99.0,ricardo cruz,5,sucursal aeropuerto,1,,,3533.15,1

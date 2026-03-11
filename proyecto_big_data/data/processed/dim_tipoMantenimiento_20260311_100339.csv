@@ -1,0 +1,13 @@
+id_tipo_mantenimiento,nombre_tipo,descripcion,incluye_garantia,meses_garantia,kilometros_garantia
+1.0,aceite y filtros,cambio de aceite y filtros,1,3,5000
+2.0,frenos,revision y cambio de pastillas,1,6,10000
+3.0,suspension,revision de amortiguadores,1,12,20000
+4.0,motor,ajuste y calibracion del motor,1,12,15000
+5.0,sistema electrico,revision electrica completa,0,0,0
+6.0,aire acondicionado,recarga y revision a c,0,0,0
+7.0,transmision,cambio de aceite transmision,1,6,15000
+8.0,alineacion y balanceo,alineacion y balanceo de llantas,0,0,0
+9.0,llantas y neumaticos,cambio y rotacion de llantas,1,12,15000
+10.0,revision general,revision completa del vehiculo,0,0,0
+11.0,latoneria y pintura,reparacion de carroceria,1,6,0
+12.0,vidrios y lunas,cambio o reparacion de vidrios,0,0,0

@@ -1,500 +1,867 @@
 ﻿id_cliente,nombre,tipo_cliente,edad,genero,ultima_compra,frecuencia,valor_monetario,ticket_promedio,vehiculos_comprados,recency,r_score,f_score,m_score,rfm_score,segmento
-1.0,Valentina López,recurrente,32,F,2024-03-17,3,193138.9,64379.63333333333,3,723.0,3,2,2,7,Potenciales
-2.0,Sofía González,recurrente,45,M,2024-10-09,8,440508.55,55063.56875,8,517.0,4,5,5,14,Campeones
-3.0,María Ramírez,nuevo,47,F,2024-03-11,5,219585.2,43917.04,5,729.0,3,4,3,10,Leales
-4.0,Ana Pérez,nuevo,37,M,2022-08-19,2,119345.0,59672.5,2,1299.0,1,1,1,3,En riesgo
-5.0,Valentina Martínez,recurrente,41,M,2024-07-25,5,276762.14999999997,55352.42999999999,4,593.0,4,4,4,12,Leales
-6.0,Andrés Martínez,nuevo,46,F,2025-01-30,5,293797.95,58759.590000000004,5,404.0,5,4,4,13,Campeones
-7.0,Carlos Pérez,nuevo,45,M,2024-09-16,8,526121.25,65765.15625,8,540.0,4,5,5,14,Campeones
-8.0,María Rodríguez,recurrente,36,M,2022-04-18,5,302891.7,60578.340000000004,5,1422.0,1,4,4,9,Potenciales
-9.0,María Sánchez,recurrente,67,F,2024-07-18,4,232824.55,58206.1375,4,600.0,4,3,3,10,Leales
-10.0,Juan López,recurrente,47,F,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-11.0,Laura López,nuevo,54,M,2024-10-04,7,508311.9,72615.98571428572,7,522.0,4,5,5,14,Campeones
-12.0,Luis García,recurrente,40,M,2023-06-05,1,42625.60000000001,42625.60000000001,1,1009.0,2,1,1,4,Prometedores
-13.0,Juan Ramírez,recurrente,38,F,2023-10-04,4,264544.2,66136.05,4,888.0,2,3,3,8,Potenciales
-14.0,Valentina Pérez,recurrente,27,M,2024-12-07,5,321219.75,64243.95,5,458.0,5,4,4,13,Campeones
-15.0,Andrés Martínez,recurrente,59,M,2024-02-04,6,327896.15,54649.35833333334,6,765.0,3,4,4,11,Leales
-16.0,Juan García,recurrente,63,M,2024-12-19,4,229317.34999999998,57329.337499999994,4,446.0,5,3,3,11,Leales
-17.0,Luis Ramírez,recurrente,22,F,2022-10-21,7,394123.65,56303.37857142858,7,1236.0,1,5,5,11,Leales
-18.0,Andrés Martínez,nuevo,37,M,2024-07-19,6,342697.0,57116.166666666664,6,599.0,4,4,4,12,Leales
-19.0,Sofía Sánchez,nuevo,36,M,2024-12-11,4,253261.65000000002,63315.412500000006,4,454.0,5,3,3,11,Leales
-21.0,Ana Pérez,recurrente,53,M,2024-05-13,4,261556.84999999998,65389.212499999994,4,666.0,3,3,3,9,Potenciales
-22.0,Ana López,nuevo,69,M,2024-05-13,3,175698.85,58566.28333333333,3,666.0,3,2,2,7,Potenciales
-23.0,Juan Ramírez,nuevo,36,M,2024-04-11,4,230790.85,57697.7125,4,698.0,3,3,3,9,Potenciales
-24.0,Juan Ramírez,recurrente,62,M,2023-06-28,5,291430.05,58286.009999999995,5,986.0,2,4,4,10,Leales
-25.0,Andrés Sánchez,recurrente,19,M,2023-08-17,3,182187.9,60729.299999999996,3,936.0,2,2,2,6,Prometedores
-26.0,Andrés Rodríguez,nuevo,39,M,2023-05-10,3,193266.80000000002,64422.26666666667,3,1035.0,2,2,2,6,Prometedores
-27.0,María Rodríguez,nuevo,67,M,2023-11-06,5,294273.65,58854.73,5,855.0,2,4,4,10,Leales
-28.0,Juan Ramírez,recurrente,24,M,2024-07-20,6,346842.0,57807.0,6,598.0,4,4,5,13,Campeones
-29.0,Luis López,nuevo,67,F,2022-09-29,3,217099.2,72366.40000000001,3,1258.0,1,2,3,6,Prometedores
-30.0,Ana Sánchez,recurrente,51,M,2024-01-11,3,165100.6,55033.53333333333,3,789.0,3,2,2,7,Potenciales
-31.0,Carlos García,recurrente,52,M,2024-07-27,3,209186.5,69728.83333333333,3,591.0,4,2,3,9,Potenciales
-32.0,María González,recurrente,49,F,2023-04-02,3,202439.95,67479.98333333334,3,1073.0,1,2,3,6,Prometedores
-33.0,Laura Ramírez,recurrente,44,M,2025-01-30,7,445646.75,63663.82142857143,7,404.0,5,5,5,15,Campeones
-34.0,Sofía Sánchez,recurrente,67,F,2024-12-14,8,512321.1,64040.1375,8,451.0,5,5,5,15,Campeones
-35.0,Ana García,nuevo,64,M,2024-05-18,2,135916.4,67958.2,2,661.0,3,1,2,6,Prometedores
-36.0,Pedro Martínez,recurrente,24,M,2024-12-17,7,397115.3,56730.75714285714,7,448.0,5,5,5,15,Campeones
-37.0,Valentina Rodríguez,nuevo,44,M,2024-12-23,4,268160.25,67040.0625,4,442.0,5,3,4,12,Leales
-38.0,Laura Sánchez,recurrente,30,F,2024-09-13,2,69927.2,34963.6,2,543.0,4,1,1,6,Prometedores
-39.0,Juan Pérez,nuevo,19,F,2024-01-26,6,369569.1,61594.85,5,774.0,3,4,5,12,Leales
-40.0,Ana Pérez,nuevo,29,M,2023-08-08,2,112276.5,56138.25,2,945.0,2,1,1,4,Prometedores
-41.0,Sofía Rodríguez,nuevo,61,M,2024-02-04,7,437338.25,62476.892857142855,7,765.0,3,5,5,13,Campeones
-42.0,Sofía Ramírez,recurrente,58,M,2023-11-23,4,253740.85,63435.2125,4,838.0,2,3,3,8,Potenciales
-43.0,Pedro López,nuevo,50,F,2025-01-30,1,70918.9,70918.9,1,404.0,5,1,1,7,Potenciales
-44.0,Juan García,nuevo,61,M,2024-02-29,8,530787.35,66348.41875,8,740.0,3,5,5,13,Campeones
-45.0,Juan Martínez,nuevo,48,M,2024-06-26,4,305228.1,76307.025,4,622.0,4,3,4,11,Leales
-46.0,Juan Sánchez,nuevo,67,F,2023-05-24,4,173163.65,43290.9125,4,1021.0,2,3,2,7,Potenciales
-47.0,María González,nuevo,23,M,2024-12-02,7,375710.95,53672.99285714286,7,463.0,5,5,5,15,Campeones
-48.0,Ana González,nuevo,51,F,2023-08-08,2,166744.95,83372.475,2,945.0,2,1,2,5,Prometedores
-49.0,Sofía Sánchez,recurrente,37,M,2024-12-10,4,224490.90000000002,56122.725000000006,4,455.0,5,3,3,11,Leales
-50.0,Ana López,nuevo,60,F,2024-09-09,7,407167.3,58166.75714285714,7,547.0,4,5,5,14,Campeones
-51.0,Valentina González,recurrente,29,M,2024-05-21,4,166954.25,41738.5625,4,658.0,3,3,2,8,Potenciales
-52.0,Pedro Ramírez,nuevo,64,M,2024-06-23,2,99366.95,49683.475,2,625.0,4,1,1,6,Prometedores
-53.0,Carlos Rodríguez,recurrente,59,M,2020-12-10,1,45620.0,45620.0,1,1916.0,1,1,1,3,En riesgo
-54.0,Ana González,recurrente,48,M,2023-06-28,4,189818.95,47454.7375,4,986.0,2,3,2,7,Potenciales
-55.0,Ana Sánchez,nuevo,43,F,2024-10-11,5,385648.0,77129.6,3,515.0,5,4,5,14,Campeones
-56.0,Laura González,nuevo,26,M,2024-08-18,3,166917.6,55639.200000000004,3,569.0,4,2,2,8,Potenciales
-57.0,Luis Ramírez,nuevo,49,M,2022-12-17,3,153344.5,51114.833333333336,3,1179.0,1,2,2,5,Prometedores
-58.0,Andrés Pérez,nuevo,39,M,2023-01-26,5,270602.95,54120.590000000004,5,1139.0,1,4,4,9,Potenciales
-59.0,Valentina González,nuevo,64,M,2023-08-18,2,152775.0,76387.5,2,935.0,2,1,2,5,Prometedores
-60.0,Luis García,nuevo,63,F,2023-02-09,2,148026.95,74013.475,2,1125.0,1,1,2,4,Prometedores
-61.0,Andrés Martínez,recurrente,64,F,2023-07-12,5,292426.9,58485.380000000005,4,972.0,2,4,4,10,Leales
-62.0,Valentina González,nuevo,20,M,2023-09-05,3,208964.65,69654.88333333333,3,917.0,2,2,3,7,Potenciales
-63.0,María González,recurrente,68,F,2024-10-15,6,372694.9,62115.81666666667,6,511.0,5,4,5,14,Campeones
-64.0,Valentina Rodríguez,nuevo,32,M,2025-01-30,2,110775.25,55387.625,2,404.0,5,1,1,7,Potenciales
-65.0,Luis Martínez,recurrente,38,F,2023-12-25,6,406700.7,67783.45,6,806.0,3,5,5,13,Campeones
-66.0,Valentina Sánchez,recurrente,61,F,2025-01-30,5,317556.7,63511.340000000004,5,404.0,5,4,4,13,Campeones
-67.0,Sofía Pérez,recurrente,24,F,2023-06-14,4,194485.95,48621.4875,4,1000.0,2,3,2,7,Potenciales
-68.0,Laura García,nuevo,46,F,2023-01-20,4,213353.85,53338.4625,4,1145.0,1,3,3,7,Potenciales
-69.0,Sofía Ramírez,nuevo,53,M,2023-11-05,4,266552.05,66638.0125,4,856.0,2,3,4,9,Potenciales
-70.0,Sofía González,nuevo,30,M,2023-08-28,3,157372.0,52457.333333333336,3,925.0,2,2,2,6,Prometedores
-71.0,Andrés Rodríguez,nuevo,36,M,2023-12-10,5,324846.55,64969.31,5,821.0,3,4,4,11,Leales
-72.0,Carlos Rodríguez,recurrente,31,M,2024-08-29,3,210268.0,70089.33333333333,3,558.0,4,2,3,9,Potenciales
-73.0,Carlos López,nuevo,51,F,2024-04-29,4,266334.75,66583.6875,4,680.0,3,3,3,9,Potenciales
-74.0,Pedro Martínez,recurrente,62,M,2024-08-01,5,351157.7,70231.54000000001,5,586.0,4,4,5,13,Campeones
-75.0,Luis Pérez,nuevo,29,M,2023-03-01,2,86463.70000000001,43231.850000000006,2,1105.0,1,1,1,3,En riesgo
-76.0,Andrés González,nuevo,20,F,2024-12-27,3,202099.45,67366.48333333334,3,438.0,5,2,3,10,Leales
-77.0,Juan Sánchez,recurrente,46,F,2025-01-30,4,297447.45,74361.8625,4,404.0,5,3,4,12,Leales
-78.0,Andrés Pérez,recurrente,21,F,2024-12-07,7,383410.35,54772.90714285714,7,458.0,5,5,5,15,Campeones
-79.0,Ana López,recurrente,19,M,2024-09-02,4,262869.85,65717.4625,4,554.0,4,3,3,10,Leales
-80.0,María López,nuevo,19,M,2023-03-21,2,175877.7,87938.85,2,1085.0,1,1,2,4,Prometedores
-81.0,Juan Martínez,nuevo,65,F,2024-12-28,5,335584.95,67116.99,5,437.0,5,4,4,13,Campeones
-82.0,Ana Ramírez,nuevo,68,M,2023-12-16,5,312990.05,62598.009999999995,5,815.0,3,4,4,11,Leales
-83.0,Carlos Sánchez,nuevo,34,F,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-84.0,Sofía Pérez,nuevo,70,M,2022-08-25,3,220778.8,73592.93333333333,3,1293.0,1,2,3,6,Prometedores
-85.0,Juan Ramírez,recurrente,21,F,2024-01-04,5,246709.95,49341.990000000005,5,796.0,3,4,3,10,Leales
-86.0,Andrés Sánchez,nuevo,56,M,2024-05-25,3,190132.15,63377.38333333333,3,654.0,3,2,2,7,Potenciales
-87.0,Carlos Ramírez,recurrente,60,F,2022-10-26,3,166768.0,55589.333333333336,3,1231.0,1,2,2,5,Prometedores
-88.0,Luis Rodríguez,nuevo,25,M,2024-05-14,3,201005.95,67001.98333333334,3,665.0,3,2,3,8,Potenciales
-89.0,Laura García,recurrente,42,F,2024-10-28,8,464042.55,58005.31875,8,498.0,5,5,5,15,Campeones
-90.0,Luis Rodríguez,recurrente,67,M,2023-11-05,5,274148.35,54829.67,5,856.0,2,4,4,10,Leales
-91.0,Pedro López,recurrente,63,F,2022-08-08,1,80523.0,80523.0,1,1310.0,1,1,1,3,En riesgo
-92.0,Luis Ramírez,nuevo,34,F,2021-06-21,4,264803.0,66200.75,4,1723.0,1,3,3,7,Potenciales
-93.0,Sofía Martínez,nuevo,65,M,2025-01-30,5,266548.75,53309.75,5,404.0,5,4,4,13,Campeones
-94.0,Sofía García,nuevo,36,F,2024-06-25,4,260856.05,65214.0125,4,623.0,4,3,3,10,Leales
-95.0,María Rodríguez,recurrente,29,M,2024-08-03,3,195979.6,65326.53333333333,3,584.0,4,2,2,8,Potenciales
-96.0,Luis Pérez,recurrente,69,M,2024-12-07,7,356291.0,50898.71428571428,7,458.0,5,5,5,15,Campeones
-97.0,Valentina Rodríguez,nuevo,61,M,2020-04-20,1,70250.8,70250.8,1,2150.0,1,1,1,3,En riesgo
-98.0,Valentina Rodríguez,recurrente,45,F,2022-10-12,4,177557.44999999998,44389.362499999996,4,1245.0,1,3,2,6,Prometedores
-99.0,Carlos Rodríguez,nuevo,55,F,2024-07-05,4,232379.15,58094.7875,4,613.0,4,3,3,10,Leales
-100.0,Laura García,nuevo,61,M,2023-12-21,2,107554.4,53777.2,2,810.0,3,1,1,5,Prometedores
-101.0,Andrés Rodríguez,recurrente,64,F,2021-10-28,2,107797.5,53898.75,2,1594.0,1,1,1,3,En riesgo
-102.0,Carlos López,nuevo,48,M,2023-02-15,2,136062.1,68031.05,2,1119.0,1,1,2,4,Prometedores
-103.0,Carlos González,nuevo,68,M,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-104.0,Juan Rodríguez,nuevo,28,F,2024-09-07,4,242510.05,60627.5125,4,549.0,4,3,3,10,Leales
-105.0,Juan Pérez,nuevo,70,M,2023-03-14,1,42761.60000000001,42761.60000000001,1,1092.0,1,1,1,3,En riesgo
-106.0,Luis Martínez,nuevo,59,F,2024-02-20,2,133309.6,66654.8,2,749.0,3,1,2,6,Prometedores
-107.0,Luis Pérez,recurrente,28,M,2024-11-07,3,240698.34999999998,80232.78333333333,3,488.0,5,2,3,10,Leales
-108.0,Carlos García,recurrente,18,M,2023-02-18,1,42979.0,42979.0,1,1116.0,1,1,1,3,En riesgo
-109.0,Juan Pérez,nuevo,56,M,2024-03-19,9,553947.9,61549.76666666667,9,721.0,3,5,5,13,Campeones
-110.0,Sofía González,recurrente,51,F,,1,67076.8,67076.8,1,999.0,2,1,1,4,Prometedores
-111.0,Ana González,recurrente,33,M,2023-03-14,6,373025.14999999997,62170.85833333333,6,1092.0,1,5,5,11,Leales
-112.0,Sofía Martínez,recurrente,49,M,2024-08-16,5,305768.65,61153.73,5,571.0,4,4,4,12,Leales
-113.0,Luis Rodríguez,recurrente,45,F,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-114.0,Sofía García,recurrente,21,F,2024-05-25,6,324133.75,54022.291666666664,5,654.0,3,5,4,12,Leales
-115.0,Andrés García,nuevo,56,F,2024-02-09,2,106502.5,53251.25,2,760.0,3,1,1,5,Prometedores
-116.0,Andrés Ramírez,recurrente,39,M,2021-06-29,3,117322.05,39107.35,3,1715.0,1,2,1,4,Prometedores
-117.0,Laura Martínez,nuevo,24,M,2024-08-14,1,81995.25,81995.25,1,573.0,4,1,1,6,Prometedores
-118.0,Carlos López,nuevo,64,M,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-119.0,Carlos López,recurrente,59,M,2023-11-02,4,297350.2,74337.55,4,859.0,2,3,4,9,Potenciales
-120.0,Pedro Martínez,recurrente,31,M,2023-06-03,3,190278.95,63426.31666666667,3,1011.0,2,2,2,6,Prometedores
-121.0,Valentina López,nuevo,55,M,2023-06-26,6,414515.35,69085.89166666666,5,988.0,2,5,5,12,Leales
-122.0,Carlos García,recurrente,47,M,2023-11-27,9,500501.55,55611.28333333333,9,834.0,2,5,5,12,Leales
-123.0,Ana Sánchez,nuevo,21,M,2024-03-10,2,107316.9,53658.45,2,730.0,3,1,1,5,Prometedores
-124.0,Pedro López,recurrente,48,M,2022-08-31,3,138028.9,46009.63333333333,3,1287.0,1,2,2,5,Prometedores
-125.0,Carlos Martínez,nuevo,25,F,2023-05-24,4,215800.9,53950.225,4,1021.0,2,3,3,8,Potenciales
-126.0,Luis Ramírez,recurrente,64,F,2024-12-29,8,466265.64999999997,58283.206249999996,7,436.0,5,5,5,15,Campeones
-127.0,Laura Pérez,recurrente,28,F,2024-05-06,5,290228.85,58045.77,5,673.0,3,4,4,11,Leales
-128.0,Valentina López,recurrente,67,M,2024-04-03,4,218738.4,54684.6,4,706.0,3,3,3,9,Potenciales
-129.0,Carlos González,nuevo,68,F,2024-07-05,7,398560.15,56937.16428571429,6,613.0,4,5,5,14,Campeones
-130.0,Luis García,recurrente,52,M,2020-06-21,2,125683.2,62841.6,2,2088.0,1,1,2,4,Prometedores
-131.0,Laura López,nuevo,20,F,2025-01-30,4,299545.55,74886.3875,4,404.0,5,3,4,12,Leales
-132.0,Ana Ramírez,recurrente,26,F,2023-05-28,1,44439.1,44439.1,1,1017.0,2,1,1,4,Prometedores
-133.0,Luis González,recurrente,48,F,2022-02-16,2,118498.45,59249.225,2,1483.0,1,1,1,3,En riesgo
-134.0,Pedro Ramírez,nuevo,23,M,2024-12-24,5,327530.5,65506.1,5,441.0,5,4,4,13,Campeones
-135.0,Laura López,recurrente,26,M,2024-09-19,8,580468.8,72558.6,8,537.0,4,5,5,14,Campeones
-136.0,Ana López,recurrente,41,M,2024-04-08,5,374714.7,74942.94,5,701.0,3,4,5,12,Leales
-137.0,Andrés Rodríguez,nuevo,35,F,2024-10-22,5,329329.55,65865.91,5,504.0,5,4,4,13,Campeones
-138.0,Valentina Pérez,nuevo,33,F,2021-09-25,2,112409.6,56204.8,2,1627.0,1,1,1,3,En riesgo
-139.0,Luis Martínez,nuevo,23,M,2021-07-19,1,64329.3,64329.3,1,1695.0,1,1,1,3,En riesgo
-140.0,Sofía Sánchez,recurrente,20,M,2024-11-18,4,275055.55,68763.8875,4,477.0,5,3,4,12,Leales
-141.0,Laura Ramírez,recurrente,34,F,2024-11-30,5,292864.9,58572.98,5,465.0,5,4,4,13,Campeones
-142.0,Juan González,nuevo,69,F,2024-05-12,4,197478.55,49369.6375,4,667.0,3,3,2,8,Potenciales
-143.0,Sofía González,nuevo,56,M,2024-08-19,6,337081.55,56180.25833333333,6,568.0,4,5,4,13,Campeones
-144.0,Valentina González,nuevo,28,F,2022-11-13,5,290091.95,58018.39,5,1213.0,1,4,4,9,Potenciales
-145.0,Pedro Martínez,nuevo,49,M,2023-08-30,6,378642.6,63107.1,6,923.0,2,5,5,12,Leales
-146.0,Juan López,nuevo,67,F,2022-08-17,2,88697.4,44348.7,2,1301.0,1,1,1,3,En riesgo
-147.0,Carlos Rodríguez,nuevo,50,F,2023-02-02,1,60026.0,60026.0,1,1132.0,1,1,1,3,En riesgo
-148.0,Luis García,nuevo,31,M,2023-11-24,2,137993.05000000002,68996.52500000001,2,837.0,2,1,2,5,Prometedores
-149.0,Ana Pérez,recurrente,46,M,2022-08-07,4,213791.4,53447.85,4,1311.0,1,3,3,7,Potenciales
-150.0,María González,recurrente,28,F,2024-09-19,6,398377.9,66396.31666666667,6,537.0,4,5,5,14,Campeones
-151.0,Pedro Martínez,recurrente,33,M,2024-12-11,5,270734.1,54146.81999999999,5,454.0,5,4,4,13,Campeones
-152.0,Juan González,recurrente,61,M,2025-01-30,3,156749.40000000002,52249.80000000001,3,404.0,5,2,2,9,Potenciales
-153.0,Ana Pérez,recurrente,57,M,2025-01-30,4,230942.90000000002,57735.725000000006,4,404.0,5,3,3,11,Leales
-154.0,Juan García,recurrente,47,F,2023-12-05,2,94972.79999999999,47486.399999999994,2,826.0,2,1,1,4,Prometedores
-155.0,Andrés Pérez,recurrente,30,F,2024-02-03,3,209539.40000000002,69846.46666666667,3,766.0,3,2,3,8,Potenciales
-156.0,Laura González,recurrente,40,F,2022-12-27,2,132093.2,66046.6,2,1169.0,1,1,2,4,Prometedores
-157.0,Luis González,nuevo,49,M,2024-10-14,5,327730.45,65546.09,5,512.0,5,4,4,13,Campeones
-158.0,Juan Rodríguez,nuevo,45,M,2024-09-27,7,460495.7,65785.1,7,529.0,4,5,5,14,Campeones
-159.0,Valentina Rodríguez,nuevo,37,M,2025-01-30,5,347413.0,69482.6,5,404.0,5,4,5,14,Campeones
-160.0,Andrés García,recurrente,37,M,2024-08-30,5,304422.45,60884.490000000005,5,557.0,4,4,4,12,Leales
-161.0,Luis Sánchez,recurrente,35,F,2024-12-04,2,103535.20000000001,51767.600000000006,2,461.0,5,1,1,7,Potenciales
-162.0,Sofía García,nuevo,24,F,2024-02-15,8,461386.25,57673.28125,8,754.0,3,5,5,13,Campeones
-163.0,Laura Sánchez,nuevo,48,M,2024-08-29,3,204019.3,68006.43333333333,3,558.0,4,2,3,9,Potenciales
-164.0,Valentina Sánchez,nuevo,28,M,2023-06-09,4,290707.7,72676.925,4,1005.0,2,3,4,9,Potenciales
-165.0,Sofía Pérez,nuevo,19,F,2023-10-08,1,72981.90000000001,72981.90000000001,1,884.0,2,1,1,4,Prometedores
-166.0,Laura García,nuevo,68,F,2024-06-12,1,66160.0,66160.0,1,636.0,4,1,1,6,Prometedores
-167.0,María Rodríguez,nuevo,35,F,2024-09-19,1,66795.0,66795.0,1,537.0,4,1,1,6,Prometedores
-168.0,Luis García,recurrente,38,F,2025-01-30,3,142401.65,47467.21666666667,3,404.0,5,2,2,9,Potenciales
-169.0,Luis Sánchez,recurrente,70,M,2023-07-04,1,78100.0,78100.0,1,980.0,2,1,1,4,Prometedores
-170.0,Luis González,recurrente,34,F,2021-09-11,1,58911.2,58911.2,1,1641.0,1,1,1,3,En riesgo
-171.0,Laura Ramírez,nuevo,40,M,2024-12-06,1,62756.0,62756.0,1,459.0,5,1,1,7,Potenciales
-172.0,Luis Martínez,nuevo,66,F,2024-09-06,4,227451.3,56862.825,4,550.0,4,3,3,10,Leales
-173.0,Valentina Martínez,recurrente,66,F,2023-12-19,4,328683.6,82170.9,4,812.0,3,3,4,10,Leales
-174.0,Valentina Sánchez,recurrente,40,F,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-175.0,Valentina Pérez,nuevo,26,M,2024-01-30,5,344545.75,68909.15,5,770.0,3,4,5,12,Leales
-176.0,María González,recurrente,45,M,2023-11-03,1,37034.0,37034.0,1,858.0,2,1,1,4,Prometedores
-177.0,Valentina López,recurrente,26,F,2024-07-26,4,225539.1,56384.775,4,592.0,4,3,3,10,Leales
-178.0,Luis López,nuevo,58,M,2024-04-19,3,197618.65,65872.88333333333,3,690.0,3,2,2,7,Potenciales
-179.0,Ana Sánchez,recurrente,36,M,2024-05-06,6,393049.3,65508.21666666667,6,673.0,3,5,5,13,Campeones
-180.0,María García,nuevo,60,F,2024-08-26,6,394233.6,65705.59999999999,6,561.0,4,5,5,14,Campeones
-181.0,Sofía Ramírez,recurrente,20,M,2023-04-28,3,141738.2,47246.06666666667,3,1047.0,2,2,2,6,Prometedores
-182.0,Valentina Pérez,recurrente,63,M,2024-10-31,3,245348.55,81782.84999999999,3,495.0,5,2,3,10,Leales
-183.0,Carlos López,recurrente,55,M,2024-06-05,4,218903.55,54725.8875,4,643.0,3,3,3,9,Potenciales
-184.0,Carlos Ramírez,recurrente,52,M,2024-01-29,3,190594.40000000002,63531.466666666674,3,771.0,3,2,2,7,Potenciales
-185.0,María Pérez,nuevo,28,M,2024-01-03,5,302331.4,60466.280000000006,5,797.0,3,4,4,11,Leales
-186.0,Carlos Sánchez,recurrente,62,F,2023-06-03,4,300196.85,75049.2125,4,1011.0,2,3,4,9,Potenciales
-187.0,Valentina López,nuevo,37,F,2023-06-03,3,236131.7,78710.56666666667,3,1011.0,2,2,3,7,Potenciales
-188.0,Luis Rodríguez,nuevo,19,M,2024-09-28,2,106758.1,53379.05,2,528.0,4,1,1,6,Prometedores
-189.0,Pedro López,recurrente,36,M,2024-11-18,2,77106.0,38553.0,2,477.0,5,1,1,7,Potenciales
-190.0,Pedro González,recurrente,64,M,2021-12-22,2,173915.0,86957.5,2,1539.0,1,1,2,4,Prometedores
-191.0,Carlos Pérez,recurrente,23,F,2025-01-30,2,89049.6,44524.8,2,404.0,5,1,1,7,Potenciales
-192.0,Laura González,nuevo,38,F,2022-05-26,4,286844.14999999997,71711.03749999999,4,1384.0,1,3,4,8,Potenciales
-193.0,Carlos García,recurrente,29,M,2023-04-21,3,184509.0,61503.0,3,1054.0,2,2,2,6,Prometedores
-194.0,Ana García,nuevo,40,F,2024-11-23,4,208251.6,52062.9,4,472.0,5,3,3,11,Leales
-195.0,Valentina Pérez,nuevo,67,M,2024-09-06,4,224870.5,56217.625,4,550.0,4,3,3,10,Leales
-196.0,Laura García,recurrente,18,M,2024-06-11,6,275027.2,45837.86666666667,6,637.0,4,5,4,13,Campeones
-197.0,Carlos Pérez,recurrente,65,F,2024-11-18,4,248997.95,62249.4875,4,477.0,5,3,3,11,Leales
-198.0,María Pérez,nuevo,30,M,2024-02-09,4,241112.75,60278.1875,4,760.0,3,3,3,9,Potenciales
-199.0,Valentina Rodríguez,recurrente,62,M,2024-10-10,6,350884.3,58480.71666666667,6,516.0,4,5,5,14,Campeones
-200.0,Juan Sánchez,recurrente,18,M,2024-05-02,3,198504.09999999998,66168.03333333333,3,677.0,3,2,2,7,Potenciales
-201.0,Valentina Martínez,nuevo,54,F,2022-06-18,6,308797.0,51466.166666666664,6,1361.0,1,5,4,10,Leales
-202.0,Ana Martínez,recurrente,52,F,2024-06-10,5,323049.85,64609.969999999994,5,638.0,4,4,4,12,Leales
-203.0,Pedro García,recurrente,41,M,2022-09-25,1,88741.4,88741.4,1,1262.0,1,1,1,3,En riesgo
-204.0,Pedro Sánchez,recurrente,23,M,2024-02-03,4,261501.7,65375.425,4,766.0,3,3,3,9,Potenciales
-205.0,Laura Sánchez,recurrente,22,M,2024-03-20,10,596029.95,59602.994999999995,10,720.0,3,5,5,13,Campeones
-206.0,Pedro Martínez,recurrente,53,M,2024-08-30,5,285083.89999999997,57016.77999999999,5,557.0,4,4,4,12,Leales
-207.0,Pedro Ramírez,nuevo,35,M,2023-02-14,5,321799.15,64359.83,5,1120.0,1,4,4,9,Potenciales
-208.0,Laura Ramírez,nuevo,47,F,2024-12-27,4,251597.1,62899.275,4,438.0,5,3,3,11,Leales
-209.0,Luis García,recurrente,28,M,2024-11-13,5,375491.95,75098.39,5,482.0,5,4,5,14,Campeones
-210.0,Carlos García,nuevo,37,F,2025-01-30,4,295761.8,73940.45,4,404.0,5,3,4,12,Leales
-211.0,Laura Ramírez,nuevo,19,F,2024-05-02,4,246913.8,61728.45,4,677.0,3,3,3,9,Potenciales
-212.0,Valentina González,recurrente,40,M,2025-01-30,8,466130.65,58266.33125,8,404.0,5,5,5,15,Campeones
-213.0,Sofía Ramírez,nuevo,60,M,2024-12-29,8,435617.25,54452.15625,8,436.0,5,5,5,15,Campeones
-214.0,Carlos Rodríguez,recurrente,19,F,2023-11-24,5,281780.8,56356.159999999996,5,837.0,2,4,4,10,Leales
-215.0,Ana Ramírez,nuevo,68,M,2024-03-03,6,395006.45,65834.40833333334,6,737.0,3,5,5,13,Campeones
-216.0,Andrés Pérez,nuevo,68,F,2024-07-24,8,499997.45,62499.68125,8,594.0,4,5,5,14,Campeones
-217.0,Luis González,recurrente,66,F,2024-10-26,2,102687.70000000001,51343.850000000006,2,500.0,5,1,1,7,Potenciales
-218.0,Ana Martínez,nuevo,21,F,2024-06-21,6,339968.35,56661.39166666666,6,627.0,4,5,4,13,Campeones
-219.0,Valentina Pérez,nuevo,44,F,2024-07-15,4,198218.3,49554.575,4,603.0,4,3,2,9,Potenciales
-220.0,Pedro Pérez,recurrente,55,M,2023-05-09,5,294043.45,58808.69,5,1036.0,2,4,4,10,Leales
-221.0,Valentina Sánchez,nuevo,28,M,2025-01-30,5,309263.3,61852.659999999996,5,404.0,5,4,4,13,Campeones
-222.0,Luis Rodríguez,recurrente,23,M,2022-07-21,1,66583.2,66583.2,1,1328.0,1,1,1,3,En riesgo
-223.0,Carlos Pérez,nuevo,47,F,2023-03-09,7,359746.35,51392.33571428571,7,1097.0,1,5,5,11,Leales
-224.0,Luis López,nuevo,48,M,2023-09-28,6,385132.2,64188.700000000004,6,894.0,2,5,5,12,Leales
-225.0,Andrés Martínez,recurrente,41,M,2024-08-31,3,156355.8,52118.6,3,556.0,4,2,2,8,Potenciales
-226.0,Juan Martínez,recurrente,35,M,2023-09-14,8,452719.05,56589.88125,8,908.0,2,5,5,12,Leales
-227.0,María González,recurrente,59,M,2025-01-30,5,314073.45,62814.69,5,404.0,5,4,4,13,Campeones
-228.0,Ana Martínez,recurrente,23,F,2024-08-09,9,510056.8,56672.97777777778,9,578.0,4,5,5,14,Campeones
-229.0,Sofía Sánchez,nuevo,69,F,2022-04-18,2,136219.0,68109.5,2,1422.0,1,1,2,4,Prometedores
-230.0,Luis López,recurrente,48,M,2024-07-14,4,239991.2,59997.8,4,604.0,4,3,3,10,Leales
-231.0,Andrés López,nuevo,21,M,2023-04-07,10,657856.75,65785.675,10,1068.0,2,5,5,12,Leales
-232.0,Ana Pérez,recurrente,60,M,2023-02-06,2,76968.45,38484.225,2,1128.0,1,1,1,3,En riesgo
-233.0,Luis López,nuevo,41,F,2024-08-01,1,58114.5,58114.5,1,586.0,4,1,1,6,Prometedores
-234.0,Valentina González,recurrente,27,M,2024-11-07,3,196937.30000000002,65645.76666666668,3,488.0,5,2,2,9,Potenciales
-235.0,Valentina Rodríguez,nuevo,43,M,2022-07-30,4,247020.1,61755.025,3,1319.0,1,3,3,7,Potenciales
-236.0,Luis Ramírez,recurrente,30,F,2024-06-28,6,339176.7,56529.450000000004,6,620.0,4,5,4,13,Campeones
-237.0,Ana García,nuevo,35,M,2025-01-30,6,436289.4,72714.90000000001,6,404.0,5,5,5,15,Campeones
-238.0,Ana González,recurrente,62,M,2024-07-28,6,376974.5,62829.083333333336,6,590.0,4,5,5,14,Campeones
-239.0,Sofía López,recurrente,27,M,2023-08-03,7,408801.6,58400.22857142857,7,950.0,2,5,5,12,Leales
-240.0,Andrés Sánchez,recurrente,68,M,2023-01-19,1,35579.4,35579.4,1,1146.0,1,1,1,3,En riesgo
-241.0,Pedro Ramírez,nuevo,48,F,2024-11-10,3,150531.2,50177.06666666667,3,485.0,5,2,2,9,Potenciales
-242.0,Pedro González,nuevo,44,M,2024-01-06,6,437773.5,72962.25,6,794.0,3,5,5,13,Campeones
-243.0,Carlos Martínez,nuevo,30,F,2024-07-06,2,124406.95000000001,62203.475000000006,2,612.0,4,1,2,7,Potenciales
-244.0,Laura García,recurrente,39,M,2024-08-08,4,235366.2,58841.55,4,579.0,4,3,3,10,Leales
-245.0,Laura Martínez,recurrente,33,M,2024-08-27,7,326695.7,46670.81428571429,7,560.0,4,5,4,13,Campeones
-246.0,Ana Rodríguez,nuevo,18,M,2022-04-24,2,151374.8,75687.4,2,1416.0,1,1,2,4,Prometedores
-247.0,Carlos López,recurrente,24,F,2023-07-14,2,121942.7,60971.35,2,970.0,2,1,1,4,Prometedores
-248.0,María López,nuevo,69,F,2023-04-30,8,412333.25,51541.65625,8,1045.0,2,5,5,12,Leales
-249.0,Juan Ramírez,nuevo,53,F,2023-12-30,5,311582.4,62316.48,5,801.0,3,4,4,11,Leales
-250.0,Carlos Rodríguez,recurrente,56,M,2024-08-19,4,277666.4,69416.6,4,568.0,4,3,4,11,Leales
-251.0,Laura Rodríguez,nuevo,42,F,2023-03-05,3,164268.7,54756.23333333334,3,1101.0,1,2,2,5,Prometedores
-252.0,Sofía González,recurrente,33,F,2024-06-01,9,573054.0,63672.666666666664,9,647.0,3,5,5,13,Campeones
-253.0,Andrés Sánchez,recurrente,24,F,2024-11-29,6,365798.5,60966.416666666664,6,466.0,5,5,5,15,Campeones
-254.0,Pedro Rodríguez,recurrente,56,M,2024-08-13,3,211160.65000000002,70386.88333333335,3,574.0,4,2,3,9,Potenciales
-255.0,Luis Martínez,nuevo,69,M,2024-05-28,3,183130.7,61043.56666666667,3,651.0,3,2,2,7,Potenciales
-256.0,Pedro González,nuevo,43,M,2024-10-25,7,464479.89999999997,66354.27142857142,7,501.0,5,5,5,15,Campeones
-257.0,Carlos López,nuevo,51,M,2023-03-15,2,117804.70000000001,58902.350000000006,2,1091.0,1,1,1,3,En riesgo
-258.0,Ana García,nuevo,37,M,2024-04-09,6,398396.9,66399.48333333334,6,700.0,3,5,5,13,Campeones
-259.0,Sofía López,recurrente,46,F,2024-09-04,5,270326.55,54065.31,5,552.0,4,4,4,12,Leales
-260.0,Andrés López,recurrente,60,M,2023-12-23,2,122556.8,61278.4,2,808.0,3,1,1,5,Prometedores
-261.0,Luis González,nuevo,65,M,2024-06-19,3,185543.8,61847.93333333333,3,629.0,4,2,2,8,Potenciales
-262.0,Laura Martínez,recurrente,33,M,2025-01-30,7,444626.6,63518.08571428571,7,404.0,5,5,5,15,Campeones
-263.0,Valentina Rodríguez,recurrente,65,M,2022-12-24,1,54344.75,54344.75,1,1172.0,1,1,1,3,En riesgo
-264.0,Pedro Sánchez,recurrente,64,M,2024-02-07,7,351046.14999999997,50149.45,7,762.0,3,5,5,13,Campeones
-265.0,Ana Pérez,recurrente,61,M,2024-07-19,5,280386.6,56077.31999999999,5,599.0,4,4,4,12,Leales
-266.0,Carlos Ramírez,recurrente,31,F,2020-07-17,1,34838.95,34838.95,1,2062.0,1,1,1,3,En riesgo
-267.0,Laura López,nuevo,70,M,2024-11-20,2,118787.65,59393.825,2,475.0,5,1,1,7,Potenciales
-268.0,Pedro Martínez,nuevo,27,M,2024-12-10,4,293151.6,73287.9,4,455.0,5,3,4,12,Leales
-269.0,Andrés García,nuevo,42,F,2024-11-18,3,161759.4,53919.799999999996,3,477.0,5,2,2,9,Potenciales
-270.0,Juan García,recurrente,36,F,2024-08-23,8,554621.9,69327.7375,7,564.0,4,5,5,14,Campeones
-271.0,Pedro Pérez,recurrente,46,M,2021-08-24,3,166050.1,55350.03333333333,3,1659.0,1,2,2,5,Prometedores
-272.0,Pedro Pérez,nuevo,59,M,2025-01-30,4,261006.15,65251.5375,4,404.0,5,3,3,11,Leales
-273.0,Luis Martínez,nuevo,63,M,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-274.0,Luis Pérez,recurrente,50,F,2020-11-08,2,158812.2,79406.1,2,1948.0,1,1,2,4,Prometedores
-275.0,Valentina Sánchez,recurrente,59,M,2024-06-01,2,71543.65,35771.825,2,647.0,3,1,1,5,Prometedores
-276.0,Pedro Rodríguez,nuevo,55,F,2023-01-14,3,223393.3,74464.43333333333,3,1151.0,1,2,3,6,Prometedores
-277.0,María González,recurrente,21,F,2024-04-20,7,388680.25,55525.75,7,689.0,3,5,5,13,Campeones
-278.0,Valentina Sánchez,recurrente,20,M,2024-01-31,7,427944.5,61134.92857142857,7,769.0,3,5,5,13,Campeones
-279.0,Laura Ramírez,nuevo,45,M,2023-12-09,1,67155.5,67155.5,1,822.0,3,1,1,5,Prometedores
-280.0,María Pérez,recurrente,61,M,2023-09-19,3,208606.75,69535.58333333333,3,903.0,2,2,3,7,Potenciales
-281.0,María López,nuevo,31,M,2024-12-06,7,453873.05,64839.00714285714,7,459.0,5,5,5,15,Campeones
-282.0,Juan Rodríguez,nuevo,43,M,2023-06-09,2,144686.75,72343.375,2,1005.0,2,1,2,5,Prometedores
-283.0,María Martínez,recurrente,22,M,2023-12-25,4,202434.5,50608.625,4,806.0,3,3,3,9,Potenciales
-284.0,Luis García,nuevo,53,M,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-285.0,Carlos Rodríguez,recurrente,35,M,2024-06-01,4,253031.5,63257.875,4,647.0,3,3,3,9,Potenciales
-286.0,Laura Martínez,nuevo,64,M,2024-10-19,5,285567.85,57113.56999999999,5,507.0,5,4,4,13,Campeones
-287.0,María González,nuevo,34,M,2024-12-01,4,291752.35,72938.0875,4,464.0,5,3,4,12,Leales
-288.0,Pedro Pérez,nuevo,60,F,2024-11-22,3,156219.94999999998,52073.31666666666,3,473.0,5,2,2,9,Potenciales
-289.0,Andrés López,nuevo,54,M,2024-08-20,5,280730.5,56146.1,5,567.0,4,4,4,12,Leales
-290.0,Andrés Martínez,nuevo,69,M,2022-12-16,4,235808.3,58952.075,4,1180.0,1,3,3,7,Potenciales
-291.0,Luis Ramírez,recurrente,59,M,2020-12-25,3,203375.1,67791.7,3,1901.0,1,2,3,6,Prometedores
-292.0,Ana Ramírez,recurrente,67,F,2023-10-20,4,226435.40000000002,56608.850000000006,4,872.0,2,3,3,8,Potenciales
-293.0,Juan Martínez,recurrente,35,M,2024-01-02,5,369327.95,73865.59,5,798.0,3,4,5,12,Leales
-294.0,Luis Rodríguez,recurrente,43,M,2025-01-30,2,118320.8,59160.4,2,404.0,5,1,1,7,Potenciales
-295.0,Pedro García,recurrente,52,M,2022-10-07,3,156863.55,52287.85,3,1250.0,1,2,2,5,Prometedores
-296.0,María Ramírez,recurrente,57,M,2024-05-20,5,289751.05,57950.21,5,659.0,3,4,4,11,Leales
-297.0,Luis García,nuevo,36,F,2024-05-21,3,138104.8,46034.93333333333,3,658.0,3,2,2,7,Potenciales
-298.0,Andrés González,nuevo,39,M,2024-11-26,5,265412.3,53082.46,5,469.0,5,4,3,12,Leales
-299.0,Valentina García,nuevo,70,F,2024-08-22,4,235779.25,58944.8125,4,565.0,4,3,3,10,Leales
-300.0,Luis López,recurrente,51,M,2020-11-12,2,120899.84999999999,60449.924999999996,2,1944.0,1,1,1,3,En riesgo
-301.0,Luis Ramírez,recurrente,37,F,2023-06-17,6,332285.4,55380.9,6,997.0,2,5,4,11,Leales
-302.0,Laura Rodríguez,recurrente,62,F,2023-11-25,6,422671.4,70445.23333333334,6,836.0,2,5,5,12,Leales
-303.0,Juan Martínez,recurrente,70,M,2024-11-18,7,354926.2,50703.74285714286,7,477.0,5,5,5,15,Campeones
-304.0,Carlos García,recurrente,62,M,2022-12-22,3,163553.8,54517.93333333333,3,1174.0,1,2,2,5,Prometedores
-305.0,Luis González,nuevo,29,M,2024-12-24,4,282031.35,70507.8375,4,441.0,5,3,4,12,Leales
-306.0,Valentina González,recurrente,18,F,2020-08-07,2,129639.0,64819.5,2,2041.0,1,1,2,4,Prometedores
-307.0,María Rodríguez,recurrente,23,F,2023-11-22,3,169205.2,56401.73333333334,3,839.0,2,2,2,6,Prometedores
-308.0,Juan García,recurrente,25,F,2025-01-30,2,131484.0,65742.0,2,404.0,5,1,2,8,Potenciales
-309.0,Valentina López,nuevo,48,M,2022-12-27,3,218233.6,72744.53333333334,3,1169.0,1,2,3,6,Prometedores
-310.0,Pedro García,nuevo,18,F,2024-07-29,5,270278.7,54055.740000000005,5,589.0,4,4,4,12,Leales
-311.0,Luis Pérez,nuevo,64,M,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-312.0,Pedro García,recurrente,51,M,2022-05-15,4,189935.75,47483.9375,4,1395.0,1,3,2,6,Prometedores
-313.0,Luis Pérez,recurrente,50,F,2025-01-30,1,78557.84999999999,78557.84999999999,1,404.0,5,1,1,7,Potenciales
-314.0,María Martínez,nuevo,61,M,2021-12-04,2,109568.25,54784.125,2,1557.0,1,1,1,3,En riesgo
-315.0,María González,nuevo,49,M,2023-10-29,3,128594.4,42864.799999999996,3,863.0,2,2,2,6,Prometedores
-316.0,Valentina Pérez,nuevo,69,M,2024-09-01,5,334351.55,66870.31,5,555.0,4,4,4,12,Leales
-317.0,Luis Rodríguez,recurrente,22,F,2022-06-16,1,89711.1,89711.1,1,1363.0,1,1,1,3,En riesgo
-318.0,Pedro López,nuevo,22,M,2023-11-13,3,162904.6,54301.53333333333,3,848.0,2,2,2,6,Prometedores
-319.0,Laura Pérez,recurrente,50,M,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-320.0,Pedro López,recurrente,32,F,2022-11-06,3,193830.8,64610.26666666666,3,1220.0,1,2,2,5,Prometedores
-321.0,Pedro Sánchez,nuevo,38,F,2024-03-18,6,279749.95,46624.99166666667,6,722.0,3,5,4,12,Leales
-322.0,Sofía Sánchez,nuevo,42,M,2024-12-30,3,179468.1,59822.700000000004,3,435.0,5,2,2,9,Potenciales
-323.0,Sofía González,recurrente,20,F,2023-09-15,5,281603.7,56320.740000000005,5,907.0,2,4,4,10,Leales
-324.0,Valentina Pérez,recurrente,39,M,2020-04-01,3,149642.4,49880.799999999996,3,2169.0,1,2,2,5,Prometedores
-325.0,María Sánchez,recurrente,49,F,2024-12-19,3,163229.4,54409.799999999996,3,446.0,5,2,2,9,Potenciales
-326.0,Sofía González,nuevo,26,F,2024-09-21,5,312578.95,62515.79,5,535.0,4,4,4,12,Leales
-327.0,Luis Ramírez,recurrente,30,M,2024-05-24,5,255113.5,51022.7,5,655.0,3,4,3,10,Leales
-328.0,Juan González,recurrente,68,M,2023-09-20,2,145527.8,72763.9,2,902.0,2,2,2,6,Prometedores
-329.0,Andrés García,nuevo,18,F,2024-06-28,4,238177.9,59544.475,4,620.0,4,3,3,10,Leales
-330.0,Laura López,nuevo,49,M,2024-01-05,1,69722.1,69722.1,1,795.0,3,1,1,5,Prometedores
-331.0,Juan Rodríguez,recurrente,47,F,2023-08-04,1,69151.45,69151.45,1,949.0,2,1,1,4,Prometedores
-332.0,Pedro Ramírez,recurrente,21,M,2024-04-17,6,292013.8,48668.96666666667,6,692.0,3,5,4,12,Leales
-333.0,Andrés González,nuevo,65,M,2023-03-12,4,233412.44999999998,58353.112499999996,4,1094.0,1,3,3,7,Potenciales
-334.0,Sofía Sánchez,recurrente,70,M,2022-07-31,3,189379.6,63126.53333333333,3,1318.0,1,2,2,5,Prometedores
-335.0,Valentina López,nuevo,18,M,2021-04-01,2,79869.9,39934.95,2,1804.0,1,2,1,4,Prometedores
-336.0,Juan Ramírez,nuevo,46,M,2025-01-30,7,448158.3,64022.614285714284,7,404.0,5,5,5,15,Campeones
-337.0,Juan González,nuevo,36,F,2023-05-02,2,148180.8,74090.4,2,1043.0,2,2,2,6,Prometedores
-338.0,Carlos Pérez,recurrente,51,M,2024-04-20,2,142240.15000000002,71120.07500000001,2,689.0,3,2,2,7,Potenciales
-339.0,Pedro Rodríguez,recurrente,58,M,2024-07-04,5,345061.3,69012.26,5,614.0,4,4,5,13,Campeones
-340.0,Carlos Sánchez,recurrente,43,F,2023-10-28,7,457819.55,65402.79285714286,7,864.0,2,5,5,12,Leales
-341.0,Laura Rodríguez,recurrente,68,M,2023-07-06,11,619830.15,56348.19545454546,11,978.0,2,5,5,12,Leales
-342.0,Valentina Sánchez,recurrente,53,F,2023-05-26,4,228862.55,57215.6375,4,1019.0,2,3,3,8,Potenciales
-343.0,Luis García,recurrente,38,F,2023-11-05,3,175036.2,58345.4,3,856.0,2,2,2,6,Prometedores
-344.0,Pedro Ramírez,recurrente,25,M,2022-10-10,2,154131.2,77065.6,2,1247.0,1,2,2,5,Prometedores
-345.0,Carlos Sánchez,nuevo,46,F,2024-07-12,8,410874.10000000003,51359.262500000004,8,606.0,4,5,5,14,Campeones
-346.0,Carlos Pérez,nuevo,63,F,2024-06-26,2,108989.9,54494.95,2,622.0,4,2,1,7,Potenciales
-347.0,Pedro García,recurrente,37,M,2024-08-03,4,223062.45,55765.6125,4,584.0,4,3,3,10,Leales
-348.0,Luis Sánchez,recurrente,50,M,2024-09-22,6,403483.3,67247.21666666666,6,534.0,4,5,5,14,Campeones
-349.0,Andrés López,nuevo,18,F,2024-12-12,2,158877.45,79438.725,2,453.0,5,2,2,9,Potenciales
-350.0,Ana González,nuevo,29,M,2024-04-18,3,163225.3,54408.43333333333,3,691.0,3,2,2,7,Potenciales
-351.0,Laura Rodríguez,nuevo,41,M,2023-02-03,5,331201.45,66240.29000000001,5,1131.0,1,4,4,9,Potenciales
-352.0,Sofía Sánchez,nuevo,47,F,2024-12-18,5,285006.55,57001.31,5,447.0,5,4,4,13,Campeones
-353.0,Pedro Pérez,recurrente,34,M,2024-06-25,7,524212.7,74887.52857142857,7,623.0,4,5,5,14,Campeones
-354.0,Sofía Ramírez,recurrente,64,M,2024-09-08,3,232914.95,77638.31666666667,3,548.0,4,2,3,9,Potenciales
-355.0,Pedro Rodríguez,recurrente,41,M,2024-03-30,2,107601.1,53800.55,2,710.0,3,2,1,6,Prometedores
-356.0,Carlos Ramírez,nuevo,21,M,2024-04-25,6,364872.14999999997,60812.024999999994,6,684.0,3,5,5,13,Campeones
-357.0,Sofía López,nuevo,68,F,2024-04-06,6,407271.1,67878.51666666666,6,703.0,3,5,5,13,Campeones
-358.0,Valentina Ramírez,recurrente,61,F,2024-05-20,4,257425.0,64356.25,4,659.0,3,3,3,9,Potenciales
-359.0,Andrés Martínez,recurrente,69,M,2023-04-16,2,100438.4,50219.2,2,1059.0,2,2,1,5,Prometedores
-360.0,Andrés López,nuevo,23,F,2024-04-20,5,248760.0,49752.0,5,689.0,3,4,3,10,Leales
-361.0,Carlos López,recurrente,23,F,2024-09-21,6,364676.95,60779.49166666667,6,535.0,4,5,5,14,Campeones
-362.0,Carlos Rodríguez,recurrente,62,M,2024-05-08,3,199230.65,66410.21666666666,3,671.0,3,2,2,7,Potenciales
-363.0,Ana García,nuevo,39,M,2024-07-17,5,301768.4,60353.68000000001,5,601.0,4,4,4,12,Leales
-364.0,Juan Sánchez,nuevo,36,M,2024-04-17,5,250506.65,50101.33,5,692.0,3,4,3,10,Leales
-365.0,Sofía Pérez,recurrente,21,F,2024-09-02,6,351073.89999999997,58512.31666666666,6,554.0,4,5,5,14,Campeones
-366.0,María García,recurrente,43,F,2024-09-13,5,267502.35,53500.469999999994,5,543.0,4,4,4,12,Leales
-367.0,Pedro Pérez,recurrente,62,F,2023-12-26,2,119206.0,59603.0,2,805.0,3,2,1,6,Prometedores
-368.0,Luis Martínez,nuevo,41,M,,1,96627.0,96627.0,1,999.0,2,1,1,4,Prometedores
-369.0,Valentina López,recurrente,25,M,2023-11-04,4,248551.69999999998,62137.924999999996,4,857.0,2,3,3,8,Potenciales
-370.0,Andrés Rodríguez,nuevo,58,M,2022-02-02,4,233693.90000000002,58423.475000000006,4,1497.0,1,3,3,7,Potenciales
-371.0,Juan García,recurrente,43,M,2023-05-15,4,223720.5,55930.125,4,1030.0,2,3,3,8,Potenciales
-372.0,Valentina González,nuevo,25,M,2022-06-02,4,253916.15,63479.0375,4,1377.0,1,3,3,7,Potenciales
-373.0,Pedro Ramírez,recurrente,37,F,2022-10-09,6,285357.1,47559.51666666666,6,1248.0,1,5,4,10,Leales
-374.0,Andrés López,recurrente,21,F,2023-08-20,1,80483.09999999999,80483.09999999999,1,933.0,2,1,1,4,Prometedores
-375.0,Carlos González,nuevo,57,M,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-376.0,Ana Sánchez,recurrente,62,M,2025-01-30,4,286230.35,71557.5875,4,404.0,5,3,4,12,Leales
-377.0,María Sánchez,recurrente,36,F,2021-05-19,4,296567.25,74141.8125,4,1756.0,1,3,4,8,Potenciales
-378.0,Andrés Pérez,nuevo,58,M,2023-12-19,6,421871.65,70311.94166666667,6,812.0,3,5,5,13,Campeones
-379.0,Valentina Martínez,recurrente,56,F,2024-07-14,5,242554.2,48510.840000000004,5,604.0,4,4,3,11,Leales
-380.0,Laura López,nuevo,44,M,2023-12-15,2,178224.5,89112.25,2,816.0,3,2,2,7,Potenciales
-381.0,Ana López,recurrente,68,M,2021-09-02,2,142947.6,71473.8,2,1650.0,1,2,2,5,Prometedores
-382.0,Andrés Pérez,recurrente,50,F,2022-10-04,2,156345.6,78172.8,2,1253.0,1,2,2,5,Prometedores
-383.0,Pedro Pérez,recurrente,22,F,2023-08-17,4,232448.5,58112.125,4,936.0,2,3,3,8,Potenciales
-384.0,Laura Ramírez,recurrente,52,F,2024-05-01,6,368957.65,61492.94166666667,6,678.0,3,5,5,13,Campeones
-385.0,Laura González,nuevo,46,F,2024-09-12,4,161755.2,40438.8,4,544.0,4,3,2,9,Potenciales
-386.0,María Martínez,recurrente,63,F,2021-01-31,1,39636.0,39636.0,1,1864.0,1,1,1,3,En riesgo
-387.0,María Sánchez,nuevo,67,F,2020-05-01,1,77804.75,77804.75,1,2139.0,1,1,1,3,En riesgo
-388.0,Carlos López,nuevo,57,F,2024-11-02,6,413850.75,68975.125,6,493.0,5,5,5,15,Campeones
-389.0,Laura Pérez,nuevo,58,M,2023-01-12,5,296262.0,59252.4,5,1153.0,1,4,4,9,Potenciales
-390.0,Ana Martínez,nuevo,64,F,2024-06-03,3,184114.5,61371.5,3,645.0,3,2,2,7,Potenciales
-391.0,Ana Sánchez,recurrente,55,F,2020-06-05,1,48224.85,48224.85,1,2104.0,1,1,1,3,En riesgo
-392.0,Sofía Rodríguez,nuevo,26,M,2024-10-06,6,372150.65,62025.10833333334,6,520.0,4,5,5,14,Campeones
-393.0,Pedro Sánchez,recurrente,65,M,2023-06-14,2,104670.7,52335.35,2,1000.0,2,2,1,5,Prometedores
-394.0,Pedro Pérez,nuevo,22,M,2024-07-13,3,165291.2,55097.06666666667,3,605.0,4,2,2,8,Potenciales
-395.0,Andrés Martínez,nuevo,44,F,2024-03-13,7,446792.85,63827.549999999996,7,727.0,3,5,5,13,Campeones
-396.0,Valentina Rodríguez,nuevo,37,F,2023-07-10,3,223393.55,74464.51666666666,3,974.0,2,2,3,7,Potenciales
-397.0,María García,nuevo,54,M,2023-09-18,4,214841.10000000003,53710.27500000001,4,904.0,2,3,3,8,Potenciales
-398.0,Ana Martínez,nuevo,31,M,2022-11-23,3,200143.8,66714.59999999999,3,1203.0,1,2,3,6,Prometedores
-399.0,Luis Pérez,recurrente,52,F,2023-04-22,2,105861.2,52930.6,2,1053.0,2,2,1,5,Prometedores
-400.0,Luis González,nuevo,30,M,2020-10-06,2,113209.6,56604.8,2,1981.0,1,2,1,4,Prometedores
-401.0,Sofía Sánchez,recurrente,26,F,2024-08-26,7,378959.0,54137.0,7,561.0,4,5,5,14,Campeones
-402.0,Sofía Pérez,nuevo,55,F,2025-01-30,3,219730.75,73243.58333333333,3,404.0,5,2,3,10,Leales
-403.0,Valentina Sánchez,recurrente,46,M,2022-09-14,4,284611.2,71152.8,4,1273.0,1,3,4,8,Potenciales
-404.0,Valentina Pérez,recurrente,46,M,2024-05-04,2,140151.85,70075.925,2,675.0,3,2,2,7,Potenciales
-405.0,Carlos Rodríguez,recurrente,42,M,2023-07-07,2,88540.8,44270.4,2,977.0,2,2,1,5,Prometedores
-406.0,Pedro Sánchez,recurrente,33,M,2024-02-21,5,310317.15,62063.43000000001,5,748.0,3,4,4,11,Leales
-407.0,Pedro Rodríguez,recurrente,33,F,2022-03-09,2,142252.95,71126.475,2,1462.0,1,2,2,5,Prometedores
-408.0,María Sánchez,recurrente,53,F,2024-02-19,5,262404.5,52480.9,5,750.0,3,4,3,10,Leales
-409.0,Carlos Pérez,nuevo,32,M,2024-03-19,3,191057.1,63685.700000000004,3,721.0,3,3,2,8,Potenciales
-410.0,María López,nuevo,52,F,2022-11-30,5,261039.6,52207.92,5,1196.0,1,4,3,8,Potenciales
-411.0,Andrés Pérez,recurrente,67,M,2024-04-10,6,371228.64999999997,61871.44166666666,6,699.0,3,5,5,13,Campeones
-412.0,Valentina Pérez,recurrente,52,F,2024-10-13,6,322507.4,53751.23333333334,6,513.0,5,5,4,14,Campeones
-413.0,María Sánchez,recurrente,39,M,2021-01-07,2,142311.05,71155.525,2,1888.0,1,2,2,5,Prometedores
-414.0,María Martínez,nuevo,58,M,2024-11-01,7,475276.6,67896.65714285713,7,494.0,5,5,5,15,Campeones
-415.0,Juan Ramírez,recurrente,20,M,2025-01-30,4,193494.0,48373.5,4,404.0,5,3,2,10,Leales
-416.0,Sofía Pérez,nuevo,67,M,2024-09-08,4,266104.85,66526.2125,4,548.0,4,3,3,10,Leales
-417.0,Ana García,recurrente,37,F,2025-01-30,5,272323.95,54464.79,5,404.0,5,4,4,13,Campeones
-418.0,Laura López,nuevo,46,M,2022-04-28,1,51087.2,51087.2,1,1412.0,1,1,1,3,En riesgo
-419.0,Carlos Sánchez,recurrente,21,F,2023-10-30,2,158312.0,79156.0,2,862.0,2,2,2,6,Prometedores
-420.0,Carlos Martínez,recurrente,35,M,2024-05-26,6,444994.75,74165.79166666667,6,653.0,3,5,5,13,Campeones
-421.0,Sofía López,recurrente,23,M,2022-08-08,7,421432.95,60204.70714285714,6,1310.0,1,5,5,11,Leales
-422.0,Sofía García,recurrente,20,M,2023-06-16,1,49906.9,49906.9,1,998.0,2,1,1,4,Prometedores
-423.0,Carlos Rodríguez,recurrente,52,M,2024-07-07,4,188599.25,47149.8125,4,611.0,4,3,2,9,Potenciales
-424.0,Luis Rodríguez,nuevo,64,M,2023-10-17,5,343133.5,68626.7,5,875.0,2,4,4,10,Leales
-425.0,Pedro García,nuevo,22,F,2024-07-21,5,246286.8,49257.36,5,597.0,4,4,3,11,Leales
-426.0,Juan López,recurrente,33,M,2021-11-20,3,204586.59999999998,68195.53333333333,3,1571.0,1,3,3,7,Potenciales
-427.0,Juan Martínez,recurrente,36,M,2024-06-21,4,253941.75,63485.4375,4,627.0,4,3,3,10,Leales
-428.0,Ana Rodríguez,nuevo,64,M,2024-03-30,5,319640.5,63928.1,4,710.0,3,4,4,11,Leales
-429.0,Sofía Rodríguez,recurrente,26,M,2024-10-11,7,401962.0,57423.142857142855,7,515.0,4,5,5,14,Campeones
-430.0,Valentina Sánchez,nuevo,68,M,2024-07-06,2,183195.1,91597.55,2,612.0,4,2,2,8,Potenciales
-431.0,Sofía Pérez,recurrente,45,M,2023-08-24,5,309105.65,61821.130000000005,5,929.0,2,4,4,10,Leales
-432.0,Andrés Ramírez,recurrente,63,M,2024-04-23,8,456417.75000000006,57052.21875000001,8,686.0,3,5,5,13,Campeones
-433.0,Ana Ramírez,recurrente,49,M,2021-05-24,5,303062.6,60612.52,5,1751.0,1,4,4,9,Potenciales
-434.0,Carlos Martínez,nuevo,40,M,2024-08-20,3,127136.45,42378.816666666666,3,567.0,4,3,2,9,Potenciales
-435.0,Pedro García,recurrente,33,F,2022-07-28,5,274179.4,54835.880000000005,5,1321.0,1,4,4,9,Potenciales
-436.0,Andrés González,nuevo,31,F,2024-05-08,4,298367.7,74591.925,4,671.0,3,3,4,10,Leales
-437.0,Sofía López,recurrente,44,M,2024-10-01,5,291146.25,58229.25,5,525.0,4,4,4,12,Leales
-438.0,Pedro Pérez,nuevo,21,F,2024-03-14,5,248772.85,49754.57,5,726.0,3,4,3,10,Leales
-439.0,Pedro López,nuevo,31,M,2025-01-30,5,359378.25,71875.65,5,404.0,5,4,5,14,Campeones
-440.0,Luis Ramírez,recurrente,36,M,2023-06-23,4,294360.2,73590.05,4,991.0,2,3,4,9,Potenciales
-441.0,María López,recurrente,60,M,2024-10-24,5,286220.65,57244.130000000005,5,502.0,5,4,4,13,Campeones
-442.0,Ana Martínez,recurrente,56,F,2024-03-08,5,239390.25,47878.05,5,732.0,3,4,3,10,Leales
-443.0,Andrés González,recurrente,66,F,2023-12-22,2,125537.4,62768.7,2,809.0,3,2,2,7,Potenciales
-444.0,María Pérez,nuevo,63,M,2024-12-07,4,273990.85,68497.7125,4,458.0,5,3,4,12,Leales
-445.0,Juan González,nuevo,54,M,2024-03-25,4,259706.2,64926.55,4,715.0,3,3,3,9,Potenciales
-446.0,Luis García,recurrente,22,F,2022-04-24,5,261133.4,52226.68,5,1416.0,1,4,3,8,Potenciales
-447.0,Juan Pérez,nuevo,56,M,2020-04-06,1,60883.2,60883.2,1,2164.0,1,1,1,3,En riesgo
-448.0,Andrés Martínez,recurrente,23,F,2024-08-27,3,119793.20000000001,39931.06666666667,3,560.0,4,3,1,8,Potenciales
-449.0,María García,nuevo,27,M,2024-10-30,3,211524.6,70508.2,3,496.0,5,3,3,11,Leales
-450.0,Carlos Rodríguez,recurrente,29,M,2024-11-02,4,269988.55,67497.1375,4,493.0,5,4,4,13,Campeones
-451.0,Valentina Ramírez,nuevo,50,M,2024-01-02,3,188380.0,62793.333333333336,3,798.0,3,3,2,8,Potenciales
-452.0,Valentina Martínez,nuevo,70,M,2021-05-28,1,57402.9,57402.9,1,1747.0,1,1,1,3,En riesgo
-453.0,Pedro Sánchez,recurrente,64,M,2023-04-30,4,266446.5,66611.625,4,1045.0,2,4,4,10,Leales
-454.0,Pedro Rodríguez,recurrente,24,M,2024-08-09,5,268419.5,53683.9,5,578.0,4,4,4,12,Leales
-455.0,Pedro Martínez,nuevo,47,M,2024-06-18,3,189789.19999999998,63263.06666666666,3,630.0,4,3,2,9,Potenciales
-456.0,Valentina González,recurrente,19,M,2024-07-03,7,433547.75,61935.392857142855,7,615.0,4,5,5,14,Campeones
-457.0,Andrés Pérez,recurrente,47,F,2024-01-16,5,213932.5,42786.5,5,784.0,3,4,3,10,Leales
-458.0,Andrés Pérez,nuevo,64,M,2023-09-19,3,199983.8,66661.26666666666,3,903.0,2,3,3,8,Potenciales
-459.0,Juan Ramírez,recurrente,62,F,2023-10-18,8,436614.75,54576.84375,8,874.0,2,5,5,12,Leales
-460.0,Laura Sánchez,recurrente,38,F,2025-01-30,5,332312.2,66462.44,5,404.0,5,4,4,13,Campeones
-461.0,Sofía López,recurrente,52,M,2024-03-30,2,95353.29999999999,47676.649999999994,2,710.0,3,2,1,6,Prometedores
-462.0,Laura García,nuevo,23,F,2024-01-25,3,190006.05,63335.35,3,775.0,3,3,2,8,Potenciales
-463.0,Sofía Rodríguez,recurrente,64,M,2023-05-16,2,117600.9,58800.45,2,1029.0,2,2,1,5,Prometedores
-464.0,Andrés Martínez,nuevo,68,F,2024-07-25,2,133557.90000000002,66778.95000000001,2,593.0,4,2,2,8,Potenciales
-465.0,Pedro González,nuevo,20,M,2024-11-23,6,431181.1,71863.51666666666,6,472.0,5,5,5,15,Campeones
-466.0,Carlos García,nuevo,27,M,2024-11-24,2,130019.4,65009.7,2,471.0,5,2,2,9,Potenciales
-467.0,María Sánchez,nuevo,60,M,2021-03-14,1,35597.0,35597.0,1,1822.0,1,1,1,3,En riesgo
-468.0,María González,recurrente,24,M,2023-10-09,3,161635.7,53878.56666666667,3,883.0,2,3,2,7,Potenciales
-469.0,Laura González,nuevo,52,M,2023-11-16,1,97504.0,97504.0,1,845.0,2,1,1,4,Prometedores
-470.0,Sofía Sánchez,nuevo,25,M,,0,0.0,,0,999.0,2,1,1,4,Prometedores
-471.0,Andrés Pérez,nuevo,63,F,2024-06-21,3,159212.05,53070.68333333333,3,627.0,4,3,2,9,Potenciales
-472.0,Andrés Sánchez,recurrente,68,F,2024-11-23,4,251759.3,62939.825,4,472.0,5,4,3,12,Leales
-473.0,Sofía Sánchez,nuevo,45,M,2024-09-30,2,102889.05,51444.525,2,526.0,4,2,1,7,Potenciales
-474.0,Sofía García,nuevo,37,F,2023-05-21,2,109333.8,54666.9,2,1024.0,2,2,1,5,Prometedores
-475.0,Sofía Rodríguez,recurrente,19,M,2025-01-30,4,237326.6,59331.65,4,404.0,5,4,3,12,Leales
-476.0,Sofía García,recurrente,45,F,2024-10-26,5,328498.8,65699.76,5,500.0,5,4,4,13,Campeones
-477.0,Valentina González,recurrente,46,M,2023-09-25,2,122861.2,61430.6,2,897.0,2,2,1,5,Prometedores
-478.0,Valentina González,nuevo,62,F,2023-04-27,4,261508.19999999998,65377.049999999996,4,1048.0,2,4,3,9,Potenciales
-479.0,Valentina González,recurrente,68,F,2024-06-06,5,229709.65,45941.93,5,642.0,4,4,3,11,Leales
-480.0,Andrés López,nuevo,28,F,2023-10-28,5,334145.75,66829.15,5,864.0,2,4,4,10,Leales
-481.0,Carlos González,recurrente,51,M,2024-04-18,3,166137.8,55379.26666666666,3,691.0,3,3,2,8,Potenciales
-482.0,Carlos Pérez,recurrente,33,F,2022-03-02,1,82327.59999999999,82327.59999999999,1,1469.0,1,1,1,3,En riesgo
-483.0,María Martínez,recurrente,37,M,2024-10-31,8,433499.95,54187.49375,8,495.0,5,5,5,15,Campeones
-484.0,Carlos López,nuevo,23,F,2024-08-14,6,397157.60000000003,66192.93333333333,6,573.0,4,5,5,14,Campeones
-485.0,María Ramírez,nuevo,25,M,2022-10-20,2,98571.29999999999,49285.649999999994,2,1237.0,1,2,1,4,Prometedores
-486.0,Valentina López,recurrente,29,F,2023-05-11,4,160148.6,40037.15,4,1034.0,2,4,2,8,Potenciales
-487.0,Ana Rodríguez,nuevo,63,M,2024-08-23,3,205017.95,68339.31666666667,3,564.0,4,3,3,10,Leales
-488.0,Carlos Pérez,recurrente,52,M,2024-10-13,6,385107.1,64184.51666666666,6,513.0,5,5,5,15,Campeones
-489.0,Carlos González,recurrente,68,F,2024-11-28,6,356397.35,59399.55833333333,6,467.0,5,5,5,15,Campeones
-490.0,Andrés González,nuevo,29,F,2024-07-18,3,188487.0,62829.0,3,600.0,4,3,2,9,Potenciales
-491.0,Pedro Martínez,nuevo,29,F,2022-07-26,2,112508.6,56254.3,2,1323.0,1,2,1,4,Prometedores
-492.0,Valentina López,recurrente,62,F,2025-01-30,5,249334.34999999998,49866.869999999995,5,404.0,5,4,3,12,Leales
-493.0,Valentina García,recurrente,48,M,2023-02-08,4,251414.3,62853.575,4,1126.0,1,4,3,8,Potenciales
-494.0,Pedro Martínez,recurrente,35,M,2024-03-26,5,272787.15,54557.43000000001,5,714.0,3,4,4,11,Leales
-495.0,Andrés Pérez,recurrente,23,F,2023-07-25,7,407065.9,58152.27142857143,7,959.0,2,5,5,12,Leales
-496.0,Andrés García,recurrente,61,M,2024-01-11,5,259375.84999999998,51875.17,5,789.0,3,4,3,10,Leales
-497.0,Juan Martínez,recurrente,44,M,2024-10-22,5,306459.3,61291.86,5,504.0,5,4,4,13,Campeones
-498.0,Juan Sánchez,nuevo,52,F,2024-12-04,7,496300.6,70900.08571428571,7,461.0,5,5,5,15,Campeones
-499.0,María Sánchez,recurrente,52,F,2024-10-30,6,344464.95,57410.825000000004,6,496.0,5,5,5,15,Campeones
-500.0,Juan Pérez,nuevo,54,F,2024-06-10,5,266795.9,53359.18000000001,5,638.0,4,4,4,12,Leales
+1,maria rodriguez penia,recurrente,57,F,,4,143143.0,35785.75,4,999.0,5,4,3,12,Leales
+2,veronica vargas perez,empresarial,36,M,,2,147333.0,73666.5,2,999.0,5,2,3,10,Leales
+3,valentina castano castanio,recurrente,61,M,2023-11-28,2,80311.0,40155.5,2,834.0,5,2,2,9,Prometedores
+5,diego dominguez gonzalez,potencial,52,F,,1,18091.0,18091.0,1,999.0,5,1,1,7,Prometedores
+6,benjamin fernandez alvarez,nuevo,38,F,,4,136116.0,45372.0,4,999.0,5,4,3,12,Leales
+7,laura fernandez vargas,vip,61,F,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+8,natalia gutierrez dominguez,vip,72,F,2022-07-10,1,1000.0,1000.0,1,1340.0,1,1,1,3,En riesgo
+9,hernan moreno dominguez,potencial,86,F,,3,76175.0,25391.666666666668,3,999.0,5,3,2,10,Leales
+10,patricia moreno herrera,recurrente,70,M,,2,2000.0,1000.0,2,999.0,5,2,1,8,Prometedores
+11,natalia ramirez castano,nuevo,54,F,,3,97553.0,32517.666666666668,3,999.0,5,3,3,11,Leales
+12,jesus toro cruz,nuevo,34,M,,2,65403.0,32701.5,2,999.0,5,2,2,9,Prometedores
+13,mauricio garcia ninez,empresarial,40,M,2023-01-15,1,36286.0,36286.0,1,1151.0,1,1,2,4,Potenciales
+14,paola dominguez rodriguez,empresarial,29,F,,4,449778.0,112444.5,4,999.0,5,4,5,14,Campeones
+15,jose lopez penia,empresarial,77,F,2024-10-02,4,155397.0,38849.25,4,525.0,5,5,4,14,Campeones
+16,alvaro ramirez cardenas,empresarial,74,F,2022-04-22,1,48866.0,48866.0,1,1419.0,1,1,2,4,Potenciales
+17,natalia sanchez garcia,empresarial,44,M,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+18,paola moreno perez,nuevo,60,M,2023-03-06,4,147895.0,36973.75,4,1101.0,1,5,3,9,Prometedores
+19,jose dominguez cifuentes,nuevo,67,M,,3,228262.0,76087.33333333333,3,999.0,5,3,5,13,Campeones
+20,maria cifuentes fernandez,vip,74,M,2023-08-22,1,40880.0,40880.0,1,932.0,5,1,2,8,Prometedores
+21,diego gutierrez ospina,recurrente,19,F,,1,41613.0,41613.0,1,999.0,5,1,2,8,Prometedores
+22,veronica toro espania,nuevo,100,F,,3,375378.0,125126.0,3,999.0,5,3,5,13,Campeones
+23,patricia dominguez rodriguez,nuevo,68,F,,3,241370.0,80456.66666666667,3,999.0,5,3,5,13,Campeones
+24,jesus fernandez espana,vip,41,F,,1,25439.0,25439.0,1,999.0,5,1,1,7,Prometedores
+25,monica garcia ramirez,potencial,38,M,2023-07-27,5,87106.0,17421.2,5,958.0,5,5,2,12,Leales
+26,sebastian sanchez espana,potencial,23,F,,4,251091.0,62772.75,4,999.0,5,5,5,15,Campeones
+27,alejandro pena toro,empresarial,18,F,2023-08-31,5,386177.0,77235.4,5,923.0,5,5,5,15,Campeones
+28,jose cruz ospina,vip,69,M,,0,0.0,,0,999.0,5,1,1,7,Prometedores
+29,mauricio herrera cifuentes,nuevo,75,F,,1,37078.0,37078.0,1,999.0,5,1,2,8,Prometedores
+30,sofia fernandez penia,recurrente,22,F,,3,237205.0,79068.33333333333,3,999.0,5,3,5,13,Campeones
+31,ricardo sanchez garcia,empresarial,80,F,,2,287126.0,143563.0,2,999.0,5,2,5,12,Leales
+32,camilo vargas vargas,potencial,37,M,,1,72892.0,72892.0,1,999.0,5,1,2,8,Prometedores
+33,julian cifuentes cruz,recurrente,30,F,,1,57107.0,57107.0,1,999.0,5,1,2,8,Prometedores
+34,camilo garcia herrera,empresarial,62,M,2021-06-17,3,180343.0,60114.333333333336,3,1728.0,1,3,4,8,Prometedores
+35,daniela herrera martinez,potencial,100,M,,3,118206.0,39402.0,3,999.0,5,3,3,11,Leales
+36,valentina espana alvarez,nuevo,44,M,2020-04-27,3,122243.0,40747.666666666664,3,2144.0,1,3,3,7,Prometedores
+37,patricia castano cruz,nuevo,19,F,,2,117028.0,58514.0,2,999.0,5,2,3,10,Leales
+38,julian fernandez alvarez,potencial,35,M,,0,0.0,,0,999.0,5,1,1,7,Prometedores
+39,valentina cruz castano,empresarial,36,M,,2,74694.0,37347.0,2,999.0,5,2,2,9,Prometedores
+40,paola ospina munioz,recurrente,31,F,,0,0.0,,0,999.0,5,1,1,7,Prometedores
+41,alejandro cruz toro,vip,63,F,,2,103341.0,51670.5,2,999.0,5,2,3,10,Leales
+42,jose sanchez cardenas,nuevo,77,F,,0,0.0,,0,999.0,5,1,1,7,Prometedores
+43,natalia cardenas cifuentes,recurrente,57,F,2020-11-21,7,547157.0,78165.28571428571,7,1936.0,1,5,5,11,Leales
+44,jesus moreno toro,recurrente,59,F,,1,38377.0,38377.0,1,999.0,5,1,2,8,Prometedores
+45,natalia cruz rodriguez,recurrente,44,M,,5,318073.0,63614.6,5,999.0,5,5,5,15,Campeones
+46,natalia rodriguez martinez,nuevo,19,M,,1,72747.0,72747.0,1,999.0,5,1,2,8,Prometedores
+47,raul munoz perez,potencial,48,M,2024-06-16,2,2000.0,1000.0,2,633.0,5,2,1,8,Prometedores
+48,paola toro cifuentes,vip,98,M,,3,178272.0,59424.0,3,999.0,5,4,4,13,Campeones
+49,valentina fernandez fernandez,nuevo,63,F,,1,104601.0,104601.0,1,999.0,5,1,3,9,Prometedores
+50,angela martinez toro,vip,57,F,2020-08-02,4,80128.0,20032.0,4,2047.0,1,5,2,8,Prometedores
+51,carolina rodriguez cardenas,nuevo,69,F,,1,137999.0,137999.0,1,999.0,5,1,3,9,Prometedores
+52,jesus garcia toro,potencial,37,F,,6,370858.0,61809.666666666664,6,999.0,5,5,5,15,Campeones
+53,sebastian ospina castano,recurrente,68,M,,5,377371.0,75474.2,5,999.0,5,5,5,15,Campeones
+54,paola lopez pena,vip,20,F,,1,137461.0,137461.0,1,999.0,5,1,3,9,Prometedores
+55,paola fernandez ramirez,nuevo,63,M,,0,0.0,,0,999.0,5,1,1,7,Prometedores
+56,alejandro rodriguez niniez,empresarial,47,M,,3,242694.0,80898.0,3,999.0,5,4,5,14,Campeones
+57,angela moreno sanchez,nuevo,25,M,,4,114236.0,28559.0,4,999.0,5,5,3,13,Campeones
+58,ricardo ramirez cruz,empresarial,30,F,,7,793135.0,113305.0,7,999.0,5,5,5,15,Campeones
+59,julian toro garcia,nuevo,58,M,2021-12-25,2,75295.0,37647.5,2,1537.0,1,2,2,5,Potenciales
+60,daniela ramirez gonzalez,nuevo,27,F,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+61,alejandro fernandez rios,vip,47,M,,1,57661.0,57661.0,1,999.0,5,1,2,8,Prometedores
+62,carolina pena moreno,empresarial,52,F,,1,55055.0,55055.0,1,999.0,5,1,2,8,Prometedores
+63,ricardo martinez gonzalez,potencial,30,M,2020-06-14,1,1000.0,1000.0,1,2096.0,1,1,1,3,En riesgo
+64,sofia ospina garcia,vip,40,F,,1,33162.0,33162.0,1,999.0,5,1,2,8,Prometedores
+65,jose ramirez castanio,nuevo,73,M,,5,222596.0,44519.2,5,999.0,5,5,5,15,Campeones
+66,alejandro lopez cifuentes,recurrente,43,M,,4,123152.0,30788.0,4,999.0,5,5,3,13,Campeones
+67,andres gutierrez castanio,nuevo,30,F,,4,66767.0,22255.666666666668,4,999.0,5,5,2,12,Leales
+68,raul rios castano,recurrente,57,M,,0,0.0,,0,999.0,5,1,1,7,Prometedores
+69,sebastian cifuentes martinez,nuevo,64,F,,3,324364.0,108121.33333333333,3,999.0,5,4,5,14,Campeones
+71,alvaro fernandez rodriguez,potencial,34,F,,1,94069.0,94069.0,1,999.0,5,1,3,9,Prometedores
+72,felipe cruz moreno,vip,47,M,,5,276490.0,55298.0,5,999.0,5,5,5,15,Campeones
+73,natalia castanio gonzalez,empresarial,71,F,2024-07-03,2,138718.0,69359.0,2,616.0,5,2,3,10,Leales
+74,valentina gutierrez castanio,vip,71,F,,6,552283.0,92047.16666666667,6,999.0,5,5,5,15,Campeones
+75,monica toro castanio,nuevo,46,F,,2,190205.0,95102.5,2,999.0,5,2,4,11,Leales
+76,felipe perez ninez,empresarial,25,F,,5,343749.0,68749.8,5,999.0,5,5,5,15,Campeones
+77,maria castanio ninez,potencial,100,M,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+78,diego lopez garcia,recurrente,48,M,,4,251223.0,62805.75,4,999.0,5,5,5,15,Campeones
+79,julian lopez rodriguez,nuevo,30,F,,1,17704.0,17704.0,1,999.0,5,1,1,7,Prometedores
+80,benjamin ninez sanchez,vip,20,M,,4,152797.0,50932.333333333336,4,999.0,5,5,4,14,Campeones
+81,sebastian perez gonzalez,recurrente,64,M,,2,89159.0,89159.0,2,999.0,5,2,2,9,Prometedores
+82,sebastian fernandez fernandez,nuevo,26,F,,4,376860.0,94215.0,4,999.0,5,5,5,15,Campeones
+83,laura martinez gutierrez,recurrente,61,M,2021-12-26,5,413193.0,82638.6,5,1536.0,1,5,5,11,Leales
+84,natalia pena lopez,recurrente,67,M,,2,187158.0,93579.0,2,999.0,5,2,4,11,Leales
+85,veronica cardenas ospina,empresarial,68,F,,1,59722.0,59722.0,1,999.0,5,1,2,8,Prometedores
+86,raul cardenas moreno,empresarial,75,M,2020-02-27,2,30898.0,15449.0,2,2204.0,1,2,2,5,Potenciales
+87,mauricio penia martinez,empresarial,44,M,,1,126588.0,126588.0,1,999.0,5,1,3,9,Prometedores
+88,claudia gonzalez herrera,empresarial,31,M,2021-06-01,4,290996.0,72749.0,4,1744.0,1,5,5,11,Leales
+89,maria martinez ospina,recurrente,61,F,,2,2000.0,1000.0,2,999.0,5,2,1,8,Prometedores
+91,maria cifuentes espania,nuevo,54,M,2023-07-20,4,377019.0,94254.75,4,965.0,5,5,5,15,Campeones
+92,jesus martinez moreno,vip,70,F,2021-01-01,2,144372.0,72186.0,2,1895.0,1,2,3,6,Potenciales
+93,paola espania sanchez,recurrente,30,M,,1,36650.0,36650.0,1,999.0,5,1,2,8,Prometedores
+94,benjamin cruz vargas,potencial,38,F,,1,64788.0,64788.0,1,999.0,5,1,2,8,Prometedores
+95,jose ospina fernandez,recurrente,24,M,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+96,diego fernandez castanio,nuevo,34,M,,3,133657.0,44552.333333333336,3,999.0,5,4,3,12,Leales
+97,ricardo herrera ospina,potencial,20,F,,2,196113.0,98056.5,2,999.0,5,2,4,11,Leales
+98,natalia cardenas sanchez,vip,73,M,,3,213232.0,71077.33333333333,3,999.0,5,4,4,13,Campeones
+99,benjamin herrera ospina,potencial,78,M,2023-02-20,2,93951.0,46975.5,2,1115.0,1,2,3,6,Potenciales
+100,patricia cifuentes ninez,vip,67,F,2020-02-27,2,119827.0,59913.5,2,2204.0,1,2,3,6,Potenciales
+101,patricia espania penia,vip,57,F,,5,222314.0,44462.8,5,999.0,5,5,5,15,Campeones
+102,valentina munoz gutierrez,vip,22,M,2021-03-13,1,59611.0,59611.0,1,1824.0,1,1,2,4,Potenciales
+103,natalia lopez cardenas,potencial,79,M,,3,171272.0,57090.666666666664,3,999.0,5,4,4,13,Campeones
+104,valentina penia pena,empresarial,35,F,,6,217932.0,36322.0,6,999.0,5,5,4,14,Campeones
+105,mauricio lopez ninez,empresarial,32,F,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+106,laura ospina fernandez,empresarial,58,F,2020-05-07,2,37727.0,18863.5,2,2134.0,1,2,2,5,Potenciales
+107,valentina munoz lopez,potencial,19,M,,2,142134.0,71067.0,2,999.0,5,2,3,10,Leales
+108,monica cifuentes alvarez,recurrente,53,F,,3,3000.0,1000.0,3,999.0,5,4,1,10,Leales
+109,benjamin ramirez ospina,recurrente,29,F,2020-06-16,5,474066.0,94813.2,5,2094.0,1,5,5,11,Leales
+110,andres dominguez herrera,nuevo,79,F,,0,0.0,,0,999.0,5,1,1,7,Prometedores
+111,patricia martinez cardenas,potencial,32,M,,2,190097.0,95048.5,2,999.0,5,2,4,11,Leales
+112,alejandro espania cardenas,potencial,27,M,,1,23293.0,23293.0,1,999.0,5,1,1,7,Prometedores
+113,monica ospina penia,recurrente,66,F,,3,108681.0,36227.0,3,999.0,5,4,3,12,Leales
+114,ricardo gutierrez munioz,empresarial,33,F,,0,0.0,,0,999.0,5,1,1,7,Prometedores
+115,daniela ramirez vargas,potencial,61,F,,3,164811.0,54937.0,3,999.0,5,4,4,13,Campeones
+116,ricardo garcia cifuentes,vip,53,F,,3,76965.0,25655.0,3,999.0,5,4,2,11,Leales
+117,laura martinez cifuentes,vip,34,M,,1,119971.0,119971.0,1,999.0,5,1,3,9,Prometedores
+118,daniela martinez garcia,nuevo,67,F,2022-01-09,1,81246.0,81246.0,1,1522.0,1,1,2,4,Potenciales
+119,paola lopez sanchez,potencial,64,F,,2,170761.0,85380.5,2,999.0,5,2,4,11,Leales
+120,valentina ramirez perez,nuevo,29,F,2020-08-20,6,412185.0,68697.5,6,2029.0,1,5,5,11,Leales
+121,patricia garcia herrera,vip,33,M,,1,58734.0,58734.0,1,999.0,5,1,2,8,Prometedores
+122,patricia cifuentes martinez,empresarial,18,F,,3,252457.0,84152.33333333333,3,999.0,5,4,5,14,Campeones
+123,alvaro martinez gonzalez,vip,61,F,,2,138402.0,69201.0,2,999.0,5,2,3,10,Leales
+124,andres gonzalez ospina,potencial,30,F,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+125,jose lopez herrera,nuevo,61,F,,2,144797.0,72398.5,2,999.0,5,2,3,10,Leales
+126,andres toro dominguez,potencial,41,M,,4,223676.0,55919.0,4,999.0,5,5,5,15,Campeones
+128,diego cardenas castanio,nuevo,30,F,,4,243207.0,60801.75,4,999.0,5,5,5,15,Campeones
+129,julian cifuentes cruz,vip,33,F,,1,106407.0,106407.0,1,999.0,5,1,3,9,Prometedores
+130,jesus martinez toro,vip,60,F,,1,87706.0,87706.0,1,999.0,5,1,2,8,Prometedores
+131,jose moreno ospina,vip,77,M,,1,61035.0,61035.0,1,999.0,5,1,2,8,Prometedores
+132,claudia perez garcia,empresarial,60,M,,3,157540.0,52513.333333333336,3,999.0,5,4,4,13,Campeones
+133,julian sanchez garcia,recurrente,51,F,,2,173032.0,86516.0,2,999.0,5,2,4,11,Leales
+134,veronica castanio martinez,vip,70,M,,1,82117.0,82117.0,1,999.0,5,1,2,8,Prometedores
+135,maria rios ramirez,potencial,79,M,,4,94107.0,23526.75,4,999.0,5,5,3,13,Campeones
+136,felipe cardenas toro,recurrente,30,M,2023-12-30,1,1000.0,1000.0,1,802.0,5,1,1,7,Prometedores
+137,laura perez alvarez,recurrente,74,F,,0,0.0,,0,999.0,5,1,1,7,Prometedores
+138,alvaro cardenas rios,empresarial,80,M,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+139,raul alvarez perez,vip,76,F,2024-04-25,3,351360.0,117120.0,3,685.0,5,4,5,14,Campeones
+140,maria garcia munoz,recurrente,29,F,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+141,alvaro fernandez dominguez,potencial,66,M,,2,210771.0,105385.5,2,999.0,5,2,4,11,Leales
+142,ricardo cardenas ninez,empresarial,50,M,2021-10-15,2,235330.0,117665.0,2,1608.0,1,2,5,8,Prometedores
+143,raul garcia pena,potencial,71,M,,3,238040.0,79346.66666666667,3,999.0,5,4,5,14,Campeones
+144,carolina ospina martinez,potencial,68,F,2024-03-01,4,329457.0,82364.25,4,740.0,5,5,5,15,Campeones
+145,andres garcia rios,empresarial,30,M,,2,183489.0,91744.5,2,999.0,5,2,4,11,Leales
+146,diego vargas alvarez,vip,46,F,2022-11-26,2,138836.0,69418.0,2,1201.0,1,2,3,6,Potenciales
+147,monica herrera sanchez,nuevo,18,M,2021-07-01,4,207150.0,51787.5,4,1714.0,1,5,4,10,Leales
+148,natalia castanio cruz,vip,54,M,2024-04-27,3,29730.0,9910.0,3,683.0,5,4,1,10,Leales
+149,mauricio lopez perez,potencial,42,F,,1,1000.0,1000.0,1,999.0,5,1,1,7,Prometedores
+150,sebastian toro cardenas,recurrente,56,F,2020-11-04,2,145771.0,72885.5,2,1953.0,1,2,3,6,Potenciales
+151,monica munoz cardenas,nuevo,68,F,2020-11-18,2,109050.0,54525.0,2,1939.0,1,2,3,6,Potenciales
+152,maria toro cruz,vip,73,F,,2,213522.0,106761.0,2,999.0,5,2,4,11,Leales
+153,hernan herrera rodriguez,empresarial,61,F,,2,188912.0,94456.0,2,999.0,5,2,4,11,Leales
+154,felipe toro cifuentes,nuevo,62,M,,2,89849.0,44924.5,2,999.0,5,2,2,9,Prometedores
+155,valentina castanio garcia,empresarial,34,M,,3,226188.0,75396.0,3,999.0,5,4,5,14,Campeones
+156,hernan lopez dominguez,nuevo,30,M,,3,262241.0,87413.66666666667,3,999.0,5,4,5,14,Campeones
+157,paola perez cifuentes,nuevo,66,M,2024-12-09,4,156416.0,52138.666666666664,4,457.0,5,5,4,14,Campeones
+158,patricia cifuentes perez,vip,49,M,,2,158607.0,79303.5,2,999.0,5,2,4,11,Leales
+160,carolina cruz ospina,potencial,69,M,,2,2000.0,1000.0,2,999.0,5,2,1,8,Prometedores
+161,monica cardenas alvarez,vip,47,F,2020-03-11,4,226190.0,56547.5,4,2191.0,1,5,5,11,Leales
+162,benjamin espana martinez,empresarial,24,M,,4,331093.0,82773.25,4,999.0,5,5,5,15,Campeones
+163,diego munoz lopez,empresarial,49,M,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+164,daniela herrera cruz,potencial,44,F,,2,127250.0,63625.0,2,999.0,4,2,3,9,Prometedores
+165,sebastian alvarez cifuentes,nuevo,29,F,2020-09-25,1,133636.0,133636.0,1,1993.0,1,1,3,5,Potenciales
+166,natalia herrera rodriguez,vip,41,F,2021-01-18,2,174317.0,87158.5,2,1878.0,1,2,4,7,Prometedores
+167,benjamin moreno gutierrez,nuevo,30,M,2021-05-10,3,123862.0,41287.333333333336,3,1766.0,1,4,3,8,Prometedores
+168,diego vargas herrera,nuevo,30,M,2020-01-29,3,176212.0,58737.333333333336,3,2233.0,1,4,4,9,Prometedores
+169,jesus castano gutierrez,recurrente,45,M,2021-02-12,3,201046.0,67015.33333333333,3,1853.0,1,4,4,9,Prometedores
+170,diego munoz dominguez,potencial,35,F,,2,243802.0,121901.0,2,999.0,4,2,5,11,Leales
+171,alejandro rodriguez cardenas,vip,75,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+172,hernan herrera vargas,recurrente,75,M,,1,120309.0,120309.0,1,999.0,4,1,3,8,Prometedores
+173,felipe vargas cardenas,recurrente,43,M,2022-03-14,1,91945.0,91945.0,1,1458.0,1,1,2,4,Potenciales
+174,paola ospina cruz,nuevo,79,M,,2,166226.0,83113.0,2,999.0,4,2,4,10,Leales
+175,angela herrera niniez,nuevo,77,M,,1,84957.0,84957.0,1,999.0,4,1,2,7,Prometedores
+176,julian pena fernandez,potencial,62,F,,1,32376.0,32376.0,1,999.0,4,1,2,7,Prometedores
+177,claudia munoz dominguez,vip,54,F,,2,199576.0,99788.0,2,999.0,4,2,4,10,Leales
+179,jose cardenas fernandez,recurrente,57,M,2023-01-12,2,156957.0,78478.5,2,1154.0,1,2,4,7,Prometedores
+180,angela alvarez espania,vip,68,F,,4,367887.0,91971.75,4,999.0,4,5,5,14,Campeones
+181,claudia penia rodriguez,empresarial,22,F,,1,53258.0,53258.0,1,999.0,4,1,2,7,Prometedores
+182,hernan cifuentes ospina,vip,78,M,2024-03-11,1,1000.0,1000.0,1,730.0,5,1,1,7,Prometedores
+183,carolina perez herrera,recurrente,29,M,,2,120835.0,60417.5,2,999.0,4,2,3,9,Prometedores
+184,monica ninez garcia,potencial,30,M,,4,220304.0,73434.66666666667,4,999.0,4,5,4,13,Campeones
+185,hernan munoz lopez,potencial,71,M,2021-08-10,3,240542.0,80180.66666666667,3,1674.0,1,4,5,10,Leales
+186,veronica lopez gonzalez,recurrente,30,F,,4,215666.0,53916.5,4,999.0,4,5,4,13,Campeones
+187,sebastian niniez rios,recurrente,29,M,,5,250779.0,50155.8,5,999.0,4,5,5,14,Campeones
+188,raul rios toro,empresarial,71,F,,2,192054.0,96027.0,2,999.0,4,2,4,10,Leales
+189,laura rodriguez garcia,vip,33,F,,1,72287.0,72287.0,1,999.0,4,1,2,7,Prometedores
+190,veronica ramirez martinez,potencial,60,F,,3,217244.0,72414.66666666667,3,999.0,4,4,4,12,Leales
+191,daniela ospina rios,vip,71,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+192,benjamin alvarez ospina,vip,69,M,,2,54442.0,27221.0,2,999.0,4,2,2,8,Prometedores
+193,benjamin martinez castano,empresarial,26,M,2020-12-03,3,168233.0,56077.666666666664,3,1924.0,1,4,4,9,Prometedores
+194,sebastian ramirez sanchez,nuevo,46,F,,3,96931.0,32310.333333333332,3,999.0,4,4,3,11,Leales
+197,paola alvarez herrera,potencial,36,F,2020-10-11,4,205019.0,51254.75,4,1977.0,1,5,4,10,Leales
+198,sofia munoz pena,nuevo,74,F,2022-12-20,2,177264.0,88632.0,2,1177.0,1,2,4,7,Prometedores
+199,patricia toro perez,empresarial,80,M,2022-01-13,2,208856.0,104428.0,2,1518.0,1,2,4,7,Prometedores
+200,alvaro vargas ramirez,nuevo,28,M,,4,306018.0,76504.5,4,999.0,4,5,5,14,Campeones
+201,jesus espana munoz,empresarial,25,M,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+202,daniela cruz cruz,empresarial,55,F,,4,132541.0,33135.25,4,999.0,4,5,3,12,Leales
+203,monica gutierrez moreno,recurrente,30,F,,2,231057.0,115528.5,2,999.0,4,2,5,11,Leales
+204,patricia penia ospina,vip,61,M,,2,221159.0,110579.5,2,999.0,4,2,5,11,Leales
+205,jesus moreno ramirez,potencial,60,M,,5,311304.0,103768.0,5,999.0,4,5,5,14,Campeones
+206,angela moreno cifuentes,vip,39,M,,5,141684.0,28336.8,5,999.0,4,5,3,12,Leales
+207,andres fernandez ospina,nuevo,57,M,,3,363954.0,121318.0,3,999.0,4,4,5,13,Campeones
+208,raul herrera penia,vip,46,M,,2,86580.0,43290.0,2,999.0,4,2,2,8,Prometedores
+209,monica alvarez gonzalez,recurrente,33,M,,1,148070.0,148070.0,1,999.0,4,1,3,8,Prometedores
+210,patricia herrera penia,empresarial,74,F,,2,36205.0,18102.5,2,999.0,4,2,2,8,Prometedores
+211,diego herrera cruz,empresarial,100,F,,2,77615.0,38807.5,2,999.0,4,2,2,8,Prometedores
+213,laura fernandez sanchez,vip,30,F,,3,45114.0,15038.0,3,999.0,4,4,2,10,Leales
+214,benjamin ospina moreno,vip,70,M,,2,201524.0,100762.0,2,999.0,4,2,4,10,Leales
+215,maria ramirez fernandez,potencial,76,M,,4,374775.0,93693.75,4,999.0,4,5,5,14,Campeones
+216,raul ramirez herrera,vip,35,F,,2,110098.0,55049.0,2,999.0,4,2,3,9,Prometedores
+217,monica ramirez lopez,nuevo,30,F,2020-10-16,5,366657.0,73331.4,5,1972.0,1,5,5,11,Leales
+218,paola espana cifuentes,nuevo,47,F,2022-09-03,4,244678.0,61169.5,4,1285.0,1,5,5,11,Leales
+219,mauricio ramirez gonzalez,empresarial,30,M,,1,58281.0,58281.0,1,999.0,4,1,2,7,Prometedores
+220,sofia munioz herrera,vip,50,M,,3,265614.0,88538.0,3,999.0,4,4,5,13,Campeones
+221,ricardo herrera espania,potencial,71,F,,1,50672.0,50672.0,1,999.0,4,1,2,7,Prometedores
+222,raul fernandez ramirez,recurrente,79,M,2024-01-13,4,25113.0,6278.25,4,788.0,5,5,1,11,Leales
+223,patricia niniez garcia,potencial,34,M,,4,171305.0,42826.25,4,999.0,4,5,4,13,Campeones
+224,andres espania cifuentes,vip,30,F,2020-11-10,1,132046.0,132046.0,1,1947.0,1,1,3,5,Potenciales
+225,patricia fernandez dominguez,potencial,65,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+226,benjamin perez cifuentes,recurrente,54,F,,3,209514.0,69838.0,3,999.0,4,4,4,12,Leales
+227,benjamin lopez herrera,potencial,32,M,,2,63181.0,31590.5,2,999.0,4,2,2,8,Prometedores
+228,hernan ospina espana,vip,32,M,2020-02-17,3,235541.0,78513.66666666667,3,2214.0,1,4,5,10,Leales
+229,alejandro cardenas alvarez,potencial,18,M,,1,42430.0,42430.0,1,999.0,4,1,2,7,Prometedores
+230,raul vargas perez,recurrente,46,M,2021-09-05,3,183558.0,61186.0,3,1648.0,1,4,4,9,Prometedores
+231,laura sanchez cardenas,potencial,26,F,,1,66127.0,66127.0,1,999.0,4,1,2,7,Prometedores
+232,daniela dominguez herrera,vip,22,F,,3,211256.0,70418.66666666667,3,999.0,4,4,4,12,Leales
+233,alvaro espania sanchez,nuevo,75,M,,1,80327.0,80327.0,1,999.0,4,1,2,7,Prometedores
+234,sofia vargas moreno,potencial,79,M,,3,162525.0,54175.0,3,999.0,4,4,4,12,Leales
+235,valentina espania dominguez,nuevo,42,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+236,natalia cifuentes garcia,recurrente,70,M,2020-11-15,2,28420.0,14210.0,2,1942.0,1,2,1,4,Potenciales
+237,hernan herrera garcia,recurrente,59,M,2021-08-06,4,270736.0,135368.0,4,1678.0,1,5,5,11,Leales
+238,camilo vargas castanio,potencial,28,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+239,claudia gonzalez vargas,potencial,47,F,,1,25611.0,25611.0,1,999.0,4,1,1,6,Potenciales
+240,maria rodriguez gonzalez,recurrente,50,M,,2,81218.0,40609.0,2,999.0,4,2,2,8,Prometedores
+241,carolina cruz martinez,recurrente,66,F,,3,270936.0,90312.0,3,999.0,4,4,5,13,Campeones
+242,maria lopez munioz,recurrente,29,F,,5,143774.0,28754.8,5,999.0,4,5,3,12,Leales
+243,natalia lopez castanio,potencial,35,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+244,natalia ospina martinez,recurrente,25,F,,2,2000.0,1000.0,2,999.0,4,2,1,7,Prometedores
+245,hernan toro gutierrez,recurrente,23,M,2022-12-30,2,111460.0,55730.0,2,1167.0,1,2,3,6,Potenciales
+246,angela rios alvarez,empresarial,57,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+247,sofia rodriguez rios,recurrente,53,M,,3,167065.0,55688.333333333336,3,999.0,4,4,4,12,Leales
+248,benjamin toro castanio,empresarial,26,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+249,julian gonzalez garcia,potencial,38,F,2021-06-06,3,81588.0,27196.0,3,1739.0,1,4,2,7,Prometedores
+250,camilo dominguez toro,empresarial,58,F,,6,287020.0,47836.666666666664,6,999.0,4,5,5,14,Campeones
+251,valentina pena gonzalez,nuevo,30,F,2024-03-11,3,106862.0,35620.666666666664,3,730.0,5,4,3,12,Leales
+252,veronica lopez niniez,nuevo,61,M,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+253,claudia vargas moreno,vip,54,F,2024-11-07,3,179687.0,59895.666666666664,3,489.0,5,4,4,13,Campeones
+254,claudia castanio gutierrez,nuevo,76,M,2022-09-07,2,224337.0,112168.5,2,1281.0,1,2,5,8,Prometedores
+255,alvaro castanio alvarez,nuevo,23,F,,1,142771.0,142771.0,1,999.0,4,1,3,8,Prometedores
+256,ricardo gonzalez dominguez,nuevo,29,M,,1,101924.0,101924.0,1,999.0,4,1,3,8,Prometedores
+257,andres rodriguez fernandez,nuevo,50,M,2024-01-20,2,78813.0,39406.5,2,781.0,5,3,2,10,Leales
+258,julian sanchez moreno,nuevo,30,F,,1,101325.0,101325.0,1,999.0,4,1,3,8,Prometedores
+259,claudia garcia munioz,vip,23,M,,2,83840.0,41920.0,2,999.0,4,3,2,9,Prometedores
+260,mauricio castanio gutierrez,vip,64,F,,1,86484.0,86484.0,1,999.0,4,1,2,7,Prometedores
+261,hernan rodriguez alvarez,recurrente,74,M,2021-11-06,1,1000.0,1000.0,1,1586.0,1,1,1,3,En riesgo
+263,claudia vargas alvarez,potencial,43,M,,2,137771.0,68885.5,2,999.0,4,3,3,10,Leales
+264,claudia gonzalez dominguez,vip,38,F,,5,179846.0,35969.2,5,999.0,4,5,4,13,Campeones
+265,diego sanchez rios,vip,23,F,2021-08-27,5,382856.0,76571.2,5,1657.0,1,5,5,11,Leales
+266,felipe cruz niniez,nuevo,31,M,,2,136669.0,68334.5,2,999.0,4,3,3,10,Leales
+267,alejandro espania moreno,empresarial,77,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+268,patricia perez fernandez,empresarial,54,F,,2,170282.0,85141.0,2,999.0,4,3,4,11,Leales
+269,jesus moreno vargas,potencial,44,F,,3,3000.0,1000.0,3,999.0,4,4,1,9,Prometedores
+270,daniela toro sanchez,empresarial,47,M,,4,367029.0,91757.25,4,999.0,4,5,5,14,Campeones
+271,maria cruz munoz,vip,30,M,,3,186739.0,93369.5,3,999.0,4,4,4,12,Leales
+272,felipe vargas ramirez,recurrente,54,M,,2,124642.0,62321.0,2,999.0,4,3,3,10,Leales
+273,sebastian sanchez sanchez,recurrente,88,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+274,veronica herrera ospina,recurrente,49,F,,2,61047.0,30523.5,2,999.0,4,3,2,9,Prometedores
+275,alejandro moreno ospina,empresarial,59,M,,2,44743.0,22371.5,2,999.0,4,3,2,9,Prometedores
+276,sofia vargas niniez,empresarial,77,F,,1,27069.0,27069.0,1,999.0,4,1,1,6,Potenciales
+277,daniela fernandez espana,empresarial,53,F,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+278,monica rios vargas,vip,28,M,,4,133435.0,33358.75,4,999.0,4,5,3,12,Leales
+279,alvaro vargas perez,potencial,20,F,,2,129770.0,64885.0,2,999.0,4,3,3,10,Leales
+280,daniela moreno castanio,recurrente,40,F,,4,333182.0,83295.5,4,999.0,4,5,5,14,Campeones
+281,carolina ninez ospina,vip,30,F,,3,120961.0,40320.333333333336,3,999.0,4,4,3,11,Leales
+282,camilo ospina garcia,nuevo,58,F,,4,319063.0,79765.75,4,999.0,4,5,5,14,Campeones
+283,angela martinez castanio,empresarial,48,M,,5,551907.0,110381.4,5,999.0,4,5,5,14,Campeones
+284,valentina cruz gutierrez,recurrente,63,M,,2,212747.0,106373.5,2,999.0,4,3,4,11,Leales
+285,patricia garcia ramirez,nuevo,31,F,2021-06-11,3,191106.0,63702.0,3,1734.0,1,4,4,9,Prometedores
+286,julian garcia cifuentes,vip,57,F,,3,68411.0,22803.666666666668,3,999.0,4,4,2,10,Leales
+287,julian toro fernandez,potencial,26,F,,1,75154.0,75154.0,1,999.0,4,1,2,7,Prometedores
+288,camilo espana cruz,recurrente,74,F,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+289,daniela ramirez dominguez,empresarial,26,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+290,jesus ospina espana,vip,60,M,2022-11-24,3,165150.0,55050.0,3,1203.0,1,4,4,9,Prometedores
+291,sebastian rios gutierrez,potencial,47,M,,2,154192.0,77096.0,2,999.0,4,3,4,11,Leales
+292,mauricio cifuentes castanio,potencial,30,F,,2,195062.0,97531.0,2,999.0,4,3,4,11,Leales
+293,sebastian garcia garcia,recurrente,19,M,,3,80910.0,26970.0,3,999.0,4,4,2,10,Leales
+294,monica niniez pena,vip,24,F,,3,301428.0,100476.0,3,999.0,4,4,5,13,Campeones
+295,ricardo toro niniez,potencial,68,F,,2,33773.0,16886.5,2,999.0,4,3,2,9,Prometedores
+296,carolina rios cardenas,vip,29,F,2024-09-07,5,373327.0,74665.4,5,550.0,5,5,5,15,Campeones
+297,mauricio cruz cardenas,vip,55,F,2020-12-09,3,224224.0,74741.33333333333,3,1918.0,1,4,5,10,Leales
+298,valentina pena alvarez,nuevo,26,F,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+299,patricia munioz vargas,empresarial,55,M,,3,258226.0,86075.33333333333,3,999.0,4,4,5,13,Campeones
+300,carolina garcia cruz,empresarial,55,M,,5,288675.0,72168.75,5,999.0,4,5,5,14,Campeones
+301,laura munioz cardenas,empresarial,30,F,2023-11-09,4,144025.0,36006.25,4,853.0,5,5,3,13,Campeones
+302,sofia ramirez rios,potencial,20,M,2023-09-05,4,305990.0,76497.5,4,918.0,5,5,5,15,Campeones
+303,daniela gonzalez dominguez,vip,55,M,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+304,jose moreno cifuentes,vip,28,F,,3,182111.0,60703.666666666664,3,999.0,4,4,4,12,Leales
+305,jesus garcia cifuentes,empresarial,30,M,,2,30807.0,30807.0,2,999.0,4,3,2,9,Prometedores
+306,monica garcia perez,nuevo,35,F,,1,33505.0,33505.0,1,999.0,4,1,2,7,Prometedores
+307,laura perez rodriguez,empresarial,58,M,,4,190345.0,47586.25,4,999.0,4,5,4,13,Campeones
+309,patricia gonzalez niniez,vip,68,F,,3,219797.0,73265.66666666667,3,999.0,4,4,4,12,Leales
+310,hernan ospina ninez,potencial,56,M,2024-07-24,1,30623.0,30623.0,1,595.0,5,1,1,7,Prometedores
+311,daniela niniez vargas,recurrente,32,M,,1,19189.0,19189.0,1,999.0,4,1,1,6,Potenciales
+312,daniela cruz cifuentes,nuevo,29,F,2020-04-26,4,215882.0,71960.66666666667,4,2145.0,1,5,4,10,Leales
+313,mauricio alvarez vargas,potencial,75,M,,3,175451.0,58483.666666666664,3,999.0,4,4,4,12,Leales
+314,sebastian munioz ospina,vip,22,F,2021-06-26,4,296254.0,74063.5,4,1719.0,1,5,5,11,Leales
+315,raul herrera moreno,potencial,54,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+316,alejandro moreno toro,potencial,52,M,,3,186701.0,62233.666666666664,3,999.0,4,4,4,12,Leales
+317,sofia espana gonzalez,recurrente,77,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+319,hernan vargas lopez,vip,70,M,,2,131348.0,65674.0,2,999.0,4,3,3,10,Leales
+320,alvaro gutierrez ramirez,potencial,54,M,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+321,sofia dominguez perez,empresarial,30,M,,5,214438.0,42887.6,5,999.0,4,5,4,13,Campeones
+322,laura alvarez penia,recurrente,58,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+323,patricia niniez ospina,vip,53,M,,2,154426.0,77213.0,2,999.0,4,3,4,11,Leales
+324,jesus vargas fernandez,vip,57,F,,3,164045.0,54681.666666666664,3,999.0,4,4,4,12,Leales
+325,benjamin lopez gutierrez,empresarial,41,F,,1,103531.0,103531.0,1,999.0,4,1,3,8,Prometedores
+326,natalia cruz garcia,vip,57,F,,2,116010.0,58005.0,2,999.0,4,3,3,10,Leales
+327,benjamin martinez dominguez,nuevo,35,F,,2,101729.0,50864.5,2,999.0,4,3,3,10,Leales
+328,laura gonzalez pena,nuevo,79,F,,1,48682.0,48682.0,1,999.0,4,1,2,7,Prometedores
+329,jose sanchez garcia,potencial,30,M,,2,161193.0,80596.5,2,999.0,4,3,4,11,Leales
+330,sebastian rodriguez sanchez,recurrente,64,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+331,jesus toro niniez,empresarial,32,M,,3,103238.0,34412.666666666664,3,999.0,4,4,3,11,Leales
+332,maria lopez moreno,nuevo,20,M,,1,60281.0,60281.0,1,999.0,4,1,2,7,Prometedores
+333,laura ramirez sanchez,empresarial,68,F,2023-05-04,3,157702.0,52567.333333333336,3,1042.0,1,4,4,9,Prometedores
+334,patricia gonzalez fernandez,vip,77,F,,1,150447.0,150447.0,1,999.0,4,1,4,9,Prometedores
+335,natalia gonzalez cardenas,nuevo,44,M,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+336,paola castanio niniez,nuevo,30,F,,1,112018.0,112018.0,1,999.0,4,1,3,8,Prometedores
+337,raul cifuentes garcia,potencial,59,F,2020-09-04,3,31263.0,15631.5,3,2014.0,1,4,2,7,Prometedores
+338,jesus lopez toro,nuevo,46,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+339,jesus martinez cifuentes,nuevo,30,F,,1,53203.0,53203.0,1,999.0,4,1,2,7,Prometedores
+340,carolina rodriguez rios,recurrente,18,F,,1,28759.0,28759.0,1,999.0,4,1,1,6,Potenciales
+341,jose lopez vargas,nuevo,26,F,2022-10-21,2,163051.0,81525.5,2,1237.0,1,3,4,8,Prometedores
+342,angela dominguez ospina,empresarial,32,F,,3,158805.0,52935.0,3,999.0,4,4,4,12,Leales
+343,monica gutierrez alvarez,vip,52,M,2022-09-12,1,49128.0,49128.0,1,1276.0,1,1,2,4,Potenciales
+345,patricia alvarez gonzalez,empresarial,40,M,,4,148306.0,49435.333333333336,4,999.0,4,5,3,12,Leales
+346,daniela alvarez martinez,recurrente,59,F,,2,217501.0,108750.5,2,999.0,4,3,4,11,Leales
+347,valentina cifuentes ospina,empresarial,65,F,,2,111826.0,55913.0,2,999.0,4,3,3,10,Leales
+348,veronica toro gutierrez,recurrente,65,M,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+350,paola ramirez toro,empresarial,29,M,2022-04-08,4,360050.0,90012.5,4,1433.0,1,5,5,11,Leales
+351,ricardo moreno cifuentes,recurrente,19,M,,1,71941.0,71941.0,1,999.0,4,1,2,7,Prometedores
+353,natalia herrera ninez,recurrente,48,F,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+354,angela rodriguez perez,recurrente,42,M,2021-10-10,3,86415.0,28805.0,3,1613.0,1,4,2,7,Prometedores
+355,ricardo vargas alvarez,vip,64,F,,4,294197.0,73549.25,4,999.0,4,5,5,14,Campeones
+356,valentina rodriguez gutierrez,nuevo,44,M,,1,100172.0,100172.0,1,999.0,4,1,3,8,Prometedores
+357,jesus sanchez sanchez,vip,30,M,,5,274538.0,54907.6,5,999.0,4,5,5,14,Campeones
+358,carolina perez fernandez,potencial,24,F,,3,140813.0,46937.666666666664,3,999.0,4,4,3,11,Leales
+359,jesus espana perez,vip,63,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+360,angela rios espania,empresarial,59,F,,1,75315.0,75315.0,1,999.0,4,1,2,7,Prometedores
+361,sofia moreno ospina,empresarial,59,F,2020-08-07,3,204390.0,68130.0,3,2042.0,1,4,4,9,Prometedores
+362,raul garcia ospina,nuevo,55,F,,2,2000.0,1000.0,2,999.0,4,3,1,8,Prometedores
+363,alejandro munioz cruz,recurrente,53,F,2020-06-02,3,249170.0,124585.0,3,2108.0,1,4,5,10,Leales
+364,maria ramirez gonzalez,empresarial,73,F,2020-09-09,2,60593.0,60593.0,2,2009.0,1,3,2,6,Potenciales
+365,felipe rios fernandez,vip,75,M,,3,260880.0,86960.0,3,999.0,4,4,5,13,Campeones
+366,maria fernandez cruz,recurrente,69,F,2023-06-05,2,99214.0,49607.0,2,1010.0,1,3,3,7,Prometedores
+367,alejandro gutierrez alvarez,vip,60,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+368,alejandro cifuentes toro,nuevo,29,M,,3,201720.0,67240.0,3,999.0,4,4,4,12,Leales
+369,jose gutierrez castanio,vip,55,M,,1,146502.0,146502.0,1,999.0,4,1,3,8,Prometedores
+370,alejandro fernandez rodriguez,empresarial,30,M,,1,38070.0,38070.0,1,999.0,4,1,2,7,Prometedores
+371,felipe castanio perez,recurrente,30,M,,2,157299.0,78649.5,2,999.0,4,3,4,11,Leales
+372,claudia cifuentes gutierrez,potencial,22,F,2024-06-30,5,196019.0,39203.8,5,619.0,5,5,4,14,Campeones
+373,paola espania lopez,vip,53,F,,2,35487.0,17743.5,2,999.0,4,3,2,9,Prometedores
+374,valentina herrera garcia,potencial,47,F,,1,53229.0,53229.0,1,999.0,4,1,2,7,Prometedores
+375,julian rodriguez rios,vip,35,F,,2,45065.0,22532.5,2,999.0,4,3,2,9,Prometedores
+376,camilo munoz cifuentes,nuevo,65,F,,3,115172.0,38390.666666666664,3,999.0,4,4,3,11,Leales
+377,valentina dominguez cruz,nuevo,75,M,2023-02-04,5,411529.0,82305.8,5,1131.0,1,5,5,11,Leales
+378,mauricio toro alvarez,nuevo,21,F,2024-11-03,2,198379.0,99189.5,2,493.0,5,3,4,12,Leales
+380,sofia martinez ospina,empresarial,67,M,,4,394467.0,98616.75,4,999.0,4,5,5,14,Campeones
+381,raul garcia lopez,vip,30,M,,1,1000.0,1000.0,1,999.0,4,1,1,6,Potenciales
+382,carolina rodriguez cifuentes,nuevo,34,F,2021-02-06,6,264048.0,44008.0,6,1859.0,1,5,5,11,Leales
+383,felipe espania fernandez,recurrente,32,F,2021-11-11,5,220902.0,44180.4,5,1581.0,1,5,5,11,Leales
+384,claudia toro pena,recurrente,45,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+385,paola cardenas ninez,empresarial,39,M,,4,153719.0,38429.75,4,999.0,4,5,4,13,Campeones
+386,julian fernandez vargas,nuevo,33,M,,3,172147.0,57382.333333333336,3,999.0,4,4,4,12,Leales
+387,julian rodriguez vargas,vip,33,M,,2,220621.0,110310.5,2,999.0,4,3,4,11,Leales
+388,sofia cardenas cardenas,nuevo,40,F,,2,1000.0,1000.0,2,999.0,4,3,1,8,Prometedores
+389,paola castano martinez,vip,50,M,,1,142566.0,142566.0,1,999.0,4,1,3,8,Prometedores
+390,jesus espana garcia,recurrente,68,F,,1,41240.0,41240.0,1,999.0,4,1,2,7,Prometedores
+391,alvaro rodriguez vargas,empresarial,78,F,,1,52987.0,52987.0,1,999.0,4,1,2,7,Prometedores
+392,andres vargas dominguez,recurrente,77,F,2023-08-06,3,156741.0,52247.0,3,948.0,5,4,4,13,Campeones
+394,carolina fernandez ospina,vip,36,M,2020-08-09,4,287656.0,71914.0,3,2040.0,1,5,5,11,Leales
+395,alvaro lopez espania,recurrente,46,F,,2,25655.0,12827.5,2,999.0,4,3,1,8,Prometedores
+396,carolina lopez rios,nuevo,26,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+397,ricardo vargas ospina,empresarial,77,F,2023-01-03,2,144849.0,72424.5,2,1163.0,1,3,3,7,Prometedores
+398,natalia cardenas ninez,empresarial,80,M,2020-03-06,1,88712.0,88712.0,1,2196.0,1,1,2,4,Potenciales
+399,angela alvarez ramirez,potencial,57,F,,2,82203.0,41101.5,2,999.0,4,3,2,9,Prometedores
+400,felipe dominguez munioz,vip,30,M,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+401,laura alvarez cardenas,potencial,45,F,2021-02-14,4,364150.0,91037.5,4,1851.0,1,5,5,11,Leales
+403,sofia munioz gonzalez,recurrente,44,F,2021-01-03,2,100006.0,50003.0,2,1893.0,1,3,3,7,Prometedores
+404,maria herrera toro,recurrente,21,F,,3,162430.0,54143.333333333336,3,999.0,4,4,4,12,Leales
+405,carolina garcia martinez,vip,31,F,2023-05-31,4,219394.0,54848.5,4,1015.0,1,5,4,10,Leales
+406,alvaro sanchez toro,recurrente,61,M,,2,53250.0,26625.0,2,999.0,4,3,2,9,Prometedores
+407,benjamin espania munioz,potencial,22,M,,3,280958.0,93652.66666666667,3,999.0,4,4,5,13,Campeones
+408,sebastian lopez sanchez,vip,58,F,,0,0.0,,0,999.0,4,1,1,6,Potenciales
+409,jose rodriguez garcia,vip,25,F,,2,233502.0,116751.0,2,999.0,3,3,5,11,Leales
+410,jose fernandez penia,nuevo,71,M,,2,183662.0,91831.0,2,999.0,3,3,4,10,Leales
+411,veronica cardenas moreno,potencial,23,F,,4,250819.0,62704.75,4,999.0,3,5,5,13,Campeones
+412,hernan gutierrez perez,recurrente,71,M,,3,191418.0,63806.0,3,999.0,3,4,4,11,Leales
+413,jesus penia rios,recurrente,21,F,,2,150156.0,75078.0,2,999.0,3,3,4,10,Leales
+414,sofia cifuentes cardenas,nuevo,30,F,,3,169593.0,56531.0,3,999.0,3,4,4,11,Leales
+415,maria dominguez ramirez,empresarial,67,F,2023-03-26,2,197218.0,98609.0,2,1081.0,1,3,4,8,Prometedores
+416,diego cruz rios,recurrente,21,M,,4,332934.0,83233.5,4,999.0,3,5,5,13,Campeones
+417,jose toro cifuentes,nuevo,37,M,,1,147302.0,147302.0,1,999.0,3,1,3,7,Prometedores
+418,claudia herrera gonzalez,empresarial,59,F,,2,113095.0,56547.5,2,999.0,3,3,3,9,Prometedores
+419,laura cruz fernandez,vip,74,F,,1,92123.0,92123.0,1,999.0,3,1,2,6,Potenciales
+421,raul ramirez pena,vip,19,F,,1,1000.0,1000.0,1,999.0,3,1,1,5,Potenciales
+422,veronica alvarez alvarez,empresarial,80,M,2024-10-01,4,273243.0,68310.75,4,526.0,5,5,5,15,Campeones
+423,alejandro cifuentes pena,empresarial,38,M,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+424,andres moreno cruz,vip,48,F,,3,158503.0,52834.333333333336,3,999.0,3,4,4,11,Leales
+425,monica ramirez moreno,nuevo,47,F,,1,95496.0,95496.0,1,999.0,3,1,3,7,Prometedores
+426,claudia garcia rodriguez,empresarial,30,M,,1,87913.0,87913.0,1,999.0,3,2,2,7,Prometedores
+427,raul fernandez gutierrez,nuevo,22,M,,4,285456.0,71364.0,4,999.0,3,5,5,13,Campeones
+428,hernan fernandez cruz,potencial,52,M,,2,183602.0,91801.0,2,999.0,3,3,4,10,Leales
+429,maria ramirez cifuentes,nuevo,66,M,2023-07-24,3,314496.0,104832.0,3,961.0,5,4,5,14,Campeones
+430,mauricio vargas gutierrez,recurrente,68,M,,1,103627.0,103627.0,1,999.0,3,2,3,8,Prometedores
+431,angela cruz niniez,empresarial,28,F,,2,107582.0,53791.0,2,999.0,3,3,3,9,Prometedores
+432,julian dominguez rios,recurrente,78,M,2020-01-06,2,151733.0,75866.5,2,2256.0,1,3,4,8,Prometedores
+433,benjamin rodriguez ramirez,recurrente,42,M,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+434,valentina sanchez cruz,recurrente,30,M,,2,183705.0,91852.5,2,999.0,3,3,4,10,Leales
+435,paola alvarez ramirez,empresarial,23,F,,1,114638.0,114638.0,1,999.0,3,2,3,8,Prometedores
+436,maria dominguez martinez,potencial,33,M,2020-04-21,2,186805.0,93402.5,2,2150.0,1,3,4,8,Prometedores
+437,sebastian ramirez toro,potencial,56,M,,1,135338.0,135338.0,1,999.0,3,2,3,8,Prometedores
+438,camilo gonzalez espania,nuevo,56,F,,2,2000.0,1000.0,2,999.0,3,3,1,7,Prometedores
+439,felipe moreno rodriguez,nuevo,68,F,2023-09-11,3,109844.0,36614.666666666664,3,912.0,5,4,3,12,Leales
+440,valentina rodriguez rodriguez,potencial,30,F,,2,183755.0,91877.5,2,999.0,3,3,4,10,Leales
+441,jesus gutierrez cruz,vip,43,M,,2,28339.0,14169.5,2,999.0,3,3,1,7,Prometedores
+442,natalia alvarez cruz,empresarial,79,M,,1,79616.0,79616.0,1,999.0,3,2,2,7,Prometedores
+443,benjamin munioz sanchez,potencial,30,M,,2,153671.0,76835.5,2,999.0,3,3,4,10,Leales
+444,sebastian ramirez ospina,vip,58,F,2024-04-12,2,179332.0,89666.0,2,698.0,5,3,4,12,Leales
+445,sebastian garcia toro,potencial,70,M,,2,89252.0,44626.0,2,999.0,3,3,2,8,Prometedores
+446,camilo munioz ninez,recurrente,75,F,,1,125686.0,125686.0,1,999.0,3,2,3,8,Prometedores
+447,hernan penia gonzalez,nuevo,59,M,2021-07-21,3,335474.0,111824.66666666667,3,1694.0,1,4,5,10,Leales
+448,raul penia lopez,vip,18,M,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+449,laura ramirez alvarez,empresarial,32,M,2021-08-10,4,295892.0,73973.0,4,1674.0,1,5,5,11,Leales
+450,maria munoz cardenas,nuevo,51,F,,6,240771.0,40128.5,6,999.0,3,5,5,13,Campeones
+451,sofia cruz cardenas,vip,57,M,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+452,veronica pena alvarez,empresarial,38,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+453,felipe cardenas castano,empresarial,35,M,,1,88340.0,88340.0,1,999.0,3,2,2,7,Prometedores
+454,maria lopez garcia,potencial,51,M,2022-08-19,3,336007.0,112002.33333333333,3,1300.0,1,4,5,10,Leales
+455,jesus perez gutierrez,empresarial,63,M,2024-07-11,2,124176.0,62088.0,2,608.0,5,3,3,11,Leales
+456,daniela niniez herrera,nuevo,41,F,,1,37183.0,37183.0,1,999.0,3,2,2,7,Prometedores
+457,andres lopez lopez,nuevo,44,M,,2,2000.0,1000.0,2,999.0,3,3,1,7,Prometedores
+458,alvaro garcia ramirez,vip,45,M,,1,137911.0,137911.0,1,999.0,3,2,3,8,Prometedores
+459,alvaro castano martinez,nuevo,44,F,,3,285131.0,95043.66666666667,3,999.0,3,4,5,12,Leales
+460,alvaro penia rodriguez,empresarial,51,M,,2,148477.0,74238.5,2,999.0,3,3,3,9,Prometedores
+461,veronica ospina niniez,nuevo,27,M,,2,101585.0,50792.5,2,999.0,3,3,3,9,Prometedores
+462,ricardo penia alvarez,potencial,32,M,,3,200890.0,66963.33333333333,3,999.0,3,4,4,11,Leales
+463,ricardo moreno lopez,potencial,75,F,2021-12-15,4,140591.0,35147.75,4,1547.0,1,5,3,9,Prometedores
+464,natalia perez cruz,potencial,30,M,,2,31501.0,15750.5,2,999.0,3,3,2,8,Prometedores
+465,angela moreno ramirez,recurrente,55,M,,1,24668.0,24668.0,1,999.0,3,2,1,6,Potenciales
+466,camilo cardenas ramirez,vip,60,M,,1,39898.0,39898.0,1,999.0,3,2,2,7,Prometedores
+467,monica moreno cruz,vip,65,M,2022-04-25,5,171997.0,34399.4,5,1416.0,1,5,4,10,Leales
+468,carolina ramirez pena,empresarial,19,M,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+469,laura cifuentes alvarez,recurrente,53,M,2022-11-13,2,2000.0,1000.0,2,1214.0,1,3,1,5,Potenciales
+470,felipe munioz munioz,potencial,22,F,,1,145031.0,145031.0,1,999.0,3,2,3,8,Prometedores
+471,jose ramirez rios,empresarial,44,M,2020-10-27,3,205812.0,68604.0,3,1961.0,1,4,4,9,Prometedores
+472,diego gonzalez espania,potencial,46,M,2023-07-09,1,54417.0,54417.0,1,976.0,5,2,2,9,Prometedores
+474,mauricio alvarez martinez,nuevo,51,F,,1,44035.0,44035.0,1,999.0,3,2,2,7,Prometedores
+475,angela espania niniez,recurrente,23,M,,2,97557.0,48778.5,2,999.0,3,3,3,9,Prometedores
+476,camilo ramirez ramirez,vip,27,F,,4,277364.0,69341.0,4,999.0,3,5,5,13,Campeones
+477,mauricio cardenas toro,vip,46,F,,3,341036.0,113678.66666666667,3,999.0,3,4,5,12,Leales
+478,camilo rios ospina,empresarial,34,M,,2,52584.0,52584.0,2,999.0,3,3,2,8,Prometedores
+479,maria gonzalez alvarez,vip,68,M,,1,1000.0,1000.0,1,999.0,3,2,1,6,Potenciales
+480,sebastian moreno dominguez,vip,25,M,,1,75021.0,75021.0,1,999.0,3,2,2,7,Prometedores
+481,laura ramirez niniez,empresarial,57,M,,2,93736.0,46868.0,2,999.0,3,3,2,8,Prometedores
+482,sofia cardenas lopez,nuevo,34,F,,2,70543.0,35271.5,1,999.0,3,3,2,8,Prometedores
+483,alejandro ospina ninez,potencial,37,F,,4,46560.0,23280.0,4,999.0,3,5,2,10,Leales
+484,sofia perez rodriguez,potencial,67,F,2021-09-02,1,84786.0,84786.0,1,1651.0,1,2,2,5,Potenciales
+485,natalia vargas fernandez,empresarial,39,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+486,paola herrera gutierrez,empresarial,53,M,,1,115949.0,115949.0,1,999.0,3,2,3,8,Prometedores
+487,julian niniez alvarez,potencial,21,M,,2,2000.0,1000.0,2,999.0,3,3,1,7,Prometedores
+488,ricardo herrera vargas,potencial,78,F,2020-07-19,3,255147.0,85049.0,3,2061.0,1,4,5,10,Leales
+489,veronica gutierrez cruz,nuevo,29,M,2024-07-15,4,319193.0,79798.25,4,604.0,5,5,5,15,Campeones
+491,laura ninez vargas,recurrente,19,M,,1,103011.0,103011.0,1,999.0,3,2,3,8,Prometedores
+492,veronica martinez dominguez,potencial,30,F,,2,219065.0,109532.5,2,999.0,3,3,4,10,Leales
+493,mauricio munioz ninez,empresarial,45,M,,4,256272.0,64068.0,4,999.0,3,5,5,13,Campeones
+494,ricardo ospina gonzalez,vip,73,M,,1,83606.0,83606.0,1,999.0,3,2,2,7,Prometedores
+495,carolina martinez sanchez,vip,25,F,,3,98417.0,32805.666666666664,3,999.0,3,4,3,10,Leales
+496,paola dominguez castano,vip,48,F,,2,111455.0,55727.5,2,999.0,3,3,3,9,Prometedores
+497,laura ospina cifuentes,vip,30,M,,4,310741.0,77685.25,4,999.0,3,5,5,13,Campeones
+498,alejandro ramirez cardenas,nuevo,62,F,,3,291060.0,97020.0,3,999.0,3,4,5,12,Leales
+499,sebastian alvarez gutierrez,nuevo,20,F,,5,256026.0,51205.2,5,999.0,3,5,5,13,Campeones
+500,diego penia castano,nuevo,44,M,,4,220802.0,55200.5,4,999.0,3,5,4,12,Leales
+501,jose perez munoz,recurrente,68,M,,1,104898.0,104898.0,1,999.0,3,2,3,8,Prometedores
+502,sofia lopez moreno,recurrente,49,M,2020-08-08,3,247746.0,82582.0,3,2041.0,1,4,5,10,Leales
+503,carolina martinez castano,nuevo,79,F,,1,96524.0,96524.0,1,999.0,3,2,3,8,Prometedores
+504,alvaro lopez vargas,empresarial,56,M,,3,203822.0,67940.66666666667,3,999.0,3,4,4,11,Leales
+505,monica perez gonzalez,vip,44,F,2024-11-10,6,532978.0,88829.66666666667,6,486.0,5,5,5,15,Campeones
+506,andres garcia sanchez,nuevo,78,F,,3,273799.0,91266.33333333333,3,999.0,3,4,5,12,Leales
+507,sofia moreno toro,nuevo,22,M,2020-12-03,3,142251.0,47417.0,3,1924.0,1,4,3,8,Prometedores
+508,ricardo cifuentes gutierrez,nuevo,45,M,,3,133653.0,44551.0,3,999.0,3,4,3,10,Leales
+509,mauricio martinez herrera,potencial,28,M,,2,153017.0,76508.5,2,999.0,3,3,4,10,Leales
+510,laura cardenas castanio,nuevo,79,F,,5,363468.0,72693.6,5,999.0,3,5,5,13,Campeones
+511,patricia fernandez penia,recurrente,31,M,2024-03-12,1,130424.0,130424.0,1,729.0,5,2,3,10,Leales
+512,hernan cardenas gonzalez,potencial,71,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+513,raul gutierrez rios,empresarial,38,F,2022-06-20,6,120431.0,20071.833333333332,6,1360.0,1,5,3,9,Prometedores
+514,paola alvarez castano,empresarial,30,F,2020-11-03,2,119469.0,59734.5,2,1954.0,1,3,3,7,Prometedores
+515,sofia cardenas munoz,empresarial,30,F,,2,2000.0,1000.0,2,999.0,3,3,1,7,Prometedores
+516,patricia martinez penia,nuevo,43,F,,2,97204.0,48602.0,2,999.0,3,3,3,9,Prometedores
+517,camilo moreno dominguez,vip,21,M,2024-08-22,3,385494.0,128498.0,3,566.0,5,4,5,14,Campeones
+518,diego munioz ramirez,vip,53,M,2022-12-12,1,1000.0,1000.0,1,1185.0,1,2,1,4,Potenciales
+520,angela cruz perez,vip,74,F,,3,179974.0,59991.333333333336,3,999.0,3,4,4,11,Leales
+521,camilo gonzalez dominguez,potencial,72,F,,1,98369.0,98369.0,1,999.0,3,2,3,8,Prometedores
+522,angela lopez espania,potencial,63,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+523,monica munoz niniez,empresarial,73,F,,1,88192.0,88192.0,1,999.0,3,2,2,7,Prometedores
+524,claudia cifuentes ospina,empresarial,22,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+525,claudia cifuentes munioz,potencial,80,M,2020-05-06,3,197424.0,65808.0,3,2135.0,1,4,4,9,Prometedores
+526,alvaro perez castanio,nuevo,23,F,,4,90472.0,22618.0,4,999.0,3,5,2,10,Leales
+527,mauricio alvarez munoz,recurrente,53,F,,4,152155.0,50718.333333333336,4,999.0,3,5,4,12,Leales
+528,jesus ramirez vargas,nuevo,80,F,,1,69621.0,69621.0,1,999.0,3,2,2,7,Prometedores
+529,andres alvarez martinez,nuevo,27,F,,3,211627.0,70542.33333333333,3,999.0,3,4,4,11,Leales
+530,patricia cardenas penia,vip,56,M,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+531,hernan gonzalez toro,vip,49,M,,3,224452.0,74817.33333333333,3,999.0,3,4,5,12,Leales
+533,alvaro vargas ninez,potencial,46,M,,5,286217.0,57243.4,5,999.0,3,5,5,13,Campeones
+534,carolina castano dominguez,empresarial,34,F,,4,389140.0,97285.0,4,999.0,3,5,5,13,Campeones
+535,sofia gonzalez herrera,nuevo,53,F,,2,146415.0,73207.5,2,999.0,3,3,3,9,Prometedores
+536,veronica cifuentes moreno,potencial,30,F,2020-12-20,1,24366.0,24366.0,1,1907.0,1,2,1,4,Potenciales
+537,raul herrera garcia,empresarial,41,M,,4,145594.0,36398.5,4,999.0,3,5,3,11,Leales
+538,monica cifuentes rodriguez,potencial,21,M,2024-06-05,1,66721.0,66721.0,1,644.0,5,2,2,9,Prometedores
+539,raul fernandez ninez,vip,61,M,2021-12-25,3,193050.0,64350.0,3,1537.0,1,4,4,9,Prometedores
+540,carolina cifuentes ramirez,nuevo,68,F,,2,83893.0,41946.5,2,999.0,3,3,2,8,Prometedores
+541,julian ramirez fernandez,nuevo,52,M,,2,259922.0,129961.0,2,999.0,3,3,5,11,Leales
+542,felipe fernandez vargas,nuevo,22,M,,1,75346.0,75346.0,1,999.0,3,2,2,7,Prometedores
+543,alejandro rios munoz,recurrente,30,F,2020-03-02,6,498278.0,83046.33333333333,6,2200.0,1,5,5,11,Leales
+544,andres rios gonzalez,empresarial,40,M,,3,249561.0,83187.0,3,999.0,3,4,5,12,Leales
+546,laura herrera dominguez,nuevo,55,F,,4,31101.0,7775.25,4,999.0,3,5,2,10,Leales
+547,valentina gonzalez lopez,recurrente,80,F,,1,70197.0,70197.0,1,999.0,3,2,2,7,Prometedores
+548,mauricio vargas herrera,nuevo,63,F,,2,85168.0,42584.0,2,999.0,3,3,2,8,Prometedores
+549,andres lopez rodriguez,empresarial,62,F,,2,235033.0,117516.5,2,999.0,3,3,5,11,Leales
+550,laura ramirez herrera,potencial,67,M,,1,43347.0,43347.0,1,999.0,3,2,2,7,Prometedores
+551,patricia castano gutierrez,nuevo,32,M,,2,115944.0,57972.0,2,999.0,3,3,3,9,Prometedores
+552,jesus alvarez garcia,potencial,47,F,2020-11-05,3,238033.0,79344.33333333333,3,1952.0,1,4,5,10,Leales
+553,claudia rodriguez sanchez,vip,54,M,,4,341647.0,85411.75,4,999.0,3,5,5,13,Campeones
+554,carolina cardenas penia,empresarial,75,F,,1,63245.0,63245.0,1,999.0,3,2,2,7,Prometedores
+555,carolina herrera alvarez,potencial,29,F,,4,113350.0,28337.5,4,999.0,3,5,3,11,Leales
+556,maria gutierrez moreno,vip,96,M,,2,184144.0,92072.0,2,999.0,3,3,4,10,Leales
+557,angela penia garcia,recurrente,45,F,,2,56295.0,28147.5,2,999.0,3,3,2,8,Prometedores
+558,monica rodriguez castanio,vip,52,M,,2,150784.0,75392.0,2,999.0,3,3,4,10,Leales
+559,andres perez martinez,recurrente,51,F,,3,39227.0,13075.666666666666,3,999.0,3,4,2,9,Prometedores
+560,andres rios penia,potencial,44,F,,1,88696.0,88696.0,1,999.0,3,2,2,7,Prometedores
+561,mauricio cardenas cruz,empresarial,22,F,,1,50287.0,50287.0,1,999.0,3,2,2,7,Prometedores
+562,jose perez castanio,nuevo,30,M,2024-11-07,5,191837.0,38367.4,5,489.0,5,5,4,14,Campeones
+563,andres cardenas vargas,potencial,27,M,2021-06-29,1,140563.0,140563.0,1,1716.0,1,2,3,6,Potenciales
+564,mauricio garcia fernandez,empresarial,47,F,,2,152675.0,76337.5,2,999.0,3,3,4,10,Leales
+565,raul rios vargas,empresarial,75,M,2020-12-10,2,88592.0,44296.0,2,1917.0,1,3,2,6,Potenciales
+566,felipe martinez perez,vip,82,M,,1,17827.0,17827.0,1,999.0,3,2,1,6,Potenciales
+567,laura herrera perez,empresarial,39,M,,4,218368.0,54592.0,4,999.0,3,5,4,12,Leales
+568,monica castano cruz,recurrente,22,F,,2,2000.0,1000.0,2,999.0,3,3,1,7,Prometedores
+569,jose lopez vargas,recurrente,27,F,2021-11-02,2,114221.0,57110.5,2,1590.0,1,3,3,7,Prometedores
+570,claudia fernandez rios,potencial,30,F,,4,321149.0,80287.25,4,999.0,3,5,5,13,Campeones
+571,paola castanio ramirez,potencial,36,M,2022-12-02,2,273338.0,136669.0,2,1195.0,1,3,5,9,Prometedores
+572,felipe moreno rios,nuevo,62,F,2020-04-09,3,277936.0,92645.33333333333,3,2162.0,1,4,5,10,Leales
+573,benjamin herrera gonzalez,recurrente,73,F,,4,252223.0,63055.75,4,999.0,3,5,5,13,Campeones
+574,angela ospina rodriguez,vip,51,M,2023-01-23,4,139368.0,34842.0,4,1143.0,1,5,3,9,Prometedores
+575,sofia ospina munioz,empresarial,78,M,,2,163942.0,163942.0,2,999.0,3,3,4,10,Leales
+576,claudia cruz ramirez,nuevo,49,F,,1,142060.0,142060.0,1,999.0,3,2,3,8,Prometedores
+577,raul herrera rios,recurrente,32,F,,2,66817.0,33408.5,2,999.0,3,3,2,8,Prometedores
+578,felipe alvarez perez,vip,24,F,2021-08-30,1,58092.0,58092.0,1,1654.0,1,2,2,5,Potenciales
+579,valentina garcia rodriguez,potencial,37,M,,2,130979.0,65489.5,2,999.0,3,3,3,9,Prometedores
+581,mauricio gonzalez martinez,vip,40,F,,6,203774.0,33962.333333333336,6,999.0,3,5,4,12,Leales
+582,daniela cifuentes garcia,vip,40,F,,3,182518.0,60839.333333333336,3,999.0,3,4,4,11,Leales
+584,raul ospina espania,nuevo,26,M,,2,184936.0,92468.0,2,999.0,3,3,4,10,Leales
+585,angela ninez herrera,recurrente,66,M,,1,1000.0,1000.0,1,999.0,3,2,1,6,Potenciales
+586,jose herrera ospina,nuevo,30,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+587,julian ninez espania,potencial,42,M,2024-01-07,2,78931.0,39465.5,2,794.0,5,3,2,10,Leales
+588,veronica rios cardenas,potencial,43,F,2024-10-19,3,169446.0,56482.0,3,508.0,5,4,4,13,Campeones
+589,ricardo fernandez espana,recurrente,60,F,,1,110831.0,110831.0,1,999.0,3,2,3,8,Prometedores
+590,maria gutierrez alvarez,empresarial,28,F,,2,85528.0,42764.0,2,999.0,3,3,2,8,Prometedores
+591,carolina ospina dominguez,empresarial,63,F,,5,309768.0,61953.6,5,999.0,3,5,5,13,Campeones
+592,valentina martinez espania,nuevo,76,M,2021-03-26,5,343141.0,68628.2,5,1811.0,1,5,5,11,Leales
+593,sebastian rodriguez cardenas,vip,79,F,2023-09-24,3,272286.0,90762.0,3,899.0,5,4,5,14,Campeones
+594,patricia garcia vargas,recurrente,39,M,,3,111144.0,37048.0,3,999.0,3,4,3,10,Leales
+595,hernan herrera gonzalez,potencial,21,M,2023-05-15,5,447781.0,89556.2,5,1031.0,1,5,5,11,Leales
+596,mauricio lopez vargas,potencial,78,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+597,andres cardenas herrera,vip,39,F,2021-10-25,3,204610.0,68203.33333333333,3,1598.0,1,4,4,9,Prometedores
+598,maria rios vargas,empresarial,28,M,,1,1000.0,1000.0,1,999.0,3,2,1,6,Potenciales
+599,carolina martinez garcia,vip,67,F,,2,31003.0,15501.5,2,999.0,3,3,2,8,Prometedores
+600,daniela toro gonzalez,empresarial,46,F,,1,138709.0,138709.0,1,999.0,3,2,3,8,Prometedores
+601,camilo dominguez gonzalez,nuevo,21,F,,3,255012.0,85004.0,3,999.0,3,4,5,12,Leales
+602,valentina castano gonzalez,vip,54,M,,2,84826.0,42413.0,2,999.0,3,3,2,8,Prometedores
+603,alejandro penia rios,potencial,55,F,,2,203008.0,101504.0,2,999.0,3,3,4,10,Leales
+604,diego rios cardenas,vip,30,M,,3,138458.0,46152.666666666664,3,999.0,3,4,3,10,Leales
+605,benjamin rodriguez castanio,nuevo,26,F,,3,254573.0,84857.66666666667,3,999.0,3,4,5,12,Leales
+606,jose cruz vargas,potencial,54,F,,1,39156.0,39156.0,1,999.0,3,2,2,7,Prometedores
+607,diego castanio vargas,vip,24,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+608,daniela perez gonzalez,recurrente,73,F,,4,218773.0,54693.25,4,999.0,3,5,4,12,Leales
+609,claudia castanio toro,nuevo,39,F,,3,3000.0,1000.0,3,999.0,3,4,1,8,Prometedores
+610,monica cifuentes castano,recurrente,26,F,,2,109378.0,54689.0,2,999.0,3,3,3,9,Prometedores
+611,andres gonzalez fernandez,vip,56,F,,2,152191.0,76095.5,2,999.0,3,3,4,10,Leales
+612,alvaro cruz fernandez,recurrente,43,M,,2,69646.0,69646.0,2,999.0,3,3,2,8,Prometedores
+613,ricardo cardenas vargas,recurrente,18,M,2022-09-29,5,28869.0,7217.25,5,1259.0,1,5,1,7,Prometedores
+614,jose lopez rodriguez,vip,41,F,,3,172879.0,57626.333333333336,3,999.0,3,4,4,11,Leales
+615,carolina toro ramirez,nuevo,47,F,,3,165272.0,55090.666666666664,3,999.0,3,4,4,11,Leales
+616,mauricio perez toro,vip,55,M,,3,131005.0,43668.333333333336,3,999.0,3,4,3,10,Leales
+617,benjamin herrera moreno,nuevo,30,F,,4,246181.0,61545.25,4,999.0,3,5,5,13,Campeones
+618,mauricio fernandez perez,recurrente,24,F,,1,47563.0,47563.0,1,999.0,3,2,2,7,Prometedores
+619,sofia garcia cardenas,nuevo,61,F,,3,198450.0,66150.0,3,999.0,3,4,4,11,Leales
+620,claudia castano ninez,potencial,63,M,,3,168770.0,56256.666666666664,3,999.0,3,4,4,11,Leales
+621,camilo fernandez ramirez,empresarial,30,M,2021-11-09,2,148068.0,74034.0,2,1583.0,1,3,3,7,Prometedores
+622,alejandro rios munioz,vip,30,M,2024-04-07,1,1000.0,1000.0,1,703.0,5,2,1,8,Prometedores
+623,daniela niniez munoz,nuevo,61,M,,3,156714.0,52238.0,3,999.0,3,4,4,11,Leales
+624,angela perez rios,potencial,66,M,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+625,paola cardenas cifuentes,empresarial,41,F,,1,100700.0,100700.0,1,999.0,3,2,3,8,Prometedores
+626,felipe cardenas moreno,empresarial,50,F,,2,235814.0,117907.0,2,999.0,3,3,5,11,Leales
+628,veronica gonzalez herrera,vip,51,M,,1,76697.0,76697.0,1,999.0,3,2,2,7,Prometedores
+629,julian toro vargas,empresarial,77,M,,1,151593.0,151593.0,1,999.0,3,2,4,9,Prometedores
+630,diego herrera perez,recurrente,48,F,,3,3000.0,1000.0,3,999.0,3,4,1,8,Prometedores
+631,sebastian cardenas sanchez,empresarial,43,M,2021-07-10,4,292772.0,73193.0,4,1705.0,1,5,5,11,Leales
+632,valentina penia sanchez,nuevo,58,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+634,claudia sanchez alvarez,empresarial,24,M,,3,167628.0,55876.0,3,999.0,3,4,4,11,Leales
+635,hernan ospina ospina,recurrente,32,F,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+636,camilo dominguez penia,recurrente,46,M,,3,205600.0,68533.33333333333,3,999.0,3,4,4,11,Leales
+637,camilo perez gutierrez,vip,71,M,,1,104567.0,104567.0,1,999.0,3,2,3,8,Prometedores
+638,sebastian munioz espania,empresarial,62,M,,0,0.0,,0,999.0,3,1,1,5,Potenciales
+639,veronica lopez perez,empresarial,58,M,,3,278553.0,92851.0,3,999.0,3,4,5,12,Leales
+640,carolina gutierrez garcia,potencial,53,M,,3,262986.0,131493.0,3,999.0,3,4,5,12,Leales
+641,maria gonzalez fernandez,nuevo,27,M,,1,25700.0,25700.0,1,999.0,3,2,1,6,Potenciales
+642,natalia fernandez lopez,recurrente,22,M,,2,53324.0,26662.0,2,999.0,3,3,2,8,Prometedores
+643,mauricio martinez gonzalez,recurrente,47,M,,2,148895.0,74447.5,2,999.0,2,3,3,8,Prometedores
+644,alvaro castanio dominguez,nuevo,38,M,2020-12-07,3,142408.0,47469.333333333336,3,1920.0,1,4,3,8,Prometedores
+645,ricardo martinez garcia,empresarial,39,F,2023-04-07,3,55888.0,18629.333333333332,3,1069.0,1,4,2,7,Prometedores
+646,angela martinez garcia,empresarial,22,F,2024-01-18,2,33202.0,16601.0,2,783.0,5,3,2,10,Leales
+647,ricardo gutierrez espania,empresarial,39,F,,2,199830.0,99915.0,2,999.0,2,3,4,9,Prometedores
+648,andres espania rodriguez,vip,63,F,2022-01-20,3,197516.0,65838.66666666667,3,1511.0,1,4,4,9,Prometedores
+649,natalia dominguez sanchez,vip,35,F,,2,33735.0,16867.5,2,999.0,2,3,2,7,Prometedores
+650,maria ramirez perez,recurrente,41,F,2022-01-06,2,253622.0,126811.0,2,1525.0,1,3,5,9,Prometedores
+651,claudia cruz perez,vip,21,M,,3,98718.0,49359.0,3,999.0,2,4,3,9,Prometedores
+652,camilo niniez ospina,potencial,40,F,,2,187333.0,93666.5,2,999.0,2,3,4,9,Prometedores
+653,felipe castanio ninez,potencial,44,F,2021-08-05,1,35185.0,35185.0,1,1679.0,1,2,2,5,Potenciales
+654,benjamin ramirez niniez,recurrente,48,F,,4,253876.0,63469.0,4,999.0,2,5,5,12,Leales
+655,claudia vargas cruz,potencial,63,F,2022-11-14,4,129385.0,32346.25,4,1213.0,1,5,3,9,Prometedores
+656,sofia cifuentes espania,empresarial,65,M,2022-05-16,5,298040.0,59608.0,5,1395.0,1,5,5,11,Leales
+657,diego lopez espania,recurrente,41,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+658,claudia moreno alvarez,nuevo,37,M,,2,32004.0,16002.0,2,999.0,2,3,2,7,Prometedores
+659,paola gonzalez rios,potencial,100,F,,2,138611.0,69305.5,2,999.0,2,3,3,8,Prometedores
+660,paola espania sanchez,recurrente,60,M,,6,388699.0,64783.166666666664,6,999.0,2,5,5,12,Leales
+661,valentina herrera cifuentes,recurrente,63,M,,3,115921.0,38640.333333333336,3,999.0,2,4,3,9,Prometedores
+662,julian ospina ospina,empresarial,74,F,,7,729907.0,104272.42857142857,7,999.0,2,5,5,12,Leales
+663,claudia lopez gonzalez,potencial,66,M,2021-08-30,2,65121.0,32560.5,2,1654.0,1,3,2,6,Potenciales
+664,jose vargas cruz,recurrente,48,M,2023-04-24,5,98137.0,19627.4,5,1052.0,1,5,3,9,Prometedores
+665,patricia castanio perez,potencial,27,F,,3,99305.0,33101.666666666664,3,999.0,2,4,3,9,Prometedores
+666,raul rodriguez gutierrez,recurrente,70,M,2024-02-16,6,101630.0,16938.333333333332,6,754.0,5,5,3,13,Campeones
+667,daniela rodriguez cruz,empresarial,65,F,,4,434722.0,108680.5,4,999.0,2,5,5,12,Leales
+668,monica fernandez espania,recurrente,30,M,,2,107336.0,53668.0,2,999.0,2,3,3,8,Prometedores
+669,julian lopez ospina,nuevo,35,M,,1,44866.0,44866.0,1,999.0,2,2,2,6,Potenciales
+670,raul cruz rodriguez,empresarial,47,F,2021-12-10,2,145774.0,72887.0,2,1552.0,1,3,3,7,Prometedores
+671,veronica ospina rodriguez,recurrente,32,M,2024-10-19,3,338203.0,112734.33333333333,3,508.0,5,4,5,14,Campeones
+672,jose cifuentes alvarez,potencial,63,M,,1,1000.0,1000.0,1,999.0,2,2,1,5,Potenciales
+673,diego ospina pena,nuevo,58,M,,4,114827.0,28706.75,4,999.0,2,5,3,10,Leales
+674,mauricio fernandez rios,nuevo,32,F,,3,157636.0,52545.333333333336,3,999.0,2,4,4,10,Leales
+675,carolina cruz ramirez,vip,18,M,,1,25022.0,25022.0,1,999.0,2,2,1,5,Potenciales
+676,carolina moreno ninez,empresarial,26,F,2022-11-25,2,120341.0,60170.5,2,1202.0,1,3,3,7,Prometedores
+677,claudia cruz martinez,empresarial,60,F,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+678,alvaro gonzalez penia,potencial,30,M,2021-10-25,3,85806.0,28602.0,3,1598.0,1,4,2,7,Prometedores
+679,sebastian rodriguez vargas,vip,39,M,,2,48400.0,24200.0,2,999.0,2,3,2,7,Prometedores
+680,jesus toro sanchez,nuevo,63,F,,1,105306.0,105306.0,1,999.0,2,2,3,7,Prometedores
+681,ricardo gonzalez cruz,nuevo,23,M,,1,97573.0,97573.0,1,999.0,2,2,3,7,Prometedores
+682,camilo gonzalez ospina,nuevo,71,F,,1,92269.0,92269.0,1,999.0,2,2,2,6,Potenciales
+683,sebastian cruz dominguez,nuevo,55,M,,4,62682.0,15670.5,4,999.0,2,5,2,9,Prometedores
+684,andres perez espania,recurrente,40,F,,4,321166.0,80291.5,4,999.0,2,5,5,12,Leales
+685,daniela sanchez cifuentes,empresarial,61,M,,2,126856.0,63428.0,2,999.0,2,3,3,8,Prometedores
+686,felipe toro espana,recurrente,79,M,,2,121882.0,60941.0,2,999.0,2,3,3,8,Prometedores
+687,laura ninez penia,vip,72,M,,2,215016.0,107508.0,2,999.0,2,3,4,9,Prometedores
+688,jose herrera rios,nuevo,42,F,,2,27845.0,13922.5,2,999.0,2,3,1,6,Potenciales
+689,andres vargas espana,nuevo,32,F,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+690,alejandro rodriguez herrera,nuevo,19,M,,5,282593.0,56518.6,5,999.0,2,5,5,12,Leales
+691,laura ospina ospina,vip,74,F,,2,133742.0,66871.0,2,999.0,2,3,3,8,Prometedores
+692,camilo cruz gutierrez,recurrente,48,F,2021-02-16,3,308404.0,102801.33333333333,3,1849.0,1,4,5,10,Leales
+693,andres martinez dominguez,potencial,23,F,,2,155962.0,77981.0,2,999.0,2,3,4,9,Prometedores
+694,veronica rodriguez fernandez,empresarial,59,M,,2,52207.0,26103.5,2,999.0,2,3,2,7,Prometedores
+695,maria niniez sanchez,potencial,46,F,,1,126404.0,126404.0,1,999.0,2,2,3,7,Prometedores
+696,valentina espania gutierrez,recurrente,34,M,2021-06-17,4,172732.0,43183.0,4,1728.0,1,5,4,10,Leales
+697,jesus rodriguez ospina,empresarial,43,F,,1,1000.0,1000.0,1,999.0,2,2,1,5,Potenciales
+698,natalia gonzalez garcia,potencial,40,M,2023-04-14,1,93835.0,93835.0,1,1062.0,1,2,3,6,Potenciales
+699,felipe moreno penia,vip,30,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+700,veronica castanio gonzalez,nuevo,73,M,,1,126413.0,126413.0,1,999.0,2,2,3,7,Prometedores
+701,alvaro gutierrez garcia,potencial,32,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+702,ricardo moreno alvarez,potencial,48,F,,1,118788.0,118788.0,1,999.0,2,2,3,7,Prometedores
+703,monica ramirez castanio,nuevo,45,F,,3,227017.0,75672.33333333333,3,999.0,2,4,5,11,Leales
+704,carolina perez ospina,potencial,28,F,,1,1000.0,1000.0,1,999.0,2,2,1,5,Potenciales
+705,carolina cruz lopez,empresarial,30,M,,2,29454.0,14727.0,2,999.0,2,3,1,6,Potenciales
+706,raul dominguez rodriguez,empresarial,70,M,,1,76741.0,76741.0,1,999.0,2,2,2,6,Potenciales
+707,valentina gutierrez vargas,nuevo,77,M,,3,128194.0,42731.333333333336,3,999.0,2,4,3,9,Prometedores
+708,natalia rios martinez,recurrente,66,F,,3,156770.0,52256.666666666664,3,999.0,2,4,4,10,Leales
+709,laura lopez martinez,nuevo,64,M,,3,296120.0,98706.66666666667,3,999.0,2,4,5,11,Leales
+711,hernan perez ramirez,vip,29,M,2024-01-28,2,1000.0,1000.0,2,773.0,5,3,1,9,Prometedores
+712,natalia munioz martinez,vip,51,M,2024-09-24,2,2000.0,1000.0,2,533.0,5,3,1,9,Prometedores
+713,patricia moreno moreno,recurrente,70,F,,4,84587.0,21146.75,4,999.0,2,5,2,9,Prometedores
+714,ricardo dominguez sanchez,empresarial,38,M,,2,116656.0,58328.0,2,999.0,2,3,3,8,Prometedores
+715,julian martinez rios,empresarial,66,M,2022-03-09,3,194219.0,64739.666666666664,3,1463.0,1,4,4,9,Prometedores
+716,benjamin rios penia,potencial,53,F,,3,206324.0,68774.66666666667,3,999.0,2,4,4,10,Leales
+717,claudia ramirez munoz,recurrente,78,F,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+718,patricia gonzalez dominguez,recurrente,30,M,,1,109185.0,109185.0,1,999.0,2,2,3,7,Prometedores
+719,jesus munoz fernandez,empresarial,29,M,,1,79366.0,79366.0,1,999.0,2,2,2,6,Potenciales
+720,sofia garcia castanio,empresarial,36,M,,1,27786.0,27786.0,1,999.0,2,2,1,5,Potenciales
+721,veronica dominguez garcia,vip,57,F,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+722,natalia vargas penia,vip,48,F,,2,62533.0,31266.5,2,999.0,2,3,2,7,Prometedores
+723,claudia espania sanchez,nuevo,74,F,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+724,felipe perez cifuentes,potencial,34,F,,3,115025.0,38341.666666666664,3,999.0,2,4,3,9,Prometedores
+725,jose cruz rodriguez,nuevo,100,M,,3,66627.0,22209.0,3,999.0,2,4,2,8,Prometedores
+726,jesus cifuentes rios,potencial,79,M,,2,193115.0,96557.5,2,999.0,2,3,4,9,Prometedores
+727,andres rodriguez ospina,potencial,50,M,,1,108032.0,108032.0,1,999.0,2,2,3,7,Prometedores
+729,alejandro ospina cruz,potencial,42,F,,2,223576.0,111788.0,2,999.0,2,3,5,10,Leales
+730,ricardo castano cardenas,nuevo,60,M,,3,204289.0,68096.33333333333,3,999.0,2,4,4,10,Leales
+731,alvaro ninez penia,vip,21,F,,3,71737.0,23912.333333333332,3,999.0,2,4,2,8,Prometedores
+732,andres lopez rios,recurrente,61,M,,1,1000.0,1000.0,1,999.0,2,2,1,5,Potenciales
+733,ricardo herrera fernandez,potencial,44,M,,4,172303.0,57434.333333333336,4,999.0,2,5,4,11,Leales
+734,diego fernandez rios,potencial,57,F,,2,1000.0,1000.0,2,999.0,2,3,1,6,Potenciales
+735,valentina herrera garcia,potencial,52,M,,1,107587.0,107587.0,1,999.0,2,2,3,7,Prometedores
+736,alvaro gonzalez sanchez,empresarial,34,F,,4,206113.0,51528.25,4,999.0,2,5,4,11,Leales
+737,benjamin sanchez vargas,nuevo,76,F,,1,75432.0,75432.0,1,999.0,2,2,2,6,Potenciales
+738,jose ramirez sanchez,empresarial,71,M,,4,219071.0,54767.75,4,999.0,2,5,4,11,Leales
+739,andres fernandez cruz,nuevo,39,F,,3,188001.0,62667.0,3,999.0,2,4,4,10,Leales
+740,valentina moreno espania,potencial,52,F,,4,478592.0,119648.0,4,999.0,2,5,5,12,Leales
+741,camilo toro perez,empresarial,34,M,2022-05-21,3,165217.0,55072.333333333336,3,1390.0,1,4,4,9,Prometedores
+742,mauricio lopez gutierrez,potencial,46,M,2024-07-21,2,27436.0,13718.0,2,598.0,5,3,1,9,Prometedores
+743,alvaro alvarez niniez,recurrente,67,M,,2,63657.0,31828.5,2,999.0,2,3,2,7,Prometedores
+744,felipe martinez sanchez,vip,18,M,,1,1000.0,1000.0,1,999.0,2,2,1,5,Potenciales
+745,jesus vargas gutierrez,empresarial,23,F,,3,328682.0,109560.66666666667,3,999.0,2,4,5,11,Leales
+746,felipe martinez moreno,recurrente,80,F,,1,105857.0,105857.0,1,999.0,2,2,3,7,Prometedores
+747,claudia vargas ospina,recurrente,21,M,,1,89358.0,89358.0,1,999.0,2,2,2,6,Potenciales
+748,jesus cifuentes cruz,potencial,19,M,,4,361777.0,90444.25,4,999.0,2,5,5,12,Leales
+749,andres lopez toro,recurrente,40,F,2024-12-11,1,66300.0,66300.0,1,455.0,5,2,2,9,Prometedores
+750,paola martinez toro,nuevo,47,M,,1,22874.0,22874.0,1,999.0,2,2,1,5,Potenciales
+751,sebastian cruz rios,potencial,37,F,2021-09-01,7,613160.0,87594.28571428571,6,1652.0,1,5,5,11,Leales
+752,paola moreno ospina,empresarial,24,M,,1,51178.0,51178.0,1,999.0,2,2,2,6,Potenciales
+753,alvaro herrera dominguez,vip,72,F,,2,2000.0,1000.0,2,999.0,2,3,1,6,Potenciales
+754,mauricio alvarez martinez,recurrente,64,M,,5,348005.0,69601.0,5,999.0,2,5,5,12,Leales
+755,valentina fernandez dominguez,nuevo,27,F,,5,282975.0,56595.0,5,999.0,2,5,5,12,Leales
+756,alejandro rios rios,nuevo,21,F,,1,1000.0,1000.0,1,999.0,2,2,1,5,Potenciales
+757,julian gutierrez rios,recurrente,75,F,,2,106130.0,53065.0,2,999.0,2,3,3,8,Prometedores
+758,alejandro perez lopez,nuevo,77,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+759,natalia ramirez vargas,nuevo,30,M,2023-05-31,4,150798.0,37699.5,4,1015.0,1,5,4,10,Leales
+760,natalia rodriguez rios,recurrente,68,F,,3,22516.0,7505.333333333333,3,999.0,2,4,1,7,Prometedores
+761,patricia ramirez rios,recurrente,26,F,,1,130377.0,130377.0,1,999.0,2,2,3,7,Prometedores
+762,ricardo gonzalez lopez,vip,59,M,,3,74869.0,24956.333333333332,3,999.0,2,4,2,8,Prometedores
+763,ricardo munoz rios,recurrente,62,F,,2,160228.0,80114.0,2,999.0,2,3,4,9,Prometedores
+764,jesus ospina garcia,empresarial,45,F,,1,82695.0,82695.0,1,999.0,2,2,2,6,Potenciales
+765,raul vargas alvarez,nuevo,57,M,,1,20807.0,20807.0,1,999.0,2,2,1,5,Potenciales
+766,alvaro ospina cardenas,potencial,72,F,,1,118535.0,118535.0,1,999.0,2,2,3,7,Prometedores
+767,hernan penia perez,potencial,80,F,,3,27288.0,27288.0,3,999.0,2,4,1,7,Prometedores
+768,claudia gutierrez sanchez,empresarial,59,F,2022-03-25,3,135144.0,45048.0,3,1447.0,1,4,3,8,Prometedores
+769,jose garcia lopez,recurrente,68,F,,1,28851.0,28851.0,1,999.0,2,2,1,5,Potenciales
+771,felipe fernandez rios,empresarial,61,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+772,jesus garcia alvarez,nuevo,46,F,,2,183663.0,91831.5,2,999.0,2,3,4,9,Prometedores
+773,carolina gutierrez munoz,empresarial,30,M,,2,38640.0,19320.0,2,999.0,2,3,2,7,Prometedores
+774,benjamin cruz perez,vip,25,F,,3,169902.0,56634.0,3,999.0,2,4,4,10,Leales
+775,alvaro moreno gonzalez,potencial,56,M,,1,55063.0,55063.0,1,999.0,2,2,2,6,Potenciales
+777,laura espana espania,potencial,37,F,,3,144758.0,48252.666666666664,3,999.0,2,4,3,9,Prometedores
+778,benjamin rios lopez,vip,45,M,,3,185599.0,61866.333333333336,3,999.0,2,4,4,10,Leales
+779,felipe fernandez cifuentes,empresarial,38,M,,4,208801.0,52200.25,4,999.0,2,5,4,11,Leales
+780,paola rios vargas,potencial,76,M,,1,126322.0,126322.0,1,999.0,2,2,3,7,Prometedores
+781,patricia ramirez rodriguez,vip,36,M,2023-08-05,2,167178.0,83589.0,2,949.0,5,3,4,12,Leales
+782,sebastian martinez fernandez,potencial,42,M,,1,87865.0,87865.0,1,999.0,2,2,2,6,Potenciales
+783,diego martinez cifuentes,nuevo,80,M,,1,37558.0,37558.0,1,999.0,2,2,2,6,Potenciales
+784,laura moreno gutierrez,vip,50,M,,4,265801.0,66450.25,4,999.0,2,5,5,12,Leales
+786,jose pena gonzalez,recurrente,32,M,2021-01-23,3,274358.0,91452.66666666667,3,1873.0,1,4,5,10,Leales
+787,jose fernandez herrera,nuevo,70,F,,2,213831.0,106915.5,2,999.0,2,3,4,9,Prometedores
+788,carolina ramirez ramirez,empresarial,32,M,,2,122550.0,61275.0,2,999.0,2,3,3,8,Prometedores
+789,jose sanchez toro,nuevo,68,M,,1,45287.0,45287.0,1,999.0,2,2,2,6,Potenciales
+790,felipe martinez munioz,recurrente,49,F,,2,111260.0,55630.0,2,999.0,2,3,3,8,Prometedores
+791,patricia rios ninez,potencial,64,M,,2,124010.0,62005.0,2,999.0,2,3,3,8,Prometedores
+792,ricardo rodriguez cardenas,potencial,30,M,,3,138382.0,46127.333333333336,3,999.0,2,4,3,9,Prometedores
+793,mauricio moreno herrera,recurrente,29,F,,2,18908.0,9454.0,2,999.0,2,3,1,6,Potenciales
+794,mauricio herrera rodriguez,nuevo,50,M,,1,158977.0,158977.0,1,999.0,2,2,4,8,Prometedores
+795,veronica rodriguez ninez,empresarial,30,M,,3,93768.0,31256.0,3,999.0,2,4,2,8,Prometedores
+796,felipe toro castanio,recurrente,39,F,2024-07-08,3,114962.0,38320.666666666664,3,611.0,5,4,3,12,Leales
+797,carolina gonzalez vargas,recurrente,53,M,,4,89558.0,29852.666666666668,4,999.0,2,5,2,9,Prometedores
+798,hernan gonzalez toro,nuevo,72,M,,4,316778.0,79194.5,4,999.0,2,5,5,12,Leales
+799,monica espania lopez,potencial,59,M,,3,198439.0,66146.33333333333,3,999.0,2,4,4,10,Leales
+800,carolina lopez niniez,potencial,45,F,,1,39002.0,39002.0,1,999.0,2,2,2,6,Potenciales
+801,ricardo alvarez cifuentes,recurrente,18,F,,1,32166.0,32166.0,1,999.0,2,2,2,6,Potenciales
+802,ricardo dominguez garcia,recurrente,62,F,2021-07-13,3,300507.0,100169.0,3,1702.0,1,4,5,10,Leales
+803,paola castano garcia,recurrente,48,F,,3,150132.0,50044.0,3,999.0,2,4,3,9,Prometedores
+804,daniela cardenas perez,empresarial,80,F,,4,301820.0,75455.0,4,999.0,2,5,5,12,Leales
+805,diego penia lopez,potencial,68,M,,2,90184.0,45092.0,2,999.0,2,3,2,7,Prometedores
+806,sebastian vargas rios,potencial,80,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+807,claudia castanio gonzalez,potencial,31,F,,4,286385.0,71596.25,4,999.0,2,5,5,12,Leales
+808,veronica rodriguez perez,recurrente,61,F,2023-11-09,5,342573.0,68514.6,5,853.0,5,5,5,15,Campeones
+809,felipe fernandez cifuentes,recurrente,74,M,,3,159654.0,53218.0,3,999.0,2,4,4,10,Leales
+810,monica alvarez perez,empresarial,63,M,,3,183014.0,61004.666666666664,3,999.0,2,4,4,10,Leales
+811,ricardo niniez ramirez,empresarial,42,M,,7,409510.0,58501.42857142857,7,999.0,2,5,5,12,Leales
+812,sebastian alvarez ramirez,vip,68,M,,3,272241.0,90747.0,3,999.0,2,4,5,11,Leales
+814,felipe rios moreno,empresarial,72,M,,4,323560.0,80890.0,4,999.0,2,5,5,12,Leales
+815,jesus dominguez sanchez,nuevo,48,F,2020-12-19,2,27805.0,13902.5,2,1908.0,1,3,1,5,Potenciales
+816,paola gutierrez martinez,recurrente,48,M,,3,82409.0,27469.666666666668,3,999.0,2,4,2,8,Prometedores
+817,patricia rodriguez fernandez,empresarial,19,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+818,jesus gutierrez ramirez,vip,31,M,,4,160478.0,40119.5,4,999.0,2,5,4,11,Leales
+819,patricia martinez pena,nuevo,43,F,2024-12-17,6,309808.0,51634.666666666664,6,449.0,5,5,5,15,Campeones
+820,jesus castanio fernandez,potencial,39,F,,5,107169.0,21433.8,5,999.0,2,5,3,10,Leales
+821,mauricio rodriguez munoz,empresarial,39,M,,2,219071.0,109535.5,2,999.0,2,3,4,9,Prometedores
+822,valentina perez herrera,potencial,62,M,,2,43872.0,21936.0,2,999.0,2,3,2,7,Prometedores
+823,benjamin ospina cruz,recurrente,63,M,,1,72662.0,72662.0,1,999.0,2,2,2,6,Potenciales
+824,paola herrera niniez,nuevo,79,M,2021-09-19,3,101925.0,33975.0,3,1634.0,1,4,3,8,Prometedores
+825,ricardo espana lopez,vip,38,F,,3,130709.0,43569.666666666664,3,999.0,2,4,3,9,Prometedores
+826,carolina rios munoz,nuevo,34,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+827,monica espania garcia,potencial,67,F,2024-06-14,3,219200.0,73066.66666666667,3,635.0,5,4,4,13,Campeones
+828,mauricio herrera niniez,potencial,75,M,,3,203623.0,67874.33333333333,3,999.0,2,4,4,10,Leales
+829,angela dominguez alvarez,recurrente,19,M,,1,56710.0,56710.0,1,999.0,2,2,2,6,Potenciales
+830,maria ospina toro,empresarial,75,F,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+831,ricardo vargas cardenas,potencial,38,F,2022-06-30,1,57035.0,57035.0,1,1350.0,1,2,2,5,Potenciales
+832,daniela gonzalez niniez,nuevo,30,M,2022-01-23,2,175134.0,87567.0,2,1508.0,1,3,4,8,Prometedores
+833,julian martinez munioz,vip,50,M,,3,184112.0,61370.666666666664,3,999.0,2,4,4,10,Leales
+834,ricardo ospina cruz,nuevo,33,F,,1,18721.0,18721.0,1,999.0,2,2,1,5,Potenciales
+835,monica gutierrez cardenas,nuevo,56,F,,3,3000.0,1000.0,3,999.0,2,4,1,7,Prometedores
+836,claudia dominguez herrera,potencial,80,M,,2,2000.0,1000.0,2,999.0,2,3,1,6,Potenciales
+837,benjamin fernandez rodriguez,nuevo,47,F,,1,1000.0,1000.0,1,999.0,2,2,1,5,Potenciales
+838,jose vargas lopez,empresarial,48,M,,3,314281.0,104760.33333333333,3,999.0,2,4,5,11,Leales
+839,sofia espana ramirez,nuevo,78,F,,2,44803.0,22401.5,2,999.0,2,3,2,7,Prometedores
+840,alvaro ninez ramirez,potencial,60,M,,4,200309.0,50077.25,4,999.0,2,5,4,11,Leales
+841,camilo martinez espania,recurrente,27,M,,3,3000.0,1000.0,3,999.0,2,4,1,7,Prometedores
+842,laura castano dominguez,vip,30,M,,1,119493.0,119493.0,1,999.0,2,2,3,7,Prometedores
+843,carolina sanchez lopez,nuevo,28,M,2024-11-23,4,293325.0,73331.25,4,473.0,5,5,5,15,Campeones
+844,andres dominguez herrera,recurrente,47,F,,3,126077.0,42025.666666666664,3,999.0,2,4,3,9,Prometedores
+845,mauricio dominguez niniez,nuevo,58,M,,2,218147.0,109073.5,2,999.0,2,3,4,9,Prometedores
+846,sofia ospina espana,potencial,55,M,,1,68682.0,68682.0,1,999.0,2,2,2,6,Potenciales
+847,claudia perez ramirez,recurrente,46,M,,3,104907.0,34969.0,3,999.0,2,4,3,9,Prometedores
+848,paola rios cardenas,empresarial,50,M,,3,118768.0,39589.333333333336,3,999.0,2,4,3,9,Prometedores
+849,carolina niniez perez,potencial,65,M,2021-07-09,5,292507.0,58501.4,5,1706.0,1,5,5,11,Leales
+850,maria cruz herrera,vip,20,F,,1,94456.0,94456.0,1,999.0,2,2,3,7,Prometedores
+851,raul penia ramirez,potencial,66,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+852,julian cardenas cruz,empresarial,80,F,,1,1000.0,1000.0,1,999.0,2,2,1,5,Potenciales
+853,benjamin ospina munioz,nuevo,30,M,,2,104129.0,52064.5,2,999.0,2,3,3,8,Prometedores
+854,hernan cardenas rodriguez,nuevo,38,F,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+855,raul rodriguez lopez,potencial,58,M,2023-04-28,2,155593.0,77796.5,2,1048.0,1,3,4,8,Prometedores
+856,valentina fernandez alvarez,nuevo,74,M,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+857,jose cruz garcia,potencial,49,M,,2,71375.0,35687.5,2,999.0,2,3,2,7,Prometedores
+858,monica espana munioz,vip,100,F,,0,0.0,,0,999.0,2,1,1,4,Potenciales
+859,benjamin perez toro,potencial,53,F,,5,278910.0,55782.0,5,999.0,2,5,5,12,Leales
+860,sofia dominguez espania,recurrente,33,M,,2,210483.0,105241.5,2,999.0,2,3,4,9,Prometedores
+861,maria lopez ospina,nuevo,79,F,,2,127518.0,63759.0,2,999.0,2,3,3,8,Prometedores
+862,daniela rios perez,empresarial,75,M,,2,223230.0,111615.0,2,999.0,2,3,5,10,Leales
+863,sofia cifuentes penia,potencial,44,M,,5,245333.0,49066.6,5,999.0,1,5,5,11,Leales
+864,jose espana munioz,empresarial,27,F,2020-05-13,2,275112.0,137556.0,2,2128.0,1,3,5,9,Prometedores
+865,camilo herrera cifuentes,potencial,51,M,,2,138042.0,69021.0,2,999.0,1,3,3,7,Prometedores
+866,veronica lopez munioz,vip,18,F,2021-03-13,2,2000.0,1000.0,2,1824.0,1,3,1,5,Potenciales
+867,raul garcia rios,empresarial,30,F,2020-07-16,4,286495.0,95498.33333333333,4,2064.0,1,5,5,11,Leales
+868,claudia sanchez castano,recurrente,30,M,2023-09-17,4,90062.0,22515.5,4,906.0,5,5,2,12,Leales
+869,monica cardenas fernandez,vip,30,F,,2,154086.0,77043.0,2,999.0,1,3,4,8,Prometedores
+870,paola rodriguez garcia,empresarial,73,F,2022-03-23,2,134170.0,67085.0,2,1449.0,1,3,3,7,Prometedores
+871,natalia alvarez gonzalez,nuevo,28,M,2024-01-19,4,254802.0,63700.5,4,782.0,5,5,5,15,Campeones
+872,patricia alvarez gutierrez,vip,76,F,,4,327559.0,81889.75,4,999.0,1,5,5,11,Leales
+873,carolina ramirez rios,nuevo,48,F,,1,1000.0,1000.0,1,999.0,1,2,1,4,Potenciales
+874,daniela rodriguez gonzalez,empresarial,30,M,,1,24862.0,24862.0,1,999.0,1,2,1,4,Potenciales
+875,carolina penia herrera,empresarial,30,M,,4,187675.0,46918.75,4,999.0,1,5,4,10,Leales
+876,diego alvarez rios,recurrente,30,M,,4,176331.0,44082.75,4,999.0,1,5,4,10,Leales
+877,sebastian castano penia,nuevo,76,M,,2,171136.0,85568.0,2,999.0,1,3,4,8,Prometedores
+878,mauricio rodriguez alvarez,potencial,46,F,,2,2000.0,1000.0,2,999.0,1,3,1,5,Potenciales
+879,jose herrera moreno,potencial,19,M,,1,1000.0,1000.0,1,999.0,1,2,1,4,Potenciales
+880,laura toro fernandez,vip,69,M,2022-12-02,5,393565.0,98391.25,5,1195.0,1,5,5,11,Leales
+881,alvaro pena toro,potencial,63,F,,1,67891.0,67891.0,1,999.0,1,2,2,5,Potenciales
+882,jesus gonzalez espana,nuevo,30,M,,2,204168.0,102084.0,2,999.0,1,3,4,8,Prometedores
+883,alejandro lopez martinez,empresarial,78,F,,1,62971.0,62971.0,1,999.0,1,2,2,5,Potenciales
+884,camilo alvarez garcia,potencial,18,F,,3,291863.0,97287.66666666667,3,999.0,1,4,5,10,Leales
+885,jose espana ramirez,nuevo,56,F,,4,214888.0,53722.0,4,999.0,1,5,4,10,Leales
+886,diego cifuentes gutierrez,recurrente,22,F,,2,110959.0,55479.5,2,999.0,1,3,3,7,Prometedores
+887,felipe sanchez toro,potencial,70,M,2020-09-13,6,527807.0,87967.83333333333,6,2005.0,1,5,5,11,Leales
+888,laura ospina alvarez,recurrente,30,F,,0,0.0,,0,999.0,1,1,1,3,En riesgo
+889,alvaro gutierrez espania,recurrente,40,M,,1,37021.0,37021.0,1,999.0,1,2,2,5,Potenciales
+890,laura alvarez castano,vip,24,F,,1,26276.0,26276.0,1,999.0,1,2,1,4,Potenciales
+891,jose garcia espana,nuevo,57,F,2021-12-27,1,1000.0,1000.0,1,1535.0,1,2,1,4,Potenciales
+892,sofia moreno castanio,vip,32,F,,4,195188.0,97594.0,4,999.0,1,5,4,10,Leales
+893,natalia gonzalez sanchez,potencial,20,M,,0,0.0,,0,999.0,1,1,1,3,En riesgo
+894,jesus cruz martinez,potencial,22,M,2022-04-14,2,165408.0,82704.0,2,1427.0,1,3,4,8,Prometedores
+895,patricia herrera martinez,recurrente,78,M,,5,406210.0,81242.0,5,999.0,1,5,5,11,Leales
+896,jesus ospina perez,recurrente,49,M,2022-08-12,3,114664.0,57332.0,3,1307.0,1,4,3,8,Prometedores
+897,paola castanio herrera,vip,55,F,2024-12-27,4,362883.0,90720.75,4,439.0,5,5,5,15,Campeones
+898,carolina cardenas lopez,vip,39,M,,1,151035.0,151035.0,1,999.0,1,2,4,7,Prometedores
+899,carolina dominguez niniez,vip,72,F,,2,1000.0,1000.0,2,999.0,1,3,1,5,Potenciales
+900,julian rodriguez cruz,vip,59,M,,1,89765.0,89765.0,1,999.0,1,2,2,5,Potenciales

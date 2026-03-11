@@ -1,0 +1,597 @@
+id_vehiculo,marca,modelo,tipo,año_modelo,cilindraje,tipo_combustible,color
+1,mitsubishi,eclipse cross,moto,2017,1000,Híbrido,azul
+2,toyota,land cruiser,carro,2019,2400,Híbrido,azul
+3,honda,civic,camioneta,2013,3000,Gasolina,rojo
+4,honda,cr v,carro,2012,3500,Gas Natural,azul
+5,chevrolet,s10,camioneta,2019,2400,Diesel,azul
+6,suzuki,jimny,pickup,2018,1000,Eléctrico,rojo
+7,nissan,pathfinder,pickup,2024,3000,Diesel,negro
+8,ford,explorer,camioneta,2023,1000,Gasolina,negro
+9,mazda,mazda3,carro,2012,2400,Diesel,plata
+10,ford,maverick,carro,2015,2400,Gas Natural,gris
+11,volkswagen,polo,camioneta,2018,1200,Gasolina,negro
+12,kia,rio,bus,2014,1600,Gasolina,gris
+13,chevrolet,spin,bus,2019,2400,Híbrido,gris
+14,honda,civic,bus,2021,2000,Diesel,azul
+16,chevrolet,montana,furgon,2019,3500,Diesel,naranja
+17,mitsubishi,asx,camioneta,2013,3500,Diesel,verde
+18,nissan,sentra,moto,2024,2400,Gas Natural,azul
+19,kia,carnival,pickup,2023,3000,Eléctrico,azul
+20,suzuki,vitara,camioneta,2014,1400,Gas Natural,rojo
+21,toyota,prado,camioneta,2017,2400,Diesel,amarillo
+22,mitsubishi,l200,furgon,2019,1200,Diesel,rojo
+23,mazda,mazda3,camioneta,2012,1200,Híbrido,negro
+24,ford,fiesta,moto,2018,1400,Diesel,blanco
+25,kia,carnival,furgon,2012,4000,Gas Natural,verde
+26,volkswagen,t cross,carro,2017,1600,Gas Natural,blanco
+27,renault,koleos,furgon,2012,3000,Gasolina,azul
+28,honda,hr v,furgon,2025,4000,Híbrido,naranja
+29,volkswagen,amarok,pickup,2022,1000,Gasolina,gris
+30,nissan,kicks,pickup,2019,4000,Eléctrico,naranja
+31,ford,maverick,furgon,2017,2000,Gasolina,rojo
+32,suzuki,jimny,camioneta,2014,1600,Gasolina,marron
+33,toyota,hilux,furgon,2019,1400,Gas Natural,gris
+34,volkswagen,t cross,furgon,2018,2400,Eléctrico,gris
+35,kia,sonet,bus,2020,1000,Diesel,gris
+36,toyota,corolla,pickup,2016,2000,Gasolina,negro
+37,kia,seltos,camioneta,2024,3000,Diesel,vino
+38,nissan,frontier,camioneta,2015,3000,Diesel,negro
+39,mazda,mazda3,carro,2025,3000,Gasolina,blanco
+40,mitsubishi,outlander,pickup,2014,1500,Diesel,negro
+41,toyota,yaris,carro,2016,1200,Híbrido,azul
+42,chevrolet,tracker,moto,2014,3000,Gasolina,azul
+43,nissan,x trail,pickup,2024,2000,Gas Natural,plata
+44,volkswagen,t cross,furgon,2024,1000,Diesel,negro
+45,hyundai,tucson,furgon,2016,1500,Eléctrico,azul
+46,renault,stepway,furgon,2019,1400,Diesel,plata
+47,chevrolet,spin,pickup,2019,3500,Híbrido,gris
+48,kia,seltos,carro,2019,4000,Híbrido,vino
+49,ford,maverick,moto,2016,3000,Gasolina,blanco
+50,mazda,bt 50,furgon,2015,2400,Diesel,beige
+51,volkswagen,t cross,camioneta,2019,1600,Diesel,blanco
+52,kia,picanto,furgon,2013,1600,Gas Natural,gris
+53,honda,hr v,moto,2013,1400,Gasolina,plata
+54,nissan,x trail,camioneta,2014,1400,Diesel,marron
+55,renault,duster,carro,2014,3000,Eléctrico,plata
+56,toyota,hilux,pickup,2024,1600,Diesel,negro
+57,volkswagen,t cross,moto,2013,1500,Eléctrico,azul
+58,mitsubishi,l200,furgon,2025,2400,Eléctrico,rojo
+59,honda,fit,camioneta,2024,1800,Gasolina,gris
+60,renault,logan,moto,2016,1800,Gasolina,rojo
+61,ford,ranger,carro,2014,1600,Diesel,marron
+62,nissan,kicks,carro,2019,3500,Diesel,rojo
+63,mazda,cx 30,bus,2013,2400,Eléctrico,marron
+64,toyota,corolla,furgon,2018,1200,Diesel,negro
+65,volkswagen,virtus,bus,2019,4000,Gas Natural,naranja
+66,suzuki,s cross,furgon,2013,1600,Gasolina,marron
+67,mazda,mazda6,moto,2012,3000,Diesel,blanco
+68,nissan,pathfinder,bus,2017,1200,Híbrido,azul
+69,suzuki,jimny,camioneta,2014,3500,Gasolina,negro
+70,suzuki,swift,pickup,2018,3500,Gas Natural,negro
+71,hyundai,accent,bus,2016,1600,Gas Natural,rojo
+72,volkswagen,jetta,carro,2022,1400,Diesel,rojo
+73,mitsubishi,outlander,carro,2015,1800,Gas Natural,plata
+74,nissan,pathfinder,bus,2022,3500,Híbrido,plata
+75,ford,ranger,moto,2014,1000,Diesel,azul
+76,hyundai,creta,moto,2019,2400,Gas Natural,plata
+77,hyundai,ioniq,moto,2021,1200,Gasolina,blanco
+78,kia,seltos,bus,2015,3000,Híbrido,verde
+79,mitsubishi,outlander,moto,2022,1600,Diesel,azul
+80,ford,focus,carro,2022,2400,Eléctrico,beige
+81,suzuki,jimny,moto,2021,1000,Eléctrico,rojo
+82,chevrolet,blazer,bus,2019,1200,Gasolina,gris
+83,kia,sportage,carro,2021,1600,Gas Natural,amarillo
+84,volkswagen,amarok,moto,2015,1200,Híbrido,marron
+85,ford,maverick,pickup,2023,1400,Diesel,gris
+86,mitsubishi,lancer,pickup,2022,1000,Diesel,gris
+87,volkswagen,amarok,camioneta,2023,1800,Gasolina,negro
+88,toyota,land cruiser,pickup,2017,1400,Gasolina,marron
+89,suzuki,vitara,camioneta,2012,1000,Diesel,beige
+90,kia,cerato,furgon,2019,1600,Eléctrico,plata
+91,nissan,pathfinder,moto,2018,1000,Diesel,gris
+92,chevrolet,onix,pickup,2022,1500,Diesel,gris
+93,kia,seltos,moto,2015,2000,Diesel,azul
+94,volkswagen,gol,furgon,2017,1400,Gasolina,negro
+95,renault,kwid,camioneta,2023,4000,Gasolina,azul
+96,honda,cr v,furgon,2019,1000,Gas Natural,gris
+97,honda,civic,camioneta,2023,1200,Gasolina,rojo
+98,kia,picanto,moto,2015,1200,Gasolina,beige
+99,nissan,x trail,carro,2012,1500,Diesel,amarillo
+100,renault,duster,pickup,2012,4000,Diesel,gris
+101,honda,accord,bus,2025,1600,Gasolina,azul
+102,honda,fit,furgon,2020,3500,Eléctrico,rojo
+103,mitsubishi,l200,camioneta,2020,3500,Diesel,rojo
+104,honda,accord,furgon,2024,1800,Diesel,blanco
+105,renault,logan,bus,2012,1800,Diesel,negro
+106,ford,explorer,camioneta,2020,1500,Gasolina,rojo
+107,kia,sonet,furgon,2021,1200,Gas Natural,azul
+108,volkswagen,jetta,carro,2022,3500,Gas Natural,gris
+109,mitsubishi,lancer,camioneta,2023,1600,Diesel,naranja
+110,toyota,fortuner,camioneta,2025,1800,Gasolina,verde
+111,hyundai,creta,moto,2017,1600,Híbrido,plata
+112,volkswagen,t cross,bus,2014,3000,Gasolina,rojo
+113,renault,oroch,carro,2012,2000,Diesel,negro
+114,hyundai,i10,moto,2024,2000,Gasolina,rojo
+115,hyundai,i20,moto,2015,1000,Diesel,negro
+116,hyundai,tucson,furgon,2025,1500,Gasolina,marron
+117,chevrolet,s10,pickup,2023,2000,Gas Natural,rojo
+118,ford,ranger,pickup,2023,1000,Gasolina,azul
+119,volkswagen,virtus,carro,2014,4000,Diesel,verde
+120,chevrolet,blazer,pickup,2023,1400,Diesel,azul
+121,hyundai,santa fe,furgon,2016,2400,Eléctrico,vino
+122,renault,stepway,camioneta,2022,1600,Eléctrico,rojo
+123,ford,maverick,moto,2018,4000,Eléctrico,gris
+124,chevrolet,s10,bus,2012,2400,Diesel,gris
+125,hyundai,creta,moto,2012,2400,Gasolina,negro
+126,volkswagen,virtus,moto,2021,1400,Diesel,amarillo
+127,mazda,cx 30,bus,2013,1800,Diesel,plata
+128,kia,rio,furgon,2021,1000,Eléctrico,gris
+129,toyota,land cruiser,bus,2017,3500,Gasolina,naranja
+130,honda,civic,furgon,2024,1000,Gasolina,blanco
+131,honda,hr v,pickup,2020,3000,Gas Natural,plata
+132,honda,hr v,carro,2019,4000,Eléctrico,negro
+133,toyota,rav4,pickup,2025,1500,Híbrido,gris
+134,honda,wr v,carro,2019,1400,Diesel,azul
+135,kia,picanto,carro,2024,2000,Gasolina,gris
+136,hyundai,creta,carro,2022,2000,Diesel,plata
+137,mitsubishi,lancer,moto,2019,4000,Eléctrico,gris
+138,hyundai,creta,pickup,2020,1600,Diesel,plata
+139,hyundai,i20,moto,2024,1800,Diesel,blanco
+140,honda,accord,carro,2013,1200,Híbrido,azul
+141,toyota,hilux,pickup,2022,1800,Gas Natural,negro
+142,kia,sonet,pickup,2014,3500,Eléctrico,verde
+143,renault,oroch,bus,2018,1500,Gas Natural,vino
+144,renault,kwid,moto,2019,1500,Diesel,marron
+145,mitsubishi,outlander,bus,2012,4000,Híbrido,amarillo
+146,volkswagen,jetta,carro,2013,4000,Híbrido,negro
+147,mitsubishi,eclipse cross,moto,2014,2400,Diesel,negro
+148,mitsubishi,lancer,bus,2014,1500,Gasolina,marron
+149,toyota,hilux,furgon,2021,1400,Diesel,vino
+150,honda,fit,carro,2019,2000,Diesel,azul
+151,suzuki,jimny,furgon,2024,3000,Gasolina,gris
+152,renault,koleos,bus,2018,1200,Gasolina,blanco
+153,toyota,corolla,moto,2023,1600,Eléctrico,negro
+154,hyundai,i10,carro,2018,4000,Gas Natural,naranja
+155,mitsubishi,outlander,carro,2018,1400,Híbrido,plata
+156,renault,stepway,pickup,2019,3000,Gas Natural,amarillo
+157,ford,maverick,furgon,2025,1000,Gasolina,gris
+158,mazda,cx 5,camioneta,2021,1000,Diesel,plata
+159,volkswagen,t cross,moto,2024,1400,Gas Natural,negro
+160,ford,ranger,camioneta,2021,1500,Gasolina,vino
+161,hyundai,i10,furgon,2019,1800,Gasolina,naranja
+162,suzuki,grand vitara,carro,2015,3000,Eléctrico,gris
+163,toyota,rav4,camioneta,2020,2000,Diesel,negro
+164,kia,seltos,furgon,2023,1400,Diesel,rojo
+165,chevrolet,s10,moto,2020,1800,Gasolina,amarillo
+166,ford,focus,moto,2020,1500,Gasolina,rojo
+167,chevrolet,joy,carro,2014,1000,Gasolina,plata
+168,kia,carnival,moto,2018,2400,Eléctrico,marron
+169,nissan,frontier,camioneta,2014,2000,Gasolina,azul
+170,ford,maverick,bus,2020,1800,Diesel,azul
+171,chevrolet,tracker,pickup,2025,1600,Gas Natural,gris
+172,mazda,mazda3,camioneta,2021,1400,Gasolina,negro
+173,renault,sandero,carro,2019,3000,Diesel,marron
+174,mitsubishi,lancer,bus,2022,2000,Gasolina,blanco
+175,mitsubishi,outlander,bus,2013,3000,Gasolina,naranja
+177,honda,hr v,carro,2021,4000,Diesel,verde
+178,honda,civic,bus,2021,1800,Diesel,gris
+179,hyundai,ioniq,carro,2022,4000,Eléctrico,marron
+180,mazda,bt 50,furgon,2025,1200,Híbrido,negro
+181,mazda,mazda3,carro,2016,1800,Diesel,azul
+182,renault,duster,furgon,2025,1800,Gas Natural,plata
+183,volkswagen,amarok,pickup,2022,1000,Eléctrico,beige
+184,ford,bronco,camioneta,2025,1500,Híbrido,rojo
+185,volkswagen,jetta,pickup,2013,2400,Diesel,blanco
+186,mitsubishi,asx,pickup,2013,1000,Diesel,beige
+187,volkswagen,amarok,bus,2014,1000,Gas Natural,negro
+188,toyota,fortuner,bus,2016,1200,Gas Natural,marron
+189,chevrolet,joy,camioneta,2017,1600,Diesel,azul
+190,suzuki,ignis,furgon,2016,1400,Eléctrico,negro
+191,mitsubishi,asx,moto,2018,1800,Gasolina,gris
+192,volkswagen,virtus,carro,2022,1600,Gas Natural,gris
+193,chevrolet,blazer,pickup,2017,1500,Gasolina,azul
+194,toyota,corolla,camioneta,2012,4000,Gas Natural,gris
+195,volkswagen,t cross,furgon,2020,4000,Gasolina,negro
+196,mazda,bt 50,pickup,2017,1800,Gasolina,marron
+197,nissan,pathfinder,furgon,2012,2000,Eléctrico,rojo
+198,hyundai,tucson,camioneta,2020,2400,Gasolina,amarillo
+199,ford,fiesta,carro,2020,1800,Gasolina,negro
+200,mazda,mazda6,carro,2016,4000,Gasolina,gris
+201,renault,stepway,furgon,2016,1200,Eléctrico,amarillo
+202,suzuki,ignis,camioneta,2014,4000,Diesel,gris
+203,volkswagen,polo,carro,2014,4000,Diesel,rojo
+204,suzuki,swift,moto,2019,1500,Diesel,azul
+205,kia,rio,pickup,2021,1500,Eléctrico,gris
+206,mitsubishi,outlander,furgon,2019,1800,Eléctrico,negro
+207,renault,sandero,carro,2020,4000,Eléctrico,negro
+208,chevrolet,tracker,carro,2022,3500,Diesel,azul
+209,volkswagen,tiguan,camioneta,2021,2400,Gas Natural,naranja
+210,ford,focus,furgon,2016,1200,Gas Natural,beige
+211,renault,logan,camioneta,2016,1200,Diesel,rojo
+212,kia,picanto,moto,2018,1800,Híbrido,plata
+213,hyundai,creta,moto,2025,1000,Eléctrico,azul
+214,ford,maverick,carro,2015,1200,Diesel,plata
+215,suzuki,swift,bus,2024,2000,Gasolina,vino
+216,mitsubishi,l200,furgon,2020,1000,Diesel,naranja
+217,hyundai,ioniq,bus,2019,1000,Eléctrico,blanco
+218,suzuki,jimny,bus,2024,2400,Diesel,azul
+219,chevrolet,blazer,pickup,2016,1000,Híbrido,naranja
+220,honda,hr v,carro,2024,1800,Híbrido,blanco
+221,honda,wr v,bus,2015,2000,Diesel,azul
+222,honda,civic,furgon,2018,3000,Gas Natural,negro
+223,kia,rio,camioneta,2019,2400,Híbrido,negro
+224,kia,sonet,pickup,2022,1500,Diesel,amarillo
+225,chevrolet,montana,camioneta,2013,3000,Gasolina,blanco
+226,toyota,land cruiser,pickup,2012,3000,Gasolina,marron
+227,volkswagen,virtus,carro,2021,3500,Híbrido,plata
+228,mazda,bt 50,camioneta,2013,1600,Gasolina,gris
+229,volkswagen,virtus,bus,2020,1000,Gas Natural,rojo
+230,hyundai,ioniq,furgon,2017,1600,Gasolina,plata
+231,suzuki,ignis,carro,2019,2400,Eléctrico,beige
+232,mazda,mazda3,moto,2013,1800,Diesel,blanco
+233,ford,escape,bus,2015,1600,Híbrido,blanco
+234,mitsubishi,l200,moto,2023,1200,Gas Natural,blanco
+235,nissan,pathfinder,furgon,2022,3000,Gasolina,vino
+236,mazda,mazda3,carro,2017,3500,Gasolina,negro
+237,hyundai,accent,carro,2021,1500,Eléctrico,rojo
+238,hyundai,i20,pickup,2021,3500,Diesel,negro
+239,mazda,bt 50,bus,2012,3500,Diesel,azul
+240,renault,kwid,furgon,2012,1400,Gasolina,azul
+241,chevrolet,joy,bus,2019,1400,Diesel,azul
+242,hyundai,accent,pickup,2014,1800,Diesel,plata
+243,hyundai,tucson,bus,2018,1400,Eléctrico,plata
+244,volkswagen,gol,camioneta,2020,1600,Híbrido,negro
+245,kia,seltos,carro,2020,1200,Diesel,negro
+246,suzuki,s cross,moto,2013,4000,Gasolina,rojo
+247,chevrolet,montana,moto,2017,2000,Diesel,azul
+248,nissan,pathfinder,camioneta,2016,1200,Eléctrico,gris
+249,kia,picanto,pickup,2016,1000,Diesel,marron
+250,chevrolet,onix,camioneta,2015,3500,Híbrido,beige
+251,nissan,versa,bus,2020,3000,Gasolina,azul
+252,mazda,mazda3,bus,2022,1800,Híbrido,gris
+253,chevrolet,s10,moto,2019,4000,Diesel,gris
+254,honda,cr v,pickup,2018,2400,Diesel,negro
+255,suzuki,s cross,furgon,2012,1500,Diesel,gris
+256,suzuki,jimny,moto,2025,1400,Eléctrico,verde
+257,mitsubishi,l200,pickup,2013,1800,Gasolina,marron
+258,suzuki,swift,moto,2023,2400,Diesel,azul
+259,ford,ranger,camioneta,2022,3000,Gasolina,plata
+260,kia,sonet,carro,2019,1600,Gasolina,gris
+261,suzuki,grand vitara,carro,2018,3500,Diesel,rojo
+262,ford,fiesta,carro,2013,1800,Gasolina,azul
+263,ford,ranger,camioneta,2019,2400,Eléctrico,naranja
+264,kia,picanto,pickup,2012,1500,Diesel,beige
+265,ford,maverick,bus,2015,3000,Gas Natural,amarillo
+266,toyota,prado,furgon,2016,2400,Híbrido,verde
+267,mazda,cx 5,pickup,2023,4000,Gasolina,gris
+268,honda,civic,carro,2019,1500,Diesel,amarillo
+269,volkswagen,jetta,camioneta,2021,3000,Gas Natural,blanco
+270,toyota,fortuner,moto,2016,2000,Gasolina,plata
+271,honda,wr v,pickup,2018,1400,Gas Natural,naranja
+272,suzuki,swift,pickup,2018,2400,Diesel,azul
+273,kia,sonet,bus,2023,2400,Diesel,negro
+274,chevrolet,s10,moto,2014,1000,Gasolina,blanco
+275,suzuki,swift,pickup,2012,1000,Gas Natural,blanco
+276,mitsubishi,outlander,pickup,2017,2400,Diesel,gris
+277,toyota,hilux,pickup,2024,3500,Gasolina,azul
+278,mitsubishi,outlander,bus,2019,1600,Gasolina,amarillo
+279,mitsubishi,lancer,carro,2017,2000,Gasolina,blanco
+280,mazda,bt 50,carro,2021,2400,Diesel,naranja
+281,ford,maverick,camioneta,2025,1800,Diesel,rojo
+282,mazda,cx 5,moto,2014,2400,Gasolina,plata
+283,toyota,corolla,pickup,2015,1200,Gas Natural,gris
+284,hyundai,santa fe,furgon,2022,1500,Diesel,blanco
+285,chevrolet,s10,pickup,2019,1800,Gasolina,naranja
+286,kia,picanto,moto,2017,1500,Híbrido,vino
+287,honda,civic,camioneta,2020,2000,Gasolina,azul
+288,mazda,mazda2,bus,2019,2400,Diesel,azul
+289,chevrolet,onix,bus,2016,1500,Híbrido,naranja
+290,honda,cr v,pickup,2023,1000,Híbrido,vino
+291,nissan,frontier,carro,2019,1400,Gasolina,azul
+292,volkswagen,jetta,carro,2016,1000,Diesel,blanco
+293,kia,sonet,pickup,2015,1600,Diesel,plata
+294,honda,accord,camioneta,2018,1000,Diesel,vino
+295,honda,civic,camioneta,2025,2400,Eléctrico,beige
+296,hyundai,ioniq,moto,2023,1600,Diesel,plata
+297,honda,wr v,camioneta,2014,1200,Gas Natural,amarillo
+298,volkswagen,tiguan,carro,2017,1400,Diesel,gris
+299,volkswagen,polo,moto,2024,3000,Híbrido,negro
+300,hyundai,accent,moto,2013,1000,Híbrido,negro
+301,ford,escape,bus,2016,3500,Diesel,plata
+302,honda,hr v,pickup,2014,2000,Gas Natural,negro
+303,kia,sonet,camioneta,2024,1200,Gas Natural,gris
+304,hyundai,tucson,furgon,2012,2400,Gasolina,rojo
+305,honda,accord,pickup,2025,1400,Eléctrico,gris
+306,mitsubishi,eclipse cross,camioneta,2020,1200,Híbrido,azul
+307,kia,sportage,pickup,2023,1600,Gasolina,gris
+308,nissan,sentra,furgon,2018,3000,Eléctrico,marron
+309,volkswagen,gol,pickup,2022,1800,Diesel,azul
+310,suzuki,grand vitara,carro,2022,4000,Eléctrico,gris
+311,nissan,frontier,furgon,2021,2400,Eléctrico,verde
+312,chevrolet,joy,camioneta,2017,3000,Diesel,plata
+313,mitsubishi,outlander,camioneta,2015,1500,Diesel,plata
+314,chevrolet,s10,moto,2013,3500,Gasolina,blanco
+315,honda,hr v,camioneta,2024,1200,Gas Natural,naranja
+316,honda,accord,moto,2020,3500,Gas Natural,naranja
+317,nissan,versa,furgon,2021,1600,Híbrido,plata
+318,ford,escape,bus,2022,2400,Diesel,vino
+319,kia,sonet,moto,2013,1400,Eléctrico,blanco
+320,mazda,mazda2,camioneta,2015,1500,Híbrido,gris
+321,kia,sonet,bus,2024,1000,Gasolina,vino
+322,kia,sportage,moto,2014,1400,Eléctrico,plata
+323,mitsubishi,l200,furgon,2017,3000,Gasolina,rojo
+324,renault,kwid,carro,2022,1000,Gasolina,plata
+325,mitsubishi,l200,camioneta,2023,1600,Híbrido,azul
+326,ford,bronco,furgon,2021,1600,Gasolina,gris
+327,nissan,pathfinder,moto,2024,1500,Diesel,blanco
+328,renault,koleos,furgon,2017,1000,Híbrido,rojo
+329,nissan,sentra,pickup,2013,1200,Diesel,azul
+330,mazda,cx 30,pickup,2023,1500,Diesel,blanco
+331,mazda,cx 5,carro,2020,1600,Gasolina,gris
+332,renault,stepway,bus,2020,1000,Gas Natural,negro
+333,nissan,x trail,bus,2012,1500,Eléctrico,plata
+334,renault,duster,carro,2014,1200,Gasolina,blanco
+335,chevrolet,tracker,pickup,2015,1600,Diesel,amarillo
+336,suzuki,grand vitara,moto,2022,1400,Gasolina,plata
+337,nissan,sentra,furgon,2016,4000,Diesel,negro
+338,mazda,bt 50,bus,2023,4000,Gas Natural,plata
+339,toyota,yaris,camioneta,2012,1200,Gas Natural,plata
+340,hyundai,accent,pickup,2020,1500,Gasolina,plata
+341,suzuki,vitara,carro,2012,1800,Gasolina,verde
+342,mazda,bt 50,pickup,2020,1600,Diesel,azul
+343,toyota,corolla,moto,2023,1500,Híbrido,gris
+344,honda,hr v,bus,2014,4000,Gasolina,gris
+345,renault,logan,pickup,2021,1000,Gas Natural,marron
+346,mazda,mazda2,bus,2025,1200,Gas Natural,blanco
+347,renault,stepway,moto,2019,1200,Diesel,negro
+348,toyota,land cruiser,furgon,2016,1500,Diesel,naranja
+349,honda,cr v,camioneta,2023,1500,Eléctrico,gris
+350,chevrolet,tracker,pickup,2014,2000,Diesel,negro
+351,honda,civic,camioneta,2013,1200,Diesel,azul
+352,suzuki,ignis,moto,2022,3500,Gasolina,blanco
+353,hyundai,accent,pickup,2015,2400,Diesel,gris
+354,nissan,sentra,camioneta,2018,2400,Diesel,blanco
+355,volkswagen,tiguan,moto,2023,3500,Diesel,negro
+356,volkswagen,virtus,carro,2019,1200,Gas Natural,blanco
+357,volkswagen,virtus,furgon,2023,2400,Gas Natural,gris
+358,suzuki,s cross,carro,2017,2000,Eléctrico,negro
+359,renault,stepway,camioneta,2015,1800,Híbrido,negro
+360,mazda,mazda3,camioneta,2012,2000,Eléctrico,negro
+361,nissan,pathfinder,carro,2024,1200,Gas Natural,plata
+362,mitsubishi,asx,carro,2019,3000,Eléctrico,gris
+363,renault,stepway,carro,2021,1500,Gas Natural,gris
+364,mitsubishi,asx,carro,2022,1500,Gas Natural,amarillo
+365,kia,sonet,bus,2015,1200,Gasolina,negro
+366,hyundai,i20,moto,2015,2400,Gasolina,blanco
+367,chevrolet,montana,pickup,2025,2400,Híbrido,plata
+368,ford,explorer,moto,2019,1800,Diesel,negro
+369,hyundai,i20,bus,2016,1400,Híbrido,naranja
+370,renault,oroch,moto,2015,1500,Diesel,negro
+371,nissan,frontier,furgon,2017,1500,Gas Natural,vino
+372,kia,cerato,carro,2021,2000,Diesel,rojo
+373,mitsubishi,outlander,camioneta,2014,3500,Gas Natural,azul
+374,mitsubishi,lancer,bus,2012,1500,Diesel,gris
+375,nissan,sentra,moto,2024,1000,Gasolina,gris
+376,renault,oroch,bus,2019,1000,Diesel,azul
+377,mitsubishi,eclipse cross,furgon,2013,1200,Gasolina,blanco
+378,mazda,bt 50,camioneta,2022,4000,Gas Natural,rojo
+379,chevrolet,tracker,moto,2012,1200,Gasolina,rojo
+380,renault,logan,moto,2023,4000,Gasolina,plata
+381,mitsubishi,l200,moto,2015,1200,Gasolina,plata
+382,honda,hr v,moto,2020,1600,Gas Natural,rojo
+383,nissan,kicks,pickup,2023,1500,Gasolina,blanco
+384,kia,cerato,carro,2024,1200,Gasolina,plata
+385,mitsubishi,outlander,moto,2015,1500,Diesel,blanco
+386,mitsubishi,outlander,pickup,2019,1800,Diesel,plata
+387,mitsubishi,outlander,bus,2013,1500,Diesel,azul
+388,toyota,fortuner,camioneta,2014,1600,Diesel,plata
+389,renault,koleos,camioneta,2021,2000,Diesel,plata
+390,hyundai,i20,camioneta,2017,1000,Gasolina,negro
+391,ford,focus,furgon,2017,1000,Diesel,gris
+392,toyota,land cruiser,camioneta,2019,3000,Diesel,beige
+393,ford,escape,pickup,2013,1200,Gasolina,rojo
+394,suzuki,grand vitara,moto,2019,3000,Eléctrico,negro
+395,suzuki,vitara,pickup,2016,4000,Híbrido,blanco
+396,volkswagen,polo,pickup,2025,1000,Eléctrico,azul
+397,kia,picanto,furgon,2022,1200,Diesel,gris
+398,hyundai,creta,camioneta,2012,3500,Gasolina,verde
+399,honda,fit,moto,2023,1200,Gasolina,gris
+400,ford,maverick,carro,2024,1600,Gasolina,rojo
+401,chevrolet,blazer,carro,2013,1500,Diesel,blanco
+402,volkswagen,t cross,furgon,2019,1400,Eléctrico,blanco
+403,hyundai,accent,bus,2022,1500,Diesel,vino
+404,honda,cr v,carro,2020,1600,Gasolina,azul
+405,toyota,hilux,furgon,2021,1600,Gas Natural,azul
+406,renault,sandero,pickup,2023,2400,Diesel,plata
+407,volkswagen,polo,bus,2014,3500,Diesel,marron
+408,ford,explorer,moto,2019,1200,Gas Natural,gris
+409,renault,sandero,furgon,2024,4000,Diesel,vino
+410,volkswagen,gol,bus,2025,2400,Gas Natural,blanco
+411,kia,carnival,carro,2014,2000,Gas Natural,rojo
+412,mazda,bt 50,camioneta,2018,2400,Gasolina,azul
+413,suzuki,s cross,bus,2015,1500,Gas Natural,blanco
+414,suzuki,grand vitara,carro,2015,1000,Gasolina,negro
+415,nissan,kicks,pickup,2021,1000,Híbrido,plata
+416,honda,cr v,furgon,2024,1400,Híbrido,negro
+417,mitsubishi,lancer,carro,2018,2000,Diesel,plata
+418,hyundai,accent,bus,2012,4000,Diesel,marron
+419,nissan,frontier,camioneta,2022,3000,Gas Natural,vino
+420,hyundai,i10,camioneta,2024,1800,Híbrido,blanco
+421,chevrolet,joy,carro,2015,1600,Diesel,negro
+422,hyundai,tucson,camioneta,2023,1500,Eléctrico,plata
+423,honda,accord,furgon,2020,2000,Gas Natural,azul
+424,chevrolet,montana,carro,2016,4000,Diesel,verde
+425,toyota,hilux,camioneta,2023,1500,Híbrido,rojo
+426,ford,focus,carro,2012,1500,Gasolina,rojo
+427,honda,wr v,carro,2025,1800,Diesel,plata
+428,volkswagen,gol,carro,2012,1500,Gasolina,blanco
+429,hyundai,accent,camioneta,2017,3000,Eléctrico,negro
+430,toyota,hilux,furgon,2017,3500,Gasolina,blanco
+431,toyota,hilux,moto,2013,1000,Híbrido,gris
+432,honda,wr v,carro,2017,1500,Diesel,azul
+433,volkswagen,polo,pickup,2025,1800,Gasolina,gris
+434,nissan,sentra,furgon,2024,3500,Gasolina,rojo
+435,hyundai,tucson,furgon,2024,1600,Gasolina,azul
+436,hyundai,santa fe,pickup,2021,2400,Diesel,beige
+437,hyundai,creta,furgon,2018,2000,Gas Natural,rojo
+438,honda,fit,carro,2015,1000,Eléctrico,amarillo
+439,volkswagen,jetta,bus,2017,1600,Gas Natural,negro
+440,mitsubishi,eclipse cross,moto,2024,3500,Diesel,vino
+441,toyota,corolla,moto,2018,2000,Gas Natural,plata
+442,kia,seltos,furgon,2015,1600,Diesel,rojo
+443,ford,focus,bus,2013,3000,Eléctrico,gris
+444,mitsubishi,asx,moto,2019,1200,Gasolina,negro
+445,toyota,prado,moto,2021,1500,Diesel,azul
+446,renault,oroch,pickup,2025,1600,Gasolina,rojo
+447,honda,civic,furgon,2012,1200,Híbrido,blanco
+448,volkswagen,jetta,moto,2013,2400,Híbrido,gris
+449,honda,hr v,pickup,2017,3500,Gas Natural,rojo
+450,mitsubishi,lancer,bus,2023,1000,Diesel,beige
+451,toyota,yaris,camioneta,2014,3000,Gasolina,rojo
+452,mazda,cx 5,pickup,2025,1500,Gasolina,plata
+453,toyota,yaris,pickup,2018,2000,Híbrido,negro
+454,hyundai,i20,moto,2017,2000,Diesel,gris
+455,nissan,sentra,bus,2020,1200,Eléctrico,amarillo
+456,nissan,kicks,furgon,2022,2400,Eléctrico,negro
+457,hyundai,i20,furgon,2019,3000,Gasolina,naranja
+458,mazda,mazda6,carro,2015,1800,Gasolina,gris
+459,volkswagen,jetta,pickup,2020,1600,Diesel,gris
+460,volkswagen,polo,moto,2018,1400,Eléctrico,rojo
+461,chevrolet,joy,furgon,2024,1400,Eléctrico,rojo
+462,kia,picanto,camioneta,2012,3000,Gasolina,beige
+463,volkswagen,polo,bus,2015,3500,Gasolina,plata
+464,honda,cr v,furgon,2021,1500,Híbrido,rojo
+465,mitsubishi,outlander,carro,2022,1200,Híbrido,plata
+466,honda,fit,carro,2022,3500,Diesel,amarillo
+467,hyundai,i20,pickup,2024,1500,Gasolina,negro
+468,chevrolet,onix,furgon,2018,4000,Híbrido,rojo
+469,ford,bronco,bus,2016,1400,Gasolina,plata
+470,ford,escape,moto,2024,3000,Diesel,amarillo
+471,kia,sportage,pickup,2014,2000,Gasolina,amarillo
+472,renault,oroch,carro,2016,2000,Gasolina,azul
+475,toyota,rav4,pickup,2016,3500,Gasolina,azul
+476,chevrolet,s10,camioneta,2022,1400,Gasolina,negro
+477,suzuki,vitara,furgon,2013,3000,Diesel,vino
+478,kia,cerato,bus,2014,1400,Eléctrico,blanco
+479,toyota,fortuner,furgon,2012,2400,Diesel,gris
+480,volkswagen,gol,furgon,2012,1500,Gasolina,azul
+481,honda,accord,moto,2022,2000,Gasolina,rojo
+482,honda,cr v,bus,2021,1500,Gasolina,blanco
+483,ford,ranger,furgon,2023,1600,Gasolina,azul
+484,suzuki,swift,moto,2013,1500,Eléctrico,gris
+485,mitsubishi,outlander,carro,2014,3000,Híbrido,plata
+486,hyundai,santa fe,pickup,2025,3000,Gasolina,azul
+487,toyota,hilux,moto,2012,1600,Híbrido,azul
+488,volkswagen,amarok,furgon,2015,2000,Gas Natural,beige
+489,ford,ranger,camioneta,2017,2400,Gas Natural,gris
+490,nissan,frontier,bus,2017,1600,Diesel,plata
+491,mitsubishi,outlander,camioneta,2019,3500,Gasolina,blanco
+492,ford,explorer,camioneta,2013,1800,Gasolina,rojo
+493,chevrolet,blazer,carro,2019,1500,Gas Natural,blanco
+494,mitsubishi,outlander,carro,2012,1600,Diesel,gris
+495,mazda,mazda6,pickup,2024,1000,Gas Natural,rojo
+496,mitsubishi,l200,moto,2014,1200,Gas Natural,negro
+497,kia,picanto,pickup,2012,2400,Gasolina,gris
+498,volkswagen,t cross,bus,2019,1500,Híbrido,azul
+499,mitsubishi,outlander,camioneta,2018,1400,Diesel,rojo
+500,hyundai,santa fe,furgon,2017,1400,Gas Natural,amarillo
+501,nissan,x trail,pickup,2020,4000,Eléctrico,negro
+502,renault,koleos,furgon,2019,1400,Gasolina,vino
+503,suzuki,jimny,camioneta,2013,4000,Híbrido,negro
+504,suzuki,s cross,furgon,2014,1600,Gasolina,vino
+505,hyundai,creta,camioneta,2015,1000,Eléctrico,azul
+506,hyundai,santa fe,moto,2018,4000,Gasolina,negro
+507,volkswagen,virtus,pickup,2018,1000,Eléctrico,blanco
+508,chevrolet,s10,camioneta,2022,3000,Híbrido,vino
+509,ford,ranger,furgon,2017,3500,Híbrido,plata
+510,mitsubishi,eclipse cross,camioneta,2017,1600,Gasolina,negro
+511,kia,picanto,moto,2023,1600,Diesel,naranja
+512,kia,seltos,furgon,2013,3500,Diesel,azul
+513,ford,ranger,furgon,2023,3000,Eléctrico,plata
+514,renault,duster,furgon,2021,3000,Diesel,negro
+515,nissan,kicks,pickup,2015,1500,Diesel,rojo
+516,nissan,sentra,furgon,2013,1000,Gasolina,beige
+517,honda,fit,furgon,2018,3000,Diesel,blanco
+518,ford,explorer,camioneta,2013,3000,Híbrido,blanco
+519,renault,stepway,carro,2012,1800,Diesel,negro
+520,renault,stepway,camioneta,2013,3500,Gasolina,plata
+521,mazda,cx 30,moto,2015,1400,Híbrido,negro
+522,renault,stepway,carro,2021,1500,Gasolina,vino
+523,hyundai,accent,bus,2018,2000,Gasolina,plata
+524,honda,cr v,carro,2020,1400,Gasolina,blanco
+525,mitsubishi,asx,carro,2018,2000,Gas Natural,rojo
+526,nissan,x trail,bus,2024,1600,Eléctrico,marron
+527,mazda,cx 30,bus,2019,3500,Diesel,plata
+528,nissan,kicks,furgon,2015,1400,Diesel,blanco
+529,volkswagen,amarok,bus,2019,1400,Gas Natural,beige
+530,nissan,kicks,pickup,2015,3500,Diesel,azul
+531,suzuki,s cross,camioneta,2013,3000,Gasolina,rojo
+532,mazda,mazda6,pickup,2025,1800,Gasolina,negro
+533,suzuki,jimny,moto,2018,2400,Eléctrico,negro
+534,honda,hr v,pickup,2012,2000,Gasolina,azul
+535,nissan,x trail,moto,2023,1400,Híbrido,gris
+536,honda,civic,pickup,2024,1500,Diesel,marron
+537,hyundai,i20,pickup,2012,1600,Eléctrico,amarillo
+538,renault,oroch,furgon,2024,3000,Gasolina,naranja
+539,hyundai,santa fe,pickup,2015,1000,Gasolina,naranja
+540,chevrolet,montana,moto,2019,1000,Gas Natural,gris
+541,volkswagen,amarok,bus,2013,1400,Gasolina,azul
+542,chevrolet,blazer,carro,2015,1400,Gasolina,negro
+543,kia,carnival,furgon,2016,4000,Gasolina,amarillo
+544,chevrolet,s10,camioneta,2017,2000,Gasolina,gris
+545,mitsubishi,eclipse cross,carro,2017,3500,Gas Natural,rojo
+546,mazda,mazda2,camioneta,2025,1400,Gasolina,plata
+547,hyundai,i20,camioneta,2015,3500,Diesel,gris
+548,chevrolet,montana,carro,2020,1000,Diesel,blanco
+549,hyundai,i20,camioneta,2021,3500,Gas Natural,azul
+550,renault,koleos,moto,2023,2000,Diesel,rojo
+551,kia,carnival,moto,2025,1500,Diesel,negro
+552,toyota,land cruiser,moto,2017,1400,Diesel,beige
+553,volkswagen,tiguan,camioneta,2015,2400,Diesel,negro
+554,renault,logan,moto,2013,1200,Gasolina,blanco
+555,honda,cr v,camioneta,2016,1200,Gasolina,plata
+556,toyota,land cruiser,bus,2020,4000,Diesel,rojo
+557,mazda,cx 30,bus,2023,1500,Diesel,gris
+558,mazda,cx 5,bus,2012,4000,Gasolina,plata
+559,ford,ranger,furgon,2022,1800,Eléctrico,beige
+560,toyota,corolla,carro,2013,1600,Eléctrico,verde
+561,nissan,sentra,camioneta,2025,1500,Gasolina,blanco
+562,volkswagen,amarok,furgon,2014,4000,Eléctrico,negro
+563,mitsubishi,asx,pickup,2023,1800,Gasolina,naranja
+564,volkswagen,amarok,bus,2014,2000,Gasolina,azul
+565,hyundai,i10,furgon,2025,3500,Eléctrico,rojo
+566,honda,wr v,camioneta,2025,4000,Híbrido,blanco
+567,suzuki,swift,moto,2015,2000,Híbrido,rojo
+568,volkswagen,gol,moto,2024,1800,Diesel,plata
+569,mazda,cx 5,furgon,2023,1600,Diesel,naranja
+570,chevrolet,spin,furgon,2016,1000,Gas Natural,azul
+571,honda,fit,camioneta,2023,3500,Gasolina,rojo
+572,renault,oroch,pickup,2018,1000,Gas Natural,amarillo
+573,toyota,land cruiser,moto,2021,1400,Gasolina,azul
+574,nissan,pathfinder,bus,2020,1600,Gas Natural,naranja
+575,hyundai,creta,pickup,2015,2000,Gas Natural,plata
+576,ford,bronco,furgon,2024,2400,Gasolina,beige
+577,renault,koleos,furgon,2020,1000,Gasolina,gris
+578,mazda,mazda6,bus,2024,1800,Eléctrico,plata
+579,toyota,rav4,carro,2023,1800,Gas Natural,azul
+580,mitsubishi,eclipse cross,bus,2024,2000,Diesel,blanco
+581,chevrolet,s10,furgon,2016,3000,Eléctrico,naranja
+582,nissan,pathfinder,carro,2014,2000,Gasolina,naranja
+583,nissan,frontier,bus,2013,1500,Gas Natural,vino
+584,suzuki,vitara,moto,2016,4000,Gasolina,azul
+585,toyota,fortuner,pickup,2025,4000,Híbrido,azul
+586,suzuki,ignis,bus,2017,1200,Gasolina,azul
+587,suzuki,vitara,carro,2015,1000,Gasolina,vino
+588,renault,stepway,carro,2018,1800,Gasolina,gris
+589,hyundai,accent,furgon,2022,1800,Gasolina,blanco
+590,ford,escape,camioneta,2025,1400,Gasolina,negro
+591,toyota,hilux,pickup,2019,3000,Diesel,blanco
+592,suzuki,jimny,furgon,2020,1500,Eléctrico,blanco
+593,chevrolet,tracker,camioneta,2021,2400,Diesel,rojo
+594,honda,civic,moto,2022,1400,Gasolina,negro
+595,toyota,yaris,furgon,2016,3000,Diesel,negro
+596,toyota,yaris,camioneta,2013,4000,Diesel,marron
+597,mitsubishi,outlander,carro,2020,3000,Híbrido,naranja
+598,chevrolet,s10,pickup,2024,1600,Gasolina,beige
+599,renault,oroch,pickup,2021,1000,Diesel,rojo
+600,hyundai,accent,camioneta,2013,2400,Diesel,azul

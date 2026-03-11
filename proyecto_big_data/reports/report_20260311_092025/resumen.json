@@ -1,0 +1,58 @@
+{
+  "total_ventas": 2000.0,
+  "total_mantenimientos": 1000.0,
+  "total_clientes": 855.0,
+  "total_vehiculos": 597.0,
+  "ingresos_totales": 118738488.0,
+  "ticket_promedio": 60735.79948849105,
+  "fecha_generacion": "2026-03-11T09:20:26.652174",
+  "reportes_generados": [
+    "ventas_por_tiempo",
+    "top_clientes",
+    "rendimiento_vendedores",
+    "mantenimiento_por_tipo",
+    "analisis_financiero",
+    "dashboard_ventas",
+    "calidad_datos"
+  ],
+  "resultados": {
+    "ventas_por_tiempo": {
+      "total_ingresos": 12917430.0,
+      "total_ventas": 237,
+      "ticket_promedio_general": 54503.92405063291,
+      "mes_max_ventas": "May"
+    },
+    "top_clientes": {
+      "top_cliente": "maria garcia fernandez",
+      "top_gasto": 635371.0,
+      "clientes_recurrentes": 20
+    },
+    "analisis_financiero": {
+      "ingresos_totales": 12917430.0,
+      "costos_totales": 15001924.0,
+      "margen_total": -1703357.0,
+      "margen_promedio": -1866.7819862813794,
+      "tasa_financiacion_promedio": 45.8827884267229
+    },
+    "dashboard_ventas": {
+      "dashboard": "dashboard.html"
+    },
+    "calidad_datos": {
+      "tablas": {
+        "dim_cliente": 855,
+        "dim_vehiculo": 597,
+        "hecho_ventas": 2000,
+        "hecho_mantenimiento": 1000
+      },
+      "calidad": {
+        "nulos_hecho_ventas": 0,
+        "total_hecho_ventas": 2000,
+        "nulos_hecho_mantenimiento": 0,
+        "total_hecho_mantenimiento": 1000,
+        "total_dim_cliente": 855,
+        "duplicados_ventas": 0,
+        "relaciones_rotas_ventas": 0
+      }
+    }
+  }
+}

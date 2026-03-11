@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Concesionario</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .header { background: #2c3e50; color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; }
+        .container { display: flex; flex-wrap: wrap; gap: 20px; }
+        .card { background: white; border-radius: 10px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex: 1 1 300px; }
+        .metric { font-size: 24px; font-weight: bold; color: #3498db; }
+        .chart-container { width: 100%; margin-top: 20px; background: white; padding: 20px; border-radius: 10px; }
+        img { max-width: 100%; height: auto; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #3498db; color: white; padding: 10px; }
+        td { padding: 8px; border-bottom: 1px solid #ddd; }
+        .timestamp { color: #7f8c8d; font-size: 12px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Dashboard Concesionario - Modelo Estrella</h1>
+        <p>Reporte generado: 2026-03-11 08:45:54</p>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <h3>Ventas</h3>
+            <div class="metric" id="total-ventas">Cargando...</div>
+            <p>Total de transacciones</p>
+        </div>
+        <div class="card">
+            <h3>Ingresos</h3>
+            <div class="metric" id="total-ingresos">Cargando...</div>
+            <p>Ingresos totales</p>
+        </div>
+        <div class="card">
+            <h3>Clientes</h3>
+            <div class="metric" id="total-clientes">Cargando...</div>
+            <p>Clientes únicos</p>
+        </div>
+        <div class="card">
+            <h3>Mantenimientos</h3>
+            <div class="metric" id="total-mant">Cargando...</div>
+            <p>Servicios realizados</p>
+        </div>
+    </div>
+    
+    <div class="chart-container">
+        <h2>Análisis de Ventas</h2>
+        <img src="ventas_por_tiempo.png" alt="Ventas por tiempo">
+    </div>
+    
+    <div class="chart-container">
+        <h2>Análisis Financiero</h2>
+        <img src="analisis_financiero.png" alt="Análisis financiero">
+    </div>
+    
+    <div class="chart-container">
+        <h2>Top Clientes</h2>
+        <img src="top_clientes.png" alt="Top clientes">
+    </div>
+    
+    <div class="chart-container">
+        <h2>Mantenimiento por Tipo</h2>
+        <img src="mantenimiento_por_tipo.png" alt="Mantenimiento">
+    </div>
+    
+    <div class="chart-container">
+        <h2>Rendimiento de Vendedores</h2>
+        <img src="rendimiento_vendedores.png" alt="Rendimiento vendedores">
+    </div>
+    
+    <div class="timestamp">
+        <p>Dashboard generado automáticamente por el sistema ETL</p>
+    </div>
+    
+    <script>
+        // Cargar métricas dinámicamente
+        fetch('resumen.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('total-ventas').textContent = data.total_ventas || '0';
+                document.getElementById('total-ingresos').textContent = '$' + (data.ingresos_totales || 0).toLocaleString();
+                document.getElementById('total-clientes').textContent = data.total_clientes || '0';
+                document.getElementById('total-mant').textContent = data.total_mantenimientos || '0';
+            })
+            .catch(error => {
+                console.error('Error cargando datos:', error);
+            });
+    </script>
+</body>
+</html>

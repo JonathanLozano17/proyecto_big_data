@@ -1,0 +1,17 @@
+{
+  "tablas": {
+    "dim_cliente": 499,
+    "dim_vehiculo": 300,
+    "hecho_ventas": 2000,
+    "hecho_mantenimiento": 800
+  },
+  "calidad": {
+    "nulos_hecho_ventas": 25,
+    "total_hecho_ventas": 2000,
+    "nulos_hecho_mantenimiento": 0,
+    "total_hecho_mantenimiento": 800,
+    "total_dim_cliente": 499,
+    "duplicados_ventas": 0,
+    "relaciones_rotas_ventas": 0
+  }
+}
