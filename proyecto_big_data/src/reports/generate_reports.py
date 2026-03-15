@@ -20,6 +20,8 @@ import pandas as pd
 import seaborn as sns
 import sqlite3
 
+from ..kpis.kpi_calculator import KPICalculator
+
 # ── Encoding para Windows ──────────────────────────────────────────────────────
 if sys.platform == 'win32':
     try:
@@ -450,11 +452,28 @@ class ReportGenerator:
         <div class="card"><h3>Mantenimientos</h3><div class="metric" id="km">—</div><p>Servicios</p></div>
     </div>
 
+    <div class="container" id="kpis-kpi">
+        <h2 style="width:100%; margin-bottom: 12px;">Métricas de KPIs</h2>
+        <div class="card"><h3>Rotación Inventario</h3><div class="metric" id="kr">—</div><p>% Unidades vendidas</p></div>
+        <div class="card"><h3>Índice Retención</h3><div class="metric" id="kf">—</div><p>% Clientes recurrentes</p></div>
+        <div class="card"><h3>Días en Inventario</h3><div class="metric" id="kd">—</div><p>Promedio</p></div>
+        <div class="card"><h3>Margen Promedio Venta</h3><div class="metric" id="kt">—</div><p>Margen promedio</p></div>
+    </div>
+
     <div class="chart-box"><h2>Ventas por Tiempo</h2><img src="ventas_por_tiempo.png"></div>
     <div class="chart-box"><h2>Análisis Financiero</h2><img src="analisis_financiero.png"></div>
     <div class="chart-box"><h2>Top Clientes</h2><img src="top_clientes.png"></div>
     <div class="chart-box"><h2>Mantenimiento por Tipo</h2><img src="mantenimiento_por_tipo.png"></div>
     <div class="chart-box"><h2>Rendimiento de Vendedores</h2><img src="rendimiento_vendedores.png"></div>
+
+    <div class="chart-box"><h2>KPIs Trimestrales</h2>
+        <div style="display:flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+            <div style="flex:1 1 45%; max-width: 800px;"><img src="kpi_rotacion_quarterly.png"></div>
+            <div style="flex:1 1 45%; max-width: 800px;"><img src="kpi_retencion_quarterly.png"></div>
+            <div style="flex:1 1 45%; max-width: 800px;"><img src="kpi_margen_promedio_quarterly.png"></div>
+            <div style="flex:1 1 45%; max-width: 800px;"><img src="kpi_dias_inventario_quarterly.png"></div>
+        </div>
+    </div>
 
     <footer>Dashboard generado automáticamente por el sistema ETL</footer>
 
@@ -464,6 +483,20 @@ class ReportGenerator:
             document.getElementById('ki').textContent = '$' + ((d.ingresos_totales || 0)).toLocaleString(undefined, {{maximumFractionDigits:0}});
             document.getElementById('kc').textContent = (d.total_clientes || 0).toLocaleString();
             document.getElementById('km').textContent = (d.total_mantenimientos || 0).toLocaleString();
+
+            // KPIs secundarios
+            document.getElementById('kr').textContent = d.rotacion_inventario_pct != null
+                ? `${{d.rotacion_inventario_pct.toFixed(1)}}%`
+                : 'N/A';
+            document.getElementById('kf').textContent = d.indice_retencion_clientes_pct != null
+                ? `${{d.indice_retencion_clientes_pct.toFixed(1)}}%`
+                : 'N/A';
+            document.getElementById('kd').textContent = d.dias_promedio_inventario != null
+                ? d.dias_promedio_inventario.toFixed(1)
+                : 'N/A';
+            document.getElementById('kt').textContent = d.margen_promedio_venta != null
+                ? d.margen_promedio_venta.toFixed(2)
+                : 'N/A';
         }}).catch(() => {{}});
     </script>
 </body>
@@ -539,11 +572,61 @@ class ReportGenerator:
             log.warning(f"Error métricas generales: {e}")
             resumen = {}
 
+        # Calcular KPIs usando el módulo dedicado
+        kpi_calc = KPICalculator(self.db.db_path)
+        kpi_results = kpi_calc.calculate_all_kpis()
+        resumen.update(kpi_results)
+
         resumen['fecha_generacion'] = datetime.now().isoformat()
         resumen['reportes'] = {k: v for k, v in results.items() if 'error' not in str(v)}
 
+        # ── Gráficas de KPIs trimestrales ──────────
+        def _save_kpi_time_series(fname: str, title: str, labels: list, values: list, ylabel: str, fmt: str = '{:.1f}'):
+            try:
+                fig, ax = plt.subplots(figsize=(12, 8))
+                ax.bar(labels, values, color="tomato")
+                ax.set_title(title, fontsize=15)
+                ax.set_ylabel(ylabel)
+                ax.set_xlabel('Período (Trimestre)')
+                ax.set_xticks(range(len(labels)))
+                ax.set_xticklabels(labels, rotation=45, ha='right', fontsize=11)
+                for i, v in enumerate(values):
+                    if not pd.isna(v):
+                        ax.text(i, v, fmt.format(v), ha='center', va='bottom', fontsize=10)
+                fig.tight_layout()
+                fig.savefig(out / f'{fname}.png', dpi=120, bbox_inches='tight')
+                plt.close(fig)
+            except Exception:
+                pass
+
+        q_data = resumen.get('kpi_quarterly', []) or []
+        labels = [str(x.get('periodo', '')) for x in q_data]
+        rot_vals = [x.get('rotacion_pct', 0) for x in q_data]
+        ret_vals = [x.get('retencion_pct', 0) for x in q_data]
+        fin_vals = [x.get('margen_promedio_pct', 0) for x in q_data]
+        dias_vals = [x.get('dias_inventario', 0) for x in q_data]
+
+        _save_kpi_time_series('kpi_rotacion_quarterly', 'Rotación de Inventario (trimestral)', labels, rot_vals, '%', '{:.1f}%')
+        _save_kpi_time_series('kpi_retencion_quarterly', 'Índice de Retención (trimestral)', labels, ret_vals, '%', '{:.1f}%')
+        _save_kpi_time_series('kpi_margen_promedio_quarterly', 'Margen Promedio (trimestral)', labels, fin_vals, '', '{:.2f}')
+        _save_kpi_time_series('kpi_dias_inventario_quarterly', 'Días medio en inventario (trimestral)', labels, dias_vals, 'días', '{:.1f}')
+
+        # Sanitizar valores no JSON (NaN, inf, -inf) para que el dashboard JS pueda parsear
+        def _safe_val(x):
+            try:
+                if isinstance(x, float) and (pd.isna(x) or x != x or x in (float('inf'), float('-inf'))):
+                    return None
+            except Exception:
+                pass
+            if isinstance(x, dict):
+                return {k: _safe_val(v) for k, v in x.items()}
+            if isinstance(x, list):
+                return [_safe_val(v) for v in x]
+            return x
+
+        resumen_safe = _safe_val(resumen)
         (out / 'resumen.json').write_text(
-            json.dumps(resumen, indent=2, default=str), encoding='utf-8'
+            json.dumps(resumen_safe, indent=2, default=str), encoding='utf-8'
         )
 
         with open(out / 'resumen.txt', 'w', encoding='utf-8') as f:
