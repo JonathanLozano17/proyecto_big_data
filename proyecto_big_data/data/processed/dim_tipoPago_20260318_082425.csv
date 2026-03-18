@@ -1,0 +1,4 @@
+id_tipo_pago,tipo_pago,entidad_financiera,plazo_meses,tasa_interes,requiere_aprobacion
+1,credito,no identificado,0.0,0.0,0.0
+2,leasing,scotiabank,0.0,2.38,0.0
+3,contado,no identificado,48.0,0.0,0.0

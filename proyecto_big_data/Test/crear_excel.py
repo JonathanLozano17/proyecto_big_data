@@ -1,6 +1,6 @@
 """
 generate_data.py
-Genera datos crudos del concesionario con suciedad intencional.
+Genera datos crudos del concesionario sin IDs, solo datos descriptivos con suciedad intencional.
 Output: data/raw/datos_concesionario_raw.xlsx  (hoja: datos_concesionario)
 """
 
@@ -18,7 +18,7 @@ OUT_PATH = "data/raw/"
 os.makedirs(OUT_PATH, exist_ok=True)
 
 # ──────────────────────────────────────────────
-# CATÁLOGOS BASE
+# CATÁLOGOS BASE (sin IDs)
 # ──────────────────────────────────────────────
 
 NOMBRES = [
@@ -55,18 +55,18 @@ APELLIDOS = [
 ]
 
 CIUDADES = [
-    {'id':1,'base':'Bogotá','vars':['Bogotá','Bogota','BOGOTÁ','Bogotá D.C.','Bogota DC','bogotá','BOGOTA','Santa Fe de Bogotá'],'depto':'Cundinamarca','region':'Centro'},
-    {'id':2,'base':'Medellín','vars':['Medellín','Medellin','MEDELLÍN','Medallo','medellín','MEDELLIN','Medellín, Antioquia'],'depto':'Antioquia','region':'Norte'},
-    {'id':3,'base':'Cali','vars':['Cali','CALI','cali','Santiago de Cali','Cali, Valle','SANTIAGO DE CALI'],'depto':'Valle del Cauca','region':'Sur'},
-    {'id':4,'base':'Barranquilla','vars':['Barranquilla','BARRANQUILLA','B/quilla','barranquilla','Bquilla'],'depto':'Atlántico','region':'Norte'},
-    {'id':5,'base':'Cartagena','vars':['Cartagena','CARTAGENA','Cartagena de Indias','cartagena','CTG'],'depto':'Bolívar','region':'Norte'},
-    {'id':6,'base':'Bucaramanga','vars':['Bucaramanga','BUCARAMANGA','B/manga','bucaramanga','Buca'],'depto':'Santander','region':'Este'},
-    {'id':7,'base':'Pereira','vars':['Pereira','PEREIRA','pereira','Pereira Risaralda'],'depto':'Risaralda','region':'Oeste'},
-    {'id':8,'base':'Cúcuta','vars':['Cúcuta','Cucuta','CÚCUTA','cucuta','San José de Cúcuta'],'depto':'Norte de Santander','region':'Este'},
-    {'id':9,'base':'Santa Marta','vars':['Santa Marta','SANTA MARTA','S. Marta','santa marta','SMarta'],'depto':'Magdalena','region':'Norte'},
-    {'id':10,'base':'Ibagué','vars':['Ibagué','Ibague','IBAGUÉ','ibagué','IBAGUE'],'depto':'Tolima','region':'Centro'},
-    {'id':11,'base':'Manizales','vars':['Manizales','MANIZALES','manizales'],'depto':'Caldas','region':'Oeste'},
-    {'id':12,'base':'Pasto','vars':['Pasto','PASTO','pasto','San Juan de Pasto'],'depto':'Nariño','region':'Sur'},
+    {'base':'Bogotá','vars':['Bogotá','Bogota','BOGOTÁ','Bogotá D.C.','Bogota DC','bogotá','BOGOTA','Santa Fe de Bogotá'],'depto':'Cundinamarca','region':'Centro'},
+    {'base':'Medellín','vars':['Medellín','Medellin','MEDELLÍN','Medallo','medellín','MEDELLIN','Medellín, Antioquia'],'depto':'Antioquia','region':'Norte'},
+    {'base':'Cali','vars':['Cali','CALI','cali','Santiago de Cali','Cali, Valle','SANTIAGO DE CALI'],'depto':'Valle del Cauca','region':'Sur'},
+    {'base':'Barranquilla','vars':['Barranquilla','BARRANQUILLA','B/quilla','barranquilla','Bquilla'],'depto':'Atlántico','region':'Norte'},
+    {'base':'Cartagena','vars':['Cartagena','CARTAGENA','Cartagena de Indias','cartagena','CTG'],'depto':'Bolívar','region':'Norte'},
+    {'base':'Bucaramanga','vars':['Bucaramanga','BUCARAMANGA','B/manga','bucaramanga','Buca'],'depto':'Santander','region':'Este'},
+    {'base':'Pereira','vars':['Pereira','PEREIRA','pereira','Pereira Risaralda'],'depto':'Risaralda','region':'Oeste'},
+    {'base':'Cúcuta','vars':['Cúcuta','Cucuta','CÚCUTA','cucuta','San José de Cúcuta'],'depto':'Norte de Santander','region':'Este'},
+    {'base':'Santa Marta','vars':['Santa Marta','SANTA MARTA','S. Marta','santa marta','SMarta'],'depto':'Magdalena','region':'Norte'},
+    {'base':'Ibagué','vars':['Ibagué','Ibague','IBAGUÉ','ibagué','IBAGUE'],'depto':'Tolima','region':'Centro'},
+    {'base':'Manizales','vars':['Manizales','MANIZALES','manizales'],'depto':'Caldas','region':'Oeste'},
+    {'base':'Pasto','vars':['Pasto','PASTO','pasto','San Juan de Pasto'],'depto':'Nariño','region':'Sur'},
 ]
 
 MARCAS_MODELOS = {
@@ -98,18 +98,18 @@ COLORES_POOL = (
 )
 
 TIPOS_MANTENIMIENTO = [
-    {'id':1,'nombre':'Aceite y Filtros','desc':'Cambio de aceite y filtros','garantia':1,'meses':3,'km':5000},
-    {'id':2,'nombre':'Frenos','desc':'Revisión y cambio de pastillas','garantia':1,'meses':6,'km':10000},
-    {'id':3,'nombre':'Suspensión','desc':'Revisión de amortiguadores','garantia':1,'meses':12,'km':20000},
-    {'id':4,'nombre':'Motor','desc':'Ajuste y calibración del motor','garantia':1,'meses':12,'km':15000},
-    {'id':5,'nombre':'Sistema Eléctrico','desc':'Revisión eléctrica completa','garantia':0,'meses':0,'km':0},
-    {'id':6,'nombre':'Aire Acondicionado','desc':'Recarga y revisión A/C','garantia':0,'meses':0,'km':0},
-    {'id':7,'nombre':'Transmisión','desc':'Cambio de aceite transmisión','garantia':1,'meses':6,'km':15000},
-    {'id':8,'nombre':'Alineación y Balanceo','desc':'Alineación y balanceo de llantas','garantia':0,'meses':0,'km':0},
-    {'id':9,'nombre':'Llantas y Neumáticos','desc':'Cambio y rotación de llantas','garantia':1,'meses':12,'km':15000},
-    {'id':10,'nombre':'Revisión General','desc':'Revisión completa del vehículo','garantia':0,'meses':0,'km':0},
-    {'id':11,'nombre':'Latonería y Pintura','desc':'Reparación de carrocería','garantia':1,'meses':6,'km':0},
-    {'id':12,'nombre':'Vidrios y Lunas','desc':'Cambio o reparación de vidrios','garantia':0,'meses':0,'km':0},
+    {'nombre':'Aceite y Filtros','desc':'Cambio de aceite y filtros','garantia':1,'meses':3,'km':5000},
+    {'nombre':'Frenos','desc':'Revisión y cambio de pastillas','garantia':1,'meses':6,'km':10000},
+    {'nombre':'Suspensión','desc':'Revisión de amortiguadores','garantia':1,'meses':12,'km':20000},
+    {'nombre':'Motor','desc':'Ajuste y calibración del motor','garantia':1,'meses':12,'km':15000},
+    {'nombre':'Sistema Eléctrico','desc':'Revisión eléctrica completa','garantia':0,'meses':0,'km':0},
+    {'nombre':'Aire Acondicionado','desc':'Recarga y revisión A/C','garantia':0,'meses':0,'km':0},
+    {'nombre':'Transmisión','desc':'Cambio de aceite transmisión','garantia':1,'meses':6,'km':15000},
+    {'nombre':'Alineación y Balanceo','desc':'Alineación y balanceo de llantas','garantia':0,'meses':0,'km':0},
+    {'nombre':'Llantas y Neumáticos','desc':'Cambio y rotación de llantas','garantia':1,'meses':12,'km':15000},
+    {'nombre':'Revisión General','desc':'Revisión completa del vehículo','garantia':0,'meses':0,'km':0},
+    {'nombre':'Latonería y Pintura','desc':'Reparación de carrocería','garantia':1,'meses':6,'km':0},
+    {'nombre':'Vidrios y Lunas','desc':'Cambio o reparación de vidrios','garantia':0,'meses':0,'km':0},
 ]
 
 ENTIDADES_POOL = (
@@ -164,7 +164,7 @@ def rand_date():
         return random.choice(['2024-13-45','31/02/2023','fecha_invalida','99/99/9999',''])
     return random.choice(fmts)
 
-def gen_email(nombre, apellido, id_c):
+def gen_email(nombre, apellido):
     dominios_ok  = ['gmail.com','hotmail.com','yahoo.es','outlook.com','correo.co','icloud.com']
     dominios_err = ['gmial.com','hotmai.com','yaho.es','outlok.com','correo.c']
     n = strip_accents(nombre).lower()
@@ -174,7 +174,7 @@ def gen_email(nombre, apellido, id_c):
         f"{n}{a}@{random.choice(dominios_ok)}",
         f"{n[0]}{a}@{random.choice(dominios_ok)}",
         f"{n}{random.randint(1,999)}@{random.choice(dominios_ok)}",
-        f"cliente{id_c}@{random.choice(dominios_ok)}",
+        f"cliente{random.randint(1,999)}@{random.choice(dominios_ok)}",
         f"{a}.{n}@{random.choice(dominios_ok)}",
         f"{n}_{a}@{random.choice(dominios_ok)}",
     ]
@@ -211,7 +211,7 @@ def gen_descuento():
     return val
 
 # ──────────────────────────────────────────────
-# GENERACIÓN PRINCIPAL
+# GENERACIÓN PRINCIPAL (SIN IDs)
 # ──────────────────────────────────────────────
 
 N_VENTAS = 2000
@@ -222,7 +222,6 @@ for i in range(1, N_VENTAS + N_MANT + 1):
     tipo_reg = 'VENTA' if i <= N_VENTAS else 'MANTENIMIENTO'
 
     # ── Cliente ──────────────────────────────
-    id_cli  = random.randint(1, 900)
     nombre  = random.choice(random.choice(NOMBRES))
     ap1     = random.choice(random.choice(APELLIDOS))
     ap2     = random.choice(random.choice(APELLIDOS))
@@ -234,21 +233,18 @@ for i in range(1, N_VENTAS + N_MANT + 1):
         ciudad_cli  = dirty(random.choice(ciu['vars']), 0.25)
         depto_cli   = dirty(ciu['depto'], 0.15)
         region_cli  = dirty(ciu['region'], 0.15)
-        id_ciu_cli  = ciu['id']
     else:
         ciudad_cli  = random.choice(['','CIUDAD_INVALIDA','No especificada',' ',None,'N/A','sin dato','?'])
         depto_cli   = random.choice(['',None,'N/A','sin dato'])
         region_cli  = random.choice(['',None,'N/A'])
-        id_ciu_cli  = random.choice([999,-1,None,0])
 
     tipo_cli = dirty(random.choice(['nuevo','recurrente','vip','empresarial','potencial']), 0.35)
-    cli_email = gen_email(nombre, ap1, id_cli)
+    cli_email = gen_email(nombre, ap1)
     cli_edad  = random.randint(18,80) if random.random() > 0.03 else random.randint(5,120)
     cli_edad  = maybe(cli_edad, 0.92)
     cli_gen   = dirty(random.choice(['M','F','Masculino','Femenino','M','F','M','F']), 0.2)
 
     # ── Vehículo ─────────────────────────────
-    id_veh    = random.randint(1, 600)
     marca     = random.choice(list(MARCAS_MODELOS.keys()))
     modelo    = random.choice(MARCAS_MODELOS[marca])
     tipo_veh  = dirty(random.choice(['carro','moto','camioneta','bus','furgón','pickup']), 0.2)
@@ -260,13 +256,11 @@ for i in range(1, N_VENTAS + N_MANT + 1):
     p_venta_s = int(p_compra * random.uniform(1.05, 1.40))
 
     # ── Sucursal ─────────────────────────────
-    id_suc    = random.randint(1, 35)
     ciu_suc   = random.choice(CIUDADES)
     nom_suc   = f"Sucursal {random.choice(SUCURSALES)}"
     tam_suc   = random.choice(TAMAÑOS)
 
     # ── Vendedor ─────────────────────────────
-    id_vend   = random.randint(1, 100)
     vend_nom  = f"{random.choice(random.choice(NOMBRES))} {random.choice(random.choice(APELLIDOS))}"
     vend_exp  = maybe(random.randint(0, 25), 0.92)
 
@@ -276,9 +270,8 @@ for i in range(1, N_VENTAS + N_MANT + 1):
     if tipo_reg == 'VENTA':
         fecha_venta    = fecha
         fecha_mant     = None
-        id_tipo_mant   = None
-        nom_mant       = None
-        desc_mant      = None
+        tipo_mant_nom  = None
+        tipo_mant_desc = None
         garantia_mant  = None
         meses_gar      = None
         km_gar         = None
@@ -293,7 +286,6 @@ for i in range(1, N_VENTAS + N_MANT + 1):
         descuento      = gen_descuento()
         financiado     = random.choice(FINANCIADO_VALS)
         comision       = maybe(round(p_venta_s * random.uniform(0.008, 0.035), 2), 0.90)
-        id_tipo_pago   = random.randint(1, 20)
         tipo_pago_nom  = dirty(random.choice(TIPOS_PAGO_POOL), 0.15)
         entidad_fin    = maybe(dirty(random.choice(ENTIDADES_POOL), 0.10), 0.55)
         plazo          = maybe(random.choice([12,24,36,48,60,72]), 0.55)
@@ -304,9 +296,8 @@ for i in range(1, N_VENTAS + N_MANT + 1):
         fecha_venta    = None
         fecha_mant     = fecha
         tm             = random.choice(TIPOS_MANTENIMIENTO)
-        id_tipo_mant   = tm['id']
-        nom_mant       = dirty(tm['nombre'], 0.10)
-        desc_mant      = tm['desc']
+        tipo_mant_nom  = dirty(tm['nombre'], 0.10)
+        tipo_mant_desc = tm['desc']
         garantia_mant  = tm['garantia']
         meses_gar      = tm['meses']
         km_gar         = tm['km']
@@ -321,7 +312,6 @@ for i in range(1, N_VENTAS + N_MANT + 1):
         descuento      = None
         financiado     = None
         comision       = None
-        id_tipo_pago   = None
         tipo_pago_nom  = None
         entidad_fin    = None
         plazo          = None
@@ -330,34 +320,21 @@ for i in range(1, N_VENTAS + N_MANT + 1):
         cantidad       = None
 
     records.append({
-        # ── Identificadores ──────────────────
-        'id_venta':               i if tipo_reg == 'VENTA' else None,
+        # ── Tipo de registro ─────────────────
         'tipo_registro':          tipo_reg,
         'fecha_venta':            fecha_venta,
         'fecha_mantenimiento':    fecha_mant,
-        'id_cliente':             id_cli,
-        'id_vehiculo':            id_veh,
-        'id_vendedor':            id_vend if tipo_reg == 'VENTA' else None,
-        'id_sucursal':            id_suc,
-        'id_tipo_pago':           id_tipo_pago,
-        'id_tipo_mantenimiento':  id_tipo_mant,
-        # ── Métricas venta ───────────────────
-        'cantidad':               cantidad,
-        'precio_venta':           precio_venta,
-        'costo_vehiculo':         costo_vehiculo,
-        'descuento':              descuento,
-        'financiado':             financiado,
-        'comision_vendedor':      comision,
+        
         # ── Cliente ──────────────────────────
         'cliente_nombre':         cli_nombre,
         'cliente_edad':           cli_edad,
         'cliente_genero':         cli_gen,
         'cliente_tipo':           tipo_cli,
         'cliente_email':          cli_email,
-        'id_ciudad_cliente':      id_ciu_cli,
         'ciudad_cliente':         ciudad_cli,
         'departamento_cliente':   depto_cli,
         'region_cliente':         region_cli,
+        
         # ── Vehículo ─────────────────────────
         'vehiculo_marca':         marca,
         'vehiculo_modelo':        modelo,
@@ -366,34 +343,45 @@ for i in range(1, N_VENTAS + N_MANT + 1):
         'vehiculo_cilindraje':    cilindraje,
         'vehiculo_combustible':   combustible,
         'vehiculo_color':         color,
+        
         # ── Sucursal ─────────────────────────
         'sucursal_nombre':        nom_suc,
-        'id_ciudad_sucursal':     ciu_suc['id'],
         'ciudad_sucursal':        ciu_suc['base'],
         'departamento_sucursal':  ciu_suc['depto'],
         'region_sucursal':        ciu_suc['region'],
         'sucursal_tamaño':        tam_suc,
         'sucursal_zona':          ciu_suc['region'],
+        
         # ── Vendedor ─────────────────────────
         'vendedor_nombre':        vend_nom if tipo_reg == 'VENTA' else None,
         'vendedor_experiencia':   vend_exp if tipo_reg == 'VENTA' else None,
+        
+        # ── Métricas venta ───────────────────
+        'cantidad':               cantidad,
+        'precio_venta':           precio_venta,
+        'costo_vehiculo':         costo_vehiculo,
+        'descuento':              descuento,
+        'financiado':             financiado,
+        'comision_vendedor':      comision,
+        
         # ── Pago ─────────────────────────────
-        'tipo_pago_nombre':       tipo_pago_nom,
+        'tipo_pago':              tipo_pago_nom,
         'entidad_financiera':     entidad_fin,
         'plazo_meses':            plazo,
         'tasa_interes':           tasa,
         'requiere_aprobacion':    req_aprobacion,
+        
         # ── Mantenimiento ────────────────────
-        'tipo_mantenimiento_nombre':       nom_mant,
-        'tipo_mantenimiento_descripcion':  desc_mant,
-        'incluye_garantia':        garantia_mant,
-        'meses_garantia':          meses_gar,
-        'kilometros_garantia':     km_gar,
-        'costo_servicio':          costo_serv,
-        'costo_repuestos':         costo_rep,
-        'repuestos_usados':        rep_usados,
-        'horas_taller':            horas_taller,
-        'kilometraje_vehiculo':    km_vehiculo,
+        'tipo_mantenimiento':            tipo_mant_nom,
+        'tipo_mantenimiento_descripcion': tipo_mant_desc,
+        'incluye_garantia':               garantia_mant,
+        'meses_garantia':                 meses_gar,
+        'kilometros_garantia':            km_gar,
+        'costo_servicio':                  costo_serv,
+        'costo_repuestos':                 costo_rep,
+        'repuestos_usados':                rep_usados,
+        'horas_taller':                    horas_taller,
+        'kilometraje_vehiculo':            km_vehiculo,
     })
 
 # Mezclar filas

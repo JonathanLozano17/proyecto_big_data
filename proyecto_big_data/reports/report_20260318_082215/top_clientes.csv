@@ -1,0 +1,21 @@
+﻿id_cliente,nombre_cliente,tipo_cliente,num_compras,total_gastado,ticket_promedio,vehiculos_comprados,compra_maxima
+1067,angela fernandez fernandez,nuevo,3,364942.0,121647.33333333333,3,150489.0
+154,raul rios moreno,vip,3,322233.0,107411.0,3,123593.0
+1364,julian rios dominguez,nuevo,2,279507.0,139753.5,2,149956.0
+1024,patricia ramirez fernandez,vip,2,262757.0,131378.5,2,144764.0
+480,valentina toro rodriguez,nuevo,2,249305.0,124652.5,2,158847.0
+1290,felipe munoz perez,potencial,2,248021.0,124010.5,2,158976.0
+1298,andres rios herrera,nuevo,2,235517.0,117758.5,2,125976.0
+1041,angela vargas ospina,vip,2,222171.0,111085.5,2,127902.0
+647,maria niniez alvarez,empresarial,2,218006.0,109003.0,2,126776.0
+735,sebastian cardenas gutierrez,empresarial,2,204597.0,102298.5,2,133337.0
+1552,valentina lopez herrera,recurrente,2,203184.0,101592.0,2,147401.0
+1330,laura cruz ospina,vip,2,202795.0,101397.5,2,124592.0
+1532,ricardo munioz cardenas,potencial,2,196281.0,98140.5,2,108072.0
+850,felipe dominguez rios,vip,2,195740.0,97870.0,2,119222.0
+1690,laura fernandez lopez,empresarial,2,193843.0,96921.5,2,132865.0
+615,ricardo ramirez ramirez,recurrente,2,189151.0,94575.5,2,112991.0
+230,jose alvarez penia,recurrente,2,187278.0,93639.0,2,135661.0
+1443,carolina pena herrera,recurrente,3,185702.0,61900.666666666664,3,81244.0
+886,hernan cardenas sanchez,vip,2,185682.0,92841.0,2,154173.0
+1005,monica alvarez dominguez,recurrente,2,184283.0,92141.5,2,133442.0

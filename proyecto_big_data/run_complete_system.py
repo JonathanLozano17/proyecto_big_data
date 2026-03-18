@@ -16,6 +16,7 @@ sys.path.append(str(Path(__file__).parent / 'src'))
 from src.run_etl import main as run_etl
 from src.reports.generate_reports import main as run_reports
 from src.predictions.vehicle_price_predictor import main as run_predictions
+from src.kpis.kpi_calculator import KPICalculator
 
 
 def setup_logging():
@@ -37,6 +38,7 @@ def main():
     parser.add_argument('--etl', action='store_true', help='Ejecutar ETL')
     parser.add_argument('--reports', action='store_true', help='Generar reportes')
     parser.add_argument('--predictions', action='store_true', help='Ejecutar predicciones')
+    parser.add_argument('--kpis', action='store_true', help='Calcular KPIs')
     parser.add_argument('--all', action='store_true', help='Ejecutar todo')
     
     # Usamos parse_known_args para que no explote con argumentos de otros módulos
@@ -44,8 +46,8 @@ def main():
     
     setup_logging()
     
-    if args.all or not (args.etl or args.reports or args.predictions):
-        args.etl = args.reports = args.predictions = True
+    if args.all or not (args.etl or args.reports or args.predictions or args.kpis):
+        args.etl = args.reports = args.predictions = args.kpis = True
 
     # --- TRUCO: Limpiar sys.argv antes de llamar a las fases ---
     import sys
@@ -71,9 +73,21 @@ def main():
         # CORREGIDO: Sin argumentos
         run_predictions()
 
-    print("\n" + "=" * 70)
-    print("✅ SISTEMA COMPLETADO EXITOSAMENTE")
-    print("=" * 70)
+    if args.kpis:
+        print("\n📈 FASE 4: CALCULANDO KPIs...")
+        
+        kpi_calculator = KPICalculator()
+        kpis = kpi_calculator.calculate_all_kpis()
+        
+        print("\n📊 KPIs CALCULADOS:")
+        for key, value in kpis.items():
+            if key != 'kpi_quarterly':
+                print(f"  - {key}: {value:.2f}")
+        
+        print(f"\n📅 KPIs Trimestrales: {len(kpis.get('kpi_quarterly', []))} registros")
+        print("\n" + "=" * 70)
+        print("✅ SISTEMA COMPLETADO EXITOSAMENTE")
+        print("=" * 70)
 
 
 if __name__ == "__main__":

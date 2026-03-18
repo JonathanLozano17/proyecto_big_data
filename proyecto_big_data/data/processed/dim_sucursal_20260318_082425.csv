@@ -1,0 +1,13 @@
+id_sucursal,nombre,id_ciudad,tamaño,zona
+1,sucursal industrial,1,pequenia,centro
+2,sucursal norte,4,pequenia,este
+3,sucursal occidente,3,pequenio,norte
+4,sucursal sur,12,grande,este
+5,sucursal aeropuerto,9,grande,sur
+6,sucursal principal,12,mediana,este
+7,sucursal el poblado,4,grande,este
+8,sucursal oriente,10,pequenia,oeste
+9,sucursal calle 80,7,grande,oeste
+10,sucursal autopista,4,grande,este
+11,sucursal centro,10,mediana,oeste
+12,sucursal carrera 7,1,grande,centro
